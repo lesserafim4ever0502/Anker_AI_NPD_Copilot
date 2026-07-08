@@ -3,6 +3,15 @@
   "feishu_url": "https://my.feishu.cn/base/WrKRbn36saOOzTs6UzWctWBanmg",
   "resource_type": "base",
   "created_at": "2026-07-08T10:34:45+08:00",
+  "documents": [
+    {
+      "title": "数据采集填写说明｜Anker AI-NPD Copilot",
+      "feishu_url": "https://my.feishu.cn/docx/AGAwdBavUosqQCxqeWscSfBmnvw",
+      "purpose": "Guide teammates on how to fill the five Feishu Base data intake tables.",
+      "created_at": "2026-07-08T11:19:00+08:00",
+      "location_note": "Created as a docx block inside the existing Feishu Base workspace."
+    }
+  ],
   "tables": [
     {
       "name": "raw_evidence_intake",
@@ -109,7 +118,7 @@
   ],
   "notes": [
     "Public manifest intentionally omits Base token and table IDs.",
-    "Resource identifiers are stored in data_workbench/feishu_workspace_manifest.local.json, which is gitignored.",
+    "Resource identifiers, including Base table IDs and docx block identifiers, are stored in data_workbench/feishu_workspace_manifest.local.json, which is gitignored.",
     "Use this Base for public sample evidence collection only; do not paste secrets, cookies, internal data, or personal authorization data."
   ]
 }

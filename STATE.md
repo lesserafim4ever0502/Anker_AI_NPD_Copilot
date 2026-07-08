@@ -106,6 +106,8 @@ raw public evidence
 - Workspace name: `Anker AI-NPD Copilot 数据采集工作台`.
 - Public manifest: `data_workbench/feishu_workspace_manifest.json`.
 - Local identifier manifest: `data_workbench/feishu_workspace_manifest.local.json` and ignored by `.gitignore`.
+- Feishu data intake guide created: yes, `数据采集填写说明｜Anker AI-NPD Copilot`.
+- Guide document location: created as a docx block inside the existing Feishu Base workspace.
 
 ### Tables for Team Collection
 
@@ -128,3 +130,13 @@ Recommended workflow:
 5. Transform reviewed data into `src/data/*.json` only after approval.
 
 Do not export OAuth tokens, cookies, app secrets, personal authorization files, or internal Anker data into this repository.
+
+### Feishu Guide Document
+
+The Feishu workspace now includes a teammate-facing guide document:
+
+- Title: `数据采集填写说明｜Anker AI-NPD Copilot`.
+- URL: `https://my.feishu.cn/docx/AGAwdBavUosqQCxqeWscSfBmnvw`.
+- Purpose: explain the collection goal, common rules, ID naming, field-level filling guidance for the five intake tables, recommended team roles, and the export-to-repository workflow.
+
+The public manifest records the document URL only. Internal docx token and Base block ID are stored in the ignored local manifest.
