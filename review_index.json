@@ -1,0 +1,125 @@
+{
+  "project_name": "Anker AI-NPD Copilot",
+  "submission_context": "2026 AI先锋未来人才大赛",
+  "company": "安克创新",
+  "track": "AI + 研发创新",
+  "positioning": "Evidence-driven AI-native NPD decision system",
+  "not_a": [
+    "generic chatbot",
+    "one-shot product idea generator",
+    "pure marketing copy generator",
+    "one-click product launch decision"
+  ],
+  "is_a": [
+    "multi-project NPD workspace",
+    "interactive NPD workflow demo",
+    "evidence-to-decision system",
+    "multi-agent product review system",
+    "Feishu collaboration archive workflow"
+  ],
+  "core_modules": [
+    "Project Workspace",
+    "Evidence Pool",
+    "Pain Point Radar",
+    "Competitor Opportunity Matrix",
+    "Stage-Gate Evaluation",
+    "Multi-Agent Product Committee",
+    "Sample NP PRD Output",
+    "Feishu Collaboration Archive"
+  ],
+  "key_files": {
+    "human_readme": "README.md",
+    "agent_guide": "AGENT.md",
+    "single_source_of_truth": "SPEC.md",
+    "state": "STATE.md",
+    "design": "DESIGN.md",
+    "system_prd": "docs/SYSTEM_PRD.md",
+    "ux_details": "docs/UX_PAGE_DETAILS.md",
+    "data_schema": "docs/DATA_SCHEMA.md",
+    "demo_script": "docs/DEMO_SCRIPT.md",
+    "data_intake": "docs/DATA_INTAKE.md",
+    "evidence_agent_prompt": "docs/EVIDENCE_AGENT_PROMPT.md",
+    "raw_evidence_template": "data_templates/raw_evidence_intake.csv",
+    "structured_evidence_template": "data_templates/structured_evidence_template.csv"
+  },
+  "demo_flow": [
+    "WorkspacePage",
+    "EvidencePoolPage",
+    "PainRadarPage",
+    "CompetitorMatrixPage",
+    "EvaluationPage",
+    "ProposalPrdPage",
+    "FeishuWorkflowPage"
+  ],
+  "recommended_demo_state": "PRD Drafted / Need Confirmation",
+  "feishu_role": {
+    "input": [
+      "product matrix",
+      "competitor matrix",
+      "user feedback samples",
+      "pain point tags"
+    ],
+    "output": [
+      "sample NP PRD",
+      "multi-agent review report",
+      "Stage-Gate decision record",
+      "MVP validation tasks",
+      "review meeting agenda"
+    ],
+    "reuse": [
+      "NPD knowledge base",
+      "PRD templates",
+      "risk review archive",
+      "candidate NP evaluation history"
+    ]
+  },
+  "rubric_alignment": {
+    "AI创新性": [
+      "Evidence-to-Decision",
+      "multi-agent product committee",
+      "risk reviewer agent",
+      "Stage-Gate decision gates"
+    ],
+    "业务价值": [
+      "reduce early NPD ambiguity",
+      "improve user insight workflow",
+      "improve competitor analysis workflow",
+      "preserve decision rationale"
+    ],
+    "可推广性": [
+      "multi-category reusable workflow",
+      "multi-market NPD Run model",
+      "Feishu knowledge reuse"
+    ],
+    "方案专业度": [
+      "system PRD",
+      "design spec",
+      "data schema",
+      "demo script",
+      "agent-ready repository"
+    ]
+  },
+  "evidence_intake_pipeline": {
+    "mode": "semi-automated human-selected public source intake",
+    "flow": [
+      "raw_evidence_intake.csv",
+      "Evidence Screening Agent",
+      "structured_evidence_template.csv",
+      "human review",
+      "src/data/*.json",
+      "demo pages"
+    ],
+    "scoring_fields": [
+      "relevance_score",
+      "traceability_score",
+      "structure_score",
+      "decision_value_score",
+      "reuse_score"
+    ],
+    "include_status": [
+      "include",
+      "maybe",
+      "exclude"
+    ]
+  }
+}

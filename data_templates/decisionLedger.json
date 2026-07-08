@@ -1,0 +1,35 @@
+[
+  {
+    "id": "ledger-001",
+    "day": "Day 1",
+    "stage": "项目启动",
+    "decision": "聚焦智能充电 × 多设备办公 × 北美市场",
+    "basis": "安克核心品类与多设备办公场景契合",
+    "risk": "场景范围仍需数据验证",
+    "ownerRole": "产品负责人",
+    "status": "confirmed",
+    "nextAction": "构建证据池"
+  },
+  {
+    "id": "ledger-002",
+    "day": "Day 2",
+    "stage": "证据池",
+    "decision": "公开小样本可支持开题验证",
+    "basis": "已覆盖产品矩阵、竞品矩阵、用户反馈和测评观点",
+    "risk": "缺少内部售后和销售数据",
+    "ownerRole": "用户研究员",
+    "status": "confirmed",
+    "nextAction": "进入痛点分析"
+  },
+  {
+    "id": "ledger-005",
+    "day": "Day 5",
+    "stage": "决策评审",
+    "decision": "候选 A 暂时领先",
+    "basis": "品牌契合度、痛点强度和市场验证可行性较高",
+    "risk": "竞品差异度 Warning",
+    "ownerRole": "产品负责人",
+    "status": "need_confirmation",
+    "nextAction": "发起飞书二次评审会议"
+  }
+]

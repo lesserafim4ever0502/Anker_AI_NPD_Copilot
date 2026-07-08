@@ -1,0 +1,11 @@
+[
+  {
+    "id": "overlap-001",
+    "candidateId": "candidate-a",
+    "title": "与现有桌面充电器 / 扩展坞存在重叠风险",
+    "riskLevel": "medium",
+    "reason": "候选 A 涉及充电、接口扩展和桌面设备组织，可能与安克现有高功率桌面充电器或扩展坞产品边界重叠。",
+    "suggestedAction": "在 Stage-Gate 中重点审查竞品差异度，并将差异化聚焦于桌面设备组织和场景化功率管理。",
+    "status": "open"
+  }
+]

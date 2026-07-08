@@ -1,0 +1,5 @@
+﻿id,data_type,brand,product_or_topic,raw_text_or_claim,source_url,collector,notes
+ex-001,product,Anker,Anker Prime desktop charger example,High-power desktop charger with multiple USB-C ports and smart display.,https://example.com/replace-with-real-anker-product-url,teammate_1,Useful for Anker current SKU boundary and overlap risk.
+ex-002,product,UGREEN,UGREEN docking station example,USB-C docking station with multiple ports and laptop charging support.,https://example.com/replace-with-real-ugreen-product-url,teammate_1,Useful for competitor matrix and charging / docking overlap.
+ex-003,feedback,Anker,desktop charger review,User says the charger works but the desk still has too many cables and adapters.,https://example.com/replace-with-real-review-url,teammate_2,Useful for cable clutter pain point.
+ex-004,review,Satechi,desktop dock review,Reviewer notes clean desktop form factor but limited power capability compared with high-power chargers.,https://example.com/replace-with-real-review-url,teammate_2,Useful for opportunity gap between design and charging capability.

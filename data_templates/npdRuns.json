@@ -1,0 +1,57 @@
+[
+  {
+    "id": "run-anker-001",
+    "projectId": "project-desktop-energy",
+    "name": "智能充电 × 多设备移动办公 × 北美市场",
+    "company": "安克创新",
+    "category": [
+      "智能充电",
+      "扩展坞"
+    ],
+    "scenario": "多设备移动办公",
+    "market": "北美",
+    "mode": "快速开题分析",
+    "currentStage": "PRD Drafted / Need Confirmation",
+    "status": "prd_drafted_need_confirmation",
+    "confidence": "medium",
+    "nextAction": "Product Review Meeting",
+    "summary": "候选 A 暂时领先，但需要确认与安克现有 SKU 的差异边界、用户付费意愿和 MVP 硬件复杂度。",
+    "stageProgress": [
+      {
+        "stageId": "start",
+        "name": "启动",
+        "status": "completed"
+      },
+      {
+        "stageId": "evidence",
+        "name": "证据池",
+        "status": "completed"
+      },
+      {
+        "stageId": "pain",
+        "name": "痛点",
+        "status": "completed"
+      },
+      {
+        "stageId": "competitor",
+        "name": "竞品",
+        "status": "completed"
+      },
+      {
+        "stageId": "review",
+        "name": "评审",
+        "status": "need_confirmation"
+      },
+      {
+        "stageId": "prd",
+        "name": "PRD 草案",
+        "status": "completed"
+      },
+      {
+        "stageId": "feishu",
+        "name": "飞书沉淀",
+        "status": "in_progress"
+      }
+    ]
+  }
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "id": "pain-cable-clutter",
+    "name": "线缆混乱",
+    "cluster": "桌面空间管理",
+    "frequency": 28,
+    "severityAvg": 4.3,
+    "evidenceCount": 34,
+    "confidence": "medium",
+    "scenarios": [
+      "多设备移动办公",
+      "家庭桌面",
+      "学生宿舍"
+    ],
+    "relatedEvidenceIds": [
+      "evidence-024"
+    ],
+    "designSignals": [
+      "用户需要更好的桌面设备组织能力，而不只是更高功率。"
+    ]
+  },
+  {
+    "id": "pain-power-opacity",
+    "name": "功率分配不透明",
+    "cluster": "充电体验",
+    "frequency": 21,
+    "severityAvg": 4.1,
+    "evidenceCount": 26,
+    "confidence": "medium",
+    "scenarios": [
+      "多设备移动办公"
+    ],
+    "relatedEvidenceIds": [
+      "evidence-067"
+    ],
+    "designSignals": [
+      "功率状态需要被用户理解。"
+    ]
+  },
+  {
+    "id": "pain-heat-anxiety",
+    "name": "发热担忧",
+    "cluster": "充电体验",
+    "frequency": 19,
+    "severityAvg": 4.4,
+    "evidenceCount": 22,
+    "confidence": "medium",
+    "scenarios": [
+      "高功率充电"
+    ],
+    "relatedEvidenceIds": [
+      "evidence-067"
+    ],
+    "designSignals": [
+      "高功率产品需要降低安全焦虑。"
+    ]
+  }
+]

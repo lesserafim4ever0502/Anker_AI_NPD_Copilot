@@ -1,0 +1,99 @@
+{
+  "candidateId": "candidate-a",
+  "title": "多设备移动办公桌面能量中枢 PRD 摘要",
+  "status": "draft_need_confirmation",
+  "version": "v0.1",
+  "oneSentence": "面向多设备办公用户的桌面能量与设备组织解决方案，整合多设备充电、基础线缆管理、功率状态反馈和桌面设备连接体验。",
+  "targetUsers": [
+    "远程办公用户",
+    "多设备桌面用户",
+    "内容创作者 / 轻创作者",
+    "学生宿舍与家庭桌面用户",
+    "数字游民 / 移动办公人群"
+  ],
+  "coreScenarios": [
+    "多设备桌面办公",
+    "会议前后的设备快速补能",
+    "笔记本、手机、耳机、平板等多设备同时连接",
+    "桌面线缆和适配器管理"
+  ],
+  "positioning": "本候选 NP 不是单纯增加接口数量或提升功率的桌面充电器，而是面向多设备办公场景的桌面能量组织系统。",
+  "evidenceSummary": {
+    "painPoints": [
+      "线缆混乱",
+      "功率分配不透明",
+      "桌面占用",
+      "接口割裂",
+      "发热担忧"
+    ],
+    "opportunityGaps": [
+      "桌面充电器与扩展坞能力割裂",
+      "功率状态解释不足",
+      "多设备办公场景缺少一体化管理"
+    ],
+    "gateSummary": "品牌契合度、痛点强度、技术可行性、市场验证和组织沉淀价值为 Pass，竞品差异度为 Warning。",
+    "agentSummary": "风险评审官指出该方向与现有桌面充电器 / 扩展坞存在边界重叠，需要二次确认。"
+  },
+  "mvpFeatures": [
+    {
+      "priority": "P0",
+      "feature": "多设备有线充电整合",
+      "relatedPainPoint": "多设备充电割裂",
+      "value": "减少适配器数量",
+      "status": "keep"
+    },
+    {
+      "priority": "P0",
+      "feature": "功率状态可视化",
+      "relatedPainPoint": "功率分配不透明 / 发热担忧",
+      "value": "降低用户不确定感",
+      "status": "keep"
+    },
+    {
+      "priority": "P0",
+      "feature": "基础线缆管理结构",
+      "relatedPainPoint": "线缆混乱 / 桌面占用",
+      "value": "改善桌面秩序",
+      "status": "keep"
+    },
+    {
+      "priority": "P1",
+      "feature": "场景化功率模式",
+      "relatedPainPoint": "多设备优先级不清楚",
+      "value": "提升可理解性",
+      "status": "validate"
+    },
+    {
+      "priority": "P2",
+      "feature": "完整扩展坞能力",
+      "relatedPainPoint": "接口割裂",
+      "value": "增强连接能力",
+      "status": "defer"
+    }
+  ],
+  "outOfScope": [
+    "不追求最高功率参数竞争",
+    "不在第一版集成完整扩展坞能力",
+    "不把 App 作为 P0 核心能力",
+    "不同时堆叠无线充电、屏幕、复杂散热和全接口扩展",
+    "不直接进入量产定义"
+  ],
+  "risks": [
+    "与安克现有 SKU 重叠",
+    "用户付费意愿不明确",
+    "MVP 硬件复杂度过高",
+    "公开样本代表性有限"
+  ],
+  "pendingConfirmationIds": [
+    "pc-001",
+    "pc-002",
+    "pc-003"
+  ],
+  "feishuArtifacts": [
+    "PRD 摘要文档",
+    "多 Agent 评审报告",
+    "MVP 验证任务清单",
+    "二次评审会议议程",
+    "NPD 知识库归档"
+  ]
+}

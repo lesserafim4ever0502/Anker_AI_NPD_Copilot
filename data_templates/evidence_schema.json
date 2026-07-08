@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Anker AI-NPD Evidence Intake Schema",
+  "type": "object",
+  "required": [
+    "id",
+    "data_type",
+    "raw_text_or_claim",
+    "source_url"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "data_type": {
+      "type": "string",
+      "enum": [
+        "product",
+        "feedback",
+        "review",
+        "community",
+        "article",
+        "other"
+      ]
+    },
+    "brand": {
+      "type": "string"
+    },
+    "product_or_topic": {
+      "type": "string"
+    },
+    "raw_text_or_claim": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "collector": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "include_status": {
+      "type": "string",
+      "enum": [
+        "include",
+        "maybe",
+        "exclude"
+      ]
+    },
+    "evidence_value_score": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "score_breakdown": {
+      "type": "object",
+      "properties": {
+        "relevance_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "traceability_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "structure_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "decision_value_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "reuse_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "used_for_pages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "auto_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_pain_points": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_opportunity_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "design_signal": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "human_review_status": {
+      "type": "string",
+      "enum": [
+        "unreviewed",
+        "approved",
+        "needs_edit",
+        "rejected"
+      ]
+    }
+  }
+}

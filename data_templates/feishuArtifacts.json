@@ -1,0 +1,96 @@
+[
+  {
+    "id": "artifact-001",
+    "name": "安克与竞品产品矩阵",
+    "feishuType": "多维表格",
+    "sourcePages": [
+      "EvidencePoolPage",
+      "CompetitorMatrixPage"
+    ],
+    "content": [
+      "安克 SKU",
+      "竞品 SKU",
+      "品类",
+      "功率",
+      "接口",
+      "形态",
+      "核心卖点",
+      "机会空白",
+      "来源链接"
+    ],
+    "businessValue": "形成可持续更新的品类情报库，支持竞品复核与产品边界判断。",
+    "mockStatus": "created"
+  },
+  {
+    "id": "artifact-002",
+    "name": "用户反馈与痛点标签体系",
+    "feishuType": "多维表格",
+    "sourcePages": [
+      "PainRadarPage"
+    ],
+    "content": [
+      "用户原声",
+      "来源",
+      "情绪",
+      "痛点标签",
+      "严重度",
+      "设计信号",
+      "可引用状态"
+    ],
+    "businessValue": "将分散评论转化为可分析、可复用的用户洞察资产。",
+    "mockStatus": "created"
+  },
+  {
+    "id": "artifact-003",
+    "name": "多 Agent 产品评审报告",
+    "feishuType": "飞书文档",
+    "sourcePages": [
+      "EvaluationPage"
+    ],
+    "content": [
+      "Stage-Gate 结果",
+      "Agent 支持理由",
+      "Agent 反对意见",
+      "风险项",
+      "建议动作"
+    ],
+    "businessValue": "沉淀跨职能评审过程，支持后续复盘。",
+    "mockStatus": "created"
+  },
+  {
+    "id": "artifact-004",
+    "name": "多设备移动办公桌面能量中枢 PRD 摘要",
+    "feishuType": "飞书文档",
+    "sourcePages": [
+      "ProposalPrdPage"
+    ],
+    "content": [
+      "目标用户",
+      "核心场景",
+      "产品定位",
+      "MVP 功能",
+      "风险清单",
+      "验证计划"
+    ],
+    "businessValue": "形成可进入下一轮企业评审的新产品定义草案。",
+    "mockStatus": "created"
+  },
+  {
+    "id": "artifact-005",
+    "name": "MVP 验证任务清单",
+    "feishuType": "飞书任务 / 项目",
+    "sourcePages": [
+      "ProposalPrdPage",
+      "FeishuWorkflowPage"
+    ],
+    "content": [
+      "竞品边界复核",
+      "用户概念测试",
+      "工业设计草图",
+      "MVP 功能收敛",
+      "内部数据复核"
+    ],
+    "businessValue": "把 PRD 草案转化为后续可执行任务。",
+    "mockStatus": "created"
+  }
+]

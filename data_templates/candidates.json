@@ -1,0 +1,82 @@
+[
+  {
+    "id": "candidate-a",
+    "name": "多设备移动办公桌面能量中枢",
+    "description": "面向多设备办公用户，整合充电、扩展、线缆管理、功率状态反馈和桌面设备组织能力。",
+    "targetUsers": [
+      "远程办公用户",
+      "创作者",
+      "学生",
+      "多设备桌面用户"
+    ],
+    "coreScenarios": [
+      "多设备移动办公",
+      "家庭桌面",
+      "会议前后"
+    ],
+    "relatedPainPoints": [
+      "线缆混乱",
+      "功率分配不透明",
+      "桌面占用",
+      "接口割裂"
+    ],
+    "relatedGaps": [
+      "桌面充电器与扩展坞能力割裂",
+      "功率状态解释不足"
+    ],
+    "score": 4.2,
+    "status": "recommended_with_warning",
+    "mainStrength": "痛点强、品牌契合度高、Demo 展示效果强",
+    "mainRisk": "与现有桌面充电器 / 扩展坞存在重叠风险"
+  },
+  {
+    "id": "candidate-b",
+    "name": "创作者移动电力工作站",
+    "description": "面向视频创作者、摄影师和外拍用户，整合移动供电、设备优先级、数据传输和便携收纳。",
+    "targetUsers": [
+      "视频创作者",
+      "摄影师",
+      "外拍用户"
+    ],
+    "coreScenarios": [
+      "内容创作者外拍"
+    ],
+    "relatedPainPoints": [
+      "移动供电",
+      "数据协同",
+      "线缆收纳"
+    ],
+    "relatedGaps": [
+      "创作者供电与数据分散"
+    ],
+    "score": 3.8,
+    "status": "need_feasibility_review",
+    "mainStrength": "场景清晰、差异化较强",
+    "mainRisk": "硬件复杂度较高，MVP 需要收敛"
+  },
+  {
+    "id": "candidate-c",
+    "name": "差旅多设备智能充电套装",
+    "description": "面向商务差旅、留学生和数字游民，解决多设备充电、插头适配、线缆收纳和便携配置问题。",
+    "targetUsers": [
+      "商务差旅用户",
+      "留学生",
+      "数字游民"
+    ],
+    "coreScenarios": [
+      "商务差旅",
+      "多设备出行"
+    ],
+    "relatedPainPoints": [
+      "差旅配置复杂",
+      "线缆收纳"
+    ],
+    "relatedGaps": [
+      "差旅配置复杂"
+    ],
+    "score": 3.5,
+    "status": "hold_more_evidence_needed",
+    "mainStrength": "场景常见、验证成本低",
+    "mainRisk": "差异化不足，用户付费意愿需要验证"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "candidateId": "candidate-a",
+    "agentName": "用户研究员 Agent",
+    "role": "User Researcher",
+    "score": 4.3,
+    "coreJudgement": "候选 A 与高优先级痛点高度相关。",
+    "supportReason": "公开反馈样本中，多设备办公用户反复提到桌面设备、线缆、适配器和功率状态管理问题。",
+    "objection": "当前数据主要来自公开评论，尚不能确认安克自有用户中痛点强度完全一致。",
+    "suggestion": "入围后接入安克售后工单、客服标签和用户调研数据复核。",
+    "createsPendingConfirmation": true
+  },
+  {
+    "candidateId": "candidate-a",
+    "agentName": "风险评审官 Agent",
+    "role": "Risk Reviewer",
+    "score": 3.6,
+    "coreJudgement": "候选 A 最大风险是与安克现有桌面充电器和扩展坞产品边界重叠。",
+    "supportReason": "安克在高功率充电、多口充电和扩展坞方向已有产品基础。",
+    "objection": "如果没有明确的场景化设备组织能力，该方向可能被视为现有 SKU 的组合变体。",
+    "suggestion": "发起飞书二次评审会议，重点确认产品边界、差异化主张和 MVP 范围。",
+    "createsPendingConfirmation": true
+  }
+]

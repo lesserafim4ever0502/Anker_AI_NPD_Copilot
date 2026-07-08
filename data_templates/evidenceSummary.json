@@ -1,0 +1,11 @@
+{
+  "ankerSkuCount": 12,
+  "competitorSkuCount": 20,
+  "feedbackCount": 180,
+  "validPainSampleCount": 96,
+  "expertReviewCount": 12,
+  "usableQuoteCount": 22,
+  "overallConfidence": "medium",
+  "status": "ready_for_insight",
+  "mainLimitation": "公开小样本可用于开题验证，但仍需安克内部数据复核。"
+}

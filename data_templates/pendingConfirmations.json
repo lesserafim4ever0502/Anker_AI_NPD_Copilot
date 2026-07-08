@@ -1,0 +1,47 @@
+[
+  {
+    "id": "pc-001",
+    "title": "确认候选 A 与安克现有 SKU 的差异边界",
+    "description": "候选 A 与现有桌面充电器和扩展坞产品存在一定重叠，需要明确差异化不在接口数量，而在桌面设备组织和场景化功率管理。",
+    "sourcePage": "EvaluationPage",
+    "relatedCandidateId": "candidate-a",
+    "ownerRole": [
+      "产品负责人",
+      "硬件/制造负责人"
+    ],
+    "priority": "high",
+    "status": "open",
+    "suggestedAction": "发起飞书二次评审会议",
+    "feishuAction": "CreateReviewMeeting"
+  },
+  {
+    "id": "pc-002",
+    "title": "验证用户是否愿意为桌面设备组织能力付费",
+    "description": "多设备办公人群场景明确，但需要用概念图和卖点文案验证付费意愿。",
+    "sourcePage": "ProposalPrdPage",
+    "relatedCandidateId": "candidate-a",
+    "ownerRole": [
+      "用户研究员",
+      "市场负责人"
+    ],
+    "priority": "medium",
+    "status": "open",
+    "suggestedAction": "进行概念图 A/B 测试",
+    "feishuAction": "CreateValidationTask"
+  },
+  {
+    "id": "pc-003",
+    "title": "确认 MVP 是否过度复杂",
+    "description": "若同时加入完整扩展坞、无线充、App 和屏幕，MVP 复杂度过高。",
+    "sourcePage": "ProposalPrdPage",
+    "relatedCandidateId": "candidate-a",
+    "ownerRole": [
+      "产品负责人",
+      "硬件/制造负责人"
+    ],
+    "priority": "medium",
+    "status": "open",
+    "suggestedAction": "收敛 P0 功能范围",
+    "feishuAction": "CreateValidationTask"
+  }
+]

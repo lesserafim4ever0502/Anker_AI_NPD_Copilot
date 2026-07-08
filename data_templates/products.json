@@ -1,0 +1,49 @@
+[
+  {
+    "id": "product-anker-001",
+    "brand": "Anker",
+    "productName": "Anker Desktop Charger Sample",
+    "category": "Desktop Charger",
+    "powerWatt": "100W+",
+    "ports": "USB-C / USB-A multi-port",
+    "wirelessSupport": false,
+    "dockSupport": false,
+    "screenOrApp": "unknown",
+    "formFactor": "desktop",
+    "targetScenario": [
+      "多设备办公",
+      "家庭桌面"
+    ],
+    "priceRange": "mid-high",
+    "coreClaims": [
+      "high power",
+      "multi-device charging"
+    ],
+    "sourceUrl": "",
+    "possibleGap": "线缆组织和场景化功率解释不足",
+    "notes": "Demo sample; replace with real product research data."
+  },
+  {
+    "id": "product-ugreen-001",
+    "brand": "UGREEN",
+    "productName": "UGREEN Docking Station Sample",
+    "category": "Docking Station",
+    "powerWatt": "100W PD",
+    "ports": "multi-interface",
+    "wirelessSupport": false,
+    "dockSupport": true,
+    "screenOrApp": "none",
+    "formFactor": "desktop",
+    "targetScenario": [
+      "办公扩展"
+    ],
+    "priceRange": "mid-high",
+    "coreClaims": [
+      "multi-port expansion",
+      "PD charging"
+    ],
+    "sourceUrl": "",
+    "possibleGap": "功率解释不足",
+    "notes": "Demo sample."
+  }
+]
