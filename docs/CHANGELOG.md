@@ -1,5 +1,15 @@
 # CHANGELOG.md
 
+## [Unreleased]
+
+### Added
+
+- Timestamp: 2026-07-08T10:34:45+08:00.
+- Modified paths:
+  - `data_workbench/feishu_workspace_manifest.json`: new file, L1-0 -> L1-115, +115 -0.
+  - `STATE.md`: L95-0 -> L95-130, +36 -0.
+  - `docs/CHANGELOG.md`: L1-30 -> L1-40, +10 -0.
+
 ## v0.3 Pre-dev Final Discussion Package
 
 - 完成 7 页页面设计 V1。

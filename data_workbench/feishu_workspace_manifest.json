@@ -1,0 +1,115 @@
+{
+  "workspace_name": "Anker AI-NPD Copilot 数据采集工作台",
+  "feishu_url": "https://my.feishu.cn/base/WrKRbn36saOOzTs6UzWctWBanmg",
+  "resource_type": "base",
+  "created_at": "2026-07-08T10:34:45+08:00",
+  "tables": [
+    {
+      "name": "raw_evidence_intake",
+      "fields": [
+        "id",
+        "data_type",
+        "brand",
+        "product_or_topic",
+        "raw_text_or_claim",
+        "source_url",
+        "collector",
+        "notes",
+        "created_at"
+      ]
+    },
+    {
+      "name": "anker_products",
+      "fields": [
+        "id",
+        "brand",
+        "product_name",
+        "category",
+        "product_series",
+        "power_watt",
+        "battery_capacity",
+        "ports",
+        "wireless_support",
+        "dock_support",
+        "display_or_app",
+        "cable_management",
+        "form_factor",
+        "target_scenario",
+        "core_claims",
+        "source_url",
+        "source_type",
+        "possible_gap",
+        "notes",
+        "last_checked",
+        "collector"
+      ]
+    },
+    {
+      "name": "competitor_products",
+      "fields": [
+        "id",
+        "brand",
+        "product_name",
+        "category",
+        "product_series",
+        "power_watt",
+        "battery_capacity",
+        "ports",
+        "wireless_support",
+        "dock_support",
+        "display_or_app",
+        "cable_management",
+        "form_factor",
+        "target_scenario",
+        "core_claims",
+        "source_url",
+        "source_type",
+        "possible_gap",
+        "notes",
+        "last_checked",
+        "collector"
+      ]
+    },
+    {
+      "name": "user_feedback_samples",
+      "fields": [
+        "id",
+        "source",
+        "brand",
+        "product_name",
+        "raw_text_summary",
+        "sentiment",
+        "scenario",
+        "pain_point",
+        "severity",
+        "design_signal",
+        "source_url",
+        "quote_usable",
+        "notes",
+        "collector"
+      ]
+    },
+    {
+      "name": "review_sources",
+      "fields": [
+        "id",
+        "source_type",
+        "title",
+        "platform",
+        "related_brand",
+        "related_product",
+        "key_claim_or_insight",
+        "related_pain_points",
+        "related_opportunity_gaps",
+        "source_url",
+        "notes",
+        "collector"
+      ]
+    }
+  ],
+  "notes": [
+    "Public manifest intentionally omits Base token and table IDs.",
+    "Resource identifiers are stored in data_workbench/feishu_workspace_manifest.local.json, which is gitignored.",
+    "Use this Base for public sample evidence collection only; do not paste secrets, cookies, internal data, or personal authorization data."
+  ]
+}

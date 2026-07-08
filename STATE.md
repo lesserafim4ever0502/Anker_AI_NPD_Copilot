@@ -92,3 +92,39 @@ raw public evidence
 3. Review `include` and high-value `maybe` records.
 4. Export approved evidence into `src/data/*.json`.
 5. Update Page 2–7 demo data from approved structured evidence.
+
+---
+
+## Feishu Cloud Data Workspace Initialization
+
+### Status
+
+- Git repository initialized: yes.
+- Baseline commit created: yes, `chore: add repository baseline`.
+- Feishu collaboration workspace created: yes.
+- Resource type: Feishu Base / 多维表格.
+- Workspace name: `Anker AI-NPD Copilot 数据采集工作台`.
+- Public manifest: `data_workbench/feishu_workspace_manifest.json`.
+- Local identifier manifest: `data_workbench/feishu_workspace_manifest.local.json` and ignored by `.gitignore`.
+
+### Tables for Team Collection
+
+Team members should fill these tables in Feishu:
+
+1. `raw_evidence_intake`: low-friction raw public evidence intake.
+2. `anker_products`: Anker public product capability matrix.
+3. `competitor_products`: competitor public product capability matrix.
+4. `user_feedback_samples`: public feedback and scenario pain samples.
+5. `review_sources`: review, article, community, and expert source index.
+
+### Export and Repository Sync
+
+Recommended workflow:
+
+1. Export each Feishu Base table to CSV after human review.
+2. Save exported CSV files under `data_workbench/` for working review.
+3. Run the evidence screening flow described in `docs/EVIDENCE_AGENT_PROMPT.md`.
+4. Write approved structured outputs to `data_templates/structured_evidence_template.csv` first.
+5. Transform reviewed data into `src/data/*.json` only after approval.
+
+Do not export OAuth tokens, cookies, app secrets, personal authorization files, or internal Anker data into this repository.
