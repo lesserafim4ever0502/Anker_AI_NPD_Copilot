@@ -1,0 +1,38 @@
+[
+  {
+    "id": "task-001",
+    "title": "复核候选 A 与安克现有 SKU 的差异边界",
+    "ownerRole": [
+      "产品负责人",
+      "竞品分析负责人",
+      "硬件/制造负责人"
+    ],
+    "priority": "high",
+    "source": "PRD Risk",
+    "feishuType": "task",
+    "status": "open"
+  },
+  {
+    "id": "task-002",
+    "title": "进行目标用户概念图 A/B 测试",
+    "ownerRole": [
+      "用户研究员",
+      "市场负责人"
+    ],
+    "priority": "medium",
+    "source": "Market Validation",
+    "feishuType": "task",
+    "status": "open"
+  },
+  {
+    "id": "task-003",
+    "title": "输出桌面设备组织低保真概念草图",
+    "ownerRole": [
+      "工业设计师"
+    ],
+    "priority": "medium",
+    "source": "Industrial Design Review",
+    "feishuType": "task",
+    "status": "open"
+  }
+]

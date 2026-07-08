@@ -1,0 +1,18 @@
+[
+  {
+    "id": "feedback-001",
+    "source": "Amazon Review",
+    "brand": "Anker",
+    "productName": "Desktop Charger Sample",
+    "rawTextSummary": "充电功率足够，但桌面上仍然有太多线缆、适配器和设备。",
+    "sentiment": "negative",
+    "scenario": "多设备移动办公",
+    "painPointIds": [
+      "pain-cable-clutter"
+    ],
+    "severity": 4,
+    "designSignal": "用户需要桌面设备组织和线缆管理能力。",
+    "quoteUsable": true,
+    "confidence": "medium"
+  }
+]

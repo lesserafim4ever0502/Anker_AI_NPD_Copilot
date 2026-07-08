@@ -1,0 +1,52 @@
+[
+  {
+    "id": "evidence-024",
+    "source": "Amazon Reviews",
+    "type": "User Feedback",
+    "relatedProduct": "Desktop Charger / Docking Station",
+    "relatedPainPoints": [
+      "线缆混乱",
+      "桌面占用"
+    ],
+    "designSignal": "用户需要的不只是更高功率，而是更好的桌面设备组织能力。",
+    "confidence": "medium",
+    "quoteUsable": true,
+    "relatedPages": [
+      "PainRadarPage",
+      "ProposalPrdPage"
+    ]
+  },
+  {
+    "id": "evidence-041",
+    "source": "Brand Official Pages",
+    "type": "Product Fact",
+    "relatedProduct": "UGREEN / Satechi Docking Products",
+    "relatedPainPoints": [
+      "接口割裂",
+      "多设备协同"
+    ],
+    "designSignal": "扩展坞与充电能力正在融合，但场景化功率管理仍不清晰。",
+    "confidence": "high",
+    "quoteUsable": true,
+    "relatedPages": [
+      "CompetitorMatrixPage"
+    ]
+  },
+  {
+    "id": "evidence-067",
+    "source": "YouTube Review",
+    "type": "Expert Opinion",
+    "relatedProduct": "High-power charging products",
+    "relatedPainPoints": [
+      "发热担忧",
+      "功率稳定性"
+    ],
+    "designSignal": "高功率产品需要更透明的状态反馈，降低用户安全焦虑。",
+    "confidence": "medium",
+    "quoteUsable": false,
+    "relatedPages": [
+      "PainRadarPage",
+      "ProposalPrdPage"
+    ]
+  }
+]

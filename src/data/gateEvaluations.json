@@ -1,0 +1,34 @@
+[
+  {
+    "candidateId": "candidate-a",
+    "gateId": "brand-fit",
+    "gateName": "品牌契合度",
+    "status": "pass",
+    "score": 4.5,
+    "reason": "与安克智能充电和多设备办公场景的品牌心智契合。"
+  },
+  {
+    "candidateId": "candidate-a",
+    "gateId": "pain-intensity",
+    "gateName": "痛点强度",
+    "status": "pass",
+    "score": 4.4,
+    "reason": "线缆混乱、功率不透明和桌面占用等痛点集中。"
+  },
+  {
+    "candidateId": "candidate-a",
+    "gateId": "differentiation",
+    "gateName": "竞品差异度",
+    "status": "warning",
+    "score": 3.4,
+    "reason": "与现有桌面充电器和扩展坞存在边界重叠，需要进一步确认差异化主张。"
+  },
+  {
+    "candidateId": "candidate-a",
+    "gateId": "feasibility",
+    "gateName": "技术 / 制造可行性",
+    "status": "pass",
+    "score": 4.0,
+    "reason": "若 MVP 收敛到充电、状态反馈和线缆管理，可控。"
+  }
+]

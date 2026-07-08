@@ -1,0 +1,27 @@
+[
+  {
+    "id": "signal-001",
+    "title": "桌面办公用户需要设备组织能力",
+    "description": "用户问题不只来自充电功率，而来自多设备、线缆、适配器和桌面空间的综合管理负担。",
+    "relatedPainPointIds": [
+      "pain-cable-clutter"
+    ],
+    "relatedCandidateIds": [
+      "candidate-a"
+    ],
+    "confidence": "medium"
+  },
+  {
+    "id": "signal-002",
+    "title": "功率状态需要被用户理解",
+    "description": "用户需要知道哪个设备正在优先充、为什么变慢、是否安全。",
+    "relatedPainPointIds": [
+      "pain-power-opacity",
+      "pain-heat-anxiety"
+    ],
+    "relatedCandidateIds": [
+      "candidate-a"
+    ],
+    "confidence": "medium"
+  }
+]

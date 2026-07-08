@@ -1,0 +1,71 @@
+[
+  {
+    "id": "project-desktop-energy",
+    "name": "桌面办公能源生态项目",
+    "company": "安克创新",
+    "category": [
+      "智能充电",
+      "扩展坞"
+    ],
+    "scenario": "多设备移动办公",
+    "market": "北美",
+    "currentRunId": "run-anker-001",
+    "status": "prd_drafted",
+    "confidence": "medium",
+    "recommendedCandidate": "多设备移动办公桌面能量中枢",
+    "pendingCount": 3,
+    "nextAction": "发起飞书二次评审会议",
+    "ownerRoles": [
+      "产品负责人",
+      "用户研究员",
+      "硬件/制造负责人",
+      "市场负责人"
+    ],
+    "updatedAt": "Day 5"
+  },
+  {
+    "id": "project-creator-power",
+    "name": "创作者移动电力项目",
+    "company": "安克创新",
+    "category": [
+      "移动电源",
+      "创作者设备"
+    ],
+    "scenario": "创作者外拍",
+    "market": "全球",
+    "currentRunId": "run-anker-002",
+    "status": "under_review",
+    "confidence": "medium",
+    "recommendedCandidate": "创作者移动电力工作站",
+    "pendingCount": 2,
+    "nextAction": "补充竞品样本与制造复杂度评估",
+    "ownerRoles": [
+      "产品负责人",
+      "工业设计师",
+      "硬件/制造负责人"
+    ],
+    "updatedAt": "Day 4"
+  },
+  {
+    "id": "project-travel-charging",
+    "name": "差旅多设备充电项目",
+    "company": "安克创新",
+    "category": [
+      "差旅充电",
+      "充电套装"
+    ],
+    "scenario": "商务差旅",
+    "market": "中国",
+    "currentRunId": "run-anker-003",
+    "status": "insight_ready",
+    "confidence": "low",
+    "recommendedCandidate": "暂未生成",
+    "pendingCount": 1,
+    "nextAction": "补充用户反馈样本并进入竞品机会分析",
+    "ownerRoles": [
+      "用户研究员",
+      "竞品分析负责人"
+    ],
+    "updatedAt": "Day 3"
+  }
+]

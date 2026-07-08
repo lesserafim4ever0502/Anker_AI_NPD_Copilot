@@ -140,3 +140,36 @@ The Feishu workspace now includes a teammate-facing guide document:
 - Purpose: explain the collection goal, common rules, ID naming, field-level filling guidance for the five intake tables, recommended team roles, and the export-to-repository workflow.
 
 The public manifest records the document URL only. Internal docx token and Base block ID are stored in the ignored local manifest.
+
+---
+
+## Frontend Engineering Skeleton
+
+### Status
+
+- Frontend skeleton initialized: yes.
+- Stack scaffolded: Vite + React + TypeScript + Tailwind.
+- Routing scaffolded: yes, 7 routes are available through `react-router-dom`.
+- Data source rule: pages read from `src/data/*.json`; business seed content is not embedded in components.
+- Current global run status displayed: `PRD Drafted / Need Confirmation`.
+- Demo boundary displayed: `Proposal-stage Mock / Public sample data`.
+
+### Created Frontend Files
+
+- Root config: `package.json`, `index.html`, `vite.config.ts`, `tsconfig.json`, `tsconfig.app.json`, `tsconfig.node.json`, `tailwind.config.js`, `postcss.config.js`.
+- App entry: `src/main.tsx`, `src/App.tsx`, `src/index.css`, `src/vite-env.d.ts`.
+- Types: `src/types/index.ts`.
+- Components: `Layout`, `Header`, `StepNav`, `RunStatusBar`, `DecisionPanel`, `StatusBadge`, `MetricCard`.
+- Pages: `ProjectWorkspace`, `EvidencePool`, `PainRadar`, `CompetitorMatrix`, `Evaluation`, `ProposalPrd`, `FeishuWorkflow`.
+- Seed data: copied reviewed template JSON into `src/data/` and added `src/data/competitorProducts.json`.
+
+### Current Frontend Scope
+
+This is only an engineering skeleton. It does not include complete page-level UI polish, real Feishu API calls, real LLM calls, authentication, backend services, production persistence, or final data integration.
+
+### Validation Notes
+
+- JSON seed files parse successfully.
+- Required frontend skeleton files exist.
+- `npm install` was not executed because repository instructions require explicit confirmation before dependency installation.
+- TypeScript build was not run because dependencies are not installed and no global `tsc` executable is available.

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "competitor-ugreen-001",
+    "brand": "UGREEN",
+    "productName": "UGREEN Docking Station Sample",
+    "category": "Docking Station",
+    "powerWatt": "100W PD",
+    "ports": "multi-interface",
+    "wirelessSupport": false,
+    "dockSupport": true,
+    "screenOrApp": "none",
+    "formFactor": "desktop",
+    "targetScenario": ["办公扩展", "桌面连接"],
+    "priceRange": "mid-high",
+    "coreClaims": ["multi-port expansion", "PD charging"],
+    "sourceUrl": "",
+    "possibleGap": "功率解释不足，线缆组织弱",
+    "notes": "Proposal-stage mock sample; replace with reviewed public evidence."
+  },
+  {
+    "id": "competitor-belkin-001",
+    "brand": "Belkin",
+    "productName": "Belkin Desktop Charging Sample",
+    "category": "Desktop Charger",
+    "powerWatt": "high power",
+    "ports": "USB-C / wireless",
+    "wirelessSupport": true,
+    "dockSupport": false,
+    "screenOrApp": "unknown",
+    "formFactor": "desktop",
+    "targetScenario": ["桌面办公", "多设备充电"],
+    "priceRange": "premium",
+    "coreClaims": ["desktop charging", "wireless convenience"],
+    "sourceUrl": "",
+    "possibleGap": "扩展坞能力不足，状态反馈有限",
+    "notes": "Proposal-stage mock sample; replace with reviewed public evidence."
+  }
+]

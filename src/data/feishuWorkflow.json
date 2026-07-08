@@ -1,0 +1,61 @@
+{
+  "currentMode": "proposal_stage_mock",
+  "runStatus": "prd_drafted_need_confirmation",
+  "layers": [
+    {
+      "id": "layer-input",
+      "name": "输入数据承载",
+      "feishuObjects": [
+        "多维表格",
+        "文档",
+        "知识库"
+      ],
+      "description": "承载产品矩阵、竞品矩阵、用户反馈、痛点标签和候选评分。"
+    },
+    {
+      "id": "layer-ai",
+      "name": "AI 协同分析",
+      "feishuObjects": [
+        "飞书 AI",
+        "飞书妙记",
+        "飞书文档"
+      ],
+      "description": "辅助资料摘要、痛点提炼、会议纪要和 PRD 初稿生成。"
+    },
+    {
+      "id": "layer-output",
+      "name": "输出产物沉淀",
+      "feishuObjects": [
+        "飞书文档",
+        "多维表格",
+        "任务",
+        "会议"
+      ],
+      "description": "沉淀 PRD、评审报告、任务清单和会议议程。"
+    },
+    {
+      "id": "layer-reuse",
+      "name": "知识复用",
+      "feishuObjects": [
+        "知识库",
+        "文档目录",
+        "模板"
+      ],
+      "description": "沉淀 NPD 方法论、历史案例、风险库和 PRD 模板。"
+    }
+  ],
+  "automationRoadmap": [
+    {
+      "stage": "报名阶段",
+      "mode": "Web Demo + 本地 JSON + 飞书工作区样例 / Mock 同步"
+    },
+    {
+      "stage": "入围后",
+      "mode": "通过飞书 CLI 半自动同步 Markdown PRD、评分表和验证任务"
+    },
+    {
+      "stage": "后续版本",
+      "mode": "通过飞书开放平台 API 接入文档、多维表格、任务和知识库"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "kill-001",
+    "rule": "与安克现有核心 SKU 高度重叠，否决。",
+    "severity": "high",
+    "triggeredCandidates": [],
+    "relatedWarnings": [
+      "candidate-a-differentiation-warning"
+    ]
+  },
+  {
+    "id": "kill-002",
+    "rule": "缺少明确高频痛点证据，否决。",
+    "severity": "high",
+    "triggeredCandidates": [],
+    "relatedWarnings": []
+  }
+]

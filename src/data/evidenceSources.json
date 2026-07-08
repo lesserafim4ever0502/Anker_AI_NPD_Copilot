@@ -1,0 +1,26 @@
+[
+  {
+    "id": "source-official",
+    "name": "Brand Official Pages",
+    "type": "Product Fact",
+    "purpose": "构建安克与竞品产品矩阵",
+    "confidence": "high",
+    "limitations": "只能反映官方参数与卖点，不能代表用户真实体验"
+  },
+  {
+    "id": "source-amazon",
+    "name": "Amazon Reviews",
+    "type": "User Feedback",
+    "purpose": "提取真实使用痛点、情绪倾向和场景问题",
+    "confidence": "medium",
+    "limitations": "公开评论样本存在平台偏差，需内部数据复核"
+  },
+  {
+    "id": "source-youtube",
+    "name": "YouTube Reviews",
+    "type": "Expert / KOL Opinion",
+    "purpose": "补充产品体验评价与竞品对比",
+    "confidence": "medium",
+    "limitations": "测评视角可能偏主观，需与用户反馈交叉验证"
+  }
+]

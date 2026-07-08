@@ -1,0 +1,31 @@
+[
+  {
+    "id": "gap-001",
+    "title": "桌面充电器与扩展坞能力割裂",
+    "relatedPainPointIds": [
+      "pain-cable-clutter"
+    ],
+    "currentCoverage": "充电器和扩展坞分别解决供电与接口问题，但桌面办公场景中的统一设备组织仍不足。",
+    "opportunityReason": "多设备办公用户需要统一的桌面能量与连接管理体验。",
+    "relatedCandidateIds": [
+      "candidate-a"
+    ],
+    "risk": "与现有桌面充电器和扩展坞 SKU 存在重叠风险。",
+    "confidence": "medium"
+  },
+  {
+    "id": "gap-002",
+    "title": "功率状态存在但用户理解不足",
+    "relatedPainPointIds": [
+      "pain-power-opacity",
+      "pain-heat-anxiety"
+    ],
+    "currentCoverage": "部分产品提供屏幕或 App，但多数偏参数展示。",
+    "opportunityReason": "用户需要更可理解的场景化功率解释。",
+    "relatedCandidateIds": [
+      "candidate-a"
+    ],
+    "risk": "如果只增加屏幕，容易变成硬件堆料。",
+    "confidence": "medium"
+  }
+]
