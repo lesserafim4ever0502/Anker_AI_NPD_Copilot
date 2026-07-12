@@ -140,6 +140,9 @@ Do not export OAuth tokens, cookies, app secrets, personal authorization files, 
 - A web evidence audit corrected 11 records, approved UGF-008 without content changes, and split UGF-011 into compatibility and display-information records. `verified_user_feedback` now contains 13 approved records.
 - Original records remain available for audit; cleaned tables are the preferred source for downstream analysis.
 - New Base tables must be created serially. Parallel `table-create` calls can return `OpenAPIAddTable limited` even when one request succeeds.
+- Evidence scoring completed for all 13 approved user-feedback records: all are `include`, scores range from 8 to 10, and confidence remains `medium` because each record is a public single-source sample.
+- First-pass `pain_radar` created with five clusters. Three are `insight_ready`; thermal safety and desktop integration remain `needs_more_evidence` because each has only two independent sources.
+- Frontend seed data now uses the approved user-feedback set and the first-pass Pain Radar instead of the original placeholder samples.
 
 ### Feishu Guide Document
 

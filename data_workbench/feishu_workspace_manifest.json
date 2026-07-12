@@ -124,6 +124,11 @@
       "name": "verified_user_feedback",
       "purpose": "Traceable public user-generated feedback summaries kept separate from editorial inference.",
       "record_count_at_last_review": 13
+    },
+    {
+      "name": "pain_radar",
+      "purpose": "First-pass pain clusters derived only from approved public user-generated feedback, with confidence and sample-size warnings.",
+      "record_count_at_last_review": 5
     }
   ],
   "notes": [

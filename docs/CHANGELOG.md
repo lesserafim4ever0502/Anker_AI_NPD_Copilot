@@ -4,6 +4,18 @@
 
 ### Added
 
+- Timestamp: 2026-07-12T19:38:25+08:00.
+- Modified paths:
+  - `src/types/index.ts`: L1-184 -> L1-192, +9 -1.
+  - `src/data/feedback.json`: L1-18 -> L1-249, +243 -12.
+  - `src/data/painPoints.json`: L1-58 -> L1-77, +67 -48.
+  - `src/data/evidenceCards.json`: L1-52 -> L1-57, +47 -42.
+  - `src/data/evidenceSummary.json`: L1-11 -> L1-8, +6 -9.
+  - `data_workbench/feishu_workspace_manifest.json`: L1-134 -> L1-139, +5 -0.
+  - `data_workbench/feishu_workspace_manifest.local.json`: L1-44 -> L1-47, +3 -0; file remains gitignored.
+  - `STATE.md`: L1-185 -> L1-188, +3 -0.
+  - `docs/CHANGELOG.md`: L1-115 -> L1-127, +12 -0.
+
 - Timestamp: 2026-07-12T18:54:38+08:00.
 - Modified paths:
   - `data_workbench/feishu_workspace_manifest.json`: L1-134 -> L1-134, +1 -1.

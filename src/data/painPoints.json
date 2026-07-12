@@ -1,58 +1,77 @@
 [
   {
-    "id": "pain-cable-clutter",
-    "name": "线缆混乱",
-    "cluster": "桌面空间管理",
-    "frequency": 28,
-    "severityAvg": 4.3,
-    "evidenceCount": 34,
+    "id": "pain-power-transparency",
+    "name": "功率分配与实际输出不透明",
+    "cluster": "充电决策透明度",
+    "frequency": 3,
+    "severityAvg": 3.33,
+    "evidenceCount": 3,
+    "independentSourceCount": 3,
     "confidence": "medium",
-    "scenarios": [
-      "多设备移动办公",
-      "家庭桌面",
-      "学生宿舍"
-    ],
-    "relatedEvidenceIds": [
-      "evidence-024"
-    ],
-    "designSignals": [
-      "用户需要更好的桌面设备组织能力，而不只是更高功率。"
-    ]
+    "scenarios": ["multi_device", "laptop_plus_phone", "desktop_workstation"],
+    "relatedEvidenceIds": ["UGF-001", "UGF-003", "UGF-005"],
+    "designSignals": ["解释端口优先级、模式切换、协商功率与实际输出差异。"],
+    "warning": "仅3个独立Reddit来源，集中于UGREEN与Anker；需补同配置正向对照和长期使用记录。",
+    "status": "insight_ready"
   },
   {
-    "id": "pain-power-opacity",
-    "name": "功率分配不透明",
-    "cluster": "充电体验",
-    "frequency": 21,
-    "severityAvg": 4.1,
-    "evidenceCount": 26,
-    "confidence": "medium",
-    "scenarios": [
-      "多设备移动办公"
-    ],
-    "relatedEvidenceIds": [
-      "evidence-067"
-    ],
-    "designSignals": [
-      "功率状态需要被用户理解。"
-    ]
+    "id": "pain-thermal-safety",
+    "name": "持续高负载发热与热降额",
+    "cluster": "热安全与性能稳定",
+    "frequency": 2,
+    "severityAvg": 4.5,
+    "evidenceCount": 2,
+    "independentSourceCount": 2,
+    "confidence": "low",
+    "scenarios": ["sustained_laptop_load"],
+    "relatedEvidenceIds": ["UGF-002", "UGF-004"],
+    "designSignals": ["明确过温警示、保护状态、降额原因和恢复条件。"],
+    "warning": "只有2个UGREEN单用户故障或压力测试来源，不能推断为全品类普遍问题。",
+    "status": "needs_more_evidence"
   },
   {
-    "id": "pain-heat-anxiety",
-    "name": "发热担忧",
-    "cluster": "充电体验",
-    "frequency": 19,
-    "severityAvg": 4.4,
-    "evidenceCount": 22,
+    "id": "pain-compatibility-setup",
+    "name": "显示、驱动与双向供电兼容复杂",
+    "cluster": "兼容性与设置",
+    "frequency": 3,
+    "severityAvg": 4.33,
+    "evidenceCount": 3,
+    "independentSourceCount": 3,
     "confidence": "medium",
-    "scenarios": [
-      "高功率充电"
-    ],
-    "relatedEvidenceIds": [
-      "evidence-067"
-    ],
-    "designSignals": [
-      "高功率产品需要降低安全焦虑。"
-    ]
+    "scenarios": ["dual_monitor_workstation", "high_performance_workstation", "drone_battery_charging"],
+    "relatedEvidenceIds": ["UGF-007", "UGF-008", "UGF-011"],
+    "designSignals": ["按OS和拓扑说明显示限制，检测关键驱动，并提示双向USB-C供电方向。"],
+    "warning": "三个问题来自不同配置，说明兼容引导重要，但不能合并成单一根因。",
+    "status": "insight_ready"
+  },
+  {
+    "id": "pain-desktop-integration",
+    "name": "端口布局与桌面线缆整合",
+    "cluster": "桌面物理体验",
+    "frequency": 2,
+    "severityAvg": 2.5,
+    "evidenceCount": 2,
+    "independentSourceCount": 2,
+    "confidence": "low",
+    "scenarios": ["multi_device_desktop", "home_office"],
+    "relatedEvidenceIds": ["UGF-006", "UGF-009"],
+    "designSignals": ["用真实线材验证端口间距和出线方向；内置电源可减少桌下电源砖。"],
+    "warning": "仅2个来源且包含一条正向样本，需补更多桌面布局和长期线缆使用证据。",
+    "status": "needs_more_evidence"
+  },
+  {
+    "id": "pain-state-reliability",
+    "name": "状态显示与智能功能可信度",
+    "cluster": "状态反馈与可靠性",
+    "frequency": 3,
+    "severityAvg": 3.33,
+    "evidenceCount": 3,
+    "independentSourceCount": 3,
+    "confidence": "medium",
+    "scenarios": ["mobile_device_charging", "device_monitoring", "shared_home_desktop"],
+    "relatedEvidenceIds": ["UGF-010", "UGF-011B", "UGF-012"],
+    "designSignals": ["提升电量计可信度，验证电气指标需求，简化配网并明确显示屏耐久边界。"],
+    "warning": "UGF-011B与兼容记录共享同一帖子；本簇有3个独立来源，但跨移动电源与桌充形态。",
+    "status": "insight_ready"
   }
 ]

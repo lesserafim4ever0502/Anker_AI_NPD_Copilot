@@ -89,6 +89,9 @@ export type PainPoint = {
   scenarios: string[];
   relatedEvidenceIds: string[];
   designSignals: string[];
+  independentSourceCount?: number;
+  warning?: string;
+  status?: "insight_ready" | "needs_more_evidence";
 };
 
 export type Feedback = {
@@ -97,13 +100,18 @@ export type Feedback = {
   brand: string;
   productName?: string;
   rawTextSummary: string;
-  sentiment: "positive" | "neutral" | "negative";
+  sentiment: "positive" | "neutral" | "negative" | "mixed";
   scenario: string;
   painPointIds: string[];
   severity: number;
   designSignal: string;
   quoteUsable: boolean;
   confidence: Confidence;
+  sourceUrl?: string;
+  evidenceValueScore?: number;
+  includeStatus?: "include" | "maybe" | "exclude";
+  sourceGroupId?: string;
+  humanReviewStatus?: "approved" | "needs_edit" | "rejected" | "needs_recheck";
 };
 
 export type Product = {

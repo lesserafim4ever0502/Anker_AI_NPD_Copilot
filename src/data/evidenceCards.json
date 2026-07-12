@@ -1,52 +1,57 @@
 [
   {
-    "id": "evidence-024",
-    "source": "Amazon Reviews",
-    "type": "User Feedback",
-    "relatedProduct": "Desktop Charger / Docking Station",
-    "relatedPainPoints": [
-      "线缆混乱",
-      "桌面占用"
-    ],
-    "designSignal": "用户需要的不只是更高功率，而是更好的桌面设备组织能力。",
-    "confidence": "medium",
-    "quoteUsable": true,
-    "relatedPages": [
-      "PainRadarPage",
-      "ProposalPrdPage"
-    ]
-  },
-  {
-    "id": "evidence-041",
-    "source": "Brand Official Pages",
-    "type": "Product Fact",
-    "relatedProduct": "UGREEN / Satechi Docking Products",
-    "relatedPainPoints": [
-      "接口割裂",
-      "多设备协同"
-    ],
-    "designSignal": "扩展坞与充电能力正在融合，但场景化功率管理仍不清晰。",
-    "confidence": "high",
-    "quoteUsable": true,
-    "relatedPages": [
-      "CompetitorMatrixPage"
-    ]
-  },
-  {
-    "id": "evidence-067",
-    "source": "YouTube Review",
-    "type": "Expert Opinion",
-    "relatedProduct": "High-power charging products",
-    "relatedPainPoints": [
-      "发热担忧",
-      "功率稳定性"
-    ],
-    "designSignal": "高功率产品需要更透明的状态反馈，降低用户安全焦虑。",
+    "id": "evidence-pain-power-transparency",
+    "source": "Reddit public samples (3 independent sources)",
+    "type": "Verified User Feedback Cluster",
+    "relatedProduct": "UGREEN Nexode / Anker Prime Charger",
+    "relatedPainPoints": ["功率分配与实际输出不透明"],
+    "designSignal": "解释端口优先级、模式切换、协商功率与实际输出差异。",
     "confidence": "medium",
     "quoteUsable": false,
-    "relatedPages": [
-      "PainRadarPage",
-      "ProposalPrdPage"
-    ]
+    "relatedPages": ["EvidencePool", "PainRadar", "CompetitorMatrix", "Evaluation", "ProposalPrd"]
+  },
+  {
+    "id": "evidence-pain-thermal-safety",
+    "source": "Reddit public samples (2 independent sources)",
+    "type": "Verified User Feedback Cluster / Warning",
+    "relatedProduct": "UGREEN Nexode X",
+    "relatedPainPoints": ["持续高负载发热与热降额"],
+    "designSignal": "明确过温警示、保护状态、降额原因和恢复条件。",
+    "confidence": "low",
+    "quoteUsable": false,
+    "relatedPages": ["EvidencePool", "PainRadar", "CompetitorMatrix", "Evaluation", "ProposalPrd"]
+  },
+  {
+    "id": "evidence-pain-compatibility-setup",
+    "source": "Reddit public samples (3 independent sources)",
+    "type": "Verified User Feedback Cluster",
+    "relatedProduct": "Anker docks / Shargeek 170",
+    "relatedPainPoints": ["显示、驱动与双向供电兼容复杂"],
+    "designSignal": "按OS和拓扑说明显示限制，检测关键驱动，并提示双向USB-C供电方向。",
+    "confidence": "medium",
+    "quoteUsable": false,
+    "relatedPages": ["EvidencePool", "PainRadar", "CompetitorMatrix", "Evaluation", "ProposalPrd"]
+  },
+  {
+    "id": "evidence-pain-desktop-integration",
+    "source": "Reddit public samples (2 independent sources)",
+    "type": "Verified User Feedback Cluster / Warning",
+    "relatedProduct": "Anker Prime Charger / DL7400 Dock",
+    "relatedPainPoints": ["端口布局与桌面线缆整合"],
+    "designSignal": "用真实线材验证端口间距和出线方向；内置电源可减少桌下电源砖。",
+    "confidence": "low",
+    "quoteUsable": false,
+    "relatedPages": ["EvidencePool", "PainRadar", "CompetitorMatrix", "Evaluation", "ProposalPrd"]
+  },
+  {
+    "id": "evidence-pain-state-reliability",
+    "source": "Reddit public samples (3 independent sources)",
+    "type": "Verified User Feedback Cluster",
+    "relatedProduct": "Shargeek 170 / Anker Prime Charger",
+    "relatedPainPoints": ["状态显示与智能功能可信度"],
+    "designSignal": "提升电量计可信度，验证电气指标需求，简化配网并明确显示屏耐久边界。",
+    "confidence": "medium",
+    "quoteUsable": false,
+    "relatedPages": ["EvidencePool", "PainRadar", "CompetitorMatrix", "Evaluation", "ProposalPrd"]
   }
 ]
