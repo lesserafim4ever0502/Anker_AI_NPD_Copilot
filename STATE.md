@@ -137,6 +137,7 @@ Do not export OAuth tokens, cookies, app secrets, personal authorization files, 
 - `user_feedback_samples` now distinguishes `editorial_inference` from `user_generated_feedback` through cleaning metadata fields.
 - The 42 editorial-derived records were grouped into 14 source groups and copied to `editorial_insights_cleaned`; they must not be presented as direct user feedback or quotes.
 - Twelve traceable public Reddit user-feedback summaries were added to `user_feedback_samples`, mirrored into `raw_evidence_intake`, and copied to `verified_user_feedback`.
+- A web evidence audit corrected 11 records, approved UGF-008 without content changes, and split UGF-011 into compatibility and display-information records. `verified_user_feedback` now contains 13 approved records.
 - Original records remain available for audit; cleaned tables are the preferred source for downstream analysis.
 - New Base tables must be created serially. Parallel `table-create` calls can return `OpenAPIAddTable limited` even when one request succeeds.
 

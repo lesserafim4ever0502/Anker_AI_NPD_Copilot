@@ -123,7 +123,7 @@
     {
       "name": "verified_user_feedback",
       "purpose": "Traceable public user-generated feedback summaries kept separate from editorial inference.",
-      "record_count_at_last_review": 12
+      "record_count_at_last_review": 13
     }
   ],
   "notes": [
