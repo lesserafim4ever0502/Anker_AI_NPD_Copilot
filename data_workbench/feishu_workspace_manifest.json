@@ -114,6 +114,16 @@
         "notes",
         "collector"
       ]
+    },
+    {
+      "name": "editorial_insights_cleaned",
+      "purpose": "Cleaned editorial-source-derived insights. These records are not direct user feedback or quotable user statements.",
+      "record_count_at_last_review": 42
+    },
+    {
+      "name": "verified_user_feedback",
+      "purpose": "Traceable public user-generated feedback summaries kept separate from editorial inference.",
+      "record_count_at_last_review": 12
     }
   ],
   "notes": [

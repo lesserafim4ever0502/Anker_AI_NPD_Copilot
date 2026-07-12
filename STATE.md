@@ -131,6 +131,15 @@ Recommended workflow:
 
 Do not export OAuth tokens, cookies, app secrets, personal authorization files, or internal Anker data into this repository.
 
+### Feishu Data Cleaning Status
+
+- Full read-only review completed for the five original intake tables.
+- `user_feedback_samples` now distinguishes `editorial_inference` from `user_generated_feedback` through cleaning metadata fields.
+- The 42 editorial-derived records were grouped into 14 source groups and copied to `editorial_insights_cleaned`; they must not be presented as direct user feedback or quotes.
+- Twelve traceable public Reddit user-feedback summaries were added to `user_feedback_samples`, mirrored into `raw_evidence_intake`, and copied to `verified_user_feedback`.
+- Original records remain available for audit; cleaned tables are the preferred source for downstream analysis.
+- New Base tables must be created serially. Parallel `table-create` calls can return `OpenAPIAddTable limited` even when one request succeeds.
+
 ### Feishu Guide Document
 
 The Feishu workspace now includes a teammate-facing guide document:

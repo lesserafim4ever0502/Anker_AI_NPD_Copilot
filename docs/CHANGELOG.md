@@ -4,6 +4,13 @@
 
 ### Added
 
+- Timestamp: 2026-07-12T10:34:50+08:00.
+- Modified paths:
+  - `data_workbench/feishu_workspace_manifest.json`: L1-124 -> L1-134, +10 -0.
+  - `data_workbench/feishu_workspace_manifest.local.json`: L1-37 -> L1-44, +7 -0; file remains gitignored.
+  - `STATE.md`: L1-175 -> L1-184, +9 -0.
+  - `docs/CHANGELOG.md`: L1-102 -> L1-109, +7 -0.
+
 - Timestamp: 2026-07-08T16:02:12+08:00.
 - Modified paths:
   - `package.json`: new file, L1-0 -> L1-26, +26 -0.
