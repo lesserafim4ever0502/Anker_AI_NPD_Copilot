@@ -2,12 +2,14 @@ import candidatesData from "../data/candidates.json";
 import gateEvaluationsData from "../data/gateEvaluations.json";
 import agentEvaluationsData from "../data/agentEvaluations.json";
 import killCriteria from "../data/killCriteria.json";
-import type { AgentEvaluation, CandidateNP, GateEvaluation } from "../types";
+import evaluationSummaryData from "../data/evaluationSummary.json";
+import type { AgentEvaluation, CandidateNP, EvaluationSummary, GateEvaluation } from "../types";
 import StatusBadge from "../components/StatusBadge";
 
 const candidates = candidatesData as CandidateNP[];
 const gates = gateEvaluationsData as GateEvaluation[];
 const agents = agentEvaluationsData as AgentEvaluation[];
+const evaluationSummary = evaluationSummaryData as EvaluationSummary[];
 
 export default function Evaluation() {
   return (
@@ -18,8 +20,21 @@ export default function Evaluation() {
         </div>
         <h2 className="mt-2 text-3xl font-semibold text-ink">Stage-Gate + 多 Agent 评审</h2>
         <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
-          当前已完成候选生成与边界收敛；Stage-Gate 和多 Agent 评审将在下一阶段执行，不做真实 LLM 调用。
+          当前展示基于公开小样本的结构化 Stage-Gate 与预置产品委员会评审；结论需人工确认，不做真实 LLM 调用。
         </p>
+      </section>
+
+      <section className="grid gap-4 xl:grid-cols-3">
+        {evaluationSummary.map((summary) => (
+          <article key={summary.candidateId} className="rounded-lg border border-slate-200 bg-white p-4">
+            <div className="flex items-center justify-between gap-3">
+              <span className="text-sm font-semibold text-ink">{summary.weightedScore.toFixed(2)} / 5</span>
+              <StatusBadge status={summary.gateResult} />
+            </div>
+            <p className="mt-3 text-sm text-slate-600">{summary.nextAction}</p>
+            <p className="mt-2 text-xs text-slate-500">Confidence: {summary.confidence}</p>
+          </article>
+        ))}
       </section>
 
       <section className="grid gap-4 xl:grid-cols-3">
@@ -39,18 +54,14 @@ export default function Evaluation() {
 
       <section className="rounded-lg border border-slate-200 bg-white p-5">
         <h3 className="text-lg font-semibold text-ink">Gate Matrix</h3>
-        {gates.length === 0 ? (
-          <div className="mt-4 rounded-md bg-slate-50 p-4 text-sm text-slate-600">
-            候选边界已形成。Gate 评分尚未开始，下一阶段将按品牌契合、痛点强度、竞品差异、可行性、市场验证和组织沉淀逐项评审。
-          </div>
-        ) : null}
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           {gates.map((gate) => (
-            <div key={gate.gateId} className="rounded-md bg-slate-50 p-3">
+            <div key={`${gate.candidateId}-${gate.gateId}`} className="rounded-md bg-slate-50 p-3">
               <div className="flex items-center justify-between gap-3">
                 <span className="font-medium text-ink">{gate.gateName}</span>
                 <StatusBadge status={gate.status} />
               </div>
+              <p className="mt-1 text-xs font-semibold text-anker">{gate.candidateId} · {gate.score.toFixed(1)}</p>
               <p className="mt-2 text-sm text-slate-600">{gate.reason}</p>
             </div>
           ))}
@@ -58,11 +69,6 @@ export default function Evaluation() {
       </section>
 
       <section className="grid gap-4 lg:grid-cols-2">
-        {agents.length === 0 ? (
-          <article className="rounded-lg border border-slate-200 bg-white p-4 text-sm text-slate-600 lg:col-span-2">
-            多 Agent 产品委员会尚未评审。评审结果必须包含支持理由、反对意见、建议动作和 Pending Confirmation。
-          </article>
-        ) : null}
         {agents.map((agent) => (
           <article key={`${agent.candidateId}-${agent.agentName}`} className="rounded-lg border border-slate-200 bg-white p-4">
             <div className="flex items-center justify-between gap-3">

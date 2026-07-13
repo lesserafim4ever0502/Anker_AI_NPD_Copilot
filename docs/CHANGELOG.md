@@ -4,6 +4,22 @@
 
 ### Added
 
+- Timestamp: 2026-07-13T11:06:10+08:00.
+- Modified paths:
+  - `src/data/evaluationRubric.json`: new file, L1-0 -> L1-23, +23 -0.
+  - `src/data/gateEvaluations.json`: L1-1 -> L1-22, +22 -1.
+  - `src/data/evaluationSummary.json`: new file, L1-0 -> L1-7, +7 -0.
+  - `src/data/agentEvaluations.json`: L1-1 -> L1-80, +80 -1.
+  - `src/data/pendingConfirmations.json`: L1-38 -> L1-62, +24 -0.
+  - `src/data/decisionLedger.json`: L1-35 -> L1-46, +11 -0.
+  - `src/types/index.ts`: L1-230 -> L1-246, +16 -0.
+  - `src/components/StatusBadge.tsx`: L1-59 -> L1-62, +3 -0.
+  - `src/pages/Evaluation.tsx`: L1-88 -> L1-94, +19 -13.
+  - `data_workbench/feishu_workspace_manifest.json`: L1-154 -> L1-164, +10 -0.
+  - `data_workbench/feishu_workspace_manifest.local.json`: L1-56 -> L1-62, +6 -0; file remains gitignored.
+  - `STATE.md`: L1-203 -> L1-206, +9 -6.
+  - `docs/CHANGELOG.md`: L1-158 -> L1-174, +16 -0.
+
 - Timestamp: 2026-07-13T10:56:03+08:00.
 - Modified paths:
   - `src/data/candidates.json`: L1-82 -> L1-56, +49 -75.

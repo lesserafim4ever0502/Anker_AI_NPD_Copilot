@@ -1,0 +1,7 @@
+[
+  {"candidateId":"candidate-compatibility-preflight","weightedScore":4.24,"gateResult":"recommended_with_warning","confidence":"medium","blockingIssues":[],"warnings":["必须限定首轮设备与拓扑范围","需证明相对静态 FAQ 的任务收益","兼容规则需要版本与责任人"],"decision":"recommended_with_warning","nextAction":"进入多 Agent 产品委员会并建立 10 组拓扑金标准。"},
+  {"candidateId":"candidate-explainable-power","weightedScore":3.91,"gateResult":"validation_required","confidence":"medium","blockingIssues":[],"warnings":["显示与 App 供给拥挤","差异化任务收益尚未证明"],"decision":"validate_before_decision","nextAction":"执行参数显示与解释型反馈对照任务测试。"},
+  {"candidateId":"candidate-trustworthy-state","weightedScore":3.24,"gateResult":"fail_evidence_gate","confidence":"low","blockingIssues":["痛点强度 Gate 失败","核心热问题仅 2 个独立来源"],"warnings":["真实安全状态依赖可靠传感与状态定义"],"decision":"hold_more_evidence","nextAction":"补采长期高负载、恢复过程和无故障对照样本。"}
+]
+
+

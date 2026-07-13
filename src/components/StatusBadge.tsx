@@ -27,6 +27,7 @@ const statusLabel: Record<string, string> = {
   ready_for_stage_gate: "可进入 Stage-Gate",
   validation_required: "先验证",
   more_evidence_required: "先补证据",
+  fail_evidence_gate: "证据 Gate 失败",
 };
 
 const statusClass: Record<string, string> = {
@@ -41,6 +42,8 @@ const statusClass: Record<string, string> = {
   ready_for_stage_gate: "border-emerald-200 bg-emerald-50 text-emerald-700",
   validation_required: "border-amber-200 bg-amber-50 text-amber-700",
   more_evidence_required: "border-slate-200 bg-slate-50 text-slate-700",
+  recommended_with_warning: "border-amber-200 bg-amber-50 text-amber-700",
+  fail_evidence_gate: "border-red-200 bg-red-50 text-red-700",
   pass: "border-emerald-200 bg-emerald-50 text-emerald-700",
   warning: "border-amber-200 bg-amber-50 text-amber-700",
   fail: "border-red-200 bg-red-50 text-red-700",

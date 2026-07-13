@@ -31,5 +31,16 @@
     "ownerRole": "产品负责人",
     "status": "need_confirmation",
     "nextAction": "执行 Stage-Gate 与多 Agent 产品委员会评审"
+  },
+  {
+    "id": "ledger-005",
+    "day": "Day 5",
+    "stage": "Stage-Gate 与产品委员会",
+    "decision": "兼容预检助手 Recommended with Warning；功率解释先做对照验证；可信状态因证据 Gate 失败继续保留",
+    "basis": "18 条 Gate 评审、6 个产品委员会角色意见、Kill Criteria 与公开小样本证据链",
+    "risk": "兼容范围、规则准确率、版本责任和相对 FAQ 的任务收益尚未确认",
+    "ownerRole": "产品负责人",
+    "status": "need_confirmation",
+    "nextAction": "收敛 Proposal PRD，并冻结准确率门槛、非目标和验证计划"
   }
 ]

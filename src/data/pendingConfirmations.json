@@ -34,5 +34,29 @@
     "status": "open",
     "suggestedAction": "补采长期高负载、恢复过程和无故障对照样本",
     "feishuAction": "CreateValidationTask"
+  },
+  {
+    "id": "pc-compatibility-accuracy-owner",
+    "title": "确认兼容规则准确率门槛与版本责任人",
+    "description": "错误兼容结论可能直接影响购买与系统配置，需要定义金标准、最低准确率、未知返回、失效日期和维护责任人。",
+    "sourcePage": "EvaluationPage",
+    "relatedCandidateId": "candidate-compatibility-preflight",
+    "ownerRole": ["兼容性测试负责人", "产品负责人"],
+    "priority": "high",
+    "status": "open",
+    "suggestedAction": "在 PRD 前冻结验收门槛与版本治理规则",
+    "feishuAction": "CreateReviewMeeting"
+  },
+  {
+    "id": "pc-compatibility-faq-differentiation",
+    "title": "验证兼容预检相对静态 FAQ 的任务收益",
+    "description": "竞品已披露驱动和系统限制，需要证明拓扑预检能提高正确选择率并缩短排查时间，而非重新包装支持文档。",
+    "sourcePage": "EvaluationPage",
+    "relatedCandidateId": "candidate-compatibility-preflight",
+    "ownerRole": ["用户研究员", "产品负责人"],
+    "priority": "high",
+    "status": "open",
+    "suggestedAction": "执行 FAQ 与拓扑预检的对照任务测试",
+    "feishuAction": "CreateValidationTask"
   }
 ]

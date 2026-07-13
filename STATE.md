@@ -25,9 +25,9 @@
 Project: 桌面办公能源生态项目
 Run: 智能充电 × 多设备移动办公 × 北美市场
 Status: PRD Drafted / Need Confirmation
-Leading Candidate: 跨平台 Dock 兼容预检助手（待 Stage-Gate）
+Recommended Candidate: 跨平台 Dock 兼容预检助手（Recommended with Warning）
 Confidence: Medium
-Next Action: Stage-Gate + Multi-Agent Review
+Next Action: Proposal PRD Scope Freeze
 ```
 
 ## Next Development Steps
@@ -149,15 +149,18 @@ Do not export OAuth tokens, cookies, app secrets, personal authorization files, 
 - Candidate NP generation and boundary screening completed. One candidate can enter Stage-Gate, one requires task-value validation, one requires more evidence, and the crowded desktop hardware-integration gap was excluded.
 - The old desktop energy hub recommendation and placeholder Gate/Agent scores were removed because they conflict with the reviewed evidence and overlap findings.
 - Feishu `candidate_pool` now mirrors the three bounded candidate hypotheses, their MVP boundaries, non-goals, entry decisions, risks, and next validation.
+- Stage-Gate review completed for all three candidates using six weighted gates and explicit evidence references. Weighted scores are 4.24, 3.91, and 3.24; scores do not override Fail gates or Kill Criteria.
+- The six-role product committee reviewed the compatibility-preflight candidate. The final state is `Recommended with Warning`, not approved or final.
+- Five Pending Confirmations remain open, including topology scope, accuracy and version ownership, FAQ differentiation, power-explanation task value, and thermal evidence collection.
+- Feishu now mirrors 18 Stage-Gate records and 6 product committee reviews in dedicated tables.
 
 ### Sites Handoff Readiness
 
-The project is not ready for Sites implementation yet. Two decision stages remain before the UI/data contract should be frozen:
+The project is not ready for Sites implementation yet. One decision stage remains before the UI/data contract should be frozen:
 
-1. Complete Stage-Gate, agent evaluation, Kill Criteria, Pending Confirmation, and Decision Ledger review.
-2. Draft and review Proposal PRD content, then freeze the seven-page JSON contract and demo narrative.
+1. Draft and review Proposal PRD content, then freeze the seven-page JSON contract and demo narrative.
 
-Hand off to Sites after those two stages are complete. Sites should implement the frozen evidence-to-decision experience, not invent product conclusions or replace the decision review.
+Hand off to Sites after this final stage is complete. Sites should implement the frozen evidence-to-decision experience, not invent product conclusions or replace the decision review.
 
 ### Feishu Guide Document
 

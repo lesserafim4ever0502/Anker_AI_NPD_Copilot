@@ -144,6 +144,16 @@
       "name": "candidate_pool",
       "purpose": "Bounded Candidate NP hypotheses with evidence confidence, MVP boundaries, non-goals, entry decisions, risks, and next validation.",
       "record_count_at_last_review": 3
+    },
+    {
+      "name": "stage_gate_evaluations",
+      "purpose": "Evidence-referenced six-gate evaluations for all three candidates, including status, score, confidence, reason, and decision impact.",
+      "record_count_at_last_review": 18
+    },
+    {
+      "name": "product_committee_reviews",
+      "purpose": "Six-role product committee review of the leading candidate with support, objections, confidence, actions, and confirmation triggers.",
+      "record_count_at_last_review": 6
     }
   ],
   "notes": [

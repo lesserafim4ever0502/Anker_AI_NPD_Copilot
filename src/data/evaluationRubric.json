@@ -1,0 +1,23 @@
+{
+  "scale": {
+    "1": "直接违反 Gate 或缺少关键证据",
+    "2": "主要条件不满足，需先补证据或重构",
+    "3": "部分满足但存在实质 Warning",
+    "4": "主要条件满足，风险可通过明确验证管理",
+    "5": "证据充分、边界清晰且可直接进入下一阶段"
+  },
+  "decisionRules": [
+    "任一高优先级 Kill Criteria 触发时，不因平均分而放行。",
+    "pain_intensity 为 Fail 时，候选不得进入 PRD。",
+    "evidence confidence 为 Low 时，最高只能进入补证据或验证状态。",
+    "总分只用于比较，不替代 Gate 状态、反对意见和人工确认。"
+  ],
+  "gates": [
+    {"id":"brand_fit","name":"品牌契合度","weight":0.15,"question":"是否符合安克核心品类、品牌心智和能力边界？"},
+    {"id":"pain_intensity","name":"痛点强度","weight":0.20,"question":"是否有足够独立来源支持明确且重要的用户任务问题？"},
+    {"id":"differentiation","name":"竞品差异度","weight":0.20,"question":"是否避开现有 SKU 与主要竞品的成熟能力重叠？"},
+    {"id":"technical_feasibility","name":"技术 / 制造可行性","weight":0.15,"question":"是否能以边界清晰的 MVP 在可控复杂度下验证？"},
+    {"id":"market_validation","name":"市场验证可行性","weight":0.15,"question":"是否能通过任务测试、概念测试或有限 MVP 快速证伪？"},
+    {"id":"organizational_value","name":"组织沉淀价值","weight":0.15,"question":"是否能沉淀为可复用的规则、证据、任务和决策资产？"}
+  ]
+}

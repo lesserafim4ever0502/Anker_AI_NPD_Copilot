@@ -1,1 +1,80 @@
-[]
+[
+  {
+    "candidateId": "candidate-compatibility-preflight",
+    "agentName": "用户研究员 Agent",
+    "role": "User Researcher",
+    "score": 4.3,
+    "confidence": "medium",
+    "coreJudgement": "兼容预检对应高严重度、可观察的设置任务问题，但三个来源代表不同根因。",
+    "supportReason": "显示拓扑、网卡驱动和双向供电分别造成失败或性能损失，用户需要在连接前理解条件。",
+    "objection": "不能把三个配置问题归因于同一兼容机制，也不能推断为所有 Dock 用户的共同问题。",
+    "suggestion": "访谈时按购买前、首次设置和故障排查拆分任务，不询问抽象的兼容焦虑。",
+    "evidenceRefs": ["pain-compatibility-setup", "UGF-007", "UGF-008", "UGF-011"],
+    "createsPendingConfirmation": true
+  },
+  {
+    "candidateId": "candidate-compatibility-preflight",
+    "agentName": "产品经理 Agent",
+    "role": "Product Manager",
+    "score": 4.4,
+    "confidence": "medium",
+    "coreJudgement": "该候选可以作为有限规则 MVP 进入 PRD 草案，但产品承诺必须收窄。",
+    "supportReason": "输入、输出、金标准和成功指标均可定义，且不依赖新硬件或真实 API。",
+    "objection": "如果范围扩展到任意电脑、Dock、线材和显示器组合，维护成本会迅速失控。",
+    "suggestion": "首版只覆盖 10 组高频拓扑，未覆盖组合明确返回未知而不是猜测。",
+    "evidenceRefs": ["candidate-compatibility-preflight", "gap-compatibility-preflight"],
+    "createsPendingConfirmation": true
+  },
+  {
+    "candidateId": "candidate-compatibility-preflight",
+    "agentName": "工业设计师 Agent",
+    "role": "Industrial Designer",
+    "score": 3.8,
+    "confidence": "medium",
+    "coreJudgement": "价值主要来自信息结构与连接路径可视化，而不是新增物理形态。",
+    "supportReason": "用户需要理解端口、线材和显示器之间的拓扑关系，图形化步骤可能降低认知负担。",
+    "objection": "过度图形化会掩盖系统限制，且可能让用户误以为系统已自动检测真实设备。",
+    "suggestion": "使用明确的端口与线材图示，同时持续展示数据来源、适用条件和未知状态。",
+    "evidenceRefs": ["pain-compatibility-setup", "candidate-compatibility-preflight"],
+    "createsPendingConfirmation": false
+  },
+  {
+    "candidateId": "candidate-compatibility-preflight",
+    "agentName": "硬件 / 制造顾问 Agent",
+    "role": "Hardware and Manufacturing Advisor",
+    "score": 4.1,
+    "confidence": "medium",
+    "coreJudgement": "静态规则 MVP 不增加 BOM 与制造风险，适合作为前置验证。",
+    "supportReason": "候选明确排除新 Dock 硬件、驱动控制和自动设备接入。",
+    "objection": "真实兼容结论仍受固件、芯片方案、线材规格和 OS 版本影响，公开规格不能覆盖全部边界。",
+    "suggestion": "每条规则必须绑定测试配置、固件与 OS 版本，并设置失效日期。",
+    "evidenceRefs": ["anker_007", "anker_008", "anker_010", "competitor_003"],
+    "createsPendingConfirmation": true
+  },
+  {
+    "candidateId": "candidate-compatibility-preflight",
+    "agentName": "市场增长顾问 Agent",
+    "role": "Market Growth Advisor",
+    "score": 3.9,
+    "confidence": "low",
+    "coreJudgement": "兼容确定性可能降低购买犹豫和退货风险，但当前没有转化或退货数据支持商业影响。",
+    "supportReason": "购买前预检可把复杂规格转成用户任务语言，理论上改善决策效率。",
+    "objection": "公开 Reddit 小样本不能证明北美市场规模、付费意愿或对转化率的影响。",
+    "suggestion": "将商业假设限定为减少错误选择，使用概念测试和支持页任务数据验证，不预设收入提升。",
+    "evidenceRefs": ["gap-compatibility-preflight", "pain-compatibility-setup"],
+    "createsPendingConfirmation": true
+  },
+  {
+    "candidateId": "candidate-compatibility-preflight",
+    "agentName": "风险评审官 Agent",
+    "role": "Risk Reviewer",
+    "score": 3.5,
+    "confidence": "medium",
+    "coreJudgement": "候选可继续，但错误兼容结论的信任损失高于普通内容错误。",
+    "supportReason": "用户可能依据结论购买硬件或改变系统配置，错误输出具有直接行为后果。",
+    "objection": "若没有金标准、来源追踪、版本控制、未知状态和人工责任人，该候选不应进入 Demo 推荐位。",
+    "suggestion": "把准确率门槛、未知返回、版本策略和回滚机制列为 PRD P0 验收条件。",
+    "evidenceRefs": ["candidate-compatibility-preflight", "overlap-compatibility-claim"],
+    "createsPendingConfirmation": true
+  }
+]

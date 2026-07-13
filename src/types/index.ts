@@ -191,7 +191,10 @@ export type GateEvaluation = {
   gateName: string;
   status: "pass" | "warning" | "fail";
   score: number;
+  confidence: Confidence;
   reason: string;
+  evidenceRefs: string[];
+  decisionImpact: string;
 };
 
 export type AgentEvaluation = {
@@ -199,11 +202,24 @@ export type AgentEvaluation = {
   agentName: string;
   role: string;
   score: number;
+  confidence: Confidence;
   coreJudgement: string;
   supportReason: string;
   objection: string;
   suggestion: string;
+  evidenceRefs: string[];
   createsPendingConfirmation: boolean;
+};
+
+export type EvaluationSummary = {
+  candidateId: string;
+  weightedScore: number;
+  gateResult: string;
+  confidence: Confidence;
+  blockingIssues: string[];
+  warnings: string[];
+  decision: string;
+  nextAction: string;
 };
 
 export type PendingConfirmation = {
