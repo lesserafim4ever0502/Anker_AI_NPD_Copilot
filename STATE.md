@@ -2,9 +2,9 @@
 
 ## Current Phase
 
-当前处于 **Sites Handoff Ready / 内容与数据契约冻结** 阶段。
+当前处于 **Sites Demo Published / 私有演示验收** 阶段。
 
-The repository is ready for Sites implementation. Evidence, decisions, routes, and Proposal PRD V0.2 are frozen for the demo build.
+The seven-page Sites demo is implemented and privately deployed. Evidence, decisions, routes, and Proposal PRD V0.2 remain frozen for review.
 
 ## Completed Decisions
 
@@ -32,12 +32,19 @@ Next Action: Proposal PRD Scope Freeze
 
 ## Next Development Steps / 下一步
 
-1. 让 Sites 读取 `docs/SITES_HANDOFF.md` 并沿用现有 Vite 工程。
-2. 完成七页的信息层级、响应式布局和 P0 交互。
-3. 保持全部业务内容从 `src/data/*.json` 读取。
-4. 验证 Warning、Pending Confirmation、Decision Ledger 与 Feishu Handoff 状态一致。
-5. 执行构建和桌面/移动端视觉验收。
-6. 生成可访问 Demo，并将最终链接回填提交材料。
+1. 使用私有 Sites URL 完成团队演示走查和访问权限确认。
+2. 按 `docs/DEMO_SCRIPT.md` 完成 3–5 分钟讲解排练。
+3. 复核 Page 5/6/7 的 Warning、Pending Confirmation、Decision Ledger 与 Feishu Handoff 叙事。
+4. 在真实移动设备补做一次窄屏触控验收。
+5. 仅在证据或人工决策变化时更新冻结 JSON；视觉修订不得改写业务结论。
+
+## Sites Deployment / Sites 发布
+
+- Status: private production deployment succeeded.
+- Demo URL: `https://anker-ai-npd-copilot.yingpengzhuo69.chatgpt.site`.
+- Routes: 7.
+- Validation: production build passed; 3 projects, 12 Anker products, 18 competitor products, 18 Gate evaluations, 6 committee roles, 1 Fail Gate, 4 proposed metrics, 4 risks, 3 validation methods, and 5 open confirmations verified.
+- Boundary: local JSON only; no real frontend Feishu API, LLM, authentication, backend, crawler, or analytics integration.
 
 ## Risks
 

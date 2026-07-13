@@ -4,6 +4,46 @@
 
 ### Changed
 
+- Timestamp: 2026-07-13T21:44:12+08:00.
+- Configured a GitHub Pages fallback deployment with repository-aware asset paths and hash-based client routing.
+- Modified paths and deployment metrics:
+  - `.github/workflows/deploy-pages.yml`: L1-0 -> L1-50, +50 -0.
+  - `vite.config.ts`: L1-6 -> L1-7, +1 -0.
+  - `src/main.tsx`: L1-13 -> L1-13, +3 -3.
+  - `src/components/DecisionPanel.tsx`: L1-47 -> L1-48, +2 -1.
+  - `src/pages/ProjectWorkspace.tsx`: L1-65 -> L1-66, +2 -1.
+- Validation: normal and `GITHUB_PAGES=true` production builds passed; generated assets use `/Anker_AI_NPD_Copilot/` and all seven routes remain JSON-driven.
+- `docs/CHANGELOG.md`: L1-250 -> L1-261, +11 -0 before this entry.
+
+- Timestamp: 2026-07-13T21:10:30+08:00.
+- Implemented and privately deployed the seven-page Sites demo without changing frozen business JSON conclusions.
+- Modified paths and implementation metrics:
+  - `.openai/hosting.json`: L1-0 -> L1-3, +3 -0.
+  - `package-lock.json`: L1-0 -> L1-2683, +2683 -0.
+  - `package.json`: L1-26 -> L1-27, +2 -1.
+  - `scripts/prepare-sites-build.mjs`: L1-0 -> L1-18, +18 -0.
+  - `src/components/DecisionPanel.tsx`: L1-37 -> L1-47, +25 -15.
+  - `src/components/Header.tsx`: L1-24 -> L1-28, +17 -13.
+  - `src/components/Layout.tsx`: L1-31 -> L1-31, +4 -4.
+  - `src/components/MetricCard.tsx`: L1-17 -> L1-17, +2 -2.
+  - `src/components/PageHeader.tsx`: L1-0 -> L1-24, +24 -0.
+  - `src/components/RunStatusBar.tsx`: L1-38 -> L1-30, +17 -25.
+  - `src/components/StatusBadge.tsx`: L1-62 -> L1-72, +10 -0.
+  - `src/components/StepNav.tsx`: L1-36 -> L1-31, +14 -19.
+  - `src/index.css`: L1-22 -> L1-97, +87 -12.
+  - `src/pages/CompetitorMatrix.tsx`: L1-78 -> L1-58, +35 -55.
+  - `src/pages/Evaluation.tsx`: L1-94 -> L1-53, +30 -71.
+  - `src/pages/EvidencePool.tsx`: L1-67 -> L1-67, +43 -43.
+  - `src/pages/FeishuWorkflow.tsx`: L1-82 -> L1-38, +20 -64.
+  - `src/pages/PainRadar.tsx`: L1-60 -> L1-58, +37 -39.
+  - `src/pages/ProjectWorkspace.tsx`: L1-61 -> L1-65, +46 -42.
+  - `src/pages/ProposalPrd.tsx`: L1-106 -> L1-47, +31 -90.
+  - `STATE.md`: L1-207 -> L1-214, +15 -8.
+  - `submission_templates/Demo链接说明.md`: L1-19 -> L1-23, +5 -1.
+- Validation: production build passed; 7 routes, 3 projects, 12 Anker products, 18 competitor products, 18 Gate evaluations, 6 committee roles, 1 Fail Gate, 4 metrics, 4 risks, 3 validation methods, and 5 open confirmations verified.
+- Deployment: private Sites production URL `https://anker-ai-npd-copilot.yingpengzhuo69.chatgpt.site` succeeded.
+- `docs/CHANGELOG.md`: L1-221 -> L1-250, +29 -0 before this entry.
+
 - Timestamp: 2026-07-13T12:03:59+08:00.
 - Repository completeness audit found zero zero-byte files, zero files of five bytes or fewer, and no empty Markdown links. Instructional CSV rows are explicitly excluded from demo evidence.
 - Modified paths and current working-tree metrics relative to `HEAD`:

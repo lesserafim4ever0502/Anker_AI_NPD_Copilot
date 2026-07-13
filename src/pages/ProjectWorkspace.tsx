@@ -6,6 +6,7 @@ import type { NpdProject, NpdRun } from "../types";
 import MetricCard from "../components/MetricCard";
 import StatusBadge from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
+import { Link } from "react-router-dom";
 
 const projects = projectsData as NpdProject[];
 const run = runsData[0] as NpdRun;
@@ -18,7 +19,7 @@ export default function ProjectWorkspace() {
     <div className="space-y-6">
       <PageHeader eyebrow="01 / Project Workspace" title="项目工作台" icon={FolderKanban}
         description={run.summary}
-        action={<a className="primary-button" href="/evidence-pool">进入当前 Run <ArrowRight size={16} /></a>} />
+        action={<Link className="primary-button" to="/evidence-pool">进入当前 Run <ArrowRight size={16} /></Link>} />
 
       <section className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         <MetricCard label="项目总数" value={projects.length} hint="Proposal-stage portfolio" />

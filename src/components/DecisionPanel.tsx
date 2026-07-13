@@ -4,6 +4,7 @@ import projects from "../data/projects.json";
 import runs from "../data/npdRuns.json";
 import { AlertTriangle, ArrowUpRight, ClipboardCheck, ShieldAlert } from "lucide-react";
 import StatusBadge from "./StatusBadge";
+import { Link } from "react-router-dom";
 
 export default function DecisionPanel() {
   const pending = pendingConfirmations.slice(0, 3);
@@ -29,7 +30,7 @@ export default function DecisionPanel() {
             </li>
           ))}
         </ul>
-        <a href="/proposal-prd" className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-anker">查看全部 <ArrowUpRight size={13} /></a>
+        <Link to="/proposal-prd" className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-anker">查看全部 <ArrowUpRight size={13} /></Link>
       </section>
       <section className="border-t border-slate-200 pt-5">
         <div className="section-kicker"><ShieldAlert size={14} /> Decision Ledger</div>
