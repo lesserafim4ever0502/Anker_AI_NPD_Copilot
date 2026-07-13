@@ -1,31 +1,6 @@
 [
-  {
-    "id": "gap-001",
-    "title": "桌面充电器与扩展坞能力割裂",
-    "relatedPainPointIds": [
-      "pain-cable-clutter"
-    ],
-    "currentCoverage": "充电器和扩展坞分别解决供电与接口问题，但桌面办公场景中的统一设备组织仍不足。",
-    "opportunityReason": "多设备办公用户需要统一的桌面能量与连接管理体验。",
-    "relatedCandidateIds": [
-      "candidate-a"
-    ],
-    "risk": "与现有桌面充电器和扩展坞 SKU 存在重叠风险。",
-    "confidence": "medium"
-  },
-  {
-    "id": "gap-002",
-    "title": "功率状态存在但用户理解不足",
-    "relatedPainPointIds": [
-      "pain-power-opacity",
-      "pain-heat-anxiety"
-    ],
-    "currentCoverage": "部分产品提供屏幕或 App，但多数偏参数展示。",
-    "opportunityReason": "用户需要更可理解的场景化功率解释。",
-    "relatedCandidateIds": [
-      "candidate-a"
-    ],
-    "risk": "如果只增加屏幕，容易变成硬件堆料。",
-    "confidence": "medium"
-  }
+  {"id":"gap-explainable-power","title":"可解释的多设备功率编排","relatedPainPointIds":["pain-power-transparency","pain-state-reliability"],"currentCoverage":"Anker 12 款样本中 8 款带显示或 App，竞品 18 款中 7 款带显示、2 款带 App；状态呈现已经拥挤。","opportunityReason":"机会不在增加屏幕或瓦数，而在把功率变化、降额原因和恢复动作解释成用户可执行的信息。","opportunityType":"experience_layer","ankerCoverage":"8/12 display or app","competitorCoverage":"7/18 display; 2/18 app","overlapRisk":"high","confidence":"medium","recommendation":"validate_before_candidate","killCriteriaWarning":"若方案仅增加显示屏、实时瓦数或更高总功率，应触发重叠审查。","nextValidation":"对多设备插拔过程做任务测试，验证解释层能否减少误判与重复插拔。"},
+  {"id":"gap-compatibility-preflight","title":"跨平台兼容预检与设置引导","relatedPainPointIds":["pain-compatibility-setup","pain-state-reliability"],"currentCoverage":"Dock 产品普遍披露 OS、驱动、显示拓扑与线材限制，但用户仍需自行拼接条件。","opportunityReason":"在购买前或首次连接前，将设备、系统、线材、端口和显示器拓扑转成可验证的兼容结论与设置步骤。","opportunityType":"software_service","ankerCoverage":"5/12 dock; compatibility constraints dispersed in product/support pages","competitorCoverage":"3/18 dock; DisplayLink and OS constraints disclosed but fragmented","overlapRisk":"medium","confidence":"medium","recommendation":"continue_to_candidate","killCriteriaWarning":"不得宣称通用兼容；首版应限制设备清单和规则边界。","nextValidation":"制作静态兼容检查器 MVP，以 10 组常见 Mac/Windows 拓扑验证准确率和理解成本。"},
+  {"id":"gap-trustworthy-state","title":"可信状态、热保护与恢复解释","relatedPainPointIds":["pain-thermal-safety","pain-state-reliability"],"currentCoverage":"部分产品具备主动散热、温控或状态显示，但现有真实反馈不足以证明这些能力消除了安全焦虑。","opportunityReason":"把温度、降额、保护触发和恢复状态连接成可信解释，而非仅显示瞬时参数。","opportunityType":"experience_layer","ankerCoverage":"3/12 thermal-management signals","competitorCoverage":"3/18 thermal-management signals","overlapRisk":"high","confidence":"low","recommendation":"validate_before_candidate","killCriteriaWarning":"热相关用户证据当前仅来自两个独立来源，不足以支持硬件立项。","nextValidation":"补采长期高负载和恢复过程反馈，并加入无故障对照样本。"},
+  {"id":"gap-desktop-hardware-integration","title":"桌面充电、Dock 与线缆硬件一体化","relatedPainPointIds":["pain-desktop-integration","pain-compatibility-setup"],"currentCoverage":"Anker 已有充电 Dock、显示器支架 Dock 和充电底座；Baseus Nomos 等竞品也整合线缆、无线与显示。","opportunityReason":"硬件整合方向直观，但当前供给拥挤，且桌面一体化痛点只有两个独立来源。","opportunityType":"hardware_system","ankerCoverage":"5/12 dock; 2/12 cable-management signals","competitorCoverage":"3/18 dock; 4/18 cable-management signals","overlapRisk":"high","confidence":"low","recommendation":"deprioritize","killCriteriaWarning":"若没有可量化的新任务收益，应按高重叠、低证据强度停止推进。","nextValidation":"先验证软件兼容预检和桌面任务流，不进入新硬件概念开发。"}
 ]

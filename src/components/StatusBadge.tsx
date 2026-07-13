@@ -24,6 +24,9 @@ const statusLabel: Record<string, string> = {
   need_feasibility_review: "需可行性复核",
   hold_more_evidence_needed: "保留 / 补证据",
   draft_need_confirmation: "草案 / 需确认",
+  ready_for_stage_gate: "可进入 Stage-Gate",
+  validation_required: "先验证",
+  more_evidence_required: "先补证据",
 };
 
 const statusClass: Record<string, string> = {
@@ -35,6 +38,9 @@ const statusClass: Record<string, string> = {
   prd_drafted: "border-blue-200 bg-blue-50 text-blue-700",
   under_review: "border-indigo-200 bg-indigo-50 text-indigo-700",
   insight_ready: "border-teal-200 bg-teal-50 text-teal-700",
+  ready_for_stage_gate: "border-emerald-200 bg-emerald-50 text-emerald-700",
+  validation_required: "border-amber-200 bg-amber-50 text-amber-700",
+  more_evidence_required: "border-slate-200 bg-slate-50 text-slate-700",
   pass: "border-emerald-200 bg-emerald-50 text-emerald-700",
   warning: "border-amber-200 bg-amber-50 text-amber-700",
   fail: "border-red-200 bg-red-50 text-red-700",

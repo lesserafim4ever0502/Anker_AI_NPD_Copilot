@@ -1,49 +1,14 @@
 [
-  {
-    "id": "product-anker-001",
-    "brand": "Anker",
-    "productName": "Anker Desktop Charger Sample",
-    "category": "Desktop Charger",
-    "powerWatt": "100W+",
-    "ports": "USB-C / USB-A multi-port",
-    "wirelessSupport": false,
-    "dockSupport": false,
-    "screenOrApp": "unknown",
-    "formFactor": "desktop",
-    "targetScenario": [
-      "多设备办公",
-      "家庭桌面"
-    ],
-    "priceRange": "mid-high",
-    "coreClaims": [
-      "high power",
-      "multi-device charging"
-    ],
-    "sourceUrl": "",
-    "possibleGap": "线缆组织和场景化功率解释不足",
-    "notes": "Demo sample; replace with real product research data."
-  },
-  {
-    "id": "product-ugreen-001",
-    "brand": "UGREEN",
-    "productName": "UGREEN Docking Station Sample",
-    "category": "Docking Station",
-    "powerWatt": "100W PD",
-    "ports": "multi-interface",
-    "wirelessSupport": false,
-    "dockSupport": true,
-    "screenOrApp": "none",
-    "formFactor": "desktop",
-    "targetScenario": [
-      "办公扩展"
-    ],
-    "priceRange": "mid-high",
-    "coreClaims": [
-      "multi-port expansion",
-      "PD charging"
-    ],
-    "sourceUrl": "",
-    "possibleGap": "功率解释不足",
-    "notes": "Demo sample."
-  }
+  {"id":"anker_001","brand":"Anker","productName":"Anker Prime Charger (250W, 6 Ports, GaNPrime)","category":"desktop_charger","powerWatt":"250W","ports":"4x USB-C, 2x USB-A","wirelessSupport":false,"dockSupport":false,"screenOrApp":"smart display and Anker app","formFactor":"desktop charging station","targetScenario":["multi-device desktop workstation"],"coreClaims":["250W total output","6 ports","real-time power feedback","personalized charging"],"sourceUrl":"https://www.anker.com/products/a2345-anker-prime-charger-250w-6-ports-ganprime","possibleGap":"Validate whether power feedback is actionable during multi-device use."},
+  {"id":"anker_002","brand":"Anker","productName":"Anker Prime Charger (200W, 6 Ports, GaN)","category":"desktop_charger","powerWatt":"200W","ports":"4x USB-C, 2x USB-A","wirelessSupport":false,"dockSupport":false,"screenOrApp":"unknown","formFactor":"desktop charging station","targetScenario":["multi-device desktop workstation"],"coreClaims":["200W total output","six-device charging","PowerIQ 3.0","ActiveShield 3.0"],"sourceUrl":"https://service.anker.com/product-description/a08J1000000Xkc2IAC/anker-prime-charger-200w-6-port-gan","possibleGap":"Validate port-level power allocation clarity."},
+  {"id":"anker_003","brand":"Anker","productName":"Anker Prime Charger (160W, 3 Ports, Smart Display)","category":"desktop_charger","powerWatt":"160W","ports":"3x USB-C","wirelessSupport":false,"dockSupport":false,"screenOrApp":"smart display and Anker app via Bluetooth","formFactor":"desktop charger","targetScenario":["compact high-power desktop charging"],"coreClaims":["160W total output","140W PD 3.1 single-port charging","on-screen charging modes","app control"],"sourceUrl":"https://www.anker.com/products/a2687-anker-prime-charger-160w-3-ports-gan","possibleGap":"Validate whether display and app reduce power-allocation confusion."},
+  {"id":"anker_004","brand":"Anker","productName":"Anker Prime Power Bank (26K, 300W)","category":"power_bank","powerWatt":"300W","ports":"2x USB-C, 1x USB-A","wirelessSupport":false,"dockSupport":false,"screenOrApp":"smart display and app control","formFactor":"portable power bank","targetScenario":["mobile creator","travel power"],"coreClaims":["300W total output","140W max USB-C","250W dual-port input","charging-base compatibility"],"sourceUrl":"https://www.anker.com/products/a110a-anker-prime-26k-300w-power-bank","possibleGap":"Validate continuity between mobile and fixed desktop charging."},
+  {"id":"anker_005","brand":"Anker","productName":"Anker Prime Power Bank (20K, 220W)","category":"power_bank","powerWatt":"220W","ports":"2x USB-C, 1x USB-A, pogo-pin base input","wirelessSupport":false,"dockSupport":false,"screenOrApp":"smart display and Anker app via Bluetooth","formFactor":"portable power bank","targetScenario":["travel","mobile multi-device power"],"coreClaims":["220W total output","140W max USB-C","100W max recharging","app-controlled power allocation"],"sourceUrl":"https://www.anker.com/products/a110b-anker-prime-20k-220w-power-bank","possibleGap":"Validate portability and recharging handoff."},
+  {"id":"anker_006","brand":"Anker","productName":"Anker Prime Wireless Charging Station (3-in-1, MagGo, AirCool, Dock Stand)","category":"wireless_charging_station","powerWatt":"35W","ports":"iPhone wireless pad, Apple Watch charger, TWS charger","wirelessSupport":true,"dockSupport":false,"screenOrApp":"smart display, NFC pairing, and Anker app","formFactor":"3-in-1 dock stand","targetScenario":["Apple-device desktop charging"],"coreClaims":["Qi2 25W","TEC active cooling","3-in-1 charging","smart display"],"sourceUrl":"https://www.anker.com/products/a25x7-anker-prime-qi2-wireless-charging-station-25w-3-in-1-stand","possibleGap":"Validate active-cooling value and desk integration."},
+  {"id":"anker_007","brand":"Anker","productName":"Anker Prime Charging Docking Station (14-in-1, Dual Display, 160W)","category":"charging_dock","powerWatt":"160W total charging output","ports":"4x USB-C, 5x USB-A, 2x HDMI, Ethernet, audio, upstream USB-C","wirelessSupport":false,"dockSupport":true,"screenOrApp":"smart display and Dock Manager","formFactor":"vertical desktop docking station","targetScenario":["laptop desktop workstation"],"coreClaims":["14-in-1 connectivity","160W charging","dual 4K display","real-time status display"],"sourceUrl":"https://www.anker.com/uk/products/a83b6-anker-prime-charging-docking-station-14-in-1-dual-display-160w","possibleGap":"Validate actionable power allocation and port-state information."},
+  {"id":"anker_008","brand":"Anker","productName":"Anker Prime TB5 Docking Station (14-in-1, 8K, Thunderbolt 5)","category":"thunderbolt_dock","powerWatt":"231.5W max total / 140W host charging","ports":"TB5, USB-C, USB-A, HDMI/DP, 2.5GbE, audio, SD, TF","wirelessSupport":false,"dockSupport":true,"screenOrApp":"Dock Manager","formFactor":"desktop Thunderbolt docking station","targetScenario":["high-performance multi-display workstation"],"coreClaims":["Thunderbolt 5","up to 120Gbps transfer","dual 8K displays","active cooling"],"sourceUrl":"https://www.anker.com/products/a83b5-anker-prime-thunderbolt5-docking-station-14-in-1-140w-8k","possibleGap":"Validate mainstream adoption and compatibility constraints."},
+  {"id":"anker_009","brand":"Anker","productName":"Anker 675 USB-C Docking Station (12-in-1, Monitor Stand, Wireless)","category":"usb_c_dock","powerWatt":"100W upstream PD input","ports":"USB-C, HDMI, Ethernet, USB-A, SD, microSD, audio, wireless pad","wirelessSupport":true,"dockSupport":true,"screenOrApp":"unknown","formFactor":"monitor stand docking station","targetScenario":["organized desktop workstation"],"coreClaims":["12-in-1 dock","monitor stand","10Gbps data","wireless charging pad"],"sourceUrl":"https://service.anker.com/product-description/a085g000004zqN4AAI/anker-675-usbc-docking-station-12in1-monitor-stand-wireless","possibleGap":"Validate device-management feedback and current wireless speed."},
+  {"id":"anker_010","brand":"Anker","productName":"Anker 777 Thunderbolt Docking Station (Apex, 12-in-1, Thunderbolt 4)","category":"thunderbolt_dock","powerWatt":"90W host charging","ports":"TB4, USB-C PD, HDMI, Ethernet, SD, audio, USB-A","wirelessSupport":false,"dockSupport":true,"screenOrApp":"unknown","formFactor":"desktop Thunderbolt docking station","targetScenario":["Thunderbolt laptop workstation"],"coreClaims":["12-in-1 Thunderbolt 4 dock","40Gbps transfer","8K/30Hz","dual 4K/60Hz"],"sourceUrl":"https://service.anker.com/product-description/a085g000004x2CLAAY/anker-777-thunderbolt-docking-station-apex-12in1-thunderbolt-4","possibleGap":"Validate compatibility guidance and setup simplicity."},
+  {"id":"anker_011","brand":"Anker","productName":"Anker Prime Power Bank (27K, 250W)","category":"power_bank","powerWatt":"250W","ports":"2x USB-C, 1x USB-A, pogo-pin base input","wirelessSupport":false,"dockSupport":false,"screenOrApp":"smart display and Anker app","formFactor":"portable high-power power bank","targetScenario":["mobile workstation","multi-device travel power"],"coreClaims":["250W total output","140W max single-port output","170W dual-USB-C input","app control"],"sourceUrl":"https://www.anker.com/products/a1340-250w-power-bank","possibleGap":"Distinguish incremental power upgrades from unresolved workflow needs."},
+  {"id":"anker_012","brand":"Anker","productName":"Anker Prime Charging Base (150W, 3 Ports)","category":"charging_base","powerWatt":"150W total output","ports":"2x USB-C, 1x USB-A, pogo-pin power-bank output","wirelessSupport":false,"dockSupport":true,"screenOrApp":"dynamic lighting; no standalone screen disclosed","formFactor":"desktop charging base","targetScenario":["desktop-to-mobile power handoff"],"coreClaims":["150W pogo-pin recharging","140W max USB-C1","pass-through charging","four-device charging"],"sourceUrl":"https://www.anker.com/eu-en/products/a1903-anker-prime-150w-charging-base","possibleGap":"Validate compatibility lock-in and cable-friction reduction."}
 ]

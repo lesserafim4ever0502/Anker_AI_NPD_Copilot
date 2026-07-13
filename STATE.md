@@ -25,9 +25,9 @@
 Project: 桌面办公能源生态项目
 Run: 智能充电 × 多设备移动办公 × 北美市场
 Status: PRD Drafted / Need Confirmation
-Recommended Candidate: 多设备移动办公桌面能量中枢
+Leading Candidate: 跨平台 Dock 兼容预检助手（待 Stage-Gate）
 Confidence: Medium
-Next Action: Product Review Meeting
+Next Action: Stage-Gate + Multi-Agent Review
 ```
 
 ## Next Development Steps
@@ -143,6 +143,21 @@ Do not export OAuth tokens, cookies, app secrets, personal authorization files, 
 - Evidence scoring completed for all 13 approved user-feedback records: all are `include`, scores range from 8 to 10, and confidence remains `medium` because each record is a public single-source sample.
 - First-pass `pain_radar` created with five clusters. Three are `insight_ready`; thermal safety and desktop integration remain `needs_more_evidence` because each has only two independent sources.
 - Frontend seed data now uses the approved user-feedback set and the first-pass Pain Radar instead of the original placeholder samples.
+- Product capability standardization completed for 12 Anker and 18 competitor products. The repository now mirrors the reviewed public product set and a 30-row normalized capability matrix.
+- Opportunity Gap V1 completed with four evidence-constrained gaps: one may continue to candidate generation, two require validation before candidate generation, and one hardware-system direction is deprioritized.
+- Product overlap warnings explicitly prevent display, wattage, universal-compatibility, or crowded desktop-hardware concepts from being treated as automatic opportunities.
+- Candidate NP generation and boundary screening completed. One candidate can enter Stage-Gate, one requires task-value validation, one requires more evidence, and the crowded desktop hardware-integration gap was excluded.
+- The old desktop energy hub recommendation and placeholder Gate/Agent scores were removed because they conflict with the reviewed evidence and overlap findings.
+- Feishu `candidate_pool` now mirrors the three bounded candidate hypotheses, their MVP boundaries, non-goals, entry decisions, risks, and next validation.
+
+### Sites Handoff Readiness
+
+The project is not ready for Sites implementation yet. Two decision stages remain before the UI/data contract should be frozen:
+
+1. Complete Stage-Gate, agent evaluation, Kill Criteria, Pending Confirmation, and Decision Ledger review.
+2. Draft and review Proposal PRD content, then freeze the seven-page JSON contract and demo narrative.
+
+Hand off to Sites after those two stages are complete. Sites should implement the frozen evidence-to-decision experience, not invent product conclusions or replace the decision review.
 
 ### Feishu Guide Document
 

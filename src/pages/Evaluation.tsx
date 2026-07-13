@@ -18,7 +18,7 @@ export default function Evaluation() {
         </div>
         <h2 className="mt-2 text-3xl font-semibold text-ink">Stage-Gate + 多 Agent 评审</h2>
         <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
-          当前只展示结构化占位，不做真实 LLM 调用；Warning 和 Pending Confirmation 必须保留。
+          当前已完成候选生成与边界收敛；Stage-Gate 和多 Agent 评审将在下一阶段执行，不做真实 LLM 调用。
         </p>
       </section>
 
@@ -30,14 +30,20 @@ export default function Evaluation() {
               <StatusBadge status={candidate.status} />
             </div>
             <p className="mt-2 text-sm text-slate-600">{candidate.description}</p>
-            <p className="mt-3 text-sm font-medium text-ink">Score {candidate.score}</p>
-            <p className="mt-2 text-xs text-slate-500">Risk: {candidate.mainRisk}</p>
+            <p className="mt-3 text-sm font-medium text-ink">证据置信度：{candidate.evidenceConfidence}</p>
+            <p className="mt-2 text-xs text-slate-500">主要风险：{candidate.mainRisk}</p>
+            <p className="mt-3 text-xs font-semibold text-anker">下一验证：{candidate.nextValidation}</p>
           </article>
         ))}
       </section>
 
       <section className="rounded-lg border border-slate-200 bg-white p-5">
         <h3 className="text-lg font-semibold text-ink">Gate Matrix</h3>
+        {gates.length === 0 ? (
+          <div className="mt-4 rounded-md bg-slate-50 p-4 text-sm text-slate-600">
+            候选边界已形成。Gate 评分尚未开始，下一阶段将按品牌契合、痛点强度、竞品差异、可行性、市场验证和组织沉淀逐项评审。
+          </div>
+        ) : null}
         <div className="mt-4 grid gap-3 md:grid-cols-2">
           {gates.map((gate) => (
             <div key={gate.gateId} className="rounded-md bg-slate-50 p-3">
@@ -52,6 +58,11 @@ export default function Evaluation() {
       </section>
 
       <section className="grid gap-4 lg:grid-cols-2">
+        {agents.length === 0 ? (
+          <article className="rounded-lg border border-slate-200 bg-white p-4 text-sm text-slate-600 lg:col-span-2">
+            多 Agent 产品委员会尚未评审。评审结果必须包含支持理由、反对意见、建议动作和 Pending Confirmation。
+          </article>
+        ) : null}
         {agents.map((agent) => (
           <article key={`${agent.candidateId}-${agent.agentName}`} className="rounded-lg border border-slate-200 bg-white p-4">
             <div className="flex items-center justify-between gap-3">

@@ -4,6 +4,37 @@
 
 ### Added
 
+- Timestamp: 2026-07-13T10:56:03+08:00.
+- Modified paths:
+  - `src/data/candidates.json`: L1-82 -> L1-56, +49 -75.
+  - `src/data/candidateScreening.json`: new file, L1-0 -> L1-26, +26 -0.
+  - `src/data/gateEvaluations.json`: L1-34 -> L1-1, +1 -34.
+  - `src/data/agentEvaluations.json`: L1-24 -> L1-1, +1 -24.
+  - `src/data/killCriteria.json`: L1-18 -> L1-26, +17 -9.
+  - `src/data/pendingConfirmations.json`: L1-47 -> L1-38, +23 -32.
+  - `src/data/decisionLedger.json`: L1-35 -> L1-35, +8 -8.
+  - `src/types/index.ts`: L1-211 -> L1-230, +22 -3.
+  - `src/components/StatusBadge.tsx`: L1-53 -> L1-59, +6 -0.
+  - `src/pages/Evaluation.tsx`: L1-77 -> L1-88, +14 -3.
+  - `data_workbench/feishu_workspace_manifest.json`: L1-149 -> L1-154, +5 -0.
+  - `data_workbench/feishu_workspace_manifest.local.json`: L1-53 -> L1-56, +3 -0; file remains gitignored.
+  - `STATE.md`: L1-201 -> L1-203, +4 -2.
+  - `docs/CHANGELOG.md`: L1-141 -> L1-158, +17 -0.
+
+- Timestamp: 2026-07-12T20:12:35+08:00.
+- Modified paths:
+  - `src/data/capabilityMatrix.json`: new file, L1-0 -> L1-32, +32 -0.
+  - `src/data/products.json`: L1-49 -> L1-14, +13 -48.
+  - `src/data/competitorProducts.json`: L1-38 -> L1-20, +18 -36.
+  - `src/data/opportunityGaps.json`: L1-31 -> L1-6, +5 -30.
+  - `src/data/productOverlapWarnings.json`: L1-11 -> L1-5, +4 -10.
+  - `src/types/index.ts`: L1-178 -> L1-195, +18 -0.
+  - `src/pages/CompetitorMatrix.tsx`: L1-71 -> L1-72, +2 -1.
+  - `data_workbench/feishu_workspace_manifest.json`: L1-139 -> L1-149, +10 -0.
+  - `data_workbench/feishu_workspace_manifest.local.json`: L1-47 -> L1-53, +6 -0; file remains gitignored.
+  - `STATE.md`: L1-137 -> L1-146, +13 -0.
+  - `docs/CHANGELOG.md`: L1-127 -> L1-141, +14 -0.
+
 - Timestamp: 2026-07-12T19:38:25+08:00.
 - Modified paths:
   - `src/types/index.ts`: L1-184 -> L1-192, +9 -1.

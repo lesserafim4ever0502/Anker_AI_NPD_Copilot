@@ -19,7 +19,7 @@ export default function CompetitorMatrix() {
         </div>
         <h2 className="mt-2 text-3xl font-semibold text-ink">竞品机会矩阵</h2>
         <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
-          先用占位产品矩阵展示能力边界，后续由飞书采集表和人工复核数据替换。
+          基于 30 条已复核公开产品资料对齐能力边界；能力存在只代表潜在覆盖，不等于痛点已被解决。
         </p>
       </section>
 
@@ -56,6 +56,7 @@ export default function CompetitorMatrix() {
             <h3 className="font-semibold text-ink">{gap.title}</h3>
             <p className="mt-2 text-sm text-slate-600">{gap.currentCoverage}</p>
             <p className="mt-2 text-sm text-slate-600">{gap.opportunityReason}</p>
+            <p className="mt-2 text-xs font-semibold text-anker">{gap.recommendation}</p>
             <p className="mt-2 text-xs text-slate-500">{gap.relatedPainPointIds.join(" / ")}</p>
           </article>
         ))}

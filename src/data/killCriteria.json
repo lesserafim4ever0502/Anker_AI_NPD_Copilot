@@ -1,18 +1,26 @@
 [
   {
-    "id": "kill-001",
-    "rule": "与安克现有核心 SKU 高度重叠，否决。",
+    "id": "kill-overlap",
+    "rule": "与安克现有核心 SKU 或竞品成熟形态高度重叠，且没有可量化任务收益时停止推进。",
     "severity": "high",
     "triggeredCandidates": [],
-    "relatedWarnings": [
-      "candidate-a-differentiation-warning"
-    ]
+    "excludedGapIds": ["gap-desktop-hardware-integration"],
+    "relatedWarnings": ["overlap-desktop-hardware", "overlap-display-power"]
   },
   {
-    "id": "kill-002",
-    "rule": "缺少明确高频痛点证据，否决。",
+    "id": "kill-evidence",
+    "rule": "少于 3 个独立来源支撑核心痛点时，不进入正式 Stage-Gate。",
+    "severity": "high",
+    "triggeredCandidates": ["candidate-trustworthy-state"],
+    "excludedGapIds": [],
+    "relatedWarnings": []
+  },
+  {
+    "id": "kill-unbounded-claim",
+    "rule": "依赖通用兼容、无条件安全或其他不可验证承诺时停止推进。",
     "severity": "high",
     "triggeredCandidates": [],
-    "relatedWarnings": []
+    "excludedGapIds": [],
+    "relatedWarnings": ["overlap-compatibility-claim"]
   }
 ]

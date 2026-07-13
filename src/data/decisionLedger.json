@@ -22,14 +22,14 @@
     "nextAction": "进入痛点分析"
   },
   {
-    "id": "ledger-005",
-    "day": "Day 5",
-    "stage": "决策评审",
-    "decision": "候选 A 暂时领先",
-    "basis": "品牌契合度、痛点强度和市场验证可行性较高",
-    "risk": "竞品差异度 Warning",
+    "id": "ledger-004",
+    "day": "Day 4",
+    "stage": "候选生成",
+    "decision": "兼容预检助手进入 Stage-Gate；功率解释先验证；可信状态先补证据；桌面硬件一体化不进入候选池",
+    "basis": "4 个 Opportunity Gap 的证据置信度、竞品重叠、MVP 可验证性与 Kill Criteria 预筛",
+    "risk": "兼容规则边界尚未冻结，解释层任务收益尚未证明",
     "ownerRole": "产品负责人",
     "status": "need_confirmation",
-    "nextAction": "发起飞书二次评审会议"
+    "nextAction": "执行 Stage-Gate 与多 Agent 产品委员会评审"
   }
 ]

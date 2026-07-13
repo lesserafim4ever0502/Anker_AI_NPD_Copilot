@@ -1,0 +1,26 @@
+[
+  {
+    "gapId": "gap-compatibility-preflight",
+    "candidateId": "candidate-compatibility-preflight",
+    "screeningDecision": "included",
+    "reason": "证据置信度为 Medium，竞品重叠为 Medium，且可用有限规则 MVP 快速验证。"
+  },
+  {
+    "gapId": "gap-explainable-power",
+    "candidateId": "candidate-explainable-power",
+    "screeningDecision": "included_for_validation",
+    "reason": "痛点有 3 个独立来源，但显示与 App 供给拥挤，必须先证明解释层的任务收益。"
+  },
+  {
+    "gapId": "gap-trustworthy-state",
+    "candidateId": "candidate-trustworthy-state",
+    "screeningDecision": "included_for_evidence_collection",
+    "reason": "方向可形成体验假设，但热相关证据只有 2 个独立来源，暂不进入 Stage-Gate。"
+  },
+  {
+    "gapId": "gap-desktop-hardware-integration",
+    "candidateId": null,
+    "screeningDecision": "excluded",
+    "reason": "Anker 与竞品已有多种桌面整合形态，痛点证据低且重叠高，当前触发 Kill Criteria。"
+  }
+]

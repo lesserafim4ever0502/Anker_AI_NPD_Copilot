@@ -129,6 +129,21 @@
       "name": "pain_radar",
       "purpose": "First-pass pain clusters derived only from approved public user-generated feedback, with confidence and sample-size warnings.",
       "record_count_at_last_review": 5
+    },
+    {
+      "name": "capability_matrix",
+      "purpose": "Normalized Anker and competitor capability coverage. Feature presence is potential coverage, not proof that a pain point is resolved.",
+      "record_count_at_last_review": 30
+    },
+    {
+      "name": "opportunity_gaps",
+      "purpose": "Evidence-constrained opportunity gaps with overlap risk, confidence, recommendation, kill warnings, and next validation.",
+      "record_count_at_last_review": 4
+    },
+    {
+      "name": "candidate_pool",
+      "purpose": "Bounded Candidate NP hypotheses with evidence confidence, MVP boundaries, non-goals, entry decisions, risks, and next validation.",
+      "record_count_at_last_review": 3
     }
   ],
   "notes": [

@@ -1,11 +1,5 @@
 [
-  {
-    "id": "overlap-001",
-    "candidateId": "candidate-a",
-    "title": "与现有桌面充电器 / 扩展坞存在重叠风险",
-    "riskLevel": "medium",
-    "reason": "候选 A 涉及充电、接口扩展和桌面设备组织，可能与安克现有高功率桌面充电器或扩展坞产品边界重叠。",
-    "suggestedAction": "在 Stage-Gate 中重点审查竞品差异度，并将差异化聚焦于桌面设备组织和场景化功率管理。",
-    "status": "open"
-  }
+  {"id":"overlap-display-power","candidateId":"pending","title":"显示与功率硬件重叠","riskLevel":"high","reason":"Prime 160W/250W、Prime Charging Dock 及多款竞品已提供屏幕或实时功率显示；单纯增加显示或瓦数不构成机会。","suggestedAction":"候选必须证明解释层能改善任务结果。","status":"open"},
+  {"id":"overlap-compatibility-claim","candidateId":"pending","title":"兼容承诺边界","riskLevel":"medium","reason":"兼容性取决于 OS、驱动、线材、端口和显示拓扑，不能包装为无边界的通用兼容。","suggestedAction":"以有限设备清单和静态规则 MVP 验证。","status":"open"},
+  {"id":"overlap-desktop-hardware","candidateId":"pending","title":"桌面一体化硬件供给拥挤","riskLevel":"high","reason":"Anker 675、Prime Charging Dock、Prime Charging Base 与 Baseus Nomos 已覆盖多种桌面整合形态。","suggestedAction":"在证据和任务收益不足时触发 Kill Criteria。","status":"open"}
 ]

@@ -133,18 +133,56 @@ export type Product = {
   notes?: string;
 };
 
+export type CapabilityMatrixRow = {
+  id: string;
+  portfolioRole: "anker" | "competitor";
+  productId: string;
+  hasWireless: boolean;
+  hasDock: boolean;
+  hasDisplay: boolean;
+  hasApp: boolean;
+  hasCableManagement: boolean;
+  hasThermalManagement: boolean;
+  desktopFit: "high" | "medium" | "low";
+  mobileFit: "high" | "medium" | "low";
+  compatibilityComplexity: "high" | "medium" | "low";
+  potentialPainCoverage: string[];
+  evidenceConfidence: Confidence;
+  normalizationNotes: string;
+};
+
 export type CandidateNP = {
   id: string;
   name: string;
   description: string;
+  hypothesis: string;
   targetUsers: string[];
   coreScenarios: string[];
   relatedPainPoints: string[];
   relatedGaps: string[];
-  score: number;
-  status: string;
+  score?: number;
+  status: "ready_for_stage_gate" | "validation_required" | "more_evidence_required";
+  evidenceConfidence: Confidence;
+  entryDecision:
+    | "continue_to_stage_gate"
+    | "validate_before_stage_gate"
+    | "hold_before_stage_gate";
+  mvpBoundary: string[];
+  nonGoals: string[];
   mainStrength: string;
   mainRisk: string;
+  nextValidation: string;
+};
+
+export type CandidateScreening = {
+  gapId: string;
+  candidateId: string | null;
+  screeningDecision:
+    | "included"
+    | "included_for_validation"
+    | "included_for_evidence_collection"
+    | "excluded";
+  reason: string;
 };
 
 export type GateEvaluation = {
