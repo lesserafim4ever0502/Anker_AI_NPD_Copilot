@@ -4,6 +4,15 @@
 
 ### Changed
 
+- Timestamp: 2026-07-13T21:51:45+08:00.
+- Published the public GitHub Pages fallback and documented it as the primary team demo entry point.
+- Modified paths and deployment documentation metrics:
+  - `STATE.md`: L1-214 -> L1-222, +12 -4.
+  - `submission_templates/Demo链接说明.md`: L1-23 -> L1-25, +4 -2.
+- Deployment: GitHub Actions run `29255347383` completed successfully.
+- Verification: the public root URL and `#/evaluation` both returned HTTP 200 with the expected title.
+- `docs/CHANGELOG.md`: L1-270 -> L1-279, +9 -0 including this entry.
+
 - Timestamp: 2026-07-13T21:46:26+08:00.
 - Fixed the Pages CI build by replacing an untyped Node environment lookup with Vite's explicit `pages` mode.
 - Modified paths and CI fix metrics:
