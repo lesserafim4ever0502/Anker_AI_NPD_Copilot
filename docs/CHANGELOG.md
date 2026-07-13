@@ -4,6 +4,15 @@
 
 ### Changed
 
+- Timestamp: 2026-07-13T21:46:26+08:00.
+- Fixed the Pages CI build by replacing an untyped Node environment lookup with Vite's explicit `pages` mode.
+- Modified paths and CI fix metrics:
+  - `.github/workflows/deploy-pages.yml`: L1-50 -> L1-48, +1 -3.
+  - `package.json`: L1-27 -> L1-28, +1 -0.
+  - `vite.config.ts`: L1-7 -> L1-7, +3 -3.
+- Validation: `npm run build:pages` passed locally and emitted the expected repository-prefixed asset URLs.
+- `docs/CHANGELOG.md`: L1-261 -> L1-270, +9 -0 before this entry.
+
 - Timestamp: 2026-07-13T21:44:12+08:00.
 - Configured a GitHub Pages fallback deployment with repository-aware asset paths and hash-based client routing.
 - Modified paths and deployment metrics:
