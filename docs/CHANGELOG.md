@@ -4,6 +4,15 @@
 
 ### Changed
 
+- Timestamp: 2026-07-13T22:32:38+08:00.
+- Withdrew both public demo entry points while frontend optimization continues.
+- Modified paths and hosting-status metrics:
+  - `STATE.md`: L1-222 -> L1-224, +8 -6.
+  - `submission_templates/Demo链接说明.md`: L1-25 -> L1-25, +3 -3.
+- Hosting: GitHub Pages was removed and its deployment workflow disabled; Sites access was changed from public to owner-only custom access.
+- Verification: the Pages API returns HTTP 404 and the Sites access policy reports `custom` with no additional user or group allowlists.
+- `docs/CHANGELOG.md`: L1-279 -> L1-288, +9 -0 including this entry.
+
 - Timestamp: 2026-07-13T21:51:45+08:00.
 - Published the public GitHub Pages fallback and documented it as the primary team demo entry point.
 - Modified paths and deployment documentation metrics:

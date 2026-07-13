@@ -4,9 +4,9 @@ Demo 名称：Anker AI-NPD Copilot
 
 Demo 类型：React + TypeScript + Tailwind 可交互网页
 
-GitHub Pages Demo（公开访问，推荐）：https://lesserafim4ever0502.github.io/Anker_AI_NPD_Copilot/
+GitHub Pages Demo：已暂停公开，原地址不再作为有效演示入口。
 
-Sites Demo（公开备用，部分网络可能被 Cloudflare 拦截）：https://anker-ai-npd-copilot.yingpengzhuo69.chatgpt.site
+Sites Demo：已撤回公开访问，仅站点所有者可访问。
 
 演示主线：
 
@@ -20,6 +20,6 @@ Sites Demo（公开备用，部分网络可能被 Cloudflare 拦截）：https:/
 
 当前状态：Demo 使用已审核的公开小样本和本地 JSON，推荐候选为“跨平台 Dock 兼容预检助手”，结论是 `Recommended with Warning`，不是最终立项。
 
-访问说明：优先使用 GitHub Pages 公开链接，无需 GitHub 或 ChatGPT 登录。Sites 链接已公开，但在部分网络环境可能触发 `chatgpt.site` 的 Cloudflare 安全拦截。
+访问说明：当前不提供公开 Demo。完成前端优化和重新验收后，再生成新的公开入口。
 
 边界说明：飞书数据采集 Base 与说明/PRD 文档已通过 CLI 真实创建；网页中的 Feishu Handoff 仍为 Mock，不调用真实飞书前端 API。

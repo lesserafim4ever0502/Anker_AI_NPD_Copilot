@@ -2,9 +2,9 @@
 
 ## Current Phase
 
-当前处于 **Public Demo Published / 公开演示验收** 阶段。
+当前处于 **Frontend Optimization / 暂停公开演示** 阶段。
 
-The seven-page demo is implemented and publicly deployed through GitHub Pages. Evidence, decisions, routes, and Proposal PRD V0.2 remain frozen for review.
+The seven-page demo remains in the repository for frontend optimization. Public hosting is paused; evidence, decisions, routes, and Proposal PRD V0.2 remain frozen for review.
 
 ## Completed Decisions
 
@@ -32,7 +32,7 @@ Next Action: Proposal PRD Scope Freeze
 
 ## Next Development Steps / 下一步
 
-1. 使用公开 GitHub Pages URL 完成团队演示走查和访问确认。
+1. 优化七页信息架构、视觉层级、响应式布局和演示连贯性。
 2. 按 `docs/DEMO_SCRIPT.md` 完成 3–5 分钟讲解排练。
 3. 复核 Page 5/6/7 的 Warning、Pending Confirmation、Decision Ledger 与 Feishu Handoff 叙事。
 4. 在真实移动设备补做一次窄屏触控验收。
@@ -40,17 +40,19 @@ Next Action: Proposal PRD Scope Freeze
 
 ## Sites Deployment / Sites 发布
 
-- Status: public deployment exists, but the current network is blocked by the `chatgpt.site` Cloudflare security layer.
+- Status: public access withdrawn; the site now uses owner-only custom access.
 - Demo URL: `https://anker-ai-npd-copilot.yingpengzhuo69.chatgpt.site`.
+- Reason: the current network is blocked by the `chatgpt.site` Cloudflare security layer, and the frontend requires further optimization.
 - Routes: 7.
 
 ## GitHub Pages Deployment / GitHub Pages 发布
 
-- Status: public production deployment succeeded.
-- Primary Demo URL: `https://lesserafim4ever0502.github.io/Anker_AI_NPD_Copilot/`.
+- Status: disabled; the public Pages site has been removed and the deployment workflow is disabled.
+- Former Demo URL: `https://lesserafim4ever0502.github.io/Anker_AI_NPD_Copilot/`.
 - Workflow: `Deploy GitHub Pages`, run `29255347383` completed successfully.
 - Verification: the root URL and `#/evaluation` both returned HTTP 200 with the expected application title.
 - Routing: HashRouter preserves all seven client-side routes under the repository subpath.
+- Re-enable only after frontend optimization and a new review pass.
 - Validation: production build passed; 3 projects, 12 Anker products, 18 competitor products, 18 Gate evaluations, 6 committee roles, 1 Fail Gate, 4 proposed metrics, 4 risks, 3 validation methods, and 5 open confirmations verified.
 - Boundary: local JSON only; no real frontend Feishu API, LLM, authentication, backend, crawler, or analytics integration.
 
