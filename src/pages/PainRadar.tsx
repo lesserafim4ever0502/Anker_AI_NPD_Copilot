@@ -1,59 +1,57 @@
+import { useMemo, useState } from "react";
+import { AlertTriangle, Quote, Radar } from "lucide-react";
 import painPointsData from "../data/painPoints.json";
 import feedbackData from "../data/feedback.json";
 import type { Feedback, PainPoint } from "../types";
 import MetricCard from "../components/MetricCard";
 import StatusBadge from "../components/StatusBadge";
+import PageHeader from "../components/PageHeader";
 
 const painPoints = painPointsData as PainPoint[];
 const feedback = feedbackData as Feedback[];
 
 export default function PainRadar() {
+  const [selectedId, setSelectedId] = useState(painPoints[0].id);
+  const selected = painPoints.find((pain) => pain.id === selectedId) ?? painPoints[0];
+  const related = useMemo(() => feedback.filter((item) => item.painPointIds.includes(selectedId)), [selectedId]);
+  const insightReady = painPoints.filter((pain) => pain.status === "insight_ready").length;
+
   return (
     <div className="space-y-6">
+      <PageHeader eyebrow="03 / Pain Radar" title="用户痛点雷达" icon={Radar}
+        description="将已审核公开反馈聚类为痛点与设计信号；频次和严重度用于排序，证据成熟度决定能否进入机会判断。" />
+      <section className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <MetricCard label="痛点簇" value={painPoints.length} />
+        <MetricCard label="Insight Ready" value={insightReady} />
+        <MetricCard label="Needs Evidence" value={painPoints.length - insightReady} hint="不进入确定性硬件结论" />
+      </section>
+
+      <section className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(300px,0.7fr)]">
+        <div className="table-shell">
+          <table className="data-table">
+            <thead><tr><th>痛点簇</th><th>证据</th><th>严重度</th><th>成熟度</th></tr></thead>
+            <tbody>{painPoints.map((pain) => (
+              <tr key={pain.id} onClick={() => setSelectedId(pain.id)} className={`cursor-pointer ${selectedId === pain.id ? "bg-blue-50/70" : ""}`}>
+                <td><div className="font-semibold text-ink">{pain.name}</div><div className="mt-1 text-xs text-slate-500">{pain.cluster}</div></td>
+                <td><div className="font-semibold tabular-nums">{pain.evidenceCount}</div><div className="text-xs text-slate-500">{pain.independentSourceCount} independent</div></td>
+                <td><div className="w-28"><div className="mb-1 text-xs font-semibold tabular-nums">{pain.severityAvg} / 5</div><div className="progress-track"><div className="progress-fill" style={{ width: `${pain.severityAvg * 20}%` }} /></div></div></td>
+                <td><StatusBadge status={pain.status ?? pain.confidence} /></td>
+              </tr>
+            ))}</tbody>
+          </table>
+        </div>
+
+        <aside className="panel h-fit">
+          <div className="flex items-start justify-between gap-3"><div><div className="section-kicker">Selected cluster</div><h3 className="mt-2 text-lg font-semibold text-ink">{selected.name}</h3></div><StatusBadge status={selected.confidence} /></div>
+          <p className="mt-4 text-sm leading-6 text-slate-700">{selected.designSignals.join("；")}</p>
+          <div className="mt-4 flex flex-wrap gap-1.5">{selected.scenarios.map((scenario) => <span key={scenario} className="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">{scenario}</span>)}</div>
+          {selected.warning ? <div className="mt-5 border-l-2 border-amber-300 pl-3 text-xs leading-5 text-amber-800"><AlertTriangle size={14} className="mb-1" />{selected.warning}</div> : null}
+        </aside>
+      </section>
+
       <section>
-        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-anker">
-          Pain Radar
-        </div>
-        <h2 className="mt-2 text-3xl font-semibold text-ink">用户痛点雷达</h2>
-        <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
-          将公开反馈样本转为痛点标签、严重度和设计信号；当前仍需人工复核。
-        </p>
-      </section>
-
-      <section className="grid gap-4 md:grid-cols-3">
-        {painPoints.slice(0, 3).map((pain) => (
-          <MetricCard
-            key={pain.id}
-            label={pain.cluster}
-            value={pain.name}
-            hint={`频次 ${pain.frequency} · 严重度 ${pain.severityAvg}`}
-          />
-        ))}
-      </section>
-
-      <section className="grid gap-4 lg:grid-cols-2">
-        {painPoints.map((pain) => (
-          <article key={pain.id} className="rounded-lg border border-slate-200 bg-white p-4">
-            <div className="flex items-center justify-between gap-3">
-              <h3 className="font-semibold text-ink">{pain.name}</h3>
-              <StatusBadge status={pain.confidence} />
-            </div>
-            <p className="mt-2 text-sm text-slate-600">{pain.designSignals.join("；")}</p>
-            <p className="mt-2 text-xs text-slate-500">{pain.scenarios.join(" / ")}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="rounded-lg border border-slate-200 bg-white p-5">
-        <h3 className="text-lg font-semibold text-ink">公开反馈样本占位</h3>
-        <div className="mt-4 space-y-3">
-          {feedback.map((item) => (
-            <div key={item.id} className="rounded-md bg-slate-50 p-3 text-sm text-slate-700">
-              <div className="font-medium text-ink">{item.source} · {item.scenario}</div>
-              <div className="mt-1">{item.rawTextSummary}</div>
-            </div>
-          ))}
-        </div>
+        <div className="mb-3 flex items-end justify-between"><div><h3 className="section-title">关联反馈摘要</h3><p className="section-subtitle">仅显示可追溯摘要，不伪造直接引语</p></div><span className="text-xs text-slate-500">{related.length} records</span></div>
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">{related.map((item) => <article key={item.id} className="panel"><div className="flex items-center justify-between gap-3"><div className="flex items-center gap-2 text-xs font-semibold text-slate-500"><Quote size={14} />{item.source} · {item.id}</div><StatusBadge status={item.confidence} /></div><p className="mt-3 text-sm leading-6 text-slate-700">{item.rawTextSummary}</p><div className="mt-3 text-xs text-slate-500">{item.scenario} · severity {item.severity}</div></article>)}</div>
       </section>
     </div>
   );

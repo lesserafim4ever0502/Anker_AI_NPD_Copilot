@@ -15,14 +15,14 @@ export default function Layout() {
     <div className="min-h-screen bg-surface text-ink">
       <Header project={project} run={run} />
       <RunStatusBar project={project} run={run} />
-      <div className="grid min-h-[calc(100vh-178px)] grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)_320px]">
-        <aside className="border-r border-slate-200 bg-white p-4">
+      <div className="workspace-grid">
+        <aside className="step-rail">
           <StepNav />
         </aside>
-        <main className="min-w-0 p-6">
+        <main className="min-w-0 px-4 py-6 sm:px-6 xl:px-8">
           <Outlet />
         </main>
-        <div className="border-l border-slate-200 bg-white p-4">
+        <div className="decision-rail">
           <DecisionPanel />
         </div>
       </div>

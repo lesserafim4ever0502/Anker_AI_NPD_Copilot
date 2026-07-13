@@ -28,6 +28,11 @@ const statusLabel: Record<string, string> = {
   validation_required: "先验证",
   more_evidence_required: "先补证据",
   fail_evidence_gate: "证据 Gate 失败",
+  medium: "Medium",
+  low: "Low",
+  high: "High",
+  created: "Mock 已生成",
+  open: "Open",
 };
 
 const statusClass: Record<string, string> = {
@@ -47,6 +52,11 @@ const statusClass: Record<string, string> = {
   pass: "border-emerald-200 bg-emerald-50 text-emerald-700",
   warning: "border-amber-200 bg-amber-50 text-amber-700",
   fail: "border-red-200 bg-red-50 text-red-700",
+  medium: "border-sky-200 bg-sky-50 text-sky-700",
+  low: "border-slate-200 bg-slate-50 text-slate-600",
+  high: "border-emerald-200 bg-emerald-50 text-emerald-700",
+  created: "border-teal-200 bg-teal-50 text-teal-700",
+  open: "border-amber-200 bg-amber-50 text-amber-700",
 };
 
 export default function StatusBadge({ status }: { status: BadgeStatus }) {

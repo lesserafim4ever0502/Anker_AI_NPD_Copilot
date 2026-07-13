@@ -1,78 +1,58 @@
+import { useMemo, useState } from "react";
+import { AlertTriangle, Filter, TableProperties } from "lucide-react";
 import ankerProductsData from "../data/products.json";
 import competitorProductsData from "../data/competitorProducts.json";
 import opportunityGaps from "../data/opportunityGaps.json";
 import overlapWarnings from "../data/productOverlapWarnings.json";
+import capabilityMatrix from "../data/capabilityMatrix.json";
 import type { Product } from "../types";
 import StatusBadge from "../components/StatusBadge";
+import MetricCard from "../components/MetricCard";
+import PageHeader from "../components/PageHeader";
 
 const ankerProducts = (ankerProductsData as Product[]).filter((product) => product.brand === "Anker");
 const competitorProducts = competitorProductsData as Product[];
+const products = [...ankerProducts, ...competitorProducts];
 
 export default function CompetitorMatrix() {
-  const products = [...ankerProducts, ...competitorProducts];
+  const brands = ["全部", "Anker", ...Array.from(new Set(competitorProducts.map((product) => product.brand)))];
+  const [brand, setBrand] = useState(brands[0]);
+  const [selectedGapId, setSelectedGapId] = useState(opportunityGaps[1]?.id ?? opportunityGaps[0].id);
+  const visible = useMemo(() => brand === brands[0] ? products : products.filter((product) => product.brand === brand), [brand]);
+  const selectedGap = opportunityGaps.find((gap) => gap.id === selectedGapId) ?? opportunityGaps[0];
 
   return (
     <div className="space-y-6">
+      <PageHeader eyebrow="04 / Competitor Matrix" title="竞品机会矩阵" icon={TableProperties}
+        description="产品能力存在仅代表潜在覆盖，不证明用户痛点已解决。矩阵用于识别重叠风险、验证缺口和候选准入边界。" />
+      <section className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <MetricCard label="Anker Products" value={ankerProducts.length} />
+        <MetricCard label="Competitor Products" value={competitorProducts.length} />
+        <MetricCard label="Capability Rows" value={capabilityMatrix.length} hint={`${opportunityGaps.length} opportunity gaps`} />
+      </section>
+
       <section>
-        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-anker">
-          Competitor Matrix
-        </div>
-        <h2 className="mt-2 text-3xl font-semibold text-ink">竞品机会矩阵</h2>
-        <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">
-          基于 30 条已复核公开产品资料对齐能力边界；能力存在只代表潜在覆盖，不等于痛点已被解决。
-        </p>
-      </section>
-
-      <section className="overflow-hidden rounded-lg border border-slate-200 bg-white">
-        <table className="w-full min-w-[760px] text-left text-sm">
-          <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
-            <tr>
-              <th className="px-4 py-3">Brand</th>
-              <th className="px-4 py-3">Product</th>
-              <th className="px-4 py-3">Category</th>
-              <th className="px-4 py-3">Power</th>
-              <th className="px-4 py-3">Dock</th>
-              <th className="px-4 py-3">Possible Gap</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-100">
-            {products.map((product) => (
-              <tr key={product.id}>
-                <td className="px-4 py-3 font-semibold text-ink">{product.brand}</td>
-                <td className="px-4 py-3">{product.productName}</td>
-                <td className="px-4 py-3">{product.category}</td>
-                <td className="px-4 py-3">{product.powerWatt ?? "unknown"}</td>
-                <td className="px-4 py-3">{product.dockSupport ? "yes" : "no"}</td>
-                <td className="px-4 py-3 text-slate-600">{product.possibleGap}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
-
-      <section className="grid gap-4 lg:grid-cols-2">
-        {opportunityGaps.map((gap) => (
-          <article key={gap.id} className="rounded-lg border border-slate-200 bg-white p-4">
-            <h3 className="font-semibold text-ink">{gap.title}</h3>
-            <p className="mt-2 text-sm text-slate-600">{gap.currentCoverage}</p>
-            <p className="mt-2 text-sm text-slate-600">{gap.opportunityReason}</p>
-            <p className="mt-2 text-xs font-semibold text-anker">{gap.recommendation}</p>
-            <p className="mt-2 text-xs text-slate-500">{gap.relatedPainPointIds.join(" / ")}</p>
-          </article>
-        ))}
-      </section>
-
-      <section className="rounded-lg border border-amber-200 bg-amber-50 p-4">
-        <div className="flex items-center gap-2">
-          <StatusBadge status="warning" />
-          <h3 className="font-semibold text-ink">Product Overlap Warning</h3>
-        </div>
-        <div className="mt-3 space-y-2 text-sm text-slate-700">
-          {overlapWarnings.map((warning) => (
-            <p key={warning.id}>{warning.reason}</p>
-          ))}
+        <div className="toolbar"><Filter size={14} className="text-slate-400" />{brands.map((item) => <button key={item} onClick={() => setBrand(item)} className={`filter-button ${brand === item ? "filter-button-active" : ""}`}>{item}</button>)}</div>
+        <div className="table-shell rounded-t-none border-t-0">
+          <table className="data-table">
+            <thead><tr><th>Brand / Product</th><th>Category</th><th>Power</th><th>Dock</th><th>Display / App</th><th>Possible Gap</th></tr></thead>
+            <tbody>{visible.map((product) => <tr key={product.id}>
+              <td><div className="font-semibold text-ink">{product.productName}</div><div className="mt-1 text-xs text-slate-500">{product.brand}</div></td>
+              <td>{product.category}</td><td>{product.powerWatt ?? "unknown"}</td>
+              <td><StatusBadge status={product.dockSupport ? "pass" : "pending"} /></td>
+              <td className="max-w-[180px] text-xs leading-5 text-slate-600">{product.screenOrApp ?? "none"}</td>
+              <td className="max-w-[280px] text-xs leading-5 text-slate-600">{product.possibleGap}</td>
+            </tr>)}</tbody>
+          </table>
         </div>
       </section>
+
+      <section className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">{opportunityGaps.map((gap) => <button key={gap.id} onClick={() => setSelectedGapId(gap.id)} className={`panel text-left transition ${selectedGapId === gap.id ? "border-blue-300 shadow-[inset_3px_0_0_#2f80ed]" : "hover:border-slate-300"}`}><div className="flex items-start justify-between gap-3"><h3 className="font-semibold text-ink">{gap.title}</h3><StatusBadge status={gap.confidence} /></div><p className="mt-3 text-sm leading-6 text-slate-600">{gap.opportunityReason}</p><div className="mt-3 text-xs font-semibold text-blue-700">{gap.recommendation}</div></button>)}</div>
+        <aside className="panel h-fit"><div className="section-kicker">Selected opportunity</div><h3 className="mt-2 text-lg font-semibold text-ink">{selectedGap.title}</h3><dl className="mt-4 space-y-4 text-sm"><div><dt className="text-xs text-slate-500">Current coverage</dt><dd className="mt-1 leading-6 text-slate-700">{selectedGap.currentCoverage}</dd></div><div><dt className="text-xs text-slate-500">Overlap risk</dt><dd className="mt-1"><StatusBadge status={selectedGap.overlapRisk} /></dd></div><div><dt className="text-xs text-slate-500">Next validation</dt><dd className="mt-1 leading-6 text-slate-700">{selectedGap.nextValidation}</dd></div></dl></aside>
+      </section>
+
+      <section className="warning-panel"><div className="flex items-center gap-2"><AlertTriangle size={17} className="text-amber-700" /><h3 className="section-title">Product Overlap Warning</h3><span className="ml-auto text-xs font-semibold text-amber-700">{overlapWarnings.length} warnings</span></div><div className="mt-4 grid gap-3 lg:grid-cols-3">{overlapWarnings.map((warning) => <div key={warning.id} className="border-l-2 border-amber-300 pl-3"><div className="text-sm font-semibold text-ink">{warning.title}</div><p className="mt-1 text-xs leading-5 text-amber-900/80">{warning.reason}</p></div>)}</div></section>
     </div>
   );
 }

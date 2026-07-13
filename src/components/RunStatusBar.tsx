@@ -1,37 +1,29 @@
 import type { NpdProject, NpdRun } from "../types";
 import StatusBadge from "./StatusBadge";
+import { ArrowRight, CircleAlert } from "lucide-react";
 
 export default function RunStatusBar({ project, run }: { project: NpdProject; run: NpdRun }) {
   return (
-    <section className="border-b border-slate-200 bg-white px-6 py-3">
-      <div className="grid gap-3 lg:grid-cols-[1.2fr_1.3fr_1fr_1fr]">
-        <div>
-          <div className="text-xs text-slate-500">Project</div>
-          <div className="text-sm font-semibold text-ink">{project.name}</div>
-        </div>
-        <div>
-          <div className="text-xs text-slate-500">Run</div>
-          <div className="text-sm font-semibold text-ink">{run.name}</div>
-        </div>
-        <div>
-          <div className="text-xs text-slate-500">Status</div>
-          <div className="mt-1 flex gap-2">
-            <StatusBadge status="prd_drafted" />
-            <StatusBadge status="need_confirmation" />
-          </div>
-        </div>
-        <div>
-          <div className="text-xs text-slate-500">Next Action</div>
-          <div className="text-sm font-semibold text-ink">{run.nextAction}</div>
-        </div>
+    <section className="run-bar">
+      <div className="flex min-w-0 items-center gap-2">
+        <CircleAlert size={16} className="shrink-0 text-amber-600" />
+        <span className="truncate text-sm font-semibold text-ink">{run.currentStage}</span>
+        <StatusBadge status={run.confidence} />
       </div>
-      <div className="mt-3 flex flex-wrap gap-2">
+      <div className="hidden min-w-0 items-center gap-2 text-xs text-slate-500 md:flex">
+        <span className="truncate">{project.name}</span><ArrowRight size={13} />
+        <span className="truncate text-slate-700">{run.name}</span>
+      </div>
+      <div className="stage-strip">
         {run.stageProgress.map((stage) => (
-          <div key={stage.stageId} className="flex items-center gap-2 rounded-full bg-slate-50 px-3 py-1">
-            <span className="text-xs font-medium text-slate-600">{stage.name}</span>
-            <StatusBadge status={stage.status} />
+          <div key={stage.stageId} className={`stage-dot stage-${stage.status}`} title={`${stage.name}: ${stage.status}`}>
+            <span>{stage.name}</span>
           </div>
         ))}
+      </div>
+      <div className="hidden text-right xl:block">
+        <div className="text-[10px] uppercase text-slate-400">Next action</div>
+        <div className="text-xs font-semibold text-slate-700">{run.nextAction}</div>
       </div>
     </section>
   );
