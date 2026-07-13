@@ -49,6 +49,41 @@ export default function ProposalPrd() {
       </section>
 
       <section className="grid gap-4 lg:grid-cols-2">
+        <article className="rounded-lg border border-slate-200 bg-white p-5">
+          <h3 className="font-semibold text-ink">Out of Scope</h3>
+          <ul className="mt-3 space-y-2 text-sm text-slate-700">
+            {proposalPrd.outOfScope.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+        </article>
+        <article className="rounded-lg border border-slate-200 bg-white p-5">
+          <h3 className="font-semibold text-ink">Proposed Success Metrics</h3>
+          <div className="mt-3 space-y-3">
+            {proposalPrd.successMetrics.map((metric) => (
+              <div key={metric.metric} className="rounded-md bg-slate-50 p-3 text-sm">
+                <div className="font-medium text-ink">{metric.metric} · {metric.proposedTarget}</div>
+                <div className="mt-1 text-xs text-slate-500">{metric.status}</div>
+              </div>
+            ))}
+          </div>
+        </article>
+      </section>
+
+      <section className="grid gap-4 lg:grid-cols-2">
+        <article className="rounded-lg border border-red-200 bg-red-50 p-5">
+          <h3 className="font-semibold text-ink">Risks</h3>
+          <div className="mt-3 space-y-3 text-sm text-slate-700">
+            {proposalPrd.risks.map((item) => <p key={item.id}>{item.risk}</p>)}
+          </div>
+        </article>
+        <article className="rounded-lg border border-slate-200 bg-white p-5">
+          <h3 className="font-semibold text-ink">Validation Plan</h3>
+          <div className="mt-3 space-y-3 text-sm text-slate-700">
+            {proposalPrd.validationPlan.map((item) => <p key={item.id}>{item.method} · {item.scope}</p>)}
+          </div>
+        </article>
+      </section>
+
+      <section className="grid gap-4 lg:grid-cols-2">
         <article className="rounded-lg border border-amber-200 bg-amber-50 p-5">
           <h3 className="font-semibold text-ink">Pending Confirmations</h3>
           <ul className="mt-3 space-y-2 text-sm text-slate-700">

@@ -2,7 +2,54 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Timestamp: 2026-07-13T12:03:59+08:00.
+- Repository completeness audit found zero zero-byte files, zero files of five bytes or fewer, and no empty Markdown links. Instructional CSV rows are explicitly excluded from demo evidence.
+- Modified paths and current working-tree metrics relative to `HEAD`:
+  - `README.md`: L1-164 -> L1-173, +22 -13.
+  - `STATE.md`: L1-206 -> L1-207, +18 -17.
+  - `assets_placeholder/README.md`: L1-10 -> L1-12, +5 -3.
+  - `data_templates/products.json`: L1-49 -> L1-14, +13 -48.
+  - `data_templates/raw_evidence_intake.csv`: L1-2 -> L1-2, +2 -2.
+  - `data_templates/structured_evidence_template.csv`: L1-1 -> L1-2, +2 -1.
+  - `data_workbench/README.md`: L1-14 -> L1-22, +10 -2.
+  - `docs/DATA_INTAKE.md`: L1-333 -> L1-337, +4 -0.
+  - `docs/DATA_SCHEMA.md`: L1-175 -> L1-46, +33 -162.
+  - `docs/DEVELOPMENT_PLAN.md`: L1-68 -> L1-60, +10 -18.
+  - `docs/FEISHU_COLLABORATION.md`: L1-75 -> L1-77, +6 -4.
+  - `docs/ROLE_JOURNEYS.md`: L1-49 -> L1-49, +5 -5.
+  - `docs/START_HERE_DEV.md`: L1-57 -> L1-48, +15 -24.
+  - `public/README.md`: L1-3 -> L1-5, +3 -1.
+  - `scripts/README.md`: L1-3 -> L1-5, +3 -1.
+  - `src/README.md`: L1-3 -> L1-5, +3 -1.
+  - `submission_templates/Demo链接说明.md`: L1-17 -> L1-19, +3 -1.
+  - `submission_templates/Feishu协同说明.md`: L1-9 -> L1-13, +4 -0.
+  - `submission_templates/README_评审材料导读.md`: L1-14 -> L1-16, +2 -0.
+  - `docs/CHANGELOG.md`: L1-195 -> L1-222, +27 -0 before this entry.
+
 ### Added
+
+- Timestamp: 2026-07-13T11:51:49+08:00.
+- Modified paths:
+  - `src/data/proposalPrd.json`: L1-99 -> L1-83, +65 -81.
+  - `src/data/validationTasks.json`: L1-38 -> L1-7, +6 -37.
+  - `src/data/projects.json`: L1-71 -> L1-71, +5 -5.
+  - `src/data/npdRuns.json`: L1-57 -> L1-57, +5 -5.
+  - `src/data/feishuArtifacts.json`: L1-96 -> L1-98, +10 -8.
+  - `src/data/feishuWorkflow.json`: L1-61 -> L1-61, +3 -3.
+  - `src/pages/ProposalPrd.tsx`: L1-71 -> L1-106, +35 -0.
+  - `docs/SITES_HANDOFF.md`: new file, L1-0 -> L1-84, +84 -0.
+  - `docs/DEMO_SCRIPT.md`: L1-31 -> L1-45, +29 -15.
+  - `docs/DECISION_LOGIC.md`: L1-58 -> L1-58, +1 -1.
+  - `README.md`: L1-164 -> L1-164, +1 -1.
+  - `SPEC.md`: L1-164 -> L1-164, +1 -1.
+  - `DESIGN.md`: L1-455 -> L1-455, +1 -1.
+  - `review_index.json`: L1-125 -> L1-127, +3 -1.
+  - `data_workbench/feishu_workspace_manifest.json`: L1-164 -> L1-171, +7 -0.
+  - `data_workbench/feishu_workspace_manifest.local.json`: L1-62 -> L1-69, +7 -0; file remains gitignored.
+  - `STATE.md`: L1-206 -> L1-209, +6 -3.
+  - `docs/CHANGELOG.md`: L1-174 -> L1-195, +21 -0.
 
 - Timestamp: 2026-07-13T11:06:10+08:00.
 - Modified paths:

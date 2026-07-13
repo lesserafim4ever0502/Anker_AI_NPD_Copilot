@@ -1,31 +1,45 @@
 # DEMO_SCRIPT.md
 
-## 3–5 分钟演示脚本
+## 3–5 分钟演示脚本 / 3–5 Minute Demo Script
 
-### 0:00–0:30 项目工作台
+### 0:00–0:30 项目工作台 / Project Workspace
 
-我们不是做一个单次新品生成器，而是做安克新品定义的多项目 NPD 工作台。当前主项目是“桌面办公能源生态项目”，状态是 PRD Drafted / Need Confirmation，说明系统已经生成 PRD 草案，但仍保留需要二次确认的问题。
+我们不是做单次新品生成器，而是做安克新品定义的多项目 NPD 工作台。主项目状态是 `PRD Drafted / Need Confirmation`，说明系统保留人工决策和待确认事项。
 
-### 0:30–1:00 证据池
+This is a multi-project NPD workspace, not a one-shot idea generator. The main Run remains `PRD Drafted / Need Confirmation`, preserving human review and open decisions.
 
-系统首先建立公开小样本证据池，包括安克产品、竞品产品、用户反馈、测评观点和可引用用户原声。当前证据置信度为 Medium，足以验证开题流程，但入围后需要接入安克内部数据复核。
+### 0:30–1:00 证据池 / Evidence Pool
 
-### 1:00–1:40 用户痛点雷达
+本轮使用 12 款 Anker 产品、18 款竞品和 13 条已审核公开用户反馈。它是公开小样本验证集，置信度为 Medium，不代表市场全量或安克内部用户总体。
 
-系统把分散用户反馈转化为痛点标签和设计信号。多设备办公场景的问题不只是充电功率不足，而是线缆混乱、功率分配不透明、接口割裂和桌面占用形成的复合体验问题。
+The Run uses 12 Anker products, 18 competitor products, and 13 reviewed public user-feedback records. This is a medium-confidence public sample, not full-market or internal Anker data.
 
-### 1:40–2:20 竞品机会矩阵
+### 1:00–1:40 痛点雷达 / Pain Radar
 
-系统结合产品矩阵和痛点信号，识别安克与竞品已有能力边界。我们发现充电、扩展、线缆管理和状态反馈之间存在体验割裂，因此生成 3 个候选 NP。
+系统形成 5 个痛点簇。功率透明度、兼容设置和状态可信度可进入洞察；热安全与桌面整合只有两个独立来源，需要继续补证据。
 
-### 2:20–3:20 决策评审
+The system forms five pain clusters. Power transparency, compatibility setup, and state reliability are insight-ready; thermal safety and desktop integration still need evidence.
 
-系统不是直接输出一个新品，而是用 Stage-Gate 和多 Agent 产品委员会评审 3 个候选 NP。候选 A 暂时领先，但风险评审官指出其与现有桌面充电器 / 扩展坞存在重叠风险，需要二次确认。
+### 1:40–2:20 竞品机会矩阵 / Competitor Matrix
 
-### 3:20–4:00 PRD 输出
+30 行能力矩阵显示：屏幕、App、Dock 和桌面整合已有大量供给，能力存在不等于痛点已解决。硬件一体化因高重叠和低证据被排除，兼容预检成为唯一可直接进入评审的 Gap。
 
-系统把推荐候选、Gate 结果和 Agent 意见转化为 PRD 摘要草案。它不是最终立项文件，而是包含目标用户、核心痛点、MVP 功能、风险和验证计划的结构化草案。
+The 30-row matrix shows that displays, apps, docks, and desktop integration are already crowded. Feature presence is not proof of pain resolution. Hardware integration is excluded; compatibility preflight is the only gap entering review directly.
 
-### 4:00–5:00 飞书沉淀
+### 2:20–3:20 决策评审 / Decision Review
 
-最后，系统将 PRD 草案、评审报告、任务、会议议程和决策记录沉淀到飞书。这样一次 NPD Run 不会停留在网页，而会成为企业可协作、可追踪、可复用的组织资产。
+3 个候选经过 18 条 Stage-Gate 评审。兼容预检得分 4.24，为 `Recommended with Warning`；功率解释层得分 3.91，需要先做对照验证；可信状态得分 3.24，并因痛点证据不足触发 Fail Gate。六角色委员会保留反对意见，没有用平均分覆盖风险。
+
+Across 18 Gate evaluations, compatibility preflight scores 4.24 and is `Recommended with Warning`; power explanation requires validation at 3.91; trustworthy state scores 3.24 and fails the evidence gate. Six committee roles preserve objections and blocking conditions.
+
+### 3:20–4:10 Proposal PRD
+
+PRD 只定义有限规则 MVP：10 组拓扑、可追溯兼容结论、设置步骤、来源与版本元数据，以及未知返回。它不承诺通用兼容，不自动控制设备，也不开发新 Dock 硬件。所有成功指标都是拟议目标，仍需确认。
+
+The Proposal PRD defines a bounded rules MVP: ten topologies, traceable compatibility results, setup steps, version metadata, and an explicit unknown state. It does not promise universal compatibility or new hardware. All targets remain proposed and pending confirmation.
+
+### 4:10–5:00 飞书沉淀 / Feishu Handoff
+
+产品矩阵、Pain Radar、机会缺口、候选池、Stage-Gate 和产品委员会已沉淀到同一飞书工作台。PRD、验证任务、会议议程和 Decision Ledger 形成后续协作闭环。网页 Demo 展示的是 Proposal-stage Mock，不调用真实前端飞书 API。
+
+The same Feishu workspace stores the matrix, Pain Radar, gaps, candidate pool, Gate evaluations, and committee reviews. PRD, tasks, meeting agenda, and Decision Ledger complete the collaboration loop. The web demo remains a proposal-stage mock without a real frontend Feishu API.

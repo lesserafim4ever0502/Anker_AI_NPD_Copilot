@@ -12,16 +12,16 @@
     "currentRunId": "run-anker-001",
     "status": "prd_drafted",
     "confidence": "medium",
-    "recommendedCandidate": "多设备移动办公桌面能量中枢",
-    "pendingCount": 3,
-    "nextAction": "发起飞书二次评审会议",
+    "recommendedCandidate": "跨平台 Dock 兼容预检助手（Recommended with Warning）",
+    "pendingCount": 5,
+    "nextAction": "确认 PRD 范围、准确率门槛和验证计划",
     "ownerRoles": [
       "产品负责人",
       "用户研究员",
       "硬件/制造负责人",
       "市场负责人"
     ],
-    "updatedAt": "Day 5"
+    "updatedAt": "Day 6"
   },
   {
     "id": "project-creator-power",

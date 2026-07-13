@@ -38,6 +38,8 @@ Stage: Proposal-stage public sample validation
 
 ## 2. Team Workflow
 
+Current status: the first collection and review cycle is complete. This workflow remains the contract for incremental evidence collection and re-review.
+
 The team should not manually apply complex screening rules.
 
 Use this workflow instead:
@@ -59,6 +61,8 @@ Demo pages consume the structured JSON data
 ```
 
 Human collectors only need to fill minimal fields. The AI / Agent handles page mapping, tags, scoring, pain points, opportunity gaps, and design signals.
+
+Rows whose IDs start with `template-example-` are instructional only. Replace the ID, collector, claim, and verified source before intake; these rows must never be exported to `src/data/*.json`.
 
 ---
 

@@ -1,99 +1,83 @@
 {
-  "candidateId": "candidate-a",
-  "title": "多设备移动办公桌面能量中枢 PRD 摘要",
+  "candidateId": "candidate-compatibility-preflight",
+  "title": "跨平台 Dock 兼容预检助手 Proposal PRD",
   "status": "draft_need_confirmation",
-  "version": "v0.1",
-  "oneSentence": "面向多设备办公用户的桌面能量与设备组织解决方案，整合多设备充电、基础线缆管理、功率状态反馈和桌面设备连接体验。",
+  "version": "v0.2",
+  "decisionState": "recommended_with_warning",
+  "confidence": "medium",
+  "oneSentence": "面向北美多设备办公用户，在购买前和首次连接前，将有限范围内的电脑、系统、Dock、线材和显示器拓扑转化为可追溯的兼容结论与设置步骤。",
   "targetUsers": [
-    "远程办公用户",
-    "多设备桌面用户",
-    "内容创作者 / 轻创作者",
-    "学生宿舍与家庭桌面用户",
-    "数字游民 / 移动办公人群"
+    "Mac 与 Windows 混用的多设备办公用户",
+    "双显示器或多显示器办公用户",
+    "首次购买或更换 Dock 的用户",
+    "需要排查显示、驱动或供电方向问题的用户"
+  ],
+  "jobsToBeDone": [
+    "购买前确认指定设备组合能否完成目标显示与供电任务",
+    "首次连接时获得正确的端口、线材、驱动和连接顺序",
+    "发生异常时区分不支持、配置错误、驱动缺失与未知状态"
   ],
   "coreScenarios": [
-    "多设备桌面办公",
-    "会议前后的设备快速补能",
-    "笔记本、手机、耳机、平板等多设备同时连接",
-    "桌面线缆和适配器管理"
+    "购买前兼容预检",
+    "首次连接设置",
+    "双显示器拓扑确认",
+    "显示、网卡或双向供电异常排查"
   ],
-  "positioning": "本候选 NP 不是单纯增加接口数量或提升功率的桌面充电器，而是面向多设备办公场景的桌面能量组织系统。",
+  "positioning": "这是一个有限规则、可追溯、允许返回未知的兼容决策辅助工具，不是通用兼容承诺，也不是自动控制设备的诊断软件。",
   "evidenceSummary": {
-    "painPoints": [
-      "线缆混乱",
-      "功率分配不透明",
-      "桌面占用",
-      "接口割裂",
-      "发热担忧"
-    ],
-    "opportunityGaps": [
-      "桌面充电器与扩展坞能力割裂",
-      "功率状态解释不足",
-      "多设备办公场景缺少一体化管理"
-    ],
-    "gateSummary": "品牌契合度、痛点强度、技术可行性、市场验证和组织沉淀价值为 Pass，竞品差异度为 Warning。",
-    "agentSummary": "风险评审官指出该方向与现有桌面充电器 / 扩展坞存在边界重叠，需要二次确认。"
+    "painPointIds": ["pain-compatibility-setup", "pain-state-reliability"],
+    "opportunityGapIds": ["gap-compatibility-preflight"],
+    "evidenceIds": ["UGF-007", "UGF-008", "UGF-011"],
+    "productIds": ["anker_007", "anker_008", "anker_010", "competitor_003", "competitor_010", "competitor_012"],
+    "gateSummary": "Stage-Gate 加权分 4.24 / 5；5 Pass、1 Warning。竞品差异度需证明相对静态 FAQ 的任务收益。",
+    "agentSummary": "六角色委员会结论为 Recommended with Warning。风险评审官要求金标准、来源追踪、版本治理、未知返回和人工责任人。",
+    "limitations": "仅基于 13 条已审核公开用户反馈、30 条公开产品样本和有限配置，不代表北美全市场或安克内部用户总体。"
   },
   "mvpFeatures": [
-    {
-      "priority": "P0",
-      "feature": "多设备有线充电整合",
-      "relatedPainPoint": "多设备充电割裂",
-      "value": "减少适配器数量",
-      "status": "keep"
-    },
-    {
-      "priority": "P0",
-      "feature": "功率状态可视化",
-      "relatedPainPoint": "功率分配不透明 / 发热担忧",
-      "value": "降低用户不确定感",
-      "status": "keep"
-    },
-    {
-      "priority": "P0",
-      "feature": "基础线缆管理结构",
-      "relatedPainPoint": "线缆混乱 / 桌面占用",
-      "value": "改善桌面秩序",
-      "status": "keep"
-    },
-    {
-      "priority": "P1",
-      "feature": "场景化功率模式",
-      "relatedPainPoint": "多设备优先级不清楚",
-      "value": "提升可理解性",
-      "status": "validate"
-    },
-    {
-      "priority": "P2",
-      "feature": "完整扩展坞能力",
-      "relatedPainPoint": "接口割裂",
-      "value": "增强连接能力",
-      "status": "defer"
-    }
+    {"priority":"P0","feature":"有限拓扑输入","relatedPainPoint":"pain-compatibility-setup","value":"收集电脑、OS、Dock、线材、显示器和目标任务的必要条件","status":"keep"},
+    {"priority":"P0","feature":"规则化兼容结论","relatedPainPoint":"pain-compatibility-setup","value":"输出支持、不支持、需要条件或未知，并解释触发规则","status":"keep"},
+    {"priority":"P0","feature":"设置与连接步骤","relatedPainPoint":"pain-compatibility-setup","value":"给出驱动、端口、线材、连接顺序和显示限制","status":"keep"},
+    {"priority":"P0","feature":"来源与版本元数据","relatedPainPoint":"pain-state-reliability","value":"显示规则来源、测试配置、OS/固件版本、更新时间和责任人","status":"keep"},
+    {"priority":"P0","feature":"未知与升级路径","relatedPainPoint":"pain-state-reliability","value":"未覆盖或冲突配置明确返回未知，并进入人工复核或补测任务","status":"keep"},
+    {"priority":"P1","feature":"结果反馈与错误案例回收","relatedPainPoint":"pain-state-reliability","value":"记录实际结果，支持规则修订和失效检测","status":"validate"},
+    {"priority":"P2","feature":"真实设备自动检测","relatedPainPoint":"pain-compatibility-setup","value":"降低手动输入，但需要系统权限与真实集成","status":"defer"}
   ],
   "outOfScope": [
-    "不追求最高功率参数竞争",
-    "不在第一版集成完整扩展坞能力",
-    "不把 App 作为 P0 核心能力",
-    "不同时堆叠无线充电、屏幕、复杂散热和全接口扩展",
-    "不直接进入量产定义"
+    "不承诺覆盖任意电脑、Dock、线材和显示器组合",
+    "不自动控制操作系统、驱动、固件或 Dock",
+    "不开发新的 Dock、充电器或显示硬件",
+    "不基于未知配置生成确定性结论",
+    "不把公开小样本外推为市场规模、退货率或收入提升",
+    "不直接形成量产或立项批准"
+  ],
+  "successMetrics": [
+    {"metric":"金标准结论准确率","proposedTarget":">= 95%","status":"pending_confirmation","measurement":"在冻结的 10 组拓扑上对照人工测试结论"},
+    {"metric":"错误确定性结论数","proposedTarget":"0","status":"pending_confirmation","measurement":"未知或证据冲突时必须返回未知"},
+    {"metric":"任务正确完成率提升","proposedTarget":">= 15 percentage points vs. static FAQ","status":"pending_confirmation","measurement":"对照购买前选择与首次连接任务"},
+    {"metric":"排查时间降低","proposedTarget":">= 20% vs. static FAQ","status":"pending_confirmation","measurement":"对照显示、驱动和供电异常任务"}
   ],
   "risks": [
-    "与安克现有 SKU 重叠",
-    "用户付费意愿不明确",
-    "MVP 硬件复杂度过高",
-    "公开样本代表性有限"
+    {"id":"risk-rule-staleness","level":"high","risk":"OS、固件、芯片或产品版本变化导致规则失效","mitigation":"绑定版本、失效日期、责任人和回归测试"},
+    {"id":"risk-false-certainty","level":"high","risk":"错误的确定性结论影响购买或系统配置","mitigation":"未知优先、来源追踪、金标准与人工复核"},
+    {"id":"risk-faq-repackaging","level":"medium","risk":"无法证明相对静态 FAQ 的任务收益","mitigation":"执行对照任务测试，未达阈值则停止推进"},
+    {"id":"risk-sample-bias","level":"medium","risk":"公开小样本存在故障帖与品牌选择偏差","mitigation":"补充正向对照、内部支持数据和更多品牌配置"}
+  ],
+  "validationPlan": [
+    {"id":"validation-topology-gold-set","method":"兼容性测试","scope":"冻结 10 组常见 Mac/Windows 拓扑","decisionRule":"准确率未达到确认后的门槛，停止进入 Demo 推荐位"},
+    {"id":"validation-faq-comparison","method":"受控任务测试","scope":"静态 FAQ 对比拓扑预检","decisionRule":"正确完成率和排查时间无显著改善则停止推进"},
+    {"id":"validation-unknown-state","method":"边界与冲突测试","scope":"未覆盖、缺字段和来源冲突配置","decisionRule":"出现无依据的确定性结论即 Fail"}
   ],
   "pendingConfirmationIds": [
-    "pc-001",
-    "pc-002",
-    "pc-003"
+    "pc-candidate-compatibility-scope",
+    "pc-compatibility-accuracy-owner",
+    "pc-compatibility-faq-differentiation"
   ],
   "feishuArtifacts": [
-    "PRD 摘要文档",
-    "多 Agent 评审报告",
-    "MVP 验证任务清单",
-    "二次评审会议议程",
-    "NPD 知识库归档"
+    "Proposal PRD 文档",
+    "Stage-Gate 评审表",
+    "产品委员会评审表",
+    "拓扑金标准与兼容规则表",
+    "验证任务与二次评审议程",
+    "Decision Ledger"
   ]
 }

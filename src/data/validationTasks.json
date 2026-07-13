@@ -1,38 +1,7 @@
 [
-  {
-    "id": "task-001",
-    "title": "复核候选 A 与安克现有 SKU 的差异边界",
-    "ownerRole": [
-      "产品负责人",
-      "竞品分析负责人",
-      "硬件/制造负责人"
-    ],
-    "priority": "high",
-    "source": "PRD Risk",
-    "feishuType": "task",
-    "status": "open"
-  },
-  {
-    "id": "task-002",
-    "title": "进行目标用户概念图 A/B 测试",
-    "ownerRole": [
-      "用户研究员",
-      "市场负责人"
-    ],
-    "priority": "medium",
-    "source": "Market Validation",
-    "feishuType": "task",
-    "status": "open"
-  },
-  {
-    "id": "task-003",
-    "title": "输出桌面设备组织低保真概念草图",
-    "ownerRole": [
-      "工业设计师"
-    ],
-    "priority": "medium",
-    "source": "Industrial Design Review",
-    "feishuType": "task",
-    "status": "open"
-  }
+  {"id":"task-topology-scope","title":"冻结首轮 10 组兼容拓扑与事实来源","ownerRole":["产品负责人","兼容性测试负责人"],"priority":"high","source":"pc-candidate-compatibility-scope","feishuType":"task","status":"open","acceptanceCriteria":"每组包含设备、OS、Dock、固件、线材、显示器、目标任务和人工测试结论。"},
+  {"id":"task-rule-governance","title":"定义准确率门槛、未知返回与版本治理","ownerRole":["兼容性测试负责人","产品负责人"],"priority":"high","source":"pc-compatibility-accuracy-owner","feishuType":"task","status":"open","acceptanceCriteria":"确认准确率阈值、失效日期、责任人、回归频率和回滚条件。"},
+  {"id":"task-faq-comparison","title":"执行 FAQ 与拓扑预检对照任务测试","ownerRole":["用户研究员","产品负责人"],"priority":"high","source":"pc-compatibility-faq-differentiation","feishuType":"task","status":"open","acceptanceCriteria":"记录正确完成率、错误选择、排查时间和未知状态理解。"},
+  {"id":"task-power-explanation-test","title":"验证功率解释层的独立任务价值","ownerRole":["用户研究员"],"priority":"medium","source":"pc-candidate-power-task-value","feishuType":"task","status":"open","acceptanceCriteria":"与参数显示对照，记录判断正确率、重复插拔次数和完成时间。"},
+  {"id":"task-thermal-evidence","title":"补采热保护、恢复过程和无故障对照样本","ownerRole":["用户研究员","硬件测试负责人"],"priority":"medium","source":"pc-candidate-thermal-evidence","feishuType":"task","status":"open","acceptanceCriteria":"新增独立来源并区分正常温升、保护降额和异常故障。"}
 ]

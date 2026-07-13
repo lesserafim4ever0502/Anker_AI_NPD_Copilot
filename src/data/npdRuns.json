@@ -14,8 +14,8 @@
     "currentStage": "PRD Drafted / Need Confirmation",
     "status": "prd_drafted_need_confirmation",
     "confidence": "medium",
-    "nextAction": "Product Review Meeting",
-    "summary": "候选 A 暂时领先，但需要确认与安克现有 SKU 的差异边界、用户付费意愿和 MVP 硬件复杂度。",
+    "nextAction": "Proposal PRD Scope Review",
+    "summary": "兼容预检助手以 Recommended with Warning 进入 Proposal PRD；仍需确认 10 组拓扑范围、准确率与版本责任、以及相对静态 FAQ 的任务收益。",
     "stageProgress": [
       {
         "stageId": "start",
@@ -40,12 +40,12 @@
       {
         "stageId": "review",
         "name": "评审",
-        "status": "need_confirmation"
+        "status": "completed"
       },
       {
         "stageId": "prd",
         "name": "PRD 草案",
-        "status": "completed"
+        "status": "need_confirmation"
       },
       {
         "stageId": "feishu",

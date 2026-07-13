@@ -50,13 +50,15 @@
 
 飞书对象：知识库、文档目录、模板。
 
-## 3. Demo Sync Strategy
+## 3. Current Implementation Boundary / 当前实现边界
 
-报名阶段：Web Demo + 本地 JSON + 飞书工作区样例 / Mock 同步。
+已完成：通过飞书 CLI 创建真实 Base 数据采集工作台、五张原始采集表、清洗与评审表，以及数据采集说明和 Proposal PRD 文档。
 
-入围后：通过飞书 CLI 半自动同步 Markdown PRD、评分表和验证任务。
+当前网页 Demo：继续使用本地 JSON 和 Mock Feishu Handoff，不调用真实飞书前端 API，也不读取个人授权信息。
 
-后续版本：通过飞书开放平台 API 接入多维表格、文档、任务和知识库。
+后续版本：经权限、安全和数据治理评审后，再考虑通过飞书开放平台 API 接入多维表格、文档、任务和知识库。
+
+The collaboration workspace is real, while the web handoff remains a proposal-stage mock. The browser application must never depend on CLI credentials or local manifests.
 
 ## 4. Required Demo Artifacts
 

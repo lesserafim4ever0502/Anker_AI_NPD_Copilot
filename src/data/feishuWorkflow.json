@@ -10,7 +10,7 @@
         "文档",
         "知识库"
       ],
-      "description": "承载产品矩阵、竞品矩阵、用户反馈、痛点标签和候选评分。"
+      "description": "承载产品矩阵、用户反馈、Pain Radar、机会缺口、候选池、Stage-Gate 和产品委员会评审。"
     },
     {
       "id": "layer-ai",
@@ -31,7 +31,7 @@
         "任务",
         "会议"
       ],
-      "description": "沉淀 PRD、评审报告、任务清单和会议议程。"
+      "description": "沉淀 Proposal PRD、评审报告、验证任务、Pending Confirmation 和会议议程。"
     },
     {
       "id": "layer-reuse",

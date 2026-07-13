@@ -83,7 +83,7 @@ Workspace: 安克创新 AI-NPD Workspace
 Project: 桌面办公能源生态项目
 Run: 智能充电 × 多设备移动办公 × 北美市场
 Status: PRD Drafted / Need Confirmation
-Recommended Candidate: 多设备移动办公桌面能量中枢
+Recommended Candidate: 跨平台 Dock 兼容预检助手（Recommended with Warning）
 ```
 
 ---

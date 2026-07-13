@@ -10,6 +10,13 @@
       "purpose": "Guide teammates on how to fill the five Feishu Base data intake tables.",
       "created_at": "2026-07-08T11:19:00+08:00",
       "location_note": "Created as a docx block inside the existing Feishu Base workspace."
+    },
+    {
+      "title": "Proposal PRD｜跨平台 Dock 兼容预检助手",
+      "feishu_url": "https://my.feishu.cn/docx/Dk2xdfxm5oiH6fx3P9ycjVvanlg",
+      "purpose": "Frozen proposal-stage PRD for the evidence-backed leading candidate, including scope, non-goals, proposed metrics, risks, validation, and pending confirmations.",
+      "created_at": "2026-07-13T11:51:49+08:00",
+      "location_note": "Created as a docx block inside the existing Feishu Base workspace."
     }
   ],
   "tables": [

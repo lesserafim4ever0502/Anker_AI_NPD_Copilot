@@ -326,7 +326,7 @@ Anker AI-NPD Copilot 是面向安克新品定义团队的证据链驱动 NPD 工
 
 ### Required Candidate Status
 
-- Candidate A: Recommended with Warning
+- 跨平台 Dock 兼容预检助手: Recommended with Warning
 - Candidate B: Need Feasibility Review
 - Candidate C: Hold / More Evidence Needed
 

@@ -2,9 +2,9 @@
 
 ## Current Phase
 
-当前处于 **Pre-development Design Freeze** 阶段。
+当前处于 **Sites Handoff Ready / 内容与数据契约冻结** 阶段。
 
-方向已经明确：Anker AI-NPD Copilot，一套面向安克新品定义的证据链驱动 NPD 决策系统。
+The repository is ready for Sites implementation. Evidence, decisions, routes, and Proposal PRD V0.2 are frozen for the demo build.
 
 ## Completed Decisions
 
@@ -30,16 +30,14 @@ Confidence: Medium
 Next Action: Proposal PRD Scope Freeze
 ```
 
-## Next Development Steps
+## Next Development Steps / 下一步
 
-1. 初始化 Vite + React + TypeScript + Tailwind 项目。
-2. 将 `data_templates/*.json` 复制到 `src/data/` 并补齐样例数据。
-3. 按 `docs/DATA_SCHEMA.md` 创建 `src/types/index.ts`。
-4. 搭建全局 Layout、Header、StepNav、RunStatusBar、DecisionPanel。
-5. 开发 7 个页面。
-6. 实现 P0 交互。
-7. 补充视觉 polish。
-8. 截图并沉淀到提交材料。
+1. 让 Sites 读取 `docs/SITES_HANDOFF.md` 并沿用现有 Vite 工程。
+2. 完成七页的信息层级、响应式布局和 P0 交互。
+3. 保持全部业务内容从 `src/data/*.json` 读取。
+4. 验证 Warning、Pending Confirmation、Decision Ledger 与 Feishu Handoff 状态一致。
+5. 执行构建和桌面/移动端视觉验收。
+6. 生成可访问 Demo，并将最终链接回填提交材料。
 
 ## Risks
 
@@ -156,11 +154,14 @@ Do not export OAuth tokens, cookies, app secrets, personal authorization files, 
 
 ### Sites Handoff Readiness
 
-The project is not ready for Sites implementation yet. One decision stage remains before the UI/data contract should be frozen:
+Status: **READY FOR SITES HANDOFF**.
 
-1. Draft and review Proposal PRD content, then freeze the seven-page JSON contract and demo narrative.
+- Proposal PRD V0.2 is frozen for demo implementation with explicit P0 scope, non-goals, proposed metrics, risks, validation plans, and three candidate-specific Pending Confirmations.
+- The seven-page JSON contract and bilingual demo narrative are frozen in `docs/SITES_HANDOFF.md` and `docs/DEMO_SCRIPT.md`.
+- Global project and Run data now reference the compatibility-preflight candidate and five open confirmations.
+- A Proposal PRD document was created inside the existing Feishu Base workspace.
 
-Hand off to Sites after this final stage is complete. Sites should implement the frozen evidence-to-decision experience, not invent product conclusions or replace the decision review.
+Sites may now implement the frozen evidence-to-decision experience. It must not invent product conclusions, change Gate outcomes, remove warnings, imply universal compatibility, or replace human review.
 
 ### Feishu Guide Document
 
@@ -196,11 +197,11 @@ The public manifest records the document URL only. Internal docx token and Base 
 
 ### Current Frontend Scope
 
-This is only an engineering skeleton. It does not include complete page-level UI polish, real Feishu API calls, real LLM calls, authentication, backend services, production persistence, or final data integration.
+This is a data-complete engineering skeleton ready for Sites presentation work. It does not include complete page-level UI polish, real Feishu frontend API calls, real LLM calls, authentication, backend services, or production persistence.
 
 ### Validation Notes
 
 - JSON seed files parse successfully.
 - Required frontend skeleton files exist.
-- `npm install` was not executed because repository instructions require explicit confirmation before dependency installation.
-- TypeScript build was not run because dependencies are not installed and no global `tsc` executable is available.
+- Dependency installation and build validation must be checked in the active Sites environment before publishing.
+- The current handoff contract is `docs/SITES_HANDOFF.md`; Sites must not change frozen business conclusions to make the UI look more decisive.

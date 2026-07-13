@@ -2,7 +2,9 @@
 
 ## 1. 当前仓库定位
 
-这是 Anker AI-NPD Copilot 的开发就绪基线仓库。当前包含完整 PRD、设计规范、Agent 开发规范、数据采集自动化规范和数据模板，但不包含真实 React 前端代码。
+这是 Anker AI-NPD Copilot 的 Sites-ready Demo 仓库。Vite + React + TypeScript + Tailwind 骨架、七页路由、核心组件、类型和审核后的本地 JSON 已存在；下一步是在现有工程上完成体验，不是重新初始化。
+
+This repository is ready for Sites implementation. Preserve the existing stack, routes, components, and frozen JSON contract.
 
 ## 2. 第一次开发前必须阅读
 
@@ -16,36 +18,25 @@ docs/UX_PAGE_DETAILS.md
 docs/DATA_SCHEMA.md
 docs/DATA_INTAKE.md
 docs/EVIDENCE_AGENT_PROMPT.md
+docs/SITES_HANDOFF.md
+docs/DEMO_SCRIPT.md
 ```
 
-## 3. 推荐第一轮开发任务
+## 3. Sites 实现任务
 
 ```text
-1. 初始化 Vite + React + TypeScript + Tailwind。
-2. 创建 src/types/index.ts。
-3. 将 data_templates/*.json 复制为 src/data/*.json。
-4. 创建 Layout、Header、StepNav、RunStatusBar、DecisionPanel 等基础组件。
-5. 创建 7 个页面占位：WorkspacePage、EvidencePoolPage、PainRadarPage、CompetitorMatrixPage、EvaluationPage、ProposalPrdPage、FeishuWorkflowPage。
-6. 使用 react-router-dom 建立路由。
-7. 所有页面从 JSON 读取数据，不要把业务数据硬编码到组件。
-8. 所有页面保留 Proposal-stage Demo / Public sample data 标识。
+1. 保留现有 Vite、React、TypeScript、Tailwind 和 React Router 配置。
+2. 使用现有七页路由和组件完成响应式信息架构与视觉实现。
+3. 所有业务数据继续从 `src/data/*.json` 读取，禁止在组件中硬编码结论。
+4. 让 Page 5/6/7 完整呈现门禁、PRD、待确认项和飞书交接结构。
+5. 全局保留 `PRD Drafted / Need Confirmation` 与 `Proposal-stage Mock / Public sample data`。
+6. 不新增真实飞书 API、LLM、登录、后端或持久化依赖。
+7. 完成构建验证和桌面/移动端视觉检查。
 ```
 
-## 4. 数据采集并行任务
+## 4. 数据状态
 
-队友先填：
-
-```text
-data_templates/raw_evidence_intake.csv
-```
-
-然后使用：
-
-```text
-docs/EVIDENCE_AGENT_PROMPT.md
-```
-
-批量生成结构化证据表，再人工复核后转为 `src/data/*.json`。
+首轮采集、清洗、用户反馈复核、产品能力标准化、机会缺口、候选生成、Stage-Gate 和 PRD V0.2 已完成。`data_templates/*.csv` 保留为后续补采模板，其中 `template-example-*` 行仅用于说明格式，不得进入 Demo 数据。
 
 ## 5. 当前不可做
 

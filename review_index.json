@@ -37,6 +37,7 @@
     "ux_details": "docs/UX_PAGE_DETAILS.md",
     "data_schema": "docs/DATA_SCHEMA.md",
     "demo_script": "docs/DEMO_SCRIPT.md",
+    "sites_handoff": "docs/SITES_HANDOFF.md",
     "data_intake": "docs/DATA_INTAKE.md",
     "evidence_agent_prompt": "docs/EVIDENCE_AGENT_PROMPT.md",
     "raw_evidence_template": "data_templates/raw_evidence_intake.csv",
@@ -52,6 +53,7 @@
     "FeishuWorkflowPage"
   ],
   "recommended_demo_state": "PRD Drafted / Need Confirmation",
+  "recommended_candidate": "跨平台 Dock 兼容预检助手（Recommended with Warning）",
   "feishu_role": {
     "input": [
       "product matrix",

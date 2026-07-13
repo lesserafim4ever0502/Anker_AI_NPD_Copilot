@@ -1,2 +1,2 @@
-﻿id,data_type,brand,product_or_topic,raw_text_or_claim,source_url,collector,notes
-raw-001,product,Anker,Anker Prime Charger sample,"160W, 3 USB-C ports, smart display",https://example.com/replace-with-real-source,collector_name,Replace seed row with real public data.
+id,data_type,brand,product_or_topic,raw_text_or_claim,source_url,collector,notes
+template-example-raw-001,product,Anker,Anker Prime Charger (160W),"Official page states 160W total output and three USB-C ports.",https://www.anker.com/products/a2347,example_collector,"Instructional example only. Verify the live page, assign a new ID, and replace the collector before intake."

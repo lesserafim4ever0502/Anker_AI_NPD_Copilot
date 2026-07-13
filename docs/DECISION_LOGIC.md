@@ -52,7 +52,7 @@
 当前 Demo 推荐：
 
 ```text
-Candidate A: Recommended with Warning
+跨平台 Dock 兼容预检助手: Recommended with Warning
 ```
 
 不是 Approved，也不是 Final Decision。

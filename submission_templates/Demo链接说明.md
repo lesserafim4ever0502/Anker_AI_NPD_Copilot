@@ -14,4 +14,6 @@ Demo 类型：React + TypeScript + Tailwind 可交互网页
 6. 样例 NP PRD 摘要输出
 7. 飞书协同沉淀
 
-注意：当前 Demo 使用公开小样本和本地 JSON，飞书同步为 Mock 展示。入围后可通过飞书 CLI 或开放平台 API 实现半自动或自动化集成。
+当前状态：Demo 使用已审核的公开小样本和本地 JSON，推荐候选为“跨平台 Dock 兼容预检助手”，结论是 `Recommended with Warning`，不是最终立项。
+
+边界说明：飞书数据采集 Base 与说明/PRD 文档已通过 CLI 真实创建；网页中的 Feishu Handoff 仍为 Mock，不调用真实飞书前端 API。最终发布后在此补充 Sites Demo URL 与访问说明。
