@@ -39,6 +39,12 @@ Anker AI-NPD Copilot 的交互网页 Demo 应该呈现为：
 
 ## 3. Global Layout
 
+### Desktop-first Scope / 桌面端优先范围
+
+**EN:** The current acceptance target is the desktop decision workspace at 1280–1920 px. Mobile-specific navigation, information compression, and touch optimization are deferred until the desktop demo is stable. Existing responsive rules should not be removed, but they are not a release gate for this phase.
+
+**中文：** 当前验收目标是 1280–1920 px 的桌面决策工作台。移动端导航、信息压缩和触控优化延期到桌面 Demo 稳定之后；现有响应式规则保留，但不作为本阶段发布门槛。
+
 每页保持统一框架：
 
 ```text
@@ -92,6 +98,10 @@ Right Decision Panel
 Portfolio projects without an independent evidence snapshot may be inspected but must not activate downstream analysis.
 
 尚未建立独立证据快照的组合项目只能查看状态，不得驱动后续分析页面，避免跨项目数据误配。
+
+Project activation requires a matching project, Run, and loaded snapshot registry entry. Page-level lineage must resolve against that active snapshot before showing downstream output.
+
+项目激活必须同时匹配项目、Run 和已载入的快照注册记录；页面级数据血缘必须能够在当前快照中解析后，才能展示后续输出。
 
 ---
 

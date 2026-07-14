@@ -1,0 +1,19 @@
+[
+  {
+    "runId": "run-anker-001",
+    "projectId": "project-desktop-energy",
+    "status": "loaded",
+    "version": "2026-07-13",
+    "source": "CLI-reviewed Feishu Base snapshot",
+    "dataBoundary": "Public sample data",
+    "pageData": {
+      "project-workspace": ["projects", "npdRuns", "decisionLedger"],
+      "evidence-pool": ["evidenceSummary", "evidenceSources", "evidenceCards"],
+      "pain-radar": ["painPoints", "feedback"],
+      "competitor-matrix": ["products", "competitorProducts", "capabilityMatrix", "opportunityGaps"],
+      "evaluation": ["candidates", "gateEvaluations", "agentEvaluations", "evaluationSummary"],
+      "proposal-prd": ["proposalPrd", "pendingConfirmations"],
+      "feishu-workflow": ["feishuArtifacts", "validationTasks", "decisionLedger"]
+    }
+  }
+]

@@ -1,5 +1,5 @@
 import type { NpdProject, NpdRun } from "../types";
-import { Bell, CircleUserRound, Database, Search } from "lucide-react";
+import { Database, Search } from "lucide-react";
 
 export default function Header({ project, run }: { project: NpdProject; run: NpdRun }) {
   return (
@@ -17,11 +17,7 @@ export default function Header({ project, run }: { project: NpdProject; run: Npd
             <Search size={15} /><span className="truncate">{project.name} / {run.name}</span>
           </div>
         </div>
-        <div className="flex items-center gap-1 sm:gap-2">
-          <span className="data-boundary hidden md:inline-flex"><Database size={13} /> Public sample data</span>
-          <button className="icon-button" aria-label="通知"><Bell size={17} /></button>
-          <button className="icon-button" aria-label="当前用户"><CircleUserRound size={18} /></button>
-        </div>
+        <span className="data-boundary hidden md:inline-flex"><Database size={13} /> Public sample data</span>
       </div>
     </header>
   );

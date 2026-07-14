@@ -52,11 +52,11 @@ export default function EvidencePool() {
       </section>
 
       <section>
-        <div className="toolbar"><Filter size={14} className="text-slate-400" />{sourceTypes.map((type) => <button key={type} onClick={() => setFilter(type)} className={`filter-button ${filter === type ? "filter-button-active" : ""}`}>{type}</button>)}</div>
+        <div className="toolbar"><Filter size={14} className="text-slate-400" />{sourceTypes.map((type) => <button key={type} aria-pressed={filter === type} onClick={() => setFilter(type)} className={`filter-button ${filter === type ? "filter-button-active" : ""}`}>{type}</button>)}</div>
         <div className="divide-y divide-slate-200 border-b border-slate-200 bg-white">
           {visible.map((card) => (
             <article key={card.id} className="px-4 py-4">
-              <button className="flex w-full items-start justify-between gap-4 text-left" onClick={() => setExpanded(expanded === card.id ? null : card.id)}>
+              <button className="flex w-full items-start justify-between gap-4 text-left" aria-expanded={expanded === card.id} onClick={() => setExpanded(expanded === card.id ? null : card.id)}>
                 <div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><span className="font-semibold text-ink">{card.type}</span><StatusBadge status={card.confidence} /><span className="text-xs text-slate-400">{card.id}</span></div><p className="mt-2 text-sm leading-6 text-slate-700">{card.designSignal}</p></div>
                 <ChevronDown size={17} className={`mt-1 shrink-0 text-slate-400 transition ${expanded === card.id ? "rotate-180" : ""}`} />
               </button>

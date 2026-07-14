@@ -4,6 +4,10 @@
 
 ## Global UX
 
+当前实现以桌面端为优先验收范围：重点检查 1280–1920 px 下的左侧步骤导航、主工作区、sticky Decision Panel、表格扫描效率和跨页 Run 连续性。移动端专属交互与触控优化暂不纳入本阶段验收。
+
+The current implementation is desktop-first. Acceptance focuses on the left stage navigation, main workspace, sticky Decision Panel, table scanability, and cross-page Run continuity at 1280–1920 px; mobile-specific interaction is deferred.
+
 每页必须包含：
 
 - Header
@@ -29,7 +33,7 @@
 - Selected Project Detail
 - New Run Mock Modal
 
-P0 交互：点击项目卡片，右侧详情切换；仅有独立证据快照的项目可进入并驱动全局 NPD Run。
+P0 交互：点击项目卡片，右侧详情切换；仅当项目、Run 和 loaded snapshot 注册记录同时匹配时，项目才可进入并驱动全局 NPD Run。
 
 ## Page 2: 证据池概览页
 

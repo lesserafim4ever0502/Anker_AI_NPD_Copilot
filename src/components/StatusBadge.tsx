@@ -32,6 +32,11 @@ const statusLabel: Record<string, string> = {
   low: "Low",
   high: "High",
   created: "Mock 已生成",
+  reviewed_snapshot: "飞书快照已核验",
+  existing_document: "飞书文档已存在",
+  proposal_mock: "提议产物 / Mock",
+  proposal_stage_mock: "Proposal-stage Mock",
+  prd_drafted_need_confirmation: "PRD Drafted / Need Confirmation",
   open: "Open",
 };
 
@@ -56,8 +61,15 @@ const statusClass: Record<string, string> = {
   low: "border-slate-200 bg-slate-50 text-slate-600",
   high: "border-emerald-200 bg-emerald-50 text-emerald-700",
   created: "border-teal-200 bg-teal-50 text-teal-700",
+  reviewed_snapshot: "border-teal-200 bg-teal-50 text-teal-700",
+  existing_document: "border-blue-200 bg-blue-50 text-blue-700",
+  proposal_mock: "border-slate-200 bg-slate-50 text-slate-700",
   open: "border-amber-200 bg-amber-50 text-amber-700",
 };
+
+export function getStatusLabel(status: string) {
+  return statusLabel[status] ?? status;
+}
 
 export default function StatusBadge({ status }: { status: BadgeStatus }) {
   return (
@@ -66,7 +78,7 @@ export default function StatusBadge({ status }: { status: BadgeStatus }) {
         statusClass[status] ?? "border-slate-200 bg-slate-50 text-slate-700"
       }`}
     >
-      {statusLabel[status] ?? status}
+      {getStatusLabel(status)}
     </span>
   );
 }

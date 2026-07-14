@@ -104,6 +104,7 @@ button { font: inherit; }
   .workspace-grid { grid-template-columns: 212px minmax(0, 1fr) 286px; }
   .step-rail { @apply static border-b-0 border-r p-3; }
   .decision-rail { @apply border-l border-t-0 p-5; }
+  .decision-rail > aside { @apply sticky top-4; }
   .workspace-grid > main { max-width: none; }
 }
 

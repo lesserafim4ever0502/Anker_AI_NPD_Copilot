@@ -33,8 +33,8 @@ export default function PainRadar() {
           <table className="data-table">
             <thead><tr><th>痛点簇</th><th>证据</th><th>严重度</th><th>成熟度</th></tr></thead>
             <tbody>{painPoints.map((pain) => (
-              <tr key={pain.id} onClick={() => setSelectedId(pain.id)} className={`cursor-pointer ${selectedId === pain.id ? "bg-blue-50/70" : ""}`}>
-                <td><div className="font-semibold text-ink">{pain.name}</div><div className="mt-1 text-xs text-slate-500">{pain.cluster}</div></td>
+              <tr key={pain.id} className={selectedId === pain.id ? "bg-blue-50/70" : ""}>
+                <td><button aria-pressed={selectedId === pain.id} onClick={() => setSelectedId(pain.id)} className="w-full text-left"><div className="font-semibold text-ink">{pain.name}</div><div className="mt-1 text-xs text-slate-500">{pain.cluster}</div></button></td>
                 <td><div className="font-semibold tabular-nums">{pain.evidenceCount}</div><div className="text-xs text-slate-500">{pain.independentSourceCount} independent</div></td>
                 <td><div className="w-28"><div className="mb-1 text-xs font-semibold tabular-nums">{pain.severityAvg} / 5</div><div className="progress-track"><div className="progress-fill" style={{ width: `${pain.severityAvg * 20}%` }} /></div></div></td>
                 <td><StatusBadge status={pain.status ?? pain.confidence} /></td>

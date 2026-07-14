@@ -4,6 +4,32 @@
 
 ### Changed
 
+- Timestamp: 2026-07-14T14:10:36+08:00.
+- Refined the seven-page demo as a desktop-first decision workspace with guarded Run snapshot activation, persistent desktop decision context, clearer Feishu state boundaries, and accessible selection controls.
+- Modified paths and implementation metrics:
+  - `DESIGN.md`: L1-471 -> L1-481, +10 -0.
+  - `STATE.md`: L1-235 -> L1-241, +10 -4.
+  - `docs/UX_PAGE_DETAILS.md`: L1-127 -> L1-131, +5 -1.
+  - `src/components/Header.tsx`: L1-28 -> L1-24, +2 -6.
+  - `src/components/PageDataLineage.tsx`: L1-22 -> L1-25, +4 -1.
+  - `src/components/StatusBadge.tsx`: L1-72 -> L1-84, +13 -1.
+  - `src/context/ProjectRunContext.tsx`: L1-38 -> L1-56, +22 -4.
+  - `src/data/feishuArtifacts.json`: L1-98 -> L1-98, +5 -5.
+  - `src/data/runSnapshots.json`: new file, L1-0 -> L1-19, +19 -0.
+  - `src/index.css`: L1-112 -> L1-113, +1 -0.
+  - `src/pages/CompetitorMatrix.tsx`: L1-60 -> L1-60, +2 -2.
+  - `src/pages/Evaluation.tsx`: L1-56 -> L1-56, +4 -4.
+  - `src/pages/EvidencePool.tsx`: L1-70 -> L1-70, +2 -2.
+  - `src/pages/FeishuWorkflow.tsx`: L1-39 -> L1-39, +5 -5.
+  - `src/pages/PainRadar.tsx`: L1-61 -> L1-61, +2 -2.
+  - `src/pages/ProjectWorkspace.tsx`: L1-80 -> L1-75, +8 -13.
+  - `src/pages/ProposalPrd.tsx`: L1-50 -> L1-50, +2 -2.
+  - `src/types/index.ts`: L1-246 -> L1-256, +11 -1.
+- Validation: TypeScript build and `npm run build` passed; frozen business counts and recommendation remain unchanged.
+- Visual QA: all seven routes were checked at 1280 x 800 and 1920 x 1080, with additional 1440 x 900 checks for Project Workspace, Evaluation, and Feishu Workflow; mobile-specific acceptance is explicitly deferred.
+- Cleanup: removed the confirmed untracked `artifacts/ui-audit/` screenshot directory; verification screenshots remain under the gitignored `artifacts/ui-review/` path.
+- `docs/CHANGELOG.md`: L1-319 -> L1-345, +26 -0 including this entry.
+
 - Timestamp: 2026-07-14T10:46:31+08:00.
 - Integrated project/Run context and Feishu data lineage across the seven-page frontend, while resolving the annotated layout and branding issues.
 - Modified paths and implementation metrics:

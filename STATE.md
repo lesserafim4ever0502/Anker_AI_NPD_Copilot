@@ -2,9 +2,9 @@
 
 ## Current Phase
 
-当前处于 **Frontend Optimization / 暂停公开演示** 阶段。
+当前处于 **Desktop Frontend Optimization / 桌面端优化、暂停公开演示** 阶段。
 
-The seven-page demo remains in the repository for frontend optimization. Public hosting is paused; evidence, decisions, routes, and Proposal PRD V0.2 remain frozen for review.
+The seven-page demo remains in the repository for desktop-first frontend optimization. Public hosting is paused; evidence, decisions, routes, and Proposal PRD V0.2 remain frozen for review. Mobile-specific acceptance is deferred.
 
 ## Completed Decisions
 
@@ -21,6 +21,9 @@ The seven-page demo remains in the repository for frontend optimization. Public 
 - 项目与 Run 上下文：Header、Run Status Bar、Decision Panel 和项目工作台现在读取同一全局上下文。
 - 飞书融合：七页均展示飞书工作台状态和页面级数据血缘；飞书不再只在 PRD/Handoff 阶段出现。
 - 品牌与布局：Header 使用 Anker 官方 Logo；主从视图、评审护栏和状态标签已完成首轮响应式修正。
+- Run 快照治理：只有同时存在项目、Run 与已载入快照注册记录的项目才能激活后续六页，防止跨项目误用数据。
+- 桌面决策上下文：右侧 Decision Panel 在桌面滚动时保持 sticky；无行为的通知和用户按钮已移除。
+- 飞书状态边界：真实 Base 快照、已存在飞书文档和 Proposal-stage Mock 现在使用不同状态标签。
 
 ## Current Demo State Recommendation
 
@@ -35,11 +38,12 @@ Next Action: Proposal PRD Scope Freeze
 
 ## Next Development Steps / 下一步
 
-1. 在真实移动设备补做窄屏触控验收，并继续压缩低优先级信息密度。
+1. 以 1280、1440 和 1920 px 桌面视口完成七页视觉与交互验收。
 2. 按 `docs/DEMO_SCRIPT.md` 完成 3–5 分钟讲解排练。
 3. 复核 Page 5/6/7 的 Warning、Pending Confirmation、Decision Ledger 与 Feishu Handoff 叙事。
 4. 为另外两个组合项目建立独立证据快照后，再开放跨项目 Run 切换。
-5. 仅在证据或人工决策变化时更新冻结 JSON；视觉修订不得改写业务结论。
+5. 移动端适配延期到桌面 Demo 稳定之后，不纳入当前验收范围。
+6. 仅在证据或人工决策变化时更新冻结 JSON；视觉修订不得改写业务结论。
 
 ## Sites Deployment / Sites 发布
 
@@ -74,6 +78,8 @@ Next Action: Proposal PRD Scope Freeze
 - Page 2–5 now expose the Base tables and transformation stages behind evidence, pain clusters, competitor analysis, and evaluation.
 - Page 7 is now a Run collaboration asset map; the developer-facing Automation Roadmap was removed from the product UI.
 - Project portfolio selection remains review-only when a project has no loaded evidence snapshot, preventing cross-project data misrepresentation.
+- `runSnapshots.json` now binds the only complete Run to its reviewed page datasets; downstream activation rejects projects without a matching loaded snapshot.
+- Desktop review keeps the Decision Panel visible while scrolling and removes controls that had no implemented behavior.
 
 ## Update Rule
 

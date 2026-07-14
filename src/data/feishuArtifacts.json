@@ -19,7 +19,7 @@
       "来源链接"
     ],
     "businessValue": "形成可持续更新的品类情报库，支持竞品复核与产品边界判断。",
-    "mockStatus": "created"
+    "mockStatus": "reviewed_snapshot"
   },
   {
     "id": "artifact-002",
@@ -38,7 +38,7 @@
       "可引用状态"
     ],
     "businessValue": "将分散评论转化为可分析、可复用的用户洞察资产。",
-    "mockStatus": "created"
+    "mockStatus": "reviewed_snapshot"
   },
   {
     "id": "artifact-003",
@@ -55,7 +55,7 @@
       "建议动作"
     ],
     "businessValue": "沉淀跨职能评审过程，支持后续复盘。",
-    "mockStatus": "created"
+    "mockStatus": "proposal_mock"
   },
   {
     "id": "artifact-004",
@@ -75,7 +75,7 @@
       "验证计划"
     ],
     "businessValue": "形成可进入下一轮企业评审的新产品定义草案。",
-    "mockStatus": "created"
+    "mockStatus": "existing_document"
   },
   {
     "id": "artifact-005",
@@ -93,6 +93,6 @@
       "热保护证据补采"
     ],
     "businessValue": "把 PRD 草案转化为后续可执行任务。",
-    "mockStatus": "created"
+    "mockStatus": "proposal_mock"
   }
 ]

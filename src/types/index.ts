@@ -57,6 +57,16 @@ export type NpdRun = {
   }[];
 };
 
+export type RunSnapshot = {
+  runId: string;
+  projectId: string;
+  status: "loaded" | "unavailable";
+  version: string;
+  source: string;
+  dataBoundary: string;
+  pageData: Record<string, string[]>;
+};
+
 export type EvidenceSource = {
   id: string;
   name: string;
@@ -242,5 +252,5 @@ export type FeishuArtifact = {
   sourcePages: string[];
   content: string[];
   businessValue: string;
-  mockStatus: "created" | "pending" | "failed";
+  mockStatus: "reviewed_snapshot" | "existing_document" | "proposal_mock" | "pending" | "failed";
 };

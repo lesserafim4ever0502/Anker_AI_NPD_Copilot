@@ -18,7 +18,7 @@ export default function ProposalPrd() {
     <div className="space-y-6">
       <PageHeader eyebrow={`06 / Proposal PRD · ${proposalPrd.version}`} title={proposalPrd.title} icon={FileText}
         description={proposalPrd.oneSentence}
-        action={<button onClick={() => setHandoff(true)} className="primary-button"><Send size={15} /> Mock Feishu Handoff</button>} />
+        action={<button onClick={() => setHandoff(true)} className="primary-button"><Send size={15} /> 预览 Mock Handoff</button>} />
 
       <PageDataLineage page="proposal-prd" />
 
@@ -29,7 +29,7 @@ export default function ProposalPrd() {
 
       {handoff ? <section className="border border-teal-200 bg-teal-50 p-4 text-sm text-teal-900"><div className="flex items-center gap-2 font-semibold"><CheckCircle2 size={17} /> Mock handoff prepared</div><p className="mt-1 text-xs leading-5">仅更新当前页面展示状态；未调用飞书 API，也未读取任何授权信息。</p></section> : null}
 
-      <nav className="toolbar" aria-label="PRD sections">{tabs.map((item) => <button key={item} onClick={() => setTab(item)} className={`filter-button ${tab === item ? "filter-button-active" : ""}`}>{item}</button>)}</nav>
+      <nav className="toolbar" aria-label="PRD sections" role="tablist">{tabs.map((item) => <button key={item} role="tab" aria-selected={tab === item} onClick={() => setTab(item)} className={`filter-button ${tab === item ? "filter-button-active" : ""}`}>{item}</button>)}</nav>
 
       {tab === "Scope" ? <>
         <section className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
