@@ -10,7 +10,7 @@ export default function PageHeader({ eyebrow, title, description, icon: Icon, ac
 }) {
   return (
     <header className="page-header">
-      <div className="flex min-w-0 items-start gap-3">
+      <div className="page-header-main flex min-w-0 items-start gap-3">
         <div className="page-icon"><Icon size={20} /></div>
         <div className="min-w-0">
           <div className="section-kicker">{eyebrow}</div>
@@ -18,7 +18,7 @@ export default function PageHeader({ eyebrow, title, description, icon: Icon, ac
           <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">{description}</p>
         </div>
       </div>
-      {action ? <div className="shrink-0">{action}</div> : null}
+      {action ? <div className="page-header-action shrink-0">{action}</div> : null}
     </header>
   );
 }

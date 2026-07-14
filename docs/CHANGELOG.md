@@ -4,6 +4,37 @@
 
 ### Changed
 
+- Timestamp: 2026-07-14T10:46:31+08:00.
+- Integrated project/Run context and Feishu data lineage across the seven-page frontend, while resolving the annotated layout and branding issues.
+- Modified paths and implementation metrics:
+  - `.gitignore`: L1-11 -> L1-12, +1 -0.
+  - `DESIGN.md`: L1-455 -> L1-471, +16 -0.
+  - `STATE.md`: L1-224 -> L1-235, +13 -2.
+  - `docs/SITES_HANDOFF.md`: L1-84 -> L1-88, +6 -2.
+  - `docs/UX_PAGE_DETAILS.md`: L1-124 -> L1-127, +6 -3.
+  - `src/App.tsx`: L1-26 -> L1-27, +3 -2.
+  - `src/components/DecisionPanel.tsx`: L1-48 -> L1-46, +2 -4.
+  - `src/components/FeishuWorkspaceBar.tsx`: new file, L1-0 -> L1-21, +21 -0.
+  - `src/components/Header.tsx`: L1-28 -> L1-28, +2 -2.
+  - `src/components/Layout.tsx`: L1-31 -> L1-29, +6 -8.
+  - `src/components/PageDataLineage.tsx`: new file, L1-0 -> L1-22, +22 -0.
+  - `src/components/PageHeader.tsx`: L1-24 -> L1-24, +2 -2.
+  - `src/components/StatusBadge.tsx`: L1-72 -> L1-72, +1 -1.
+  - `src/context/ProjectRunContext.tsx`: new file, L1-0 -> L1-38, +38 -0.
+  - `src/data/feishuLineage.json`: new file, L1-0 -> L1-51, +51 -0.
+  - `src/index.css`: L1-97 -> L1-112, +23 -8.
+  - `src/pages/CompetitorMatrix.tsx`: L1-58 -> L1-60, +5 -3.
+  - `src/pages/Evaluation.tsx`: L1-53 -> L1-56, +8 -5.
+  - `src/pages/EvidencePool.tsx`: L1-67 -> L1-70, +4 -1.
+  - `src/pages/FeishuWorkflow.tsx`: L1-38 -> L1-39, +6 -5.
+  - `src/pages/PainRadar.tsx`: L1-58 -> L1-61, +6 -3.
+  - `src/pages/ProjectWorkspace.tsx`: L1-66 -> L1-80, +25 -11.
+  - `src/pages/ProposalPrd.tsx`: L1-47 -> L1-50, +3 -0.
+  - `public/anker-innovations-logo.svg`: new file, L1-0 -> L1-4, +4 -0.
+- Validation: `npm run build` passed; frozen counts remain 3 projects, 12 Anker products, 18 competitors, 18 Gate evaluations, 6 committee roles, and 5 open confirmations.
+- Visual QA: desktop checks covered Pages 1, 3, 4, 5, and 7; a 390 px viewport check covered Page 1; status badges remain single-line and the frontend Automation Roadmap is no longer rendered.
+- `docs/CHANGELOG.md`: L1-288 -> L1-319, +31 -0 including this entry.
+
 - Timestamp: 2026-07-13T22:32:38+08:00.
 - Withdrew both public demo entry points while frontend optimization continues.
 - Modified paths and hosting-status metrics:

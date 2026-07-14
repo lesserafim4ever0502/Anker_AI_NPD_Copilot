@@ -18,6 +18,9 @@ The seven-page demo remains in the repository for frontend optimization. Public 
 - 仓库规范：Human-readable + Agent-readable，包含 README、AGENT、SPEC、STATE、DESIGN 等。
 - 页面设计：7 页已完成 V1 设计讨论。
 - 工作流机制：多项目工作台 + NPD Run 状态 + Pending Confirmation + Decision Ledger + Feishu Handoff。
+- 项目与 Run 上下文：Header、Run Status Bar、Decision Panel 和项目工作台现在读取同一全局上下文。
+- 飞书融合：七页均展示飞书工作台状态和页面级数据血缘；飞书不再只在 PRD/Handoff 阶段出现。
+- 品牌与布局：Header 使用 Anker 官方 Logo；主从视图、评审护栏和状态标签已完成首轮响应式修正。
 
 ## Current Demo State Recommendation
 
@@ -32,10 +35,10 @@ Next Action: Proposal PRD Scope Freeze
 
 ## Next Development Steps / 下一步
 
-1. 优化七页信息架构、视觉层级、响应式布局和演示连贯性。
+1. 在真实移动设备补做窄屏触控验收，并继续压缩低优先级信息密度。
 2. 按 `docs/DEMO_SCRIPT.md` 完成 3–5 分钟讲解排练。
 3. 复核 Page 5/6/7 的 Warning、Pending Confirmation、Decision Ledger 与 Feishu Handoff 叙事。
-4. 在真实移动设备补做一次窄屏触控验收。
+4. 为另外两个组合项目建立独立证据快照后，再开放跨项目 Run 切换。
 5. 仅在证据或人工决策变化时更新冻结 JSON；视觉修订不得改写业务结论。
 
 ## Sites Deployment / Sites 发布
@@ -63,6 +66,14 @@ Next Action: Proposal PRD Scope Freeze
 - 不要把多 Agent 做成聊天记录。
 - 不要让飞书只在最后出现一个按钮。
 - 不要让 PRD 输出显得像最终立项。
+
+## Frontend Integration Update
+
+- Added a shared project/Run context so global status, decision state, and the project workspace use one source of truth.
+- Added a persistent Feishu workspace bar and `feishuLineage.json` contract across all seven routes.
+- Page 2–5 now expose the Base tables and transformation stages behind evidence, pain clusters, competitor analysis, and evaluation.
+- Page 7 is now a Run collaboration asset map; the developer-facing Automation Roadmap was removed from the product UI.
+- Project portfolio selection remains review-only when a project has no loaded evidence snapshot, preventing cross-project data misrepresentation.
 
 ## Update Rule
 

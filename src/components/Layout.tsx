@@ -1,20 +1,18 @@
 import { Outlet } from "react-router-dom";
-import projects from "../data/projects.json";
-import runs from "../data/npdRuns.json";
-import type { NpdProject, NpdRun } from "../types";
 import DecisionPanel from "./DecisionPanel";
+import FeishuWorkspaceBar from "./FeishuWorkspaceBar";
 import Header from "./Header";
 import RunStatusBar from "./RunStatusBar";
 import StepNav from "./StepNav";
-
-const project = projects[0] as NpdProject;
-const run = runs[0] as NpdRun;
+import { useProjectRun } from "../context/ProjectRunContext";
 
 export default function Layout() {
+  const { activeProject, activeRun } = useProjectRun();
   return (
     <div className="min-h-screen bg-surface text-ink">
-      <Header project={project} run={run} />
-      <RunStatusBar project={project} run={run} />
+      <Header project={activeProject} run={activeRun} />
+      <RunStatusBar project={activeProject} run={activeRun} />
+      <FeishuWorkspaceBar />
       <div className="workspace-grid">
         <aside className="step-rail">
           <StepNav />

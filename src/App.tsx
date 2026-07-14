@@ -7,10 +7,11 @@ import CompetitorMatrix from "./pages/CompetitorMatrix";
 import Evaluation from "./pages/Evaluation";
 import ProposalPrd from "./pages/ProposalPrd";
 import FeishuWorkflow from "./pages/FeishuWorkflow";
+import { ProjectRunProvider } from "./context/ProjectRunContext";
 
 export default function App() {
   return (
-    <Routes>
+    <ProjectRunProvider><Routes>
       <Route element={<Layout />}>
         <Route index element={<Navigate to="/project-workspace" replace />} />
         <Route path="/project-workspace" element={<ProjectWorkspace />} />
@@ -21,6 +22,6 @@ export default function App() {
         <Route path="/proposal-prd" element={<ProposalPrd />} />
         <Route path="/feishu-workflow" element={<FeishuWorkflow />} />
       </Route>
-    </Routes>
+    </Routes></ProjectRunProvider>
   );
 }

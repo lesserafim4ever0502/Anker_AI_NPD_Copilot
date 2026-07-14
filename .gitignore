@@ -9,3 +9,4 @@ dist/
 coverage/
 *.log
 data_workbench/feishu_workspace_manifest.local.json
+artifacts/ui-review/

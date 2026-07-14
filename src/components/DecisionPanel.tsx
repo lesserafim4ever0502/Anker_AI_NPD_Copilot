@@ -1,16 +1,14 @@
 import pendingConfirmations from "../data/pendingConfirmations.json";
 import decisionLedger from "../data/decisionLedger.json";
-import projects from "../data/projects.json";
-import runs from "../data/npdRuns.json";
 import { AlertTriangle, ArrowUpRight, ClipboardCheck, ShieldAlert } from "lucide-react";
 import StatusBadge from "./StatusBadge";
 import { Link } from "react-router-dom";
+import { useProjectRun } from "../context/ProjectRunContext";
 
 export default function DecisionPanel() {
   const pending = pendingConfirmations.slice(0, 3);
   const ledger = decisionLedger.slice(0, 3);
-  const project = projects[0];
-  const run = runs[0];
+  const { activeProject: project, activeRun: run } = useProjectRun();
 
   return (
     <aside className="space-y-5">

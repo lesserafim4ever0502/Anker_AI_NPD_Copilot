@@ -1,0 +1,51 @@
+{
+  "workspaceName": "Anker AI-NPD Copilot 数据采集工作台",
+  "resourceType": "Feishu Base",
+  "snapshotMode": "CLI-reviewed local snapshot",
+  "syncStatus": "Reviewed snapshot",
+  "tableCount": 13,
+  "pages": {
+    "project-workspace": {
+      "stage": "项目治理",
+      "sourceTables": ["project_registry", "npd_run_registry", "decision_ledger"],
+      "process": "组合状态、责任人和开放确认项汇总",
+      "output": "当前项目与 Run 上下文"
+    },
+    "evidence-pool": {
+      "stage": "采集与核验",
+      "sourceTables": ["raw_evidence_intake", "user_feedback_samples", "review_sources", "verified_user_feedback"],
+      "process": "来源核验、人工审核、证据评分与去重",
+      "output": "可追溯证据池"
+    },
+    "pain-radar": {
+      "stage": "洞察聚类",
+      "sourceTables": ["verified_user_feedback", "editorial_insights_cleaned", "pain_radar"],
+      "process": "反馈聚类、严重度评估与独立来源计数",
+      "output": "痛点簇与设计信号"
+    },
+    "competitor-matrix": {
+      "stage": "市场对照",
+      "sourceTables": ["anker_products", "competitor_products", "capability_matrix", "opportunity_gaps"],
+      "process": "产品字段标准化、能力对照与重叠风险检查",
+      "output": "机会缺口与候选边界"
+    },
+    "evaluation": {
+      "stage": "跨职能评审",
+      "sourceTables": ["candidate_pool", "gate_evaluations", "product_committee_reviews"],
+      "process": "Stage-Gate、Kill Criteria 与产品委员会异议汇总",
+      "output": "带警告的推荐结论"
+    },
+    "proposal-prd": {
+      "stage": "提案固化",
+      "sourceTables": ["gate_evaluations", "product_committee_reviews", "pending_confirmations"],
+      "process": "冻结 P0、Non-goals、风险和验证计划",
+      "output": "Proposal PRD V0.2"
+    },
+    "feishu-workflow": {
+      "stage": "协同沉淀",
+      "sourceTables": ["decision_ledger", "pending_confirmations", "validation_tasks"],
+      "process": "把评审结论转成文档、任务、会议与知识资产",
+      "output": "可复用的 NPD 协作记录"
+    }
+  }
+}

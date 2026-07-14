@@ -55,6 +55,11 @@ Run Status Bar
   - Next Action
   - Stage Progress
 
+Feishu Workspace Bar
+  - Bound Base workspace
+  - Reviewed local snapshot status
+  - Table count and data boundary
+
 Left Step Navigation
   1. 项目工作台
   2. 证据池
@@ -66,6 +71,7 @@ Left Step Navigation
 
 Main Content
   - Page title
+  - Page-level Feishu data lineage
   - Page conclusion
   - Core modules
 
@@ -76,6 +82,16 @@ Right Decision Panel
   - Owner
   - Next Action
 ```
+
+### Project and Feishu Continuity / 项目与飞书连续性
+
+**EN:** Header, Run Status Bar, Decision Panel, and Project Workspace must consume one shared project/Run context. Every route must identify the Feishu tables, reviewed transformation, and page output behind the visible analysis.
+
+**中文：** Header、Run Status Bar、Decision Panel 与项目工作台必须共享同一项目/Run 上下文。每页都要标明当前分析对应的飞书表、审核转换过程和页面输出，形成“项目 → Run → 数据 → 洞察 → 决策 → PRD → 协作沉淀”的连续链路。
+
+Portfolio projects without an independent evidence snapshot may be inspected but must not activate downstream analysis.
+
+尚未建立独立证据快照的组合项目只能查看状态，不得驱动后续分析页面，避免跨项目数据误配。
 
 ---
 

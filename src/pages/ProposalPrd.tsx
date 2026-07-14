@@ -4,6 +4,7 @@ import proposalPrd from "../data/proposalPrd.json";
 import pendingConfirmations from "../data/pendingConfirmations.json";
 import StatusBadge from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
+import PageDataLineage from "../components/PageDataLineage";
 
 const tabs = ["Scope", "Evidence", "Validation"] as const;
 
@@ -18,6 +19,8 @@ export default function ProposalPrd() {
       <PageHeader eyebrow={`06 / Proposal PRD · ${proposalPrd.version}`} title={proposalPrd.title} icon={FileText}
         description={proposalPrd.oneSentence}
         action={<button onClick={() => setHandoff(true)} className="primary-button"><Send size={15} /> Mock Feishu Handoff</button>} />
+
+      <PageDataLineage page="proposal-prd" />
 
       <section className="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-4">
         <StatusBadge status={proposalPrd.status} /><StatusBadge status={proposalPrd.decisionState} /><StatusBadge status={proposalPrd.confidence} />

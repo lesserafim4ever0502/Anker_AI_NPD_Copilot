@@ -6,10 +6,10 @@ export default function Header({ project, run }: { project: NpdProject; run: Npd
     <header className="border-b border-slate-200 bg-white px-4 py-3 sm:px-6">
       <div className="mx-auto flex max-w-[1800px] items-center justify-between gap-4">
         <div className="flex min-w-0 items-center gap-3">
-          <div className="brand-mark">A</div>
+          <div className="brand-logo"><img src={`${import.meta.env.BASE_URL}anker-innovations-logo.svg`} alt="Anker Innovations" /></div>
           <div className="min-w-0">
             <h1 className="truncate text-base font-semibold text-ink">Anker AI-NPD Copilot</h1>
-            <p className="truncate text-xs text-slate-500">{project.company} · Evidence-to-Decision Workspace</p>
+            <p className="truncate text-xs text-slate-500">Evidence-to-Decision Workspace</p>
           </div>
         </div>
         <div className="hidden min-w-0 flex-1 justify-center xl:flex">

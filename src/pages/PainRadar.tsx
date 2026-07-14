@@ -6,6 +6,7 @@ import type { Feedback, PainPoint } from "../types";
 import MetricCard from "../components/MetricCard";
 import StatusBadge from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
+import PageDataLineage from "../components/PageDataLineage";
 
 const painPoints = painPointsData as PainPoint[];
 const feedback = feedbackData as Feedback[];
@@ -20,14 +21,15 @@ export default function PainRadar() {
     <div className="space-y-6">
       <PageHeader eyebrow="03 / Pain Radar" title="用户痛点雷达" icon={Radar}
         description="将已审核公开反馈聚类为痛点与设计信号；频次和严重度用于排序，证据成熟度决定能否进入机会判断。" />
+      <PageDataLineage page="pain-radar" />
       <section className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         <MetricCard label="痛点簇" value={painPoints.length} />
         <MetricCard label="Insight Ready" value={insightReady} />
         <MetricCard label="Needs Evidence" value={painPoints.length - insightReady} hint="不进入确定性硬件结论" />
       </section>
 
-      <section className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(300px,0.7fr)]">
-        <div className="table-shell">
+      <section className="grid grid-cols-1 items-stretch gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(320px,0.68fr)]">
+        <div className="table-shell h-full">
           <table className="data-table">
             <thead><tr><th>痛点簇</th><th>证据</th><th>严重度</th><th>成熟度</th></tr></thead>
             <tbody>{painPoints.map((pain) => (
@@ -41,11 +43,12 @@ export default function PainRadar() {
           </table>
         </div>
 
-        <aside className="panel h-fit">
+        <aside className="panel h-full">
           <div className="flex items-start justify-between gap-3"><div><div className="section-kicker">Selected cluster</div><h3 className="mt-2 text-lg font-semibold text-ink">{selected.name}</h3></div><StatusBadge status={selected.confidence} /></div>
           <p className="mt-4 text-sm leading-6 text-slate-700">{selected.designSignals.join("；")}</p>
           <div className="mt-4 flex flex-wrap gap-1.5">{selected.scenarios.map((scenario) => <span key={scenario} className="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">{scenario}</span>)}</div>
           {selected.warning ? <div className="mt-5 border-l-2 border-amber-300 pl-3 text-xs leading-5 text-amber-800"><AlertTriangle size={14} className="mb-1" />{selected.warning}</div> : null}
+          <div className="mt-5 border-t border-slate-200 pt-4 text-xs leading-5 text-slate-500">飞书血缘：pain_radar · {selected.id}<br />证据记录：{selected.relatedEvidenceIds.join(" / ")}</div>
         </aside>
       </section>
 

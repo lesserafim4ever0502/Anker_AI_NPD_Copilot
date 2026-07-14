@@ -9,6 +9,7 @@ import type { Product } from "../types";
 import StatusBadge from "../components/StatusBadge";
 import MetricCard from "../components/MetricCard";
 import PageHeader from "../components/PageHeader";
+import PageDataLineage from "../components/PageDataLineage";
 
 const ankerProducts = (ankerProductsData as Product[]).filter((product) => product.brand === "Anker");
 const competitorProducts = competitorProductsData as Product[];
@@ -25,6 +26,7 @@ export default function CompetitorMatrix() {
     <div className="space-y-6">
       <PageHeader eyebrow="04 / Competitor Matrix" title="竞品机会矩阵" icon={TableProperties}
         description="产品能力存在仅代表潜在覆盖，不证明用户痛点已解决。矩阵用于识别重叠风险、验证缺口和候选准入边界。" />
+      <PageDataLineage page="competitor-matrix" />
       <section className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         <MetricCard label="Anker Products" value={ankerProducts.length} />
         <MetricCard label="Competitor Products" value={competitorProducts.length} />
@@ -47,9 +49,9 @@ export default function CompetitorMatrix() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">{opportunityGaps.map((gap) => <button key={gap.id} onClick={() => setSelectedGapId(gap.id)} className={`panel text-left transition ${selectedGapId === gap.id ? "border-blue-300 shadow-[inset_3px_0_0_#2f80ed]" : "hover:border-slate-300"}`}><div className="flex items-start justify-between gap-3"><h3 className="font-semibold text-ink">{gap.title}</h3><StatusBadge status={gap.confidence} /></div><p className="mt-3 text-sm leading-6 text-slate-600">{gap.opportunityReason}</p><div className="mt-3 text-xs font-semibold text-blue-700">{gap.recommendation}</div></button>)}</div>
-        <aside className="panel h-fit"><div className="section-kicker">Selected opportunity</div><h3 className="mt-2 text-lg font-semibold text-ink">{selectedGap.title}</h3><dl className="mt-4 space-y-4 text-sm"><div><dt className="text-xs text-slate-500">Current coverage</dt><dd className="mt-1 leading-6 text-slate-700">{selectedGap.currentCoverage}</dd></div><div><dt className="text-xs text-slate-500">Overlap risk</dt><dd className="mt-1"><StatusBadge status={selectedGap.overlapRisk} /></dd></div><div><dt className="text-xs text-slate-500">Next validation</dt><dd className="mt-1 leading-6 text-slate-700">{selectedGap.nextValidation}</dd></div></dl></aside>
+      <section className="grid grid-cols-1 items-stretch gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
+        <div className="grid h-full grid-cols-1 gap-3 md:grid-cols-2">{opportunityGaps.map((gap) => <button key={gap.id} onClick={() => setSelectedGapId(gap.id)} className={`panel h-full text-left transition ${selectedGapId === gap.id ? "border-blue-300 shadow-[inset_3px_0_0_#2f80ed]" : "hover:border-slate-300"}`}><div className="flex items-start justify-between gap-3"><h3 className="font-semibold text-ink">{gap.title}</h3><StatusBadge status={gap.confidence} /></div><p className="mt-3 text-sm leading-6 text-slate-600">{gap.opportunityReason}</p><div className="mt-3 text-xs font-semibold text-blue-700">{gap.recommendation}</div></button>)}</div>
+        <aside className="panel h-full"><div className="section-kicker">Selected opportunity</div><h3 className="mt-2 text-lg font-semibold text-ink">{selectedGap.title}</h3><dl className="mt-4 space-y-4 text-sm"><div><dt className="text-xs text-slate-500">Current coverage</dt><dd className="mt-1 leading-6 text-slate-700">{selectedGap.currentCoverage}</dd></div><div><dt className="text-xs text-slate-500">Overlap risk</dt><dd className="mt-1"><StatusBadge status={selectedGap.overlapRisk} /></dd></div><div><dt className="text-xs text-slate-500">Next validation</dt><dd className="mt-1 leading-6 text-slate-700">{selectedGap.nextValidation}</dd></div><div><dt className="text-xs text-slate-500">Feishu lineage</dt><dd className="mt-1 text-xs leading-5 text-slate-600">opportunity_gaps · {selectedGap.id}<br />由 capability_matrix 与产品表标准化结果生成</dd></div></dl></aside>
       </section>
 
       <section className="warning-panel"><div className="flex items-center gap-2"><AlertTriangle size={17} className="text-amber-700" /><h3 className="section-title">Product Overlap Warning</h3><span className="ml-auto text-xs font-semibold text-amber-700">{overlapWarnings.length} warnings</span></div><div className="mt-4 grid gap-3 lg:grid-cols-3">{overlapWarnings.map((warning) => <div key={warning.id} className="border-l-2 border-amber-300 pl-3"><div className="text-sm font-semibold text-ink">{warning.title}</div><p className="mt-1 text-xs leading-5 text-amber-900/80">{warning.reason}</p></div>)}</div></section>

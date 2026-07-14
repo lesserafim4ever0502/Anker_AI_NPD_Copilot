@@ -8,6 +8,8 @@
 
 - Header
 - Run Status Bar
+- Feishu Workspace Bar
+- Page-level Feishu Data Lineage
 - Step Navigation
 - Page Title
 - Page Conclusion
@@ -27,7 +29,7 @@
 - Selected Project Detail
 - New Run Mock Modal
 
-P0 交互：点击项目卡片，右侧详情切换；点击进入 NPD Run。
+P0 交互：点击项目卡片，右侧详情切换；仅有独立证据快照的项目可进入并驱动全局 NPD Run。
 
 ## Page 2: 证据池概览页
 
@@ -69,6 +71,7 @@ P0 交互：点击痛点切换用户原声与设计信号。
 - Opportunity Gap Cards
 - Candidate Mapping Table
 - Product Overlap Warning
+- Feishu Market Data Lineage
 
 P0 交互：品牌筛选、机会卡片高亮候选、进入评审。
 
@@ -119,6 +122,6 @@ P0 交互：Mock 同步飞书，进入 Page 7。
 - Validation Tasks
 - Decision Ledger
 - Knowledge Archive Tree
-- Automation Roadmap
+- Run Collaboration Asset Map
 
-P0 交互：Mock 同步，查看产物详情。
+P0 交互：Mock 同步，查看产物详情；不展示面向开发者的自动化实施路线图。

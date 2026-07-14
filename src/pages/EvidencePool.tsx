@@ -6,6 +6,7 @@ import evidenceCards from "../data/evidenceCards.json";
 import MetricCard from "../components/MetricCard";
 import StatusBadge from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
+import PageDataLineage from "../components/PageDataLineage";
 
 export default function EvidencePool() {
   const sourceTypes = ["全部", ...Array.from(new Set(evidenceCards.map((card) => card.type)))];
@@ -18,6 +19,8 @@ export default function EvidencePool() {
     <div className="space-y-6">
       <PageHeader eyebrow="02 / Evidence Pool" title="证据池概览" icon={Boxes}
         description="公开小样本先经过来源核验与人工审核，再进入痛点、机会和评审链路；当前数据不代表市场全量或安克内部用户总体。" />
+
+      <PageDataLineage page="evidence-pool" />
 
       <section className="grid grid-cols-2 gap-3 lg:grid-cols-3 2xl:grid-cols-6">
         <MetricCard label="安克产品" value={evidenceSummary.ankerSkuCount} />
@@ -57,7 +60,7 @@ export default function EvidencePool() {
                 <div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><span className="font-semibold text-ink">{card.type}</span><StatusBadge status={card.confidence} /><span className="text-xs text-slate-400">{card.id}</span></div><p className="mt-2 text-sm leading-6 text-slate-700">{card.designSignal}</p></div>
                 <ChevronDown size={17} className={`mt-1 shrink-0 text-slate-400 transition ${expanded === card.id ? "rotate-180" : ""}`} />
               </button>
-              {expanded === card.id ? <div className="mt-3 grid gap-3 border-l-2 border-blue-200 pl-4 text-xs text-slate-600 sm:grid-cols-2"><div><span className="font-semibold text-slate-700">Pain refs</span><div className="mt-1">{card.relatedPainPoints.join(" / ")}</div></div><div><span className="font-semibold text-slate-700">Page refs</span><div className="mt-1 flex items-center gap-1"><Link2 size={12} />{card.relatedPages.join(" / ")}</div></div></div> : null}
+              {expanded === card.id ? <div className="mt-3 grid gap-3 border-l-2 border-blue-200 pl-4 text-xs text-slate-600 sm:grid-cols-3"><div><span className="font-semibold text-slate-700">Feishu record</span><div className="mt-1">verified_user_feedback · {card.id}</div></div><div><span className="font-semibold text-slate-700">Pain refs</span><div className="mt-1">{card.relatedPainPoints.join(" / ")}</div></div><div><span className="font-semibold text-slate-700">Page refs</span><div className="mt-1 flex items-center gap-1"><Link2 size={12} />{card.relatedPages.join(" / ")}</div></div></div> : null}
             </article>
           ))}
         </div>
