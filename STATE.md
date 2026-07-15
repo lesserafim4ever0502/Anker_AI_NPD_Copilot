@@ -24,6 +24,10 @@ The seven-page demo remains in the repository for desktop-first frontend optimiz
 - Run 快照治理：只有同时存在项目、Run 与已载入快照注册记录的项目才能激活后续六页，防止跨项目误用数据。
 - 桌面决策上下文：右侧 Decision Panel 在桌面滚动时保持 sticky；无行为的通知和用户按钮已移除。
 - 飞书状态边界：真实 Base 快照、已存在飞书文档和 Proposal-stage Mock 现在使用不同状态标签。
+- 证据可追溯交互：反馈摘要、产品矩阵和 Gate 引用可下钻到现有公开来源 URL；内部决策引用保留稳定 ID。
+- 决策优先演示：Page 4 先展示机会缺口、候选准入和重叠警告，再以固定高度矩阵承载 30 行证据明细。
+- Guided Walkthrough：Page 2–6 增加下一阶段动作，右侧待确认入口直接打开 PRD Evidence 标签。
+- 飞书闭环具象化：Page 7 展示可展开产物、二次评审会议议程、预期产物与知识库归档树。
 
 ## Current Demo State Recommendation
 
@@ -38,9 +42,9 @@ Next Action: Proposal PRD Scope Freeze
 
 ## Next Development Steps / 下一步
 
-1. 以 1280、1440 和 1920 px 桌面视口完成七页视觉与交互验收。
-2. 按 `docs/DEMO_SCRIPT.md` 完成 3–5 分钟讲解排练。
-3. 复核 Page 5/6/7 的 Warning、Pending Confirmation、Decision Ledger 与 Feishu Handoff 叙事。
+1. 以 1280、1440 和 1920 px 桌面视口回归七页视觉、来源外链与 Guided Walkthrough。
+2. 按 `docs/DEMO_SCRIPT.md` 使用新的 Page 4 决策优先顺序完成 3–5 分钟讲解排练。
+3. 复核 Page 5/6/7 的 Warning、Pending Confirmation、会议交接、Decision Ledger 与知识归档叙事。
 4. 为另外两个组合项目建立独立证据快照后，再开放跨项目 Run 切换。
 5. 移动端适配延期到桌面 Demo 稳定之后，不纳入当前验收范围。
 6. 仅在证据或人工决策变化时更新冻结 JSON；视觉修订不得改写业务结论。

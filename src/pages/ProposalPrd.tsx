@@ -1,18 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AlertTriangle, CheckCircle2, FileText, Send, Shield, Target } from "lucide-react";
 import proposalPrd from "../data/proposalPrd.json";
 import pendingConfirmations from "../data/pendingConfirmations.json";
 import StatusBadge from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
 import PageDataLineage from "../components/PageDataLineage";
+import { Link, useSearchParams } from "react-router-dom";
 
 const tabs = ["Scope", "Evidence", "Validation"] as const;
 
 export default function ProposalPrd() {
-  const [tab, setTab] = useState<(typeof tabs)[number]>(tabs[0]);
+  const [searchParams] = useSearchParams();
+  const requestedTab = searchParams.get("tab");
+  const initialTab = tabs.find((item) => item === requestedTab) ?? tabs[0];
+  const [tab, setTab] = useState<(typeof tabs)[number]>(initialTab);
   const [handoff, setHandoff] = useState(false);
   const candidatePending = pendingConfirmations.filter((item) => proposalPrd.pendingConfirmationIds.includes(item.id));
   const p0 = proposalPrd.mvpFeatures.filter((feature) => feature.priority === "P0");
+
+  useEffect(() => {
+    const nextTab = tabs.find((item) => item === requestedTab);
+    if (nextTab) setTab(nextTab);
+  }, [requestedTab]);
 
   return (
     <div className="space-y-6">
@@ -27,7 +36,7 @@ export default function ProposalPrd() {
         <span className="ml-auto text-xs text-slate-500">{candidatePending.length} candidate confirmations</span>
       </section>
 
-      {handoff ? <section className="border border-teal-200 bg-teal-50 p-4 text-sm text-teal-900"><div className="flex items-center gap-2 font-semibold"><CheckCircle2 size={17} /> Mock handoff prepared</div><p className="mt-1 text-xs leading-5">仅更新当前页面展示状态；未调用飞书 API，也未读取任何授权信息。</p></section> : null}
+      {handoff ? <section className="flex flex-col justify-between gap-3 border border-teal-200 bg-teal-50 p-4 text-sm text-teal-900 sm:flex-row sm:items-center"><div><div className="flex items-center gap-2 font-semibold"><CheckCircle2 size={17} /> Mock handoff prepared</div><p className="mt-1 text-xs leading-5">仅更新当前页面展示状态；未调用飞书 API，也未读取任何授权信息。</p></div><Link to="/feishu-workflow" className="secondary-button shrink-0">查看飞书协作资产</Link></section> : null}
 
       <nav className="toolbar" aria-label="PRD sections" role="tablist">{tabs.map((item) => <button key={item} role="tab" aria-selected={tab === item} onClick={() => setTab(item)} className={`filter-button ${tab === item ? "filter-button-active" : ""}`}>{item}</button>)}</nav>
 

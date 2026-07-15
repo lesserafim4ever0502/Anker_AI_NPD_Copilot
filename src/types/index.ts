@@ -254,3 +254,38 @@ export type FeishuArtifact = {
   businessValue: string;
   mockStatus: "reviewed_snapshot" | "existing_document" | "proposal_mock" | "pending" | "failed";
 };
+
+export type FeishuWorkflow = {
+  currentMode: string;
+  runStatus: string;
+  layers: {
+    id: string;
+    name: string;
+    feishuObjects: string[];
+    description: string;
+  }[];
+  reviewMeeting: {
+    id: string;
+    title: string;
+    schedule: string;
+    participants: string[];
+    agenda: string[];
+    expectedOutputs: string[];
+    mockStatus: FeishuArtifact["mockStatus"];
+  };
+  knowledgeArchive: {
+    root: string;
+    mockStatus: FeishuArtifact["mockStatus"];
+    nodes: {
+      id: string;
+      name: string;
+      artifactType: string;
+      summary: string;
+      mockStatus: FeishuArtifact["mockStatus"];
+    }[];
+  };
+  automationRoadmap: {
+    stage: string;
+    mode: string;
+  }[];
+};

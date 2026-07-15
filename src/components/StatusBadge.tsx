@@ -38,6 +38,11 @@ const statusLabel: Record<string, string> = {
   proposal_stage_mock: "Proposal-stage Mock",
   prd_drafted_need_confirmation: "PRD Drafted / Need Confirmation",
   open: "Open",
+  supported: "支持",
+  not_supported: "不支持",
+  continue_to_candidate: "进入候选评审",
+  validate_before_candidate: "验证后再评审",
+  deprioritize: "降低优先级",
 };
 
 const statusClass: Record<string, string> = {
@@ -65,6 +70,11 @@ const statusClass: Record<string, string> = {
   existing_document: "border-blue-200 bg-blue-50 text-blue-700",
   proposal_mock: "border-slate-200 bg-slate-50 text-slate-700",
   open: "border-amber-200 bg-amber-50 text-amber-700",
+  supported: "border-emerald-200 bg-emerald-50 text-emerald-700",
+  not_supported: "border-slate-200 bg-slate-50 text-slate-600",
+  continue_to_candidate: "border-blue-200 bg-blue-50 text-blue-700",
+  validate_before_candidate: "border-amber-200 bg-amber-50 text-amber-700",
+  deprioritize: "border-slate-200 bg-slate-50 text-slate-600",
 };
 
 export function getStatusLabel(status: string) {

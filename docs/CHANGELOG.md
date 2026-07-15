@@ -4,6 +4,33 @@
 
 ### Changed
 
+- Timestamp: 2026-07-15T12:47:00+08:00.
+- Improved the seven-page decision demo with direct evidence-source drilldown, decision-first opportunity review, guided next-step navigation, and concrete Feishu meeting and knowledge-archive handoff assets.
+- Modified paths and implementation metrics:
+  - `DESIGN.md`: L1-481 -> L1-483, +13 -11.
+  - `README.md`: L1-173 -> L1-173, +2 -2.
+  - `STATE.md`: L1-241 -> L1-245, +7 -3.
+  - `docs/DATA_SCHEMA.md`: L1-46 -> L1-48, +2 -0.
+  - `docs/SYSTEM_PRD.md`: L1-105 -> L1-105, +3 -3.
+  - `docs/UX_PAGE_DETAILS.md`: L1-131 -> L1-131, +3 -3.
+  - `index.html`: L1-12 -> L1-13, +1 -0.
+  - `src/components/DecisionPanel.tsx`: L1-46 -> L1-46, +2 -2.
+  - `src/components/EvidenceRefList.tsx`: new file, L1-0 -> L1-27, +27 -0.
+  - `src/components/StatusBadge.tsx`: L1-84 -> L1-94, +10 -0.
+  - `src/data/feishuWorkflow.json`: L1-61 -> L1-108, +47 -0.
+  - `src/index.css`: L1-113 -> L1-113, +1 -1.
+  - `src/pages/CompetitorMatrix.tsx`: L1-60 -> L1-63, +15 -12.
+  - `src/pages/Evaluation.tsx`: L1-56 -> L1-59, +6 -3.
+  - `src/pages/EvidencePool.tsx`: L1-70 -> L1-77, +10 -3.
+  - `src/pages/FeishuWorkflow.tsx`: L1-39 -> L1-46, +11 -4.
+  - `src/pages/PainRadar.tsx`: L1-61 -> L1-63, +5 -3.
+  - `src/pages/ProposalPrd.tsx`: L1-50 -> L1-59, +12 -3.
+  - `src/types/index.ts`: L1-256 -> L1-291, +35 -0.
+- Validation: `npm run build`, `npm run build:pages`, `git diff --check`, cross-JSON reference validation, and interaction regression checks passed.
+- Visual QA: all seven routes passed at 1280, 1440, and 1920 px desktop widths with no page-level horizontal overflow, console errors, or HTTP errors.
+- Data boundary: frozen products, feedback, candidates, Gate evaluations, committee roles, and recommendation outcomes remain unchanged; Feishu additions are explicitly marked as proposal-stage mock assets.
+- `docs/CHANGELOG.md`: L1-345 -> L1-372, +27 -0 including this entry.
+
 - Timestamp: 2026-07-14T14:10:36+08:00.
 - Refined the seven-page demo as a desktop-first decision workspace with guarded Run snapshot activation, persistent desktop decision context, clearer Feishu state boundaries, and accessible selection controls.
 - Modified paths and implementation metrics:

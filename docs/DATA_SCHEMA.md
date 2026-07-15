@@ -20,6 +20,7 @@
 | `AgentEvaluation` | Six-role committee judgement and objection / 六角色委员会判断与异议 | `agentEvaluations.json` |
 | `PendingConfirmation` | Human-owned unresolved decisions / 必须由人负责的待确认事项 | `pendingConfirmations.json` |
 | `FeishuArtifact` | Mock handoff object shown in the web demo / 网页 Demo 中的 Mock 交接对象 | `feishuArtifacts.json` |
+| `FeishuWorkflow` | Four-layer collaboration, review meeting and knowledge archive / 四层协同、评审会议与知识归档 | `feishuWorkflow.json` |
 
 ## 3. Required Invariants / 必须保持的约束
 
@@ -30,6 +31,7 @@
 - `GateEvaluation` and `AgentEvaluation` retain `confidence` and `evidenceRefs` for traceability.
 - Proposed PRD metrics and open questions remain pending confirmation; they are not approved targets.
 - Feishu artifacts describe the demo handoff state and must not expose CLI credentials, tokens, or local manifest identifiers.
+- `FeishuWorkflow.reviewMeeting` and `knowledgeArchive` remain proposal-stage handoff structures; their `mockStatus` must distinguish reviewed snapshots, existing documents and proposed artifacts.
 
 ## 4. JSON Consumption Rules / JSON 使用规则
 
