@@ -6,6 +6,8 @@
 
 当前样例 Run 已完成公开证据审核、候选筛选、Stage-Gate、六角色产品委员会评审和 Proposal PRD V0.2 冻结。推荐候选为“跨平台 Dock 兼容预检助手”，状态为 `Recommended with Warning / Need Confirmation`。
 
+项目工作台中的另外两个项目仅用于展示多项目组合治理，属于 `Portfolio sample / 组合示例`，尚未载入独立 Run 和证据快照，不参与当前样例 Run 的统计与结论。
+
 建议阅读顺序：
 
 1. 开题补充材料.pdf

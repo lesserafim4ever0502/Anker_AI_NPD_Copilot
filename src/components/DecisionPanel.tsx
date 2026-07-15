@@ -13,13 +13,13 @@ export default function DecisionPanel() {
   return (
     <aside className="space-y-5">
       <section>
-        <div className="section-kicker"><ClipboardCheck size={14} /> Current decision</div>
+        <div className="section-kicker"><ClipboardCheck size={14} /> 当前决策</div>
         <h2 className="mt-2 text-base font-semibold leading-6 text-ink">{project.recommendedCandidate}</h2>
         <div className="mt-3 flex flex-wrap gap-2"><StatusBadge status="recommended_with_warning" /><StatusBadge status={run.confidence} label={getConfidenceLabel(run.confidence)} /></div>
         <p className="mt-3 text-xs leading-5 text-slate-600">{run.summary}</p>
       </section>
       <section className="border-t border-slate-200 pt-5">
-        <div className="section-kicker text-amber-700"><AlertTriangle size={14} /> Pending Confirmation · {pendingConfirmations.length}</div>
+        <div className="section-kicker text-amber-700"><AlertTriangle size={14} /> 待确认事项 · {pendingConfirmations.length}</div>
         <ul className="mt-3 space-y-3 text-sm text-slate-700">
           {pending.map((item) => (
             <li key={item.id} className="border-l-2 border-amber-300 pl-3">
@@ -31,7 +31,7 @@ export default function DecisionPanel() {
         <Link to="/proposal-prd?tab=Evidence" className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-anker">查看全部 <ArrowUpRight size={13} /></Link>
       </section>
       <section className="border-t border-slate-200 pt-5">
-        <div className="section-kicker"><ShieldAlert size={14} /> Decision Ledger</div>
+        <div className="section-kicker"><ShieldAlert size={14} /> 决策台账</div>
         <ul className="mt-3 space-y-2 text-sm text-slate-700">
           {ledger.map((item) => (
             <li key={item.id} className="grid grid-cols-[42px_1fr] gap-2 border-b border-slate-100 pb-2">

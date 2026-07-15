@@ -10,7 +10,7 @@ export default function FeishuWorkspaceBar() {
         <span className="hidden truncate text-xs text-slate-500 md:inline">{lineage.workspaceName}</span>
       </div>
       <div className="flex shrink-0 items-center gap-2 text-[11px] text-slate-500">
-        <span>{lineage.tableCount} tables</span>
+        <span>{lineage.tableCount} 张表</span>
         <span className="hidden sm:inline">·</span>
         <span className="hidden sm:inline">{lineage.snapshotMode}</span>
         <RefreshCw size={12} />

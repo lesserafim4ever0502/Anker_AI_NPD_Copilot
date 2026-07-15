@@ -171,3 +171,12 @@ docs/DATA_SCHEMA.md
 直接沿用现有 `src/`、路由和 `src/data/*.json` 实现七页可交互 Demo。优先保证叙事、状态和证据引用准确，再完成响应式视觉与交互验证。
 
 Sites must preserve the existing project structure and JSON contract, implement all seven routes, and keep Warning, Pending Confirmation, Decision Ledger, and Feishu Handoff visible throughout the demo.
+
+## 10. 投稿前验证 / Submission Validation
+
+```bash
+npm run validate
+npm run build
+```
+
+`npm run validate` 会检查七页路由、核心数据数量、冻结决策、Run 快照绑定、公开来源 URL、敏感本地 manifest 忽略规则和空文件。完整投稿状态见 `docs/SUBMISSION_READINESS.md`。

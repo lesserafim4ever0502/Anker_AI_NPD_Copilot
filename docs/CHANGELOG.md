@@ -4,6 +4,14 @@
 
 ### Changed
 
+- Timestamp: 2026-07-15T17:30:00+08:00.
+- Completed the first submission-readiness pass without re-enabling public hosting.
+- Audited all seven routes at 1280, 1440, and 1920 px; no page-level horizontal overflow was found.
+- Clarified that two portfolio entries are combination samples without independent Run snapshots and excluded their placeholder counts from active decision totals.
+- Unified high-visibility project, Run, evidence, pain, and competitor control labels for the Chinese review flow.
+- Added zero-dependency `npm run validate` with 39 checks for routes, frozen conclusions, data counts, snapshot bindings, HTTPS sources, ignored local identifiers, required documents, and empty files.
+- Added `docs/SUBMISSION_READINESS.md` as the canonical remaining-work checklist; public GitHub Pages deployment remains deferred until final UI and material freeze.
+
 - Timestamp: 2026-07-15T15:46:50+08:00.
 - Reworked desktop project governance so the active Project and Run use a centered switcher rather than a search-like label; unavailable snapshots are visible but cannot be activated.
 - Reduced the global Run bar to current status, confidence, and next action; moved the connected seven-stage progress track into Project Workspace so it no longer competes with the left navigation rail.

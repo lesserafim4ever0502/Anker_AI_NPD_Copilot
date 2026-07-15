@@ -42,12 +42,12 @@ Next Action: Proposal PRD Scope Freeze
 
 ## Next Development Steps / 下一步
 
-1. 以 1280、1440 和 1920 px 桌面视口回归七页视觉、来源外链与 Guided Walkthrough。
-2. 按 `docs/DEMO_SCRIPT.md` 使用新的 Page 4 决策优先顺序完成 3–5 分钟讲解排练。
-3. 复核 Page 5/6/7 的 Warning、Pending Confirmation、会议交接、Decision Ledger 与知识归档叙事。
-4. 为另外两个组合项目建立独立证据快照后，再开放跨项目 Run 切换。
-5. 移动端适配延期到桌面 Demo 稳定之后，不纳入当前验收范围。
-6. 仅在证据或人工决策变化时更新冻结 JSON；视觉修订不得改写业务结论。
+1. 按 `docs/DEMO_SCRIPT.md` 完成 3–5 分钟讲解排练和最终桌面截图审阅。
+2. 生成补充材料 PDF、评审数据底座 XLSX 和团队能力证明。
+3. 最终 UI 与投稿材料冻结后恢复 GitHub Pages，并在无登录窗口验收。
+4. 为另外两个组合示例建立独立证据快照后，再开放跨项目 Run 切换。
+5. 移动端适配延期，不纳入当前投稿验收范围。
+6. 每次投稿候选版本执行 `npm run validate` 与 `npm run build`。
 
 ## Sites Deployment / Sites 发布
 
@@ -245,6 +245,8 @@ This is a data-complete engineering skeleton ready for Sites presentation work. 
 - Portfolio metrics show project count, Run readiness, and total pending confirmations without inventing evidence for placeholder projects.
 - Feishu lineage source tables wrap within the available desktop width and no longer expose a local horizontal scrollbar.
 - Only `project-desktop-energy` currently has a loaded Run snapshot. The other two projects remain explicit portfolio placeholders until independent evidence snapshots exist.
+- Portfolio placeholder counts are excluded from the active Run decision totals; the UI labels them as combination samples instead of implying completed analysis.
+- Submission validation is available through `npm run validate`; the canonical checklist is `docs/SUBMISSION_READINESS.md`.
 
 ### Validation Notes
 

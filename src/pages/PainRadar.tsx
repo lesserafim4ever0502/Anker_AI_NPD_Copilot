@@ -26,8 +26,8 @@ export default function PainRadar() {
       <PageDataLineage page="pain-radar" />
       <section className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         <MetricCard label="痛点簇" value={painPoints.length} />
-        <MetricCard label="Insight Ready" value={insightReady} />
-        <MetricCard label="Needs Evidence" value={painPoints.length - insightReady} hint="不进入确定性硬件结论" />
+        <MetricCard label="洞察就绪" value={insightReady} />
+        <MetricCard label="需补充证据" value={painPoints.length - insightReady} hint="不进入确定性硬件结论" />
       </section>
 
       <section className="grid grid-cols-1 items-stretch gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(320px,0.68fr)]">
@@ -37,7 +37,7 @@ export default function PainRadar() {
             <tbody>{painPoints.map((pain) => (
               <tr key={pain.id} className={selectedId === pain.id ? "bg-blue-50/70" : ""}>
                 <td><button aria-pressed={selectedId === pain.id} onClick={() => setSelectedId(pain.id)} className="w-full text-left"><div className="font-semibold text-ink">{pain.name}</div><div className="mt-1 text-xs text-slate-500">{pain.cluster}</div></button></td>
-                <td><div className="font-semibold tabular-nums">{pain.evidenceCount}</div><div className="text-xs text-slate-500">{pain.independentSourceCount} independent</div></td>
+                <td><div className="font-semibold tabular-nums">{pain.evidenceCount}</div><div className="text-xs text-slate-500">{pain.independentSourceCount} 个独立来源</div></td>
                 <td><div className="w-28"><div className="mb-1 text-xs font-semibold tabular-nums">{pain.severityAvg} / 5</div><div className="progress-track"><div className="progress-fill" style={{ width: `${pain.severityAvg * 20}%` }} /></div></div></td>
                 <td><StatusBadge status={pain.status ?? pain.confidence} /></td>
               </tr>
@@ -46,7 +46,7 @@ export default function PainRadar() {
         </div>
 
         <aside className="panel h-full">
-          <div className="flex items-start justify-between gap-3"><div><div className="section-kicker">Selected cluster</div><h3 className="mt-2 text-lg font-semibold text-ink">{selected.name}</h3></div><StatusBadge status={selected.confidence} label={getConfidenceLabel(selected.confidence)} /></div>
+          <div className="flex items-start justify-between gap-3"><div><div className="section-kicker">所选痛点簇</div><h3 className="mt-2 text-lg font-semibold text-ink">{selected.name}</h3></div><StatusBadge status={selected.confidence} label={getConfidenceLabel(selected.confidence)} /></div>
           <p className="mt-4 text-sm leading-6 text-slate-700">{selected.designSignals.join("；")}</p>
           <div className="mt-4 flex flex-wrap gap-1.5">{selected.scenarios.map((scenario) => <span key={scenario} className="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">{scenario}</span>)}</div>
           {selected.warning ? <div className="mt-5 border-l-2 border-amber-300 pl-3 text-xs leading-5 text-amber-800"><AlertTriangle size={14} className="mb-1" />{selected.warning}</div> : null}
@@ -55,8 +55,8 @@ export default function PainRadar() {
       </section>
 
       <section>
-        <div className="mb-3 flex items-end justify-between"><div><h3 className="section-title">关联反馈摘要</h3><p className="section-subtitle">仅显示可追溯摘要，不伪造直接引语</p></div><span className="text-xs text-slate-500">{related.length} records</span></div>
-        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">{related.map((item) => <article key={item.id} className="panel"><div className="flex items-center justify-between gap-3"><a href={item.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-xs font-semibold text-blue-700 hover:underline"><Quote size={14} />{item.source} · {item.id}<ExternalLink size={11} /></a><StatusBadge status={item.confidence} label={getConfidenceLabel(item.confidence)} /></div><p className="mt-3 text-sm leading-6 text-slate-700">{item.rawTextSummary}</p><div className="mt-3 text-xs text-slate-500">{item.scenario} · severity {item.severity}</div></article>)}</div>
+        <div className="mb-3 flex items-end justify-between"><div><h3 className="section-title">关联反馈摘要</h3><p className="section-subtitle">仅显示可追溯摘要，不伪造直接引语</p></div><span className="text-xs text-slate-500">{related.length} 条反馈</span></div>
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">{related.map((item) => <article key={item.id} className="panel"><div className="flex items-center justify-between gap-3"><a href={item.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-xs font-semibold text-blue-700 hover:underline"><Quote size={14} />{item.source} · {item.id}<ExternalLink size={11} /></a><StatusBadge status={item.confidence} label={getConfidenceLabel(item.confidence)} /></div><p className="mt-3 text-sm leading-6 text-slate-700">{item.rawTextSummary}</p><div className="mt-3 text-xs text-slate-500">{item.scenario} · 严重度 {item.severity}</div></article>)}</div>
       </section>
     </div>
   );
