@@ -1,5 +1,6 @@
 import type { NpdProject, NpdRun } from "../types";
-import { Database, Search } from "lucide-react";
+import { ChevronRight, Database, FolderKanban } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Header({ project, run }: { project: NpdProject; run: NpdRun }) {
   return (
@@ -12,10 +13,13 @@ export default function Header({ project, run }: { project: NpdProject; run: Npd
             <p className="truncate text-xs text-slate-500">Evidence-to-Decision Workspace</p>
           </div>
         </div>
-        <div className="hidden min-w-0 flex-1 justify-center xl:flex">
-          <div className="flex max-w-xl items-center gap-2 rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-500">
-            <Search size={15} /><span className="truncate">{project.name} / {run.name}</span>
-          </div>
+        <div className="hidden min-w-0 flex-1 justify-center lg:flex">
+          <Link to="/project-workspace" className="project-context-control" title="返回项目工作台切换项目">
+            <FolderKanban size={15} className="shrink-0 text-blue-700" />
+            <span className="min-w-0"><span className="context-label">当前项目</span><span className="context-value">{project.name}</span></span>
+            <ChevronRight size={13} className="shrink-0 text-slate-300" />
+            <span className="min-w-0"><span className="context-label">当前 Run</span><span className="context-value">{run.name}</span></span>
+          </Link>
         </div>
         <span className="data-boundary hidden md:inline-flex"><Database size={13} /> Public sample data</span>
       </div>

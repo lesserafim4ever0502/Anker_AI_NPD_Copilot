@@ -237,9 +237,19 @@ The public manifest records the document URL only. Internal docx token and Base 
 
 This is a data-complete engineering skeleton ready for Sites presentation work. It does not include complete page-level UI polish, real Feishu frontend API calls, real LLM calls, authentication, backend services, or production persistence.
 
+### Project Governance UI
+
+- The header now exposes the active Project and Run as a project-workspace entry instead of presenting a non-functional search field.
+- The global Run bar is a connected seven-stage route track with completed, need-confirmation, in-progress, and current-page states.
+- Project Workspace distinguishes portfolio projects from projects with a loaded evidence snapshot; only snapshot-ready projects can become the global Current Run.
+- Portfolio metrics show project count, Run readiness, and total pending confirmations without inventing evidence for placeholder projects.
+- Feishu lineage source tables wrap within the available desktop width and no longer expose a local horizontal scrollbar.
+- Only `project-desktop-energy` currently has a loaded Run snapshot. The other two projects remain explicit portfolio placeholders until independent evidence snapshots exist.
+
 ### Validation Notes
 
 - JSON seed files parse successfully.
 - Required frontend skeleton files exist.
+- Project governance UI production build passed on 2026-07-15; desktop screenshots were checked at 1355 x 898 and 1101 x 898, including the four-table Competitor Matrix lineage strip.
 - Dependency installation and build validation must be checked in the active Sites environment before publishing.
 - The current handoff contract is `docs/SITES_HANDOFF.md`; Sites must not change frozen business conclusions to make the UI look more decisive.

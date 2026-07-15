@@ -4,6 +4,14 @@
 
 ### Changed
 
+- Timestamp: 2026-07-15T15:46:50+08:00.
+- Reworked desktop project governance so the active Project and Run are explicit, switchable context rather than a search-like label.
+- Replaced flat workflow tags with a connected seven-stage route track that communicates completed, current, need-confirmation, and in-progress states.
+- Strengthened Project Workspace portfolio controls with Run readiness, portfolio pending totals, snapshot availability, and versioned governance context.
+- Removed the visible per-page Feishu lineage scrollbar by allowing source-table references to wrap within the available desktop width.
+- Frozen business data and decisions remain unchanged; projects without independent snapshots remain non-activatable placeholders.
+- Validation: `npm run build` and `git diff --check` passed. Visual QA covered Project Workspace at 1355 x 898 and 1101 x 898, plus the four-source-table Competitor Matrix lineage strip at 1101 x 898.
+
 - Timestamp: 2026-07-15T12:47:00+08:00.
 - Improved the seven-page decision demo with direct evidence-source drilldown, decision-first opportunity review, guided next-step navigation, and concrete Feishu meeting and knowledge-archive handoff assets.
 - Modified paths and implementation metrics:
