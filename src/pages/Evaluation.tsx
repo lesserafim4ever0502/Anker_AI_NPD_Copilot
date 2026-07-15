@@ -30,7 +30,7 @@ export default function Evaluation() {
     <div className="space-y-6">
       <PageHeader eyebrow="05 / Stage-Gate Review" title="Stage-Gate + 产品委员会" icon={Scale}
         description="先看证据理由、阻断项与反对意见，再看加权分数。Fail Gate 与 Kill Criteria 不会被平均分覆盖。"
-        action={<Link to="/proposal-prd" className="primary-button">生成 Proposal PRD <ArrowRight size={15} /></Link>} />
+        action={<Link to="/proposal-prd" className="primary-button">查看 Proposal PRD <ArrowRight size={15} /></Link>} />
 
       <PageDataLineage page="evaluation" />
 

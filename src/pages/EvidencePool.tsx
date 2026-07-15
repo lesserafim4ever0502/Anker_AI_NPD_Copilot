@@ -25,7 +25,7 @@ export default function EvidencePool() {
     <div className="space-y-6">
       <PageHeader eyebrow="02 / Evidence Pool" title="证据池概览" icon={Boxes}
         description="公开小样本先经过来源核验与人工审核，再进入痛点、机会和评审链路；当前数据不代表市场全量或安克内部用户总体。"
-        action={<Link to="/pain-radar" className="primary-button">形成痛点雷达 <ArrowRight size={15} /></Link>} />
+        action={<Link to="/pain-radar" className="primary-button">查看痛点雷达 <ArrowRight size={15} /></Link>} />
 
       <PageDataLineage page="evidence-pool" />
 
