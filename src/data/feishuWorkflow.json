@@ -44,6 +44,53 @@
       "description": "沉淀 NPD 方法论、历史案例、风险库和 PRD 模板。"
     }
   ],
+  "reviewMeeting": {
+    "id": "meeting-proposal-prd-review",
+    "title": "Proposal PRD 范围冻结与二次确认会",
+    "schedule": "待负责人确认后排期",
+    "participants": ["产品负责人", "用户研究员", "兼容性测试负责人", "硬件 / 制造顾问"],
+    "agenda": [
+      "冻结首轮 10 组设备拓扑与明确非目标",
+      "确认规则准确率、未知返回和版本责任人",
+      "评审相对静态 FAQ 的任务收益验证方案"
+    ],
+    "expectedOutputs": ["会议决议", "更新后的 Pending Confirmations", "验证任务责任人与截止条件"],
+    "mockStatus": "proposal_mock"
+  },
+  "knowledgeArchive": {
+    "root": "安克创新 AI-NPD Workspace / 桌面办公能源生态项目 / NPD-ANKER-001",
+    "mockStatus": "proposal_mock",
+    "nodes": [
+      {
+        "id": "archive-evidence",
+        "name": "01 证据快照",
+        "artifactType": "多维表格 / Evidence Cards",
+        "summary": "12 款 Anker、18 款竞品与 13 条已审核公开反馈。",
+        "mockStatus": "reviewed_snapshot"
+      },
+      {
+        "id": "archive-decision",
+        "name": "02 机会与评审",
+        "artifactType": "Stage-Gate / 产品委员会",
+        "summary": "18 条 Gate 评审、6 个委员会角色与 Kill Criteria。",
+        "mockStatus": "reviewed_snapshot"
+      },
+      {
+        "id": "archive-prd",
+        "name": "03 Proposal PRD V0.2",
+        "artifactType": "飞书文档",
+        "summary": "有限规则 MVP、Non-goals、风险与验证计划。",
+        "mockStatus": "existing_document"
+      },
+      {
+        "id": "archive-validation",
+        "name": "04 会议与验证记录",
+        "artifactType": "会议 / 妙记 / 任务",
+        "summary": "待会议确认后沉淀决议、妙记摘要和验证结果。",
+        "mockStatus": "proposal_mock"
+      }
+    ]
+  },
   "automationRoadmap": [
     {
       "stage": "报名阶段",

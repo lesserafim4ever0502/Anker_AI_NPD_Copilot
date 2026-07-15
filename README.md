@@ -4,9 +4,9 @@
 >
 > An evidence-driven AI workspace for moving from public user feedback to reviewable new-product decisions for Anker Innovation.
 
-本仓库当前是 **Sites-ready demo repository**。Vite + React + TypeScript + Tailwind 工程骨架、七页路由、审核后的公开样本数据、Stage-Gate 结果、产品委员会结论与 Proposal PRD V0.2 均已就绪。Sites 应在现有工程上完成可视化与交互，不得改写冻结的证据和决策结论。
+本仓库当前是 **可运行的桌面优先七页 Demo repository**。Vite + React + TypeScript + Tailwind 工程、审核后的公开样本数据、Stage-Gate 结果、产品委员会结论与 Proposal PRD V0.2 均已实现。当前交互支持公开来源下钻、决策优先的竞品机会页、Guided Walkthrough CTA，以及会议与知识库级别的飞书协作资产展示。
 
-This is a **Sites-ready demo repository**. The frontend skeleton, seven routes, reviewed public sample data, Stage-Gate outcome, committee decision, and Proposal PRD V0.2 are ready. Sites should implement the experience on top of the existing project without changing frozen evidence or decision outcomes.
+This is a **runnable desktop-first seven-page demo repository**. The frontend, reviewed public sample data, Stage-Gate outcome, committee decision, and Proposal PRD V0.2 are implemented. The current experience supports public-source drill-down, decision-first opportunity review, guided walkthrough actions, and Feishu meeting and knowledge-archive handoff views without changing frozen evidence or decisions.
 
 ## 1. 项目定位
 

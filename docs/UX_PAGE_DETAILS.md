@@ -48,7 +48,7 @@ P0 交互：点击项目卡片，右侧详情切换；仅当项目、Run 和 loa
 - Data Gaps
 - Feishu Input Layer
 
-P0 交互：来源筛选、证据卡片展开、进入痛点雷达。
+P0 交互：来源筛选、证据卡片展开、公开来源下钻、进入痛点雷达。
 
 ## Page 3: 用户痛点雷达页
 
@@ -77,7 +77,7 @@ P0 交互：点击痛点切换用户原声与设计信号。
 - Product Overlap Warning
 - Feishu Market Data Lineage
 
-P0 交互：品牌筛选、机会卡片高亮候选、进入评审。
+P0 交互：机会卡片高亮候选、品牌筛选、官方来源下钻、固定高度矩阵滚动、进入评审。页面顺序必须先显示机会与重叠结论，再显示 30 行能力证据。
 
 ## Page 5: Stage-Gate + 多 Agent 评审页
 
@@ -128,4 +128,4 @@ P0 交互：Mock 同步飞书，进入 Page 7。
 - Knowledge Archive Tree
 - Run Collaboration Asset Map
 
-P0 交互：Mock 同步，查看产物详情；不展示面向开发者的自动化实施路线图。
+P0 交互：Mock 同步、展开产物字段、查看会议议程和知识库归档树；不展示面向开发者的自动化实施路线图。

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { AlertOctagon, ChevronDown, Scale, ShieldAlert, Users } from "lucide-react";
+import { AlertOctagon, ArrowRight, ChevronDown, Scale, ShieldAlert, Users } from "lucide-react";
 import candidatesData from "../data/candidates.json";
 import gateEvaluationsData from "../data/gateEvaluations.json";
 import agentEvaluationsData from "../data/agentEvaluations.json";
@@ -9,6 +9,8 @@ import type { AgentEvaluation, CandidateNP, EvaluationSummary, GateEvaluation } 
 import StatusBadge, { getStatusLabel } from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
 import PageDataLineage from "../components/PageDataLineage";
+import { Link } from "react-router-dom";
+import EvidenceRefList from "../components/EvidenceRefList";
 
 const candidates = candidatesData as CandidateNP[];
 const gates = gateEvaluationsData as GateEvaluation[];
@@ -27,7 +29,8 @@ export default function Evaluation() {
   return (
     <div className="space-y-6">
       <PageHeader eyebrow="05 / Stage-Gate Review" title="Stage-Gate + 产品委员会" icon={Scale}
-        description="先看证据理由、阻断项与反对意见，再看加权分数。Fail Gate 与 Kill Criteria 不会被平均分覆盖。" />
+        description="先看证据理由、阻断项与反对意见，再看加权分数。Fail Gate 与 Kill Criteria 不会被平均分覆盖。"
+        action={<Link to="/proposal-prd" className="primary-button">查看 Proposal PRD <ArrowRight size={15} /></Link>} />
 
       <PageDataLineage page="evaluation" />
 
@@ -41,7 +44,7 @@ export default function Evaluation() {
           <div className="mb-3 flex items-end justify-between"><div><h3 className="section-title">Gate reasons & evidence</h3><p className="section-subtitle">{candidate.name} · {candidateGates.length} gates</p></div><StatusBadge status={summary.gateResult} /></div>
           <div className="divide-y divide-slate-200 border-y border-slate-200 bg-white">{candidateGates.map((gate) => {
             const key = `${gate.candidateId}-${gate.gateId}`;
-            return <article key={key} className="px-4 py-4"><button className="flex w-full items-start justify-between gap-4 text-left" aria-expanded={openGate === gate.gateId} onClick={() => setOpenGate(openGate === gate.gateId ? null : gate.gateId)}><div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><span className="font-semibold text-ink">{gate.gateName}</span><StatusBadge status={gate.status} /><StatusBadge status={gate.confidence} /></div><p className="mt-2 text-sm leading-6 text-slate-700">{gate.reason}</p></div><div className="flex shrink-0 items-center gap-2"><span className="text-lg font-semibold tabular-nums text-ink">{gate.score.toFixed(1)}</span><ChevronDown size={16} className={`text-slate-400 transition ${openGate === gate.gateId ? "rotate-180" : ""}`} /></div></button>{openGate === gate.gateId ? <div className="mt-3 grid gap-3 border-l-2 border-blue-200 pl-4 text-xs leading-5 sm:grid-cols-2"><div><span className="font-semibold">Decision impact</span><p className="mt-1 text-slate-600">{gate.decisionImpact}</p></div><div><span className="font-semibold">Evidence refs</span><p className="mt-1 text-slate-600">{gate.evidenceRefs.join(" / ")}</p></div></div> : null}</article>;
+            return <article key={key} className="px-4 py-4"><button className="flex w-full items-start justify-between gap-4 text-left" aria-expanded={openGate === gate.gateId} onClick={() => setOpenGate(openGate === gate.gateId ? null : gate.gateId)}><div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><span className="font-semibold text-ink">{gate.gateName}</span><StatusBadge status={gate.status} /><StatusBadge status={gate.confidence} /></div><p className="mt-2 text-sm leading-6 text-slate-700">{gate.reason}</p></div><div className="flex shrink-0 items-center gap-2"><span className="text-lg font-semibold tabular-nums text-ink">{gate.score.toFixed(1)}</span><ChevronDown size={16} className={`text-slate-400 transition ${openGate === gate.gateId ? "rotate-180" : ""}`} /></div></button>{openGate === gate.gateId ? <div className="mt-3 grid gap-3 border-l-2 border-blue-200 pl-4 text-xs leading-5 sm:grid-cols-2"><div><span className="font-semibold">Decision impact</span><p className="mt-1 text-slate-600">{gate.decisionImpact}</p></div><div><span className="font-semibold">Evidence refs</span><EvidenceRefList refs={gate.evidenceRefs} /></div></div> : null}</article>;
           })}</div>
         </div>
         <aside className="self-start overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm">

@@ -7,7 +7,7 @@ import { useProjectRun } from "../context/ProjectRunContext";
 
 export default function DecisionPanel() {
   const pending = pendingConfirmations.slice(0, 3);
-  const ledger = decisionLedger.slice(0, 3);
+  const ledger = decisionLedger.slice(-3);
   const { activeProject: project, activeRun: run } = useProjectRun();
 
   return (
@@ -28,7 +28,7 @@ export default function DecisionPanel() {
             </li>
           ))}
         </ul>
-        <Link to="/proposal-prd" className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-anker">查看全部 <ArrowUpRight size={13} /></Link>
+        <Link to="/proposal-prd?tab=Evidence" className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-anker">查看全部 <ArrowUpRight size={13} /></Link>
       </section>
       <section className="border-t border-slate-200 pt-5">
         <div className="section-kicker"><ShieldAlert size={14} /> Decision Ledger</div>

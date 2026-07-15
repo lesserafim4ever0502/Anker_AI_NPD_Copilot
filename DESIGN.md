@@ -253,11 +253,11 @@ Anker AI-NPD Copilot 是面向安克新品定义团队的证据链驱动 NPD 工
 ### Key Metrics
 
 - 安克产品 SKU: 12
-- 竞品 SKU: 20
-- 用户评论 / 讨论: 180
-- 有效痛点样本: 96
-- 测评 / 专家观点: 12
-- 可引用用户原声: 22
+- 竞品 SKU: 18
+- 已审核公开反馈: 13
+- 痛点簇: 5
+- 测评 / 编辑观点: 24
+- 可直接引用原声: 0（当前只展示可追溯摘要，不伪造原话）
 
 ### Key Copy
 
@@ -268,6 +268,7 @@ Anker AI-NPD Copilot 是面向安克新品定义团队的证据链驱动 NPD 工
 ### P0 Interactions
 
 - 点击数据源筛选 Evidence Card。
+- 展开 Evidence Card 后可查看审核记录 ID 与公开来源 URL。
 - 点击“进入痛点雷达”。
 
 ---
@@ -314,11 +315,11 @@ Anker AI-NPD Copilot 是面向安克新品定义团队的证据链驱动 NPD 工
 
 ### Modules
 
-1. Brand Coverage Matrix
-2. Product Capability Table
-3. Opportunity Gap Cards
-4. Opportunity Gap → Candidate NP Mapping
-5. Product Overlap Warnings
+1. Portfolio Metrics
+2. Opportunity Gap Cards → Candidate NP Entry Decision
+3. Selected Opportunity Detail
+4. Product Overlap Warnings
+5. Scrollable Product Capability Evidence Table
 6. Feishu Competitive Intelligence Layer
 
 ### Key Copy
@@ -331,6 +332,7 @@ Anker AI-NPD Copilot 是面向安克新品定义团队的证据链驱动 NPD 工
 
 - 点击品牌筛选产品表。
 - 点击机会空白，高亮关联候选 NP。
+- 点击产品来源图标打开公开官方页面。
 - 点击“进入决策评审”。
 
 ---
@@ -434,7 +436,7 @@ Draft / Need Confirmation
 5. Decision Ledger
 6. Knowledge Archive Tree
 7. Sync Status Panel
-8. CLI / API Automation Roadmap
+8. Run Collaboration Asset Map
 
 ### Four Layers
 
