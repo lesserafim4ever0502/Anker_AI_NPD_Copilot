@@ -239,8 +239,8 @@ This is a data-complete engineering skeleton ready for Sites presentation work. 
 
 ### Project Governance UI
 
-- The header now exposes the active Project and Run as a project-workspace entry instead of presenting a non-functional search field.
-- The global Run bar is a connected seven-stage route track with completed, need-confirmation, in-progress, and current-page states.
+- The header now exposes a centered active Project and Run switcher instead of presenting a non-functional search field; only snapshot-ready projects can be activated.
+- The compact global Run bar shows only current status, confidence, and next action. The connected seven-stage progress track lives in Project Workspace, while page navigation remains exclusively in the left rail.
 - Project Workspace distinguishes portfolio projects from projects with a loaded evidence snapshot; only snapshot-ready projects can become the global Current Run.
 - Portfolio metrics show project count, Run readiness, and total pending confirmations without inventing evidence for placeholder projects.
 - Feishu lineage source tables wrap within the available desktop width and no longer expose a local horizontal scrollbar.
@@ -251,5 +251,6 @@ This is a data-complete engineering skeleton ready for Sites presentation work. 
 - JSON seed files parse successfully.
 - Required frontend skeleton files exist.
 - Project governance UI production build passed on 2026-07-15; desktop screenshots were checked at 1355 x 898 and 1101 x 898, including the four-table Competitor Matrix lineage strip.
+- Seven-page interaction audit passed for project selection, filters, selectable cards, accordions, PRD URL-synced tabs, Mock Handoff state transitions, and internal route targets. External evidence links were validated structurally without bulk-opening third-party pages.
 - Dependency installation and build validation must be checked in the active Sites environment before publishing.
 - The current handoff contract is `docs/SITES_HANDOFF.md`; Sites must not change frozen business conclusions to make the UI look more decisive.

@@ -6,7 +6,7 @@ import evidenceCards from "../data/evidenceCards.json";
 import feedback from "../data/feedback.json";
 import painPoints from "../data/painPoints.json";
 import MetricCard from "../components/MetricCard";
-import StatusBadge from "../components/StatusBadge";
+import StatusBadge, { getConfidenceLabel } from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
 import PageDataLineage from "../components/PageDataLineage";
 import { Link } from "react-router-dom";
@@ -50,7 +50,7 @@ export default function EvidencePool() {
       <section className="grid grid-cols-1 gap-4 xl:grid-cols-3">
         {evidenceSources.map((source) => (
           <article key={source.id} className="panel">
-            <div className="flex items-start justify-between gap-3"><Database size={18} className="text-blue-700" /><StatusBadge status={source.confidence} /></div>
+            <div className="flex items-start justify-between gap-3"><Database size={18} className="text-blue-700" /><StatusBadge status={source.confidence} label={getConfidenceLabel(source.confidence)} /></div>
             <h3 className="mt-4 font-semibold text-ink">{source.name}</h3>
             <p className="mt-2 text-sm leading-6 text-slate-600">{source.purpose}</p>
             <p className="mt-3 border-t border-slate-100 pt-3 text-xs leading-5 text-slate-500">{source.limitations}</p>
@@ -64,7 +64,7 @@ export default function EvidencePool() {
           {visible.map((card) => (
             <article key={card.id} className="px-4 py-4">
               <button className="flex w-full items-start justify-between gap-4 text-left" aria-expanded={expanded === card.id} onClick={() => setExpanded(expanded === card.id ? null : card.id)}>
-                <div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><span className="font-semibold text-ink">{card.type}</span><StatusBadge status={card.confidence} /><span className="text-xs text-slate-400">{card.id}</span></div><p className="mt-2 text-sm leading-6 text-slate-700">{card.designSignal}</p></div>
+                <div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><span className="font-semibold text-ink">{card.type}</span><StatusBadge status={card.confidence} label={getConfidenceLabel(card.confidence)} /><span className="text-xs text-slate-400">{card.id}</span></div><p className="mt-2 text-sm leading-6 text-slate-700">{card.designSignal}</p></div>
                 <ChevronDown size={17} className={`mt-1 shrink-0 text-slate-400 transition ${expanded === card.id ? "rotate-180" : ""}`} />
               </button>
               {expanded === card.id ? <div className="mt-3 border-l-2 border-blue-200 pl-4 text-xs text-slate-600"><div className="grid gap-3 sm:grid-cols-3"><div><span className="font-semibold text-slate-700">Feishu records</span><div className="mt-1">verified_user_feedback · {(evidenceIdsByCard.get(card.id) ?? []).join(" / ")}</div></div><div><span className="font-semibold text-slate-700">Pain refs</span><div className="mt-1">{card.relatedPainPoints.join(" / ")}</div></div><div><span className="font-semibold text-slate-700">Page refs</span><div className="mt-1 flex items-center gap-1"><Link2 size={12} />{card.relatedPages.join(" / ")}</div></div></div><div className="mt-3 border-t border-slate-100 pt-3"><div className="font-semibold text-slate-700">Reviewed public sources</div><div className="mt-2 flex flex-wrap gap-2">{(evidenceIdsByCard.get(card.id) ?? []).map((id) => { const item = feedbackById.get(id); return item?.sourceUrl ? <a key={id} href={item.sourceUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded border border-slate-200 bg-white px-2 py-1 font-semibold text-blue-700 hover:border-blue-300"><ExternalLink size={11} />{id} · {item.source}</a> : <span key={id}>{id}</span>; })}</div></div></div> : null}

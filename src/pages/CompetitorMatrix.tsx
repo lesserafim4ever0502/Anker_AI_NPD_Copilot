@@ -6,7 +6,7 @@ import opportunityGaps from "../data/opportunityGaps.json";
 import overlapWarnings from "../data/productOverlapWarnings.json";
 import capabilityMatrix from "../data/capabilityMatrix.json";
 import type { Product } from "../types";
-import StatusBadge from "../components/StatusBadge";
+import StatusBadge, { getConfidenceLabel } from "../components/StatusBadge";
 import MetricCard from "../components/MetricCard";
 import PageHeader from "../components/PageHeader";
 import PageDataLineage from "../components/PageDataLineage";
@@ -36,7 +36,7 @@ export default function CompetitorMatrix() {
       </section>
 
       <section className="grid grid-cols-1 items-start gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
-        <div><div className="mb-3"><h3 className="section-title">机会缺口与候选准入</h3><p className="section-subtitle">先看决策结论，再下钻 30 行能力证据</p></div><div className="grid grid-cols-1 gap-3 md:grid-cols-2">{opportunityGaps.map((gap) => <button key={gap.id} aria-pressed={selectedGapId === gap.id} onClick={() => setSelectedGapId(gap.id)} className={`panel h-full text-left transition ${selectedGapId === gap.id ? "border-blue-300 shadow-[inset_3px_0_0_#2f80ed]" : "hover:border-slate-300"}`}><div className="flex items-start justify-between gap-3"><h3 className="font-semibold text-ink">{gap.title}</h3><StatusBadge status={gap.confidence} /></div><p className="mt-3 text-sm leading-6 text-slate-600">{gap.opportunityReason}</p><div className="mt-3"><StatusBadge status={gap.recommendation} /></div></button>)}</div></div>
+        <div><div className="mb-3"><h3 className="section-title">机会缺口与候选准入</h3><p className="section-subtitle">先看决策结论，再下钻 30 行能力证据</p></div><div className="grid grid-cols-1 gap-3 md:grid-cols-2">{opportunityGaps.map((gap) => <button key={gap.id} aria-pressed={selectedGapId === gap.id} onClick={() => setSelectedGapId(gap.id)} className={`panel h-full text-left transition ${selectedGapId === gap.id ? "border-blue-300 shadow-[inset_3px_0_0_#2f80ed]" : "hover:border-slate-300"}`}><div className="flex items-start justify-between gap-3"><h3 className="font-semibold text-ink">{gap.title}</h3><StatusBadge status={gap.confidence} label={getConfidenceLabel(gap.confidence)} /></div><p className="mt-3 text-sm leading-6 text-slate-600">{gap.opportunityReason}</p><div className="mt-3"><StatusBadge status={gap.recommendation} /></div></button>)}</div></div>
         <aside className="panel self-start"><div className="section-kicker">Selected opportunity</div><h3 className="mt-2 text-lg font-semibold text-ink">{selectedGap.title}</h3><dl className="mt-4 space-y-4 text-sm"><div><dt className="text-xs text-slate-500">Current coverage</dt><dd className="mt-1 leading-6 text-slate-700">{selectedGap.currentCoverage}</dd></div><div><dt className="text-xs text-slate-500">Overlap risk</dt><dd className="mt-1"><StatusBadge status={selectedGap.overlapRisk} /></dd></div><div><dt className="text-xs text-slate-500">Next validation</dt><dd className="mt-1 leading-6 text-slate-700">{selectedGap.nextValidation}</dd></div><div><dt className="text-xs text-slate-500">Feishu lineage</dt><dd className="mt-1 text-xs leading-5 text-slate-600">opportunity_gaps · {selectedGap.id}<br />由 capability_matrix 与产品表标准化结果生成</dd></div></dl></aside>
       </section>
 

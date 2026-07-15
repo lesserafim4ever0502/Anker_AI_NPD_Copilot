@@ -24,7 +24,7 @@ export default function FeishuWorkflow() {
     <div className="space-y-6">
       <PageHeader eyebrow="07 / Collaboration System" title="飞书协作与知识沉淀" icon={Archive}
         description="飞书贯穿数据采集、证据审核、评审协作和知识复用；本页汇总当前 Run 的协作资产，不是流程末端的导出页。"
-        action={<button onClick={() => setSynced(true)} className="primary-button"><Send size={15} /> 预览 Mock Handoff</button>} />
+        action={<button onClick={() => setSynced(true)} disabled={synced} className="primary-button disabled:cursor-default disabled:bg-teal-700">{synced ? <CheckCircle2 size={15} /> : <Send size={15} />} {synced ? "Mock Handoff 已预览" : "预览 Mock Handoff"}</button>} />
 
       <PageDataLineage page="feishu-workflow" />
 

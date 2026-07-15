@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowRight, FolderKanban, Users } from "lucide-react";
 import MetricCard from "../components/MetricCard";
-import StatusBadge from "../components/StatusBadge";
+import StatusBadge, { getConfidenceLabel } from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
 import PageDataLineage from "../components/PageDataLineage";
 import { Link } from "react-router-dom";
@@ -16,6 +16,7 @@ export default function ProjectWorkspace() {
   const isActive = selected.id === activeProject.id;
   const readyProjectCount = projects.filter((project) => canActivateProject(project.id)).length;
   const portfolioPendingCount = projects.reduce((total, project) => total + project.pendingCount, 0);
+  const currentStageIndex = run.stageProgress.findIndex((stage) => stage.status !== "completed");
 
   return (
     <div className="space-y-6">
@@ -24,6 +25,13 @@ export default function ProjectWorkspace() {
         action={<Link className="primary-button" to="/evidence-pool">进入当前 Run <ArrowRight size={16} /></Link>} />
 
       <PageDataLineage page="project-workspace" />
+
+      <section className="run-progress-panel">
+        <div className="flex items-end justify-between gap-4"><div><h3 className="section-title">当前 Run 进度</h3><p className="section-subtitle">{run.name} · {run.currentStage}</p></div><span className="text-xs text-slate-500">{run.stageProgress.filter((stage) => stage.status === "completed").length} / {run.stageProgress.length} stages completed</span></div>
+        <div className="run-stage-track" aria-label="当前 Run 进度">
+          {run.stageProgress.map((stage, index) => <div key={stage.stageId} className={`run-stage-step run-stage-${stage.status} ${index === currentStageIndex ? "run-stage-current" : ""}`} title={`${stage.name} · ${stage.status}`}><span className="run-stage-node">{index + 1}</span><span className="run-stage-name">{stage.name}</span>{index === currentStageIndex ? <span className="run-stage-current-label">当前阶段</span> : null}</div>)}
+        </div>
+      </section>
 
       <section className="grid grid-cols-1 gap-3 lg:grid-cols-3">
         <MetricCard label="项目组合" value={projects.length} hint="Proposal-stage portfolio" />
@@ -59,7 +67,7 @@ export default function ProjectWorkspace() {
         <aside className="panel h-full">
           <div className="section-kicker">Selected project</div>
           <h3 className="mt-2 text-lg font-semibold text-ink">{selected.name}</h3>
-          <div className="mt-3 flex gap-2"><StatusBadge status={selected.status} /><StatusBadge status={selected.confidence} /></div>
+          <div className="mt-3 flex gap-2"><StatusBadge status={selected.status} /><StatusBadge status={selected.confidence} label={getConfidenceLabel(selected.confidence)} /></div>
           <dl className="mt-5 grid gap-4 text-sm sm:grid-cols-2 xl:grid-cols-1">
             <div><dt className="text-xs text-slate-500">推荐候选</dt><dd className="mt-1 font-medium leading-6 text-ink">{selected.recommendedCandidate}</dd></div>
             <div><dt className="text-xs text-slate-500">下一步</dt><dd className="mt-1 leading-6 text-slate-700">{selected.nextAction}</dd></div>

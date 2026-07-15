@@ -5,12 +5,13 @@
 ### Changed
 
 - Timestamp: 2026-07-15T15:46:50+08:00.
-- Reworked desktop project governance so the active Project and Run are explicit, switchable context rather than a search-like label.
-- Replaced flat workflow tags with a connected seven-stage route track that communicates completed, current, need-confirmation, and in-progress states.
+- Reworked desktop project governance so the active Project and Run use a centered switcher rather than a search-like label; unavailable snapshots are visible but cannot be activated.
+- Reduced the global Run bar to current status, confidence, and next action; moved the connected seven-stage progress track into Project Workspace so it no longer competes with the left navigation rail.
 - Strengthened Project Workspace portfolio controls with Run readiness, portfolio pending totals, snapshot availability, and versioned governance context.
 - Removed the visible per-page Feishu lineage scrollbar by allowing source-table references to wrap within the available desktop width.
+- Clarified confidence badges as high, medium, or low confidence; completed Mock Handoff actions now expose a disabled completion state instead of remaining repeatable.
 - Frozen business data and decisions remain unchanged; projects without independent snapshots remain non-activatable placeholders.
-- Validation: `npm run build` and `git diff --check` passed. Visual QA covered Project Workspace at 1355 x 898 and 1101 x 898, plus the four-source-table Competitor Matrix lineage strip at 1101 x 898.
+- Validation: `npm run build` and `git diff --check` passed. Visual QA covered Project Workspace at 1355 x 898 and 1101 x 898, plus the four-source-table Competitor Matrix lineage strip at 1101 x 898. Seven-page interaction smoke testing covered navigation targets, project controls, filters, selections, accordions, PRD tabs, and both Mock Handoff flows.
 
 - Timestamp: 2026-07-15T12:47:00+08:00.
 - Improved the seven-page decision demo with direct evidence-source drilldown, decision-first opportunity review, guided next-step navigation, and concrete Feishu meeting and knowledge-archive handoff assets.

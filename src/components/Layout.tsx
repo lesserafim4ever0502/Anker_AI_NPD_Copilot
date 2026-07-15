@@ -10,7 +10,7 @@ export default function Layout() {
   const { activeProject, activeRun } = useProjectRun();
   return (
     <div className="min-h-screen bg-surface text-ink">
-      <Header project={activeProject} run={activeRun} />
+      <Header />
       <RunStatusBar project={activeProject} run={activeRun} />
       <FeishuWorkspaceBar />
       <div className="workspace-grid">

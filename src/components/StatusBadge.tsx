@@ -27,6 +27,7 @@ const statusLabel: Record<string, string> = {
   ready_for_stage_gate: "可进入 Stage-Gate",
   validation_required: "先验证",
   more_evidence_required: "先补证据",
+  needs_more_evidence: "需补充证据",
   fail_evidence_gate: "证据 Gate 失败",
   medium: "Medium",
   low: "Low",
@@ -57,6 +58,7 @@ const statusClass: Record<string, string> = {
   ready_for_stage_gate: "border-emerald-200 bg-emerald-50 text-emerald-700",
   validation_required: "border-amber-200 bg-amber-50 text-amber-700",
   more_evidence_required: "border-slate-200 bg-slate-50 text-slate-700",
+  needs_more_evidence: "border-slate-200 bg-slate-50 text-slate-700",
   recommended_with_warning: "border-amber-200 bg-amber-50 text-amber-700",
   fail_evidence_gate: "border-red-200 bg-red-50 text-red-700",
   pass: "border-emerald-200 bg-emerald-50 text-emerald-700",
@@ -81,14 +83,18 @@ export function getStatusLabel(status: string) {
   return statusLabel[status] ?? status;
 }
 
-export default function StatusBadge({ status }: { status: BadgeStatus }) {
+export function getConfidenceLabel(confidence: string) {
+  return ({ high: "高置信度", medium: "中置信度", low: "低置信度" } as Record<string, string>)[confidence] ?? confidence;
+}
+
+export default function StatusBadge({ status, label }: { status: BadgeStatus; label?: string }) {
   return (
     <span
       className={`inline-flex shrink-0 items-center whitespace-nowrap rounded-full border px-2.5 py-1 text-xs font-semibold ${
         statusClass[status] ?? "border-slate-200 bg-slate-50 text-slate-700"
       }`}
     >
-      {getStatusLabel(status)}
+      {label ?? getStatusLabel(status)}
     </span>
   );
 }

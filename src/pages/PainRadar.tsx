@@ -4,7 +4,7 @@ import painPointsData from "../data/painPoints.json";
 import feedbackData from "../data/feedback.json";
 import type { Feedback, PainPoint } from "../types";
 import MetricCard from "../components/MetricCard";
-import StatusBadge from "../components/StatusBadge";
+import StatusBadge, { getConfidenceLabel } from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
 import PageDataLineage from "../components/PageDataLineage";
 import { Link } from "react-router-dom";
@@ -46,7 +46,7 @@ export default function PainRadar() {
         </div>
 
         <aside className="panel h-full">
-          <div className="flex items-start justify-between gap-3"><div><div className="section-kicker">Selected cluster</div><h3 className="mt-2 text-lg font-semibold text-ink">{selected.name}</h3></div><StatusBadge status={selected.confidence} /></div>
+          <div className="flex items-start justify-between gap-3"><div><div className="section-kicker">Selected cluster</div><h3 className="mt-2 text-lg font-semibold text-ink">{selected.name}</h3></div><StatusBadge status={selected.confidence} label={getConfidenceLabel(selected.confidence)} /></div>
           <p className="mt-4 text-sm leading-6 text-slate-700">{selected.designSignals.join("；")}</p>
           <div className="mt-4 flex flex-wrap gap-1.5">{selected.scenarios.map((scenario) => <span key={scenario} className="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">{scenario}</span>)}</div>
           {selected.warning ? <div className="mt-5 border-l-2 border-amber-300 pl-3 text-xs leading-5 text-amber-800"><AlertTriangle size={14} className="mb-1" />{selected.warning}</div> : null}
@@ -56,7 +56,7 @@ export default function PainRadar() {
 
       <section>
         <div className="mb-3 flex items-end justify-between"><div><h3 className="section-title">关联反馈摘要</h3><p className="section-subtitle">仅显示可追溯摘要，不伪造直接引语</p></div><span className="text-xs text-slate-500">{related.length} records</span></div>
-        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">{related.map((item) => <article key={item.id} className="panel"><div className="flex items-center justify-between gap-3"><a href={item.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-xs font-semibold text-blue-700 hover:underline"><Quote size={14} />{item.source} · {item.id}<ExternalLink size={11} /></a><StatusBadge status={item.confidence} /></div><p className="mt-3 text-sm leading-6 text-slate-700">{item.rawTextSummary}</p><div className="mt-3 text-xs text-slate-500">{item.scenario} · severity {item.severity}</div></article>)}</div>
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">{related.map((item) => <article key={item.id} className="panel"><div className="flex items-center justify-between gap-3"><a href={item.sourceUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 text-xs font-semibold text-blue-700 hover:underline"><Quote size={14} />{item.source} · {item.id}<ExternalLink size={11} /></a><StatusBadge status={item.confidence} label={getConfidenceLabel(item.confidence)} /></div><p className="mt-3 text-sm leading-6 text-slate-700">{item.rawTextSummary}</p><div className="mt-3 text-xs text-slate-500">{item.scenario} · severity {item.severity}</div></article>)}</div>
       </section>
     </div>
   );

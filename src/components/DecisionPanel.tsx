@@ -1,7 +1,7 @@
 import pendingConfirmations from "../data/pendingConfirmations.json";
 import decisionLedger from "../data/decisionLedger.json";
 import { AlertTriangle, ArrowUpRight, ClipboardCheck, ShieldAlert } from "lucide-react";
-import StatusBadge from "./StatusBadge";
+import StatusBadge, { getConfidenceLabel } from "./StatusBadge";
 import { Link } from "react-router-dom";
 import { useProjectRun } from "../context/ProjectRunContext";
 
@@ -15,7 +15,7 @@ export default function DecisionPanel() {
       <section>
         <div className="section-kicker"><ClipboardCheck size={14} /> Current decision</div>
         <h2 className="mt-2 text-base font-semibold leading-6 text-ink">{project.recommendedCandidate}</h2>
-        <div className="mt-3 flex flex-wrap gap-2"><StatusBadge status="recommended_with_warning" /><StatusBadge status={run.confidence} /></div>
+        <div className="mt-3 flex flex-wrap gap-2"><StatusBadge status="recommended_with_warning" /><StatusBadge status={run.confidence} label={getConfidenceLabel(run.confidence)} /></div>
         <p className="mt-3 text-xs leading-5 text-slate-600">{run.summary}</p>
       </section>
       <section className="border-t border-slate-200 pt-5">

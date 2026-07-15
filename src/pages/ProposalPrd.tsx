@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AlertTriangle, CheckCircle2, FileText, Send, Shield, Target } from "lucide-react";
 import proposalPrd from "../data/proposalPrd.json";
 import pendingConfirmations from "../data/pendingConfirmations.json";
-import StatusBadge from "../components/StatusBadge";
+import StatusBadge, { getConfidenceLabel } from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
 import PageDataLineage from "../components/PageDataLineage";
 import { Link, useSearchParams } from "react-router-dom";
@@ -27,12 +27,12 @@ export default function ProposalPrd() {
     <div className="space-y-6">
       <PageHeader eyebrow={`06 / Proposal PRD · ${proposalPrd.version}`} title={proposalPrd.title} icon={FileText}
         description={proposalPrd.oneSentence}
-        action={<button onClick={() => setHandoff(true)} className="primary-button"><Send size={15} /> 预览 Mock Handoff</button>} />
+        action={<button onClick={() => setHandoff(true)} disabled={handoff} className="primary-button disabled:cursor-default disabled:bg-teal-700">{handoff ? <CheckCircle2 size={15} /> : <Send size={15} />} {handoff ? "Mock Handoff 已预览" : "预览 Mock Handoff"}</button>} />
 
       <PageDataLineage page="proposal-prd" />
 
       <section className="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-4">
-        <StatusBadge status={proposalPrd.status} /><StatusBadge status={proposalPrd.decisionState} /><StatusBadge status={proposalPrd.confidence} />
+        <StatusBadge status={proposalPrd.status} /><StatusBadge status={proposalPrd.decisionState} /><StatusBadge status={proposalPrd.confidence} label={getConfidenceLabel(proposalPrd.confidence)} />
         <span className="ml-auto text-xs text-slate-500">{candidatePending.length} candidate confirmations</span>
       </section>
 
