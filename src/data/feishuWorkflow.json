@@ -4,44 +4,45 @@
   "layers": [
     {
       "id": "layer-input",
-      "name": "输入数据承载",
+      "name": "项目与证据协作",
       "feishuObjects": [
-        "多维表格",
-        "文档",
-        "知识库"
+        "项目登记表",
+        "证据采集 Base",
+        "审核说明文档"
       ],
-      "description": "承载产品矩阵、用户反馈、Pain Radar、机会缺口、候选池、Stage-Gate 和产品委员会评审。"
+      "description": "从项目登记开始承载产品、竞品、用户反馈、来源审核和补采责任。"
     },
     {
       "id": "layer-ai",
-      "name": "AI 协同分析",
+      "name": "洞察与市场复核",
       "feishuObjects": [
-        "飞书 AI",
-        "飞书妙记",
-        "飞书文档"
+        "Pain Radar",
+        "能力矩阵",
+        "机会缺口表"
       ],
-      "description": "辅助资料摘要、痛点提炼、会议纪要和 PRD 初稿生成。"
+      "description": "在飞书表中保留聚类结果、独立来源、重叠风险、审核状态和责任角色。"
     },
     {
       "id": "layer-output",
-      "name": "输出产物沉淀",
+      "name": "评审与 PRD 共创",
       "feishuObjects": [
-        "飞书文档",
-        "多维表格",
-        "任务",
-        "会议"
+        "Gate 评审表",
+        "委员会意见",
+        "Proposal PRD",
+        "待确认事项"
       ],
-      "description": "沉淀 Proposal PRD、评审报告、验证任务、Pending Confirmation 和会议议程。"
+      "description": "记录支持理由、反对意见、Fail Gate、范围决议和验证责任，不把评分当作批准。"
     },
     {
       "id": "layer-reuse",
-      "name": "知识复用",
+      "name": "验证与知识复用",
       "feishuObjects": [
-        "知识库",
-        "文档目录",
-        "模板"
+        "验证任务",
+        "会议与妙记",
+        "Decision Ledger",
+        "知识库"
       ],
-      "description": "沉淀 NPD 方法论、历史案例、风险库和 PRD 模板。"
+      "description": "把待确认项转为任务和会议，并沉淀历史决策、风险记录与方法论模板。"
     }
   ],
   "reviewMeeting": {

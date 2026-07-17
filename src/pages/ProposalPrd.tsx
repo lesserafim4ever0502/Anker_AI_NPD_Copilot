@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { AlertTriangle, CheckCircle2, FileText, Send, Shield, Target } from "lucide-react";
+import { AlertTriangle, FileText, MessageSquareText, Shield, Target } from "lucide-react";
 import proposalPrd from "../data/proposalPrd.json";
 import pendingConfirmations from "../data/pendingConfirmations.json";
 import StatusBadge, { getConfidenceLabel } from "../components/StatusBadge";
@@ -19,7 +19,6 @@ export default function ProposalPrd() {
   const requestedTab = searchParams.get("tab");
   const initialTab = tabs.find((item) => item === requestedTab) ?? tabs[0];
   const [tab, setTab] = useState<(typeof tabs)[number]>(initialTab);
-  const [handoff, setHandoff] = useState(false);
   const candidatePending = pendingConfirmations.filter((item) => proposalPrd.pendingConfirmationIds.includes(item.id));
   const p0 = proposalPrd.mvpFeatures.filter((feature) => feature.priority === "P0");
 
@@ -32,7 +31,7 @@ export default function ProposalPrd() {
     <div className="space-y-6">
       <PageHeader eyebrow={`06 / Proposal PRD · ${proposalPrd.version}`} title={proposalPrd.title} icon={FileText}
         description={proposalPrd.oneSentence}
-        action={<button onClick={() => setHandoff(true)} disabled={handoff} className="primary-button disabled:cursor-default disabled:bg-teal-700">{handoff ? <CheckCircle2 size={15} /> : <Send size={15} />} {handoff ? "Mock Handoff 已预览" : "预览 Mock Handoff"}</button>} />
+        action={<Link to="/feishu-workflow?focus=artifact-004" className="primary-button"><MessageSquareText size={15} /> 查看 PRD 协作</Link>} />
 
       <PageDataLineage page="proposal-prd" />
 
@@ -40,8 +39,6 @@ export default function ProposalPrd() {
         <StatusBadge status={proposalPrd.status} /><StatusBadge status={proposalPrd.decisionState} /><StatusBadge status={proposalPrd.confidence} label={getConfidenceLabel(proposalPrd.confidence)} />
         <span className="ml-auto text-xs text-slate-500">{candidatePending.length} 项候选待确认</span>
       </section>
-
-      {handoff ? <section className="flex flex-col justify-between gap-3 border border-teal-200 bg-teal-50 p-4 text-sm text-teal-900 sm:flex-row sm:items-center"><div><div className="flex items-center gap-2 font-semibold"><CheckCircle2 size={17} /> Mock Handoff 已准备</div><p className="mt-1 text-xs leading-5">仅更新当前页面展示状态；未调用飞书 API，也未读取任何授权信息。</p></div><Link to="/feishu-workflow" className="secondary-button shrink-0">查看飞书协作资产</Link></section> : null}
 
       <nav className="toolbar" aria-label="PRD 章节" role="tablist">{tabs.map((item) => <button key={item} role="tab" aria-selected={tab === item} onClick={() => setSearchParams({ tab: item })} className={`filter-button ${tab === item ? "filter-button-active" : ""}`}>{tabLabels[item]}</button>)}</nav>
 

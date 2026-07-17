@@ -4,8 +4,8 @@
     "name": "安克与竞品产品矩阵",
     "feishuType": "多维表格",
     "sourcePages": [
-      "EvidencePoolPage",
-      "CompetitorMatrixPage"
+      "证据池",
+      "竞品矩阵"
     ],
     "content": [
       "安克 SKU",
@@ -26,7 +26,7 @@
     "name": "用户反馈与痛点标签体系",
     "feishuType": "多维表格",
     "sourcePages": [
-      "PainRadarPage"
+      "痛点雷达"
     ],
     "content": [
       "用户原声",
@@ -45,7 +45,7 @@
     "name": "多 Agent 产品评审报告",
     "feishuType": "飞书文档",
     "sourcePages": [
-      "EvaluationPage"
+      "决策评审"
     ],
     "content": [
       "Stage-Gate 结果",
@@ -62,7 +62,7 @@
     "name": "跨平台 Dock 兼容预检助手 Proposal PRD",
     "feishuType": "飞书文档",
     "sourcePages": [
-      "ProposalPrdPage"
+      "PRD 输出"
     ],
     "content": [
       "目标用户",
@@ -82,8 +82,8 @@
     "name": "MVP 验证任务清单",
     "feishuType": "飞书任务 / 项目",
     "sourcePages": [
-      "ProposalPrdPage",
-      "FeishuWorkflowPage"
+      "PRD 输出",
+      "飞书协作"
     ],
     "content": [
       "拓扑范围冻结",

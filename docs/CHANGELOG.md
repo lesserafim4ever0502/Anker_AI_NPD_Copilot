@@ -4,6 +4,14 @@
 
 ### Changed
 
+- Timestamp: 2026-07-17T11:40:14+08:00.
+- Upgraded Feishu from a page-level data-lineage label and end-stage handoff metaphor into a collaboration context spanning all seven routes.
+- Each stage now exposes Feishu sources, current collaboration action, owner roles, review state, pending confirmations, artifact destination, and explicit data boundary in an expandable shared component.
+- Reframed the global Feishu bar as a real workspace plus reviewed CLI snapshot and read-only local frontend, removing the misleading live-refresh cue.
+- Replaced Proposal PRD Mock Handoff with a direct PRD collaboration view; Page 7 is now the cross-stage collaboration overview rather than the point where the Run first enters Feishu.
+- Updated README, SPEC, STATE, DESIGN, UX details, demo script, Sites handoff contract, types, workflow data, and navigation terminology without changing frozen evidence or decisions.
+- Validation: `npm run validate` passed 39 checks; `npm run build` passed with 1,635 modules transformed; `git diff --check` passed.
+
 - Timestamp: 2026-07-15T17:30:00+08:00.
 - Completed the first submission-readiness pass without re-enabling public hosting.
 - Audited all seven routes at 1280, 1440, and 1920 px; no page-level horizontal overflow was found.

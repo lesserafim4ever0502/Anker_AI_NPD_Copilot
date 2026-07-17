@@ -96,7 +96,7 @@ Recommended Candidate: 跨平台 Dock 兼容预检助手（Recommended with Warn
 4. 竞品机会矩阵页
 5. Stage-Gate + 多 Agent 评审页
 6. 样例 NP PRD 摘要输出页
-7. 飞书协同沉淀页
+7. 飞书协作全景与知识沉淀页
 
 ---
 
@@ -113,6 +113,7 @@ Recommended Candidate: 跨平台 Dock 兼容预检助手（Recommended with Warn
 - 展示 Stage-Gate 矩阵、Kill Criteria 和多 Agent 评审。
 - 展示推荐但需二次确认的候选 NP。
 - 展示 PRD 摘要草案、MVP 功能、风险和验证计划。
+- 七页均展示飞书来源、当前协作动作、责任角色、审核状态、待确认项和产物去向。
 - 展示飞书四层协同、产物卡片、会议议程、任务清单、Decision Ledger、知识库归档。
 
 ---
@@ -143,7 +144,7 @@ Recommended Candidate: 跨平台 Dock 兼容预检助手（Recommended with Warn
 - 不是只生成一个产品概念，而是从多个候选 NP 中筛选。
 - 不是 Agent 角色扮演，而是结构化产品评审机制。
 - 不是一键完成，而是保留 Warning、二次确认、会议和验证任务。
-- 不是孤立 Web Demo，而是进入飞书的企业协同闭环。
+- 不是孤立 Web Demo，而是由飞书从项目治理开始贯穿的企业协同闭环。
 - 不是只产出文档，而是沉淀数据、评审、风险、任务、模板和知识库。
 
 ---

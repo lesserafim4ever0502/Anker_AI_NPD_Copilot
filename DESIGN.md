@@ -6,7 +6,7 @@ Anker AI-NPD Copilot 的交互网页 Demo 应该呈现为：
 
 > Guided walkthrough 型企业新品定义决策工作台。
 
-它不能是普通后台仪表盘，也不能是聊天机器人。评委应该沿着 7 页走完一次 NPD Run，清楚看到从证据到决策，再到飞书沉淀的完整链路。
+它不能是普通后台仪表盘，也不能是聊天机器人。评委应该沿着 7 页走完一次 NPD Run，并在每个阶段看到飞书如何承载协作、审核、责任和产物，而不是最后才进入飞书。
 
 ---
 
@@ -63,8 +63,8 @@ Run Status Bar
 
 Feishu Workspace Bar
   - Bound Base workspace
-  - Reviewed local snapshot status
-  - Table count and data boundary
+  - Real workspace / reviewed snapshot / read-only frontend boundary
+  - Table count and latest review state
 
 Left Step Navigation
   1. 项目工作台
@@ -73,11 +73,11 @@ Left Step Navigation
   4. 竞品矩阵
   5. 决策评审
   6. PRD 输出
-  7. 飞书沉淀
+  7. 飞书协作
 
 Main Content
   - Page title
-  - Page-level Feishu data lineage
+  - Page-level Feishu collaboration context
   - Page conclusion
   - Core modules
 
@@ -91,9 +91,9 @@ Right Decision Panel
 
 ### Project and Feishu Continuity / 项目与飞书连续性
 
-**EN:** Header, Run Status Bar, Decision Panel, and Project Workspace must consume one shared project/Run context. Every route must identify the Feishu tables, reviewed transformation, and page output behind the visible analysis.
+**EN:** Header, Run Status Bar, Decision Panel, and Project Workspace must consume one shared project/Run context. Every route must identify Feishu sources, the current collaboration action, owner roles, review state, open confirmations, and artifact destination.
 
-**中文：** Header、Run Status Bar、Decision Panel 与项目工作台必须共享同一项目/Run 上下文。每页都要标明当前分析对应的飞书表、审核转换过程和页面输出，形成“项目 → Run → 数据 → 洞察 → 决策 → PRD → 协作沉淀”的连续链路。
+**中文：** Header、Run Status Bar、Decision Panel 与项目工作台必须共享同一项目/Run 上下文。每页都要标明飞书来源、当前协作动作、责任角色、审核状态、开放确认项和产物去向，形成飞书贯穿项目治理、证据、洞察、决策、PRD 与验证的连续链路。
 
 Portfolio projects without an independent evidence snapshot may be inspected but must not activate downstream analysis.
 
@@ -101,7 +101,7 @@ Portfolio projects without an independent evidence snapshot may be inspected but
 
 Project activation requires a matching project, Run, and loaded snapshot registry entry. Page-level lineage must resolve against that active snapshot before showing downstream output.
 
-项目激活必须同时匹配项目、Run 和已载入的快照注册记录；页面级数据血缘必须能够在当前快照中解析后，才能展示后续输出。
+项目激活必须同时匹配项目、Run 和已载入的快照注册记录；页面级飞书协作上下文必须能够在当前快照中解析后，才能展示后续输出。
 
 ---
 
@@ -185,7 +185,7 @@ PRD Drafted / Need Confirmation
 - `MvpFeatureTable`
 - `RiskValidationTable`
 - `EvidenceSidebar`
-- `FeishuHandoffPanel`
+- `FeishuPrdCollaborationContext`
 
 ### Feishu Components
 
@@ -399,7 +399,7 @@ Anker AI-NPD Copilot 是面向安克新品定义团队的证据链驱动 NPD 工
 8. Validation Plan
 9. Pending Confirmations
 10. Evidence Sidebar
-11. Feishu Handoff Panel
+11. Feishu PRD Collaboration Context
 
 ### PRD Status
 
@@ -416,22 +416,22 @@ Draft / Need Confirmation
 ### P0 Interactions
 
 - 展示 PRD 草案。
-- 点击“同步到飞书”显示 Mock 成功。
-- 点击“查看飞书沉淀”进入 Page 7。
+- 点击“查看 PRD 协作”进入 Page 7 对应 PRD 资产。
+- 不显示统一“同步成功”；必须区分现有文档、已审核快照与 Proposal Mock。
 
 ---
 
-## 12. Page 7: 飞书协同沉淀页
+## 12. Page 7: 飞书协作全景与知识沉淀页
 
 ### Goal
 
-展示本轮 NPD Run 如何进入飞书，形成协同资产和组织知识。
+汇总本轮 NPD Run 从项目登记开始已经发生或计划发生的飞书协作，形成责任清晰的协同资产和组织知识。
 
 ### Modules
 
 1. Feishu Four-layer Architecture
 2. Generated Feishu Artifacts
-3. Review Meeting Handoff
+3. Review Meeting Collaboration
 4. Validation Tasks
 5. Decision Ledger
 6. Knowledge Archive Tree
@@ -455,7 +455,7 @@ Draft / Need Confirmation
 
 - 展示飞书产物卡片。
 - 展示会议议程、验证任务、Decision Ledger、知识库目录。
-- 点击“Mock 同步到飞书”显示已生成状态。
+- 展开协作边界，区分真实飞书资产、已审核快照和 Proposal Mock。
 
 ---
 

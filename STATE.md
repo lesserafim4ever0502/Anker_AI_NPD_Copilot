@@ -17,9 +17,9 @@ The seven-page demo remains in the repository for desktop-first frontend optimiz
 - 飞书定位：企业协同底座，不是导出按钮。
 - 仓库规范：Human-readable + Agent-readable，包含 README、AGENT、SPEC、STATE、DESIGN 等。
 - 页面设计：7 页已完成 V1 设计讨论。
-- 工作流机制：多项目工作台 + NPD Run 状态 + Pending Confirmation + Decision Ledger + Feishu Handoff。
+- 工作流机制：多项目工作台 + NPD Run 状态 + Pending Confirmation + Decision Ledger + 飞书阶段协作上下文。
 - 项目与 Run 上下文：Header、Run Status Bar、Decision Panel 和项目工作台现在读取同一全局上下文。
-- 飞书融合：七页均展示飞书工作台状态和页面级数据血缘；飞书不再只在 PRD/Handoff 阶段出现。
+- 飞书融合：七页均展示飞书工作台状态和阶段协作上下文；飞书不再只在 PRD 或总览阶段出现。
 - 品牌与布局：Header 使用 Anker 官方 Logo；主从视图、评审护栏和状态标签已完成首轮响应式修正。
 - Run 快照治理：只有同时存在项目、Run 与已载入快照注册记录的项目才能激活后续六页，防止跨项目误用数据。
 - 桌面决策上下文：右侧 Decision Panel 在桌面滚动时保持 sticky；无行为的通知和用户按钮已移除。
@@ -28,6 +28,8 @@ The seven-page demo remains in the repository for desktop-first frontend optimiz
 - 决策优先演示：Page 4 先展示机会缺口、候选准入和重叠警告，再以固定高度矩阵承载 30 行证据明细。
 - Guided Walkthrough：Page 2–6 增加下一阶段动作，右侧待确认入口直接打开 PRD Evidence 标签。
 - 飞书闭环具象化：Page 7 展示可展开产物、二次评审会议议程、预期产物与知识库归档树。
+- 飞书协作上下文：七页现统一展示来源表、当前协作动作、责任角色、审核状态、待确认数量、阶段产物与关联位置。
+- 飞书全景语义：Page 6 不再使用末端 Handoff 按钮；Page 7 改为跨阶段协作总览，并区分真实资产、已审核快照和 Proposal Mock。
 
 ## Current Demo State Recommendation
 
@@ -253,6 +255,6 @@ This is a data-complete engineering skeleton ready for Sites presentation work. 
 - JSON seed files parse successfully.
 - Required frontend skeleton files exist.
 - Project governance UI production build passed on 2026-07-15; desktop screenshots were checked at 1355 x 898 and 1101 x 898, including the four-table Competitor Matrix lineage strip.
-- Seven-page interaction audit passed for project selection, filters, selectable cards, accordions, PRD URL-synced tabs, Mock Handoff state transitions, and internal route targets. External evidence links were validated structurally without bulk-opening third-party pages.
+- Seven-page interaction audit covers project selection, filters, selectable cards, accordions, PRD URL-synced tabs, page-level Feishu collaboration expansion, collaboration-boundary disclosure, and internal route targets. External evidence links are validated structurally without bulk-opening third-party pages.
 - Dependency installation and build validation must be checked in the active Sites environment before publishing.
 - The current handoff contract is `docs/SITES_HANDOFF.md`; Sites must not change frozen business conclusions to make the UI look more decisive.

@@ -8,7 +8,7 @@ const steps = [
   { to: "/competitor-matrix", label: "竞品矩阵", short: "竞品", icon: TableProperties },
   { to: "/evaluation", label: "决策评审", short: "评审", icon: Scale },
   { to: "/proposal-prd", label: "PRD 输出", short: "PRD", icon: FileText },
-  { to: "/feishu-workflow", label: "飞书沉淀", short: "飞书", icon: Archive },
+  { to: "/feishu-workflow", label: "飞书协作", short: "飞书", icon: Archive },
 ];
 
 export default function StepNav() {

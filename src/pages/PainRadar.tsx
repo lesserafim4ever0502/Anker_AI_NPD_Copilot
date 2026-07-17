@@ -50,7 +50,7 @@ export default function PainRadar() {
           <p className="mt-4 text-sm leading-6 text-slate-700">{selected.designSignals.join("；")}</p>
           <div className="mt-4 flex flex-wrap gap-1.5">{selected.scenarios.map((scenario) => <span key={scenario} className="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">{scenario}</span>)}</div>
           {selected.warning ? <div className="mt-5 border-l-2 border-amber-300 pl-3 text-xs leading-5 text-amber-800"><AlertTriangle size={14} className="mb-1" />{selected.warning}</div> : null}
-          <div className="mt-5 border-t border-slate-200 pt-4 text-xs leading-5 text-slate-500">飞书血缘：pain_radar · {selected.id}<br />证据记录：{selected.relatedEvidenceIds.join(" / ")}</div>
+          <div className="mt-5 border-t border-slate-200 pt-4 text-xs leading-5 text-slate-500">飞书协作记录：pain_radar · {selected.id}<br />用户研究员复核 · 证据记录：{selected.relatedEvidenceIds.join(" / ")}</div>
         </aside>
       </section>
 

@@ -1,51 +1,103 @@
 {
   "workspaceName": "Anker AI-NPD Copilot 数据采集工作台",
-  "resourceType": "Feishu Base",
-  "snapshotMode": "CLI-reviewed local snapshot",
-  "syncStatus": "Reviewed snapshot",
+  "resourceType": "飞书多维表格 Base",
+  "workspaceStatus": "真实协作工作区",
+  "snapshotMode": "CLI 审核版本化快照",
+  "syncStatus": "快照已核验",
+  "frontendMode": "网页只读 · 本地 JSON",
+  "lastReviewed": "2026-07-16",
   "tableCount": 13,
   "pages": {
     "project-workspace": {
       "stage": "项目治理",
       "sourceTables": ["project_registry", "npd_run_registry", "decision_ledger"],
-      "process": "组合状态、责任人和开放确认项汇总",
-      "output": "当前项目与 Run 上下文"
+      "process": "组合状态、责任人、开放确认项与版本上下文汇总",
+      "collaborationAction": "维护项目登记、Run 范围与决策台账",
+      "ownerRoles": ["产品负责人", "项目管理员"],
+      "reviewStatus": "reviewed_snapshot",
+      "pendingCount": 5,
+      "output": "当前项目与 Run 上下文",
+      "outputArtifact": "项目注册表与 Decision Ledger",
+      "writebackTarget": "project_registry / npd_run_registry / decision_ledger",
+      "dataBoundary": "当前网页读取已审核项目快照，不在前端创建或切换真实飞书项目。"
     },
     "evidence-pool": {
       "stage": "采集与核验",
       "sourceTables": ["raw_evidence_intake", "user_feedback_samples", "review_sources", "verified_user_feedback"],
-      "process": "来源核验、人工审核、证据评分与去重",
-      "output": "可追溯证据池"
+      "process": "来源核验、人工审核、证据评分、去重与退回补采",
+      "collaborationAction": "审核来源、修订摘要并分派补采任务",
+      "ownerRoles": ["数据采集员", "证据审核员"],
+      "reviewStatus": "reviewed_snapshot",
+      "pendingCount": 0,
+      "output": "可追溯证据池",
+      "outputArtifact": "已审核证据记录与补采清单",
+      "writebackTarget": "verified_user_feedback / raw_evidence_intake",
+      "dataBoundary": "仅展示已审核公开样本；不代表市场全量或安克内部用户总体。"
     },
     "pain-radar": {
       "stage": "洞察聚类",
       "sourceTables": ["verified_user_feedback", "editorial_insights_cleaned", "pain_radar"],
-      "process": "反馈聚类、严重度评估与独立来源计数",
-      "output": "痛点簇与设计信号"
+      "process": "反馈聚类、严重度评估、独立来源计数与证据缺口标记",
+      "collaborationAction": "确认痛点簇、复核严重度并发起补证",
+      "ownerRoles": ["用户研究员", "产品负责人"],
+      "reviewStatus": "need_confirmation",
+      "pendingCount": 2,
+      "output": "痛点簇与设计信号",
+      "outputArtifact": "Pain Radar 与证据缺口任务",
+      "writebackTarget": "pain_radar / pending_confirmations",
+      "dataBoundary": "痛点结论由公开小样本支持；两类痛点仍需增加独立来源。"
     },
     "competitor-matrix": {
       "stage": "市场对照",
       "sourceTables": ["anker_products", "competitor_products", "capability_matrix", "opportunity_gaps"],
-      "process": "产品字段标准化、能力对照与重叠风险检查",
-      "output": "机会缺口与候选边界"
+      "process": "产品字段标准化、能力对照、机会缺口与重叠风险检查",
+      "collaborationAction": "复核机会缺口、重叠风险和候选准入边界",
+      "ownerRoles": ["竞品研究员", "产品负责人"],
+      "reviewStatus": "in_review",
+      "pendingCount": 1,
+      "output": "机会缺口与候选边界",
+      "outputArtifact": "机会缺口评审与重叠警告",
+      "writebackTarget": "opportunity_gaps / candidate_pool",
+      "dataBoundary": "产品能力存在不等于用户痛点已解决；机会必须继续经过验证。"
     },
     "evaluation": {
       "stage": "跨职能评审",
       "sourceTables": ["candidate_pool", "gate_evaluations", "product_committee_reviews"],
-      "process": "Stage-Gate、Kill Criteria 与产品委员会异议汇总",
-      "output": "带警告的推荐结论"
+      "process": "Stage-Gate、Kill Criteria、委员会异议与责任意见汇总",
+      "collaborationAction": "记录门禁意见、保留异议并确认下一步责任人",
+      "ownerRoles": ["六角色产品委员会", "风险评审官"],
+      "reviewStatus": "need_confirmation",
+      "pendingCount": 5,
+      "output": "带警告的推荐结论",
+      "outputArtifact": "Gate 记录、委员会意见与二次评审议程",
+      "writebackTarget": "gate_evaluations / product_committee_reviews / decision_ledger",
+      "dataBoundary": "加权分不覆盖 Fail Gate、Kill Criteria 或反对意见。"
     },
     "proposal-prd": {
-      "stage": "提案固化",
+      "stage": "PRD 共创",
       "sourceTables": ["gate_evaluations", "product_committee_reviews", "pending_confirmations"],
-      "process": "冻结 P0、Non-goals、风险和验证计划",
-      "output": "Proposal PRD V0.2"
+      "process": "冻结 P0、Non-goals、风险、拟议指标与验证计划",
+      "collaborationAction": "共创 PRD、确认范围并拆解验证责任",
+      "ownerRoles": ["产品负责人", "用户研究员", "兼容性测试负责人"],
+      "reviewStatus": "proposal_mock",
+      "pendingCount": 3,
+      "output": "Proposal PRD V0.2",
+      "outputArtifact": "PRD 文档、待确认事项与验证任务",
+      "writebackTarget": "Proposal PRD 文档 / pending_confirmations / validation_tasks",
+      "dataBoundary": "PRD 文档已存在；任务、会议和状态回写在网页中仅作 Proposal Mock。"
     },
     "feishu-workflow": {
-      "stage": "协同沉淀",
+      "stage": "协作全景",
       "sourceTables": ["decision_ledger", "pending_confirmations", "validation_tasks"],
-      "process": "把评审结论转成文档、任务、会议与知识资产",
-      "output": "可复用的 NPD 协作记录"
+      "process": "汇总七个阶段的表格、文档、评审、任务、会议与知识资产",
+      "collaborationAction": "查看当前 Run 的协作资产、责任链和知识归档",
+      "ownerRoles": ["项目管理员", "产品负责人"],
+      "reviewStatus": "proposal_mock",
+      "pendingCount": 5,
+      "output": "可复用的 NPD 协作记录",
+      "outputArtifact": "Run 协作资产地图与知识归档树",
+      "writebackTarget": "文档 / 多维表格 / 任务 / 会议 / 知识库",
+      "dataBoundary": "本页是前六页协作资产总览，不是首次进入飞书或实时同步控制台。"
     }
   }
 }

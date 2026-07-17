@@ -50,6 +50,7 @@ const committee = await readJson("agentEvaluations.json");
 const summaries = await readJson("evaluationSummary.json");
 const confirmations = await readJson("pendingConfirmations.json");
 const proposal = await readJson("proposalPrd.json");
+const feishuLineage = await readJson("feishuLineage.json");
 
 const expectedCounts = [
   [projects, 3, "projects"],
@@ -87,6 +88,22 @@ for (const snapshot of snapshots) {
   assert(Boolean(project && run && run.projectId === project.id), `snapshot binding ${snapshot.runId}`);
 }
 assert(snapshots.filter((item) => item.status === "loaded").length === 1, "loaded Run snapshots: 1");
+
+const requiredFeishuContextFields = [
+  "stage",
+  "sourceTables",
+  "process",
+  "collaborationAction",
+  "ownerRoles",
+  "reviewStatus",
+  "pendingCount",
+  "outputArtifact",
+  "writebackTarget",
+  "dataBoundary",
+];
+const feishuPageContexts = Object.values(feishuLineage.pages ?? {});
+assert(feishuPageContexts.length === requiredRoutes.length, "Feishu collaboration contexts: 7");
+assert(feishuPageContexts.every((context) => requiredFeishuContextFields.every((field) => field in context)), "complete Feishu collaboration context contract");
 
 const sourceRecords = [...products, ...competitors, ...feedback];
 const invalidUrls = sourceRecords.filter((item) => item.sourceUrl && !/^https:\/\//.test(item.sourceUrl));

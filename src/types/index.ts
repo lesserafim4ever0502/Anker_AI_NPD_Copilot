@@ -67,6 +67,26 @@ export type RunSnapshot = {
   pageData: Record<string, string[]>;
 };
 
+export type FeishuCollaborationStatus =
+  | "reviewed_snapshot"
+  | "in_review"
+  | "need_confirmation"
+  | "proposal_mock";
+
+export type FeishuPageContext = {
+  stage: string;
+  sourceTables: string[];
+  process: string;
+  collaborationAction: string;
+  ownerRoles: string[];
+  reviewStatus: FeishuCollaborationStatus;
+  pendingCount: number;
+  output: string;
+  outputArtifact: string;
+  writebackTarget: string;
+  dataBoundary: string;
+};
+
 export type EvidenceSource = {
   id: string;
   name: string;

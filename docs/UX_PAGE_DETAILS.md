@@ -13,7 +13,7 @@ The current implementation is desktop-first. Acceptance focuses on the left stag
 - Header
 - Run Status Bar
 - Feishu Workspace Bar
-- Page-level Feishu Data Lineage
+- Page-level Feishu Collaboration Context
 - Step Navigation
 - Page Title
 - Page Conclusion
@@ -110,22 +110,22 @@ P0 交互：候选卡片切换评审内容，生成 PRD 摘要。
 - Validation Plan
 - Pending Confirmations
 - Evidence Sidebar
-- Feishu Handoff Panel
+- Feishu PRD Collaboration Context
 
-P0 交互：Mock 同步飞书，进入 Page 7。
+P0 交互：切换 PRD 范围、证据和验证章节；查看 PRD 在飞书中的来源、责任角色、待确认项和协作资产。
 
-## Page 7: 飞书协同沉淀页
+## Page 7: 飞书协作全景与知识沉淀页
 
-目标：把 NPD Run 转化为飞书协同资产和组织知识。
+目标：汇总前六页贯穿发生的飞书协作、责任链和组织知识，不把飞书表现为末端导出。
 
 核心模块：
 
 - Feishu Four Layers
 - Feishu Artifacts
-- Review Meeting Handoff
+- Review Meeting Collaboration
 - Validation Tasks
 - Decision Ledger
 - Knowledge Archive Tree
 - Run Collaboration Asset Map
 
-P0 交互：Mock 同步、展开产物字段、查看会议议程和知识库归档树；不展示面向开发者的自动化实施路线图。
+P0 交互：展开真实资产、已审核快照和 Proposal Mock 边界，查看产物字段、会议议程、验证任务和知识库归档树；不展示面向开发者的自动化实施路线图。

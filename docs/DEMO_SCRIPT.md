@@ -38,8 +38,8 @@ PRD 只定义有限规则 MVP：10 组拓扑、可追溯兼容结论、设置步
 
 The Proposal PRD defines a bounded rules MVP: ten topologies, traceable compatibility results, setup steps, version metadata, and an explicit unknown state. It does not promise universal compatibility or new hardware. All targets remain proposed and pending confirmation.
 
-### 4:10–5:00 飞书沉淀 / Feishu Handoff
+### 4:10–5:00 飞书协作全景 / Feishu Collaboration Overview
 
-产品矩阵、Pain Radar、机会缺口、候选池、Stage-Gate 和产品委员会已沉淀到同一飞书工作台。PRD、验证任务、会议议程和 Decision Ledger 形成后续协作闭环。网页 Demo 展示的是 Proposal-stage Mock，不调用真实前端飞书 API。
+飞书从项目登记和证据采集开始贯穿整个 Run。产品矩阵、Pain Radar、机会缺口、候选池、Stage-Gate 和产品委员会均保留来源、责任人与审核状态；PRD、验证任务、会议议程和 Decision Ledger 形成协作闭环。网页读取已审核本地快照，任务和会议回写为 Proposal-stage Mock，不调用真实前端飞书 API。
 
-The same Feishu workspace stores the matrix, Pain Radar, gaps, candidate pool, Gate evaluations, and committee reviews. PRD, tasks, meeting agenda, and Decision Ledger complete the collaboration loop. The web demo remains a proposal-stage mock without a real frontend Feishu API.
+Feishu supports the Run from project registration and evidence intake onward. The matrix, Pain Radar, gaps, candidate pool, Gate evaluations, and committee reviews retain sources, owners, and review states. The web demo reads a reviewed local snapshot; task and meeting write-backs remain proposal-stage mocks without a real frontend Feishu API.
