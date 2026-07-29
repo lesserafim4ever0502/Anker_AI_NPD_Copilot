@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { ArrowRight, FolderKanban, Users } from "lucide-react";
+import { ArrowRight, FolderKanban, Plus, Users } from "lucide-react";
 import MetricCard from "../components/MetricCard";
+import NewRunDialog from "../components/NewRunDialog";
 import StatusBadge, { getConfidenceLabel } from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
 import PageDataLineage from "../components/PageDataLineage";
@@ -8,20 +9,23 @@ import { Link } from "react-router-dom";
 import { useProjectRun } from "../context/ProjectRunContext";
 
 export default function ProjectWorkspace() {
-  const { projects, runs, snapshots, activeProject, activeRun: run, activeSnapshot, canActivateProject, setActiveProject } = useProjectRun();
+  const { projects, runs, snapshots, activeProject, activeRun: run, activeSnapshot, canActivateProject, isDraftProject, createDraftRun, setActiveProject } = useProjectRun();
   const [selectedId, setSelectedId] = useState(activeProject.id);
+  const [newRunOpen, setNewRunOpen] = useState(false);
   const selected = projects.find((project) => project.id === selectedId) ?? projects[0];
   const selectedRun = runs.find((item) => item.id === selected.currentRunId);
   const selectedSnapshot = snapshots.find((item) => item.runId === selected.currentRunId && item.status === "loaded");
   const isActive = selected.id === activeProject.id;
+  const isDraft = isDraftProject(selected.id);
   const readyProjectCount = projects.filter((project) => canActivateProject(project.id)).length;
+  const draftProjectCount = projects.filter((project) => isDraftProject(project.id)).length;
   const currentStageIndex = run.stageProgress.findIndex((stage) => stage.status !== "completed");
 
   return (
     <div className="space-y-6">
       <PageHeader eyebrow="01 / Project Workspace" title="项目工作台" icon={FolderKanban}
         description={run.summary}
-        action={<Link className="primary-button" to="/evidence-pool">进入当前 Run <ArrowRight size={16} /></Link>} />
+        action={<div className="flex flex-wrap justify-end gap-2"><button type="button" className="secondary-button" onClick={() => setNewRunOpen(true)}><Plus size={16} /> 新建 Run 草案</button><Link className="primary-button" to="/evidence-pool">进入当前 Run <ArrowRight size={16} /></Link></div>} />
 
       <PageDataLineage page="project-workspace" />
 
@@ -33,14 +37,14 @@ export default function ProjectWorkspace() {
       </section>
 
       <section className="grid grid-cols-1 gap-3 lg:grid-cols-3">
-        <MetricCard label="项目组合" value={projects.length} hint={`${readyProjectCount} 个完整 Run · ${projects.length - readyProjectCount} 个组合示例`} />
+        <MetricCard label="项目组合" value={projects.length} hint={`${readyProjectCount} 个完整 Run · ${draftProjectCount} 个本地草案 · ${projects.length - readyProjectCount - draftProjectCount} 个组合示例`} />
         <MetricCard label="可进入 Run" value={readyProjectCount} hint={`当前：${activeProject.name}`} />
         <MetricCard label="当前 Run 待确认" value={activeProject.pendingCount} hint="仅统计已载入证据快照的 Run" />
       </section>
 
       <section>
         <div className="mb-3 flex items-end justify-between">
-          <div><h3 className="section-title">项目组合与 Run 控制</h3><p className="section-subtitle">选择项目查看治理状态；只有已载入独立证据快照的项目可切换为全局当前 Run</p></div>
+          <div><h3 className="section-title">项目组合与 Run 控制</h3><p className="section-subtitle">登记、查看和切换 NPD Run；只有已载入独立证据快照的项目可驱动后续分析</p></div>
           <span className="text-xs text-slate-500">{readyProjectCount} 个可进入 / 共 {projects.length} 个项目</span>
         </div>
         <div className="grid grid-cols-1 items-stretch gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
@@ -55,8 +59,8 @@ export default function ProjectWorkspace() {
                   <p className="mt-3 text-sm text-slate-700">{project.recommendedCandidate}</p>
                 </div>
                 <div className="flex items-center gap-3 text-xs text-slate-500 sm:justify-end">
-                  <span className={canActivateProject(project.id) ? "run-ready-chip" : "run-placeholder-chip"}>{canActivateProject(project.id) ? "Run 已载入" : "组合示例"}</span>
-                  <span>{canActivateProject(project.id) ? `${project.pendingCount} 项待确认` : "不参与当前统计"}</span><ArrowRight size={15} />
+                  <span className={canActivateProject(project.id) ? "run-ready-chip" : "run-placeholder-chip"}>{canActivateProject(project.id) ? "Run 已载入" : isDraftProject(project.id) ? "Run 草案" : "组合示例"}</span>
+                  <span>{canActivateProject(project.id) ? `${project.pendingCount} 项待确认` : "证据未载入"}</span><ArrowRight size={15} />
                 </div>
               </button>
             ))}
@@ -71,16 +75,18 @@ export default function ProjectWorkspace() {
             <div><dt className="text-xs text-slate-500">推荐候选</dt><dd className="mt-1 font-medium leading-6 text-ink">{selected.recommendedCandidate}</dd></div>
             <div><dt className="text-xs text-slate-500">下一步</dt><dd className="mt-1 leading-6 text-slate-700">{selected.nextAction}</dd></div>
             <div><dt className="flex items-center gap-1 text-xs text-slate-500"><Users size={13} /> 责任角色</dt><dd className="mt-2 flex flex-wrap gap-1.5">{selected.ownerRoles.map((role) => <span key={role} className="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600">{role}</span>)}</dd></div>
-            <div><dt className="text-xs text-slate-500">治理状态</dt><dd className="mt-1 text-xs leading-5 text-slate-600">{selectedRun && selectedSnapshot ? `已完成 ${selectedRun.stageProgress.filter((stage) => stage.status === "completed").length}/${selectedRun.stageProgress.length} 个阶段 · 快照 ${selectedSnapshot.version}` : "组合示例已登记；独立证据快照和 Run 尚未载入"}</dd></div>
-            <div><dt className="text-xs text-slate-500">最近更新</dt><dd className="mt-1 text-xs leading-5 text-slate-600">{selectedRun && selectedSnapshot ? `${selected.updatedAt} · ${selected.pendingCount} 项待确认` : "不适用 · 不参与当前 Run 统计"}</dd></div>
+            <div><dt className="text-xs text-slate-500">治理状态</dt><dd className="mt-1 text-xs leading-5 text-slate-600">{selectedRun && selectedSnapshot ? `已完成 ${selectedRun.stageProgress.filter((stage) => stage.status === "completed").length}/${selectedRun.stageProgress.length} 个阶段 · 快照 ${selectedSnapshot.version}` : selectedRun ? `${isDraft ? "Run 草案" : "Run"} 已登记 · 独立证据快照尚未建立` : "组合示例已登记 · 独立 Run 与证据快照尚未载入"}</dd></div>
+            <div><dt className="text-xs text-slate-500">飞书采集</dt><dd className="mt-1 text-xs leading-5 text-slate-600">{isDraft ? "尚未创建独立采集工作台" : selectedRun ? "主 Run 使用已审核飞书快照" : "尚未进入采集"}</dd></div>
+            <div><dt className="text-xs text-slate-500">最近更新</dt><dd className="mt-1 text-xs leading-5 text-slate-600">{selectedRun && selectedSnapshot ? `${selected.updatedAt} · ${selected.pendingCount} 项待确认` : isDraft ? `${selected.updatedAt} · 当前浏览器本地草案` : selectedRun ? `${selected.updatedAt} · 采集阶段` : "不适用 · 不参与当前 Run 统计"}</dd></div>
           </dl>
-          <div className="mt-5 border-t border-slate-200 pt-4 text-xs leading-5 text-slate-500">{isActive ? "该项目驱动顶部状态、右侧决策面板和后续六页数据。" : "该项目仅展示组合状态；进入完整分析前需先建立独立证据快照。"}</div>
-          <div className="mt-4">{selectedRun && selectedSnapshot ? <Link to="/evidence-pool" onClick={() => setActiveProject(selected.id)} className="secondary-button w-full">{isActive ? "继续当前 Run" : "设为当前 Run"}<ArrowRight size={15} /></Link> : <button disabled className="secondary-button w-full cursor-not-allowed opacity-50">证据快照未载入</button>}</div>
+          <div className="mt-5 border-t border-slate-200 pt-4 text-xs leading-5 text-slate-500">{isActive ? "该项目驱动顶部状态、右侧决策面板和后续六页数据。" : isDraft ? "该草案只保存在当前浏览器；建立独立审核证据快照前不能进入后续分析。" : "该项目仅展示组合状态；进入完整分析前需先建立独立 Run。"}</div>
+          <div className="mt-4">{selectedRun && selectedSnapshot ? <Link to="/evidence-pool" onClick={() => setActiveProject(selected.id)} className="secondary-button w-full">{isActive ? "继续当前 Run" : "设为当前 Run"}<ArrowRight size={15} /></Link> : <button disabled className="secondary-button w-full cursor-not-allowed opacity-50">{isDraft ? "证据快照未载入" : "独立 Run 尚未登记"}</button>}</div>
         </aside>
         </div>
       </section>
 
       <section><div className="mb-3"><h3 className="section-title">当前 Run 治理上下文</h3><p className="section-subtitle">项目切换后，七页证据、决策状态和飞书快照必须作为同一个版本化上下文更新</p></div><div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 lg:grid-cols-3"><div className="bg-white p-4"><div className="section-kicker">当前范围</div><div className="mt-2 text-sm font-semibold text-ink">{activeProject.name}</div><p className="mt-1 text-xs leading-5 text-slate-500">{run.name}</p></div><div className="bg-white p-4"><div className="section-kicker">证据快照</div><div className="mt-2 text-sm font-semibold text-ink">{activeSnapshot.version}</div><p className="mt-1 text-xs leading-5 text-slate-500">{activeSnapshot.source}</p></div><div className="bg-white p-4"><div className="section-kicker">决策控制</div><div className="mt-2 text-sm font-semibold text-ink">{activeProject.pendingCount} 项待确认</div><p className="mt-1 text-xs leading-5 text-slate-500">{activeProject.nextAction}</p></div></div></section>
+      <NewRunDialog open={newRunOpen} onClose={() => setNewRunOpen(false)} onCreate={(input) => setSelectedId(createDraftRun(input))} />
     </div>
   );
 }

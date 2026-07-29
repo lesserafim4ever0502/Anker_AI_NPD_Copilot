@@ -12,6 +12,7 @@
 |---|---|---|
 | `NpdProject` | Project card, active Run, recommendation, pending count / 项目卡、当前 Run、推荐与待确认数 | `projects.json` |
 | `NpdRun` | Run boundary, stage progress, status and next action / Run 边界、阶段、状态与下一步 | `npdRuns.json` |
+| `CreateNpdRunDraftInput` | Browser-local portfolio intake before evidence review / 证据审核前的浏览器本地项目登记 | Versioned `localStorage`, not `src/data` |
 | `EvidenceSource`, `EvidenceCard`, `Feedback` | Traceable evidence and reviewed feedback / 可追溯证据与已审核反馈 | `evidenceSources.json`, `evidenceCards.json`, `feedback.json` |
 | `PainPoint` | Cluster maturity, source count and design signals / 痛点成熟度、来源数与设计信号 | `painPoints.json` |
 | `Product`, `CapabilityMatrixRow` | Reviewed product facts and normalized capability coverage / 产品事实与能力矩阵 | `products.json`, `competitorProducts.json`, `capabilityMatrix.json` |
@@ -32,6 +33,9 @@
 - Proposed PRD metrics and open questions remain pending confirmation; they are not approved targets.
 - Feishu artifacts describe the demo handoff state and must not expose CLI credentials, tokens, or local manifest identifiers.
 - `FeishuWorkflow.reviewMeeting` and `knowledgeArchive` remain proposal-stage handoff structures; their `mockStatus` must distinguish reviewed snapshots, existing documents and proposed artifacts.
+- Browser-local Run drafts use the versioned key `anker-ai-npd-copilot.portfolio-drafts.v1`; their snapshot status remains `unavailable` until reviewed data is imported.
+- Local drafts never change frozen JSON counts and must not inherit evidence, candidates, scores, recommendations, or pending confirmations from another Run.
+- Static portfolio examples do not imply that a Run or reviewed snapshot exists.
 
 ## 4. JSON Consumption Rules / JSON 使用规则
 

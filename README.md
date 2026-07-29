@@ -4,9 +4,9 @@
 >
 > An evidence-driven AI workspace for moving from public user feedback to reviewable new-product decisions for Anker Innovation.
 
-本仓库当前是 **可运行的桌面优先七页 Demo repository**。Vite + React + TypeScript + Tailwind 工程、审核后的公开样本数据、Stage-Gate 结果、产品委员会结论与 Proposal PRD V0.2 均已实现。飞书作为贯穿七页的协作底座，每个阶段均展示来源表、协作动作、责任角色、审核状态、待确认项和产物去向。
+本仓库当前是 **可运行、可继续登记 NPD Run 草案的桌面优先七页工作台**。Vite + React + TypeScript + Tailwind 工程、审核后的公开样本数据、Stage-Gate 结果、产品委员会结论与 Proposal PRD V0.2 均已实现。项目工作台支持登记浏览器本地 Run 草案；独立审核证据快照完成前，草案不能进入后续分析。飞书作为贯穿七页的协作底座，每个阶段均展示来源表、协作动作、责任角色、审核状态、待确认项和产物去向。
 
-This is a **runnable desktop-first seven-page demo repository**. The frontend, reviewed public sample data, Stage-Gate outcome, committee decision, and Proposal PRD V0.2 are implemented. Feishu is represented as the collaboration layer across all seven stages, with page-level sources, actions, owners, review states, open confirmations, and artifact destinations.
+This is a **runnable desktop-first seven-page workspace with guarded local Run intake**. New Run drafts can be registered in browser storage, but remain locked until an independent evidence snapshot exists. The frontend, reviewed public sample data, Stage-Gate outcome, committee decision, and Proposal PRD V0.2 are implemented. Feishu is represented as the collaboration layer across all seven stages, with page-level sources, actions, owners, review states, open confirmations, and artifact destinations.
 
 ## 1. 项目定位
 
@@ -14,7 +14,7 @@ Anker AI-NPD Copilot 不是普通 AI 聊天机器人，也不是一次性新品�
 
 ## 2. Demo 主流程
 
-1. 项目工作台 / 项目启动页：管理多个 NPD 项目，进入当前主 Run。
+1. 项目工作台 / 项目启动页：管理多个 NPD 项目、登记浏览器本地 Run 草案，并进入具备独立审核快照的当前主 Run。
 2. 证据池概览页：展示公开小样本证据池、数据来源、证据链和数据缺口。
 3. 用户痛点雷达页：从用户反馈中提炼痛点标签、严重度和设计信号。
 4. 竞品机会矩阵页：结合产品矩阵和痛点信号识别机会空白与重叠风险。

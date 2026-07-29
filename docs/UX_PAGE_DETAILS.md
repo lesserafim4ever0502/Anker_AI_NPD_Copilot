@@ -31,9 +31,9 @@ The current implementation is desktop-first. Acceptance focuses on the left stag
 - Project Status Overview
 - Project Cards
 - Selected Project Detail
-- New Run Mock Modal
+- New Run Draft Dialog
 
-P0 交互：点击项目卡片，右侧详情切换；仅当项目、Run 和 loaded snapshot 注册记录同时匹配时，项目才可进入并驱动全局 NPD Run。
+P0 交互：点击项目卡片，右侧详情切换；登记浏览器本地 Run 草案；仅当项目、Run 和 loaded snapshot 注册记录同时匹配时，项目才可进入并驱动全局 NPD Run。草案保存不等于证据载入。
 
 ## Page 2: 证据池概览页
 

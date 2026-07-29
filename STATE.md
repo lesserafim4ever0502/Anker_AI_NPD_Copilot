@@ -2,9 +2,9 @@
 
 ## Current Phase
 
-当前处于 **Desktop Frontend Optimization / 桌面端优化、暂停公开演示** 阶段。
+当前处于 **Post-submission Continuation / 项目与 Run 生命周期补全、暂停公开演示** 阶段。
 
-The seven-page demo remains in the repository for desktop-first frontend optimization. Public hosting is paused; evidence, decisions, routes, and Proposal PRD V0.2 remain frozen for review. Mobile-specific acceptance is deferred.
+The seven-page workspace is being continued beyond the submission package. Public hosting remains paused; the reviewed main Run, evidence, decisions, routes, and Proposal PRD V0.2 stay frozen while project intake and lifecycle controls are strengthened. Mobile-specific acceptance remains deferred.
 
 ## Completed Decisions
 
@@ -30,6 +30,9 @@ The seven-page demo remains in the repository for desktop-first frontend optimiz
 - 飞书闭环具象化：Page 7 展示可展开产物、二次评审会议议程、预期产物与知识库归档树。
 - 飞书协作上下文：七页现统一展示来源表、当前协作动作、责任角色、审核状态、待确认数量、阶段产物与关联位置。
 - 飞书全景语义：Page 6 不再使用末端 Handoff 按钮；Page 7 改为跨阶段协作总览，并区分真实资产、已审核快照和 Proposal Mock。
+- Run 草案登记：项目工作台可登记浏览器本地 Run 草案，保存品类、场景、市场、问题陈述与责任角色。
+- 草案激活门禁：本地草案使用版本化存储，证据快照状态固定为 unavailable；未载入独立审核快照时不能进入后续六页或复用主 Run 数据。
+- 项目组合边界：除主 Run 外的两个预置项目仍是组合示例，不代表已创建独立 Run、飞书工作台或审核快照。
 
 ## Current Demo State Recommendation
 
@@ -44,12 +47,11 @@ Next Action: Proposal PRD Scope Freeze
 
 ## Next Development Steps / 下一步
 
-1. 按 `docs/DEMO_SCRIPT.md` 完成 3–5 分钟讲解排练和最终桌面截图审阅。
-2. 生成补充材料 PDF、评审数据底座 XLSX 和团队能力证明。
-3. 最终 UI 与投稿材料冻结后恢复 GitHub Pages，并在无登录窗口验收。
-4. 为另外两个组合示例建立独立证据快照后，再开放跨项目 Run 切换。
-5. 移动端适配延期，不纳入当前投稿验收范围。
-6. 每次投稿候选版本执行 `npm run validate` 与 `npm run build`。
+1. 继续完善主 Run 的 Pending Confirmation 本地责任状态变更与 Decision Ledger 写回演示。
+2. 为浏览器本地 Run 草案设计明确的人工确认与独立证据导入边界，但不自动创建新的云端 Run。
+3. 在桌面流程稳定后补移动端信息架构与触控验收。
+4. 需要公开展示时再恢复 GitHub Pages，并在无登录窗口验收。
+5. 每个候选版本执行 `npm run validate`、TypeScript 检查与 `npm run build`。
 
 ## Sites Deployment / Sites 发布
 

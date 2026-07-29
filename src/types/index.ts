@@ -57,6 +57,15 @@ export type NpdRun = {
   }[];
 };
 
+export type CreateNpdRunDraftInput = {
+  projectName: string;
+  categories: string[];
+  scenario: string;
+  market: string;
+  problemStatement: string;
+  ownerRoles: string[];
+};
+
 export type RunSnapshot = {
   runId: string;
   projectId: string;

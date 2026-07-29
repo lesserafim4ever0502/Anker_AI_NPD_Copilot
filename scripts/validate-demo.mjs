@@ -26,6 +26,8 @@ async function findEmptyFiles(directory) {
 }
 
 const appSource = await readFile(path.join(root, "src", "App.tsx"), "utf8");
+const projectContextSource = await readFile(path.join(root, "src", "context", "ProjectRunContext.tsx"), "utf8");
+const projectWorkspaceSource = await readFile(path.join(root, "src", "pages", "ProjectWorkspace.tsx"), "utf8");
 const requiredRoutes = [
   "/project-workspace",
   "/evidence-pool",
@@ -36,6 +38,11 @@ const requiredRoutes = [
   "/feishu-workflow",
 ];
 for (const route of requiredRoutes) assert(appSource.includes(`path="${route}"`), `route ${route}`);
+assert(projectContextSource.includes("anker-ai-npd-copilot.portfolio-drafts.v1"), "versioned local Run draft storage");
+assert(projectContextSource.includes("status: \"unavailable\""), "draft Run snapshot remains unavailable");
+assert(projectContextSource.includes("if (isDraftProject(projectId)) return false"), "local draft cannot self-activate");
+assert(projectWorkspaceSource.includes("<NewRunDialog"), "project workspace Run draft dialog");
+assert(projectWorkspaceSource.includes("建立独立审核证据快照前不能进入后续分析"), "draft Run activation guard");
 
 const projects = await readJson("projects.json");
 const runs = await readJson("npdRuns.json");
@@ -66,6 +73,8 @@ const expectedCounts = [
 for (const [data, expected, label] of expectedCounts) {
   assert(Array.isArray(data) && data.length === expected, `${label}: ${expected}`);
 }
+assert(runs.length === 1, `registered reviewed NPD Runs: ${runs.length}`);
+assert(snapshots.length === 1, `registered reviewed Run snapshots: ${snapshots.length}`);
 
 const mainProject = projects.find((item) => item.id === "project-desktop-energy");
 const mainRun = runs.find((item) => item.id === "run-anker-001");
@@ -87,7 +96,7 @@ for (const snapshot of snapshots) {
   const run = runs.find((item) => item.id === snapshot.runId);
   assert(Boolean(project && run && run.projectId === project.id), `snapshot binding ${snapshot.runId}`);
 }
-assert(snapshots.filter((item) => item.status === "loaded").length === 1, "loaded Run snapshots: 1");
+assert(snapshots.every((item) => item.status === "loaded"), "all tracked seed snapshots are reviewed");
 
 const requiredFeishuContextFields = [
   "stage",
@@ -111,6 +120,9 @@ assert(invalidUrls.length === 0, "all public source URLs use HTTPS");
 
 const gitignore = await readFile(path.join(root, ".gitignore"), "utf8");
 assert(gitignore.split(/\r?\n/).includes("data_workbench/feishu_workspace_manifest.local.json"), "local Feishu manifest is ignored");
+assert(gitignore.split(/\r?\n/).includes("data_workbench/feishu_*_auth_qr.png"), "temporary Feishu authorization QR is ignored");
+const publicManifestSource = await readFile(path.join(root, "data_workbench", "feishu_workspace_manifest.json"), "utf8");
+assert(!publicManifestSource.includes('"app_token"') && !publicManifestSource.includes('"table_id"'), "public Feishu manifest omits resource identifiers");
 
 const requiredDocs = [
   "README.md",

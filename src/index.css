@@ -126,6 +126,21 @@ button { font: inherit; }
   .filter-button-active { @apply border-blue-300 bg-blue-50 text-blue-700; }
   .primary-button { @apply inline-flex min-h-9 items-center justify-center gap-2 rounded-md bg-[#172033] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#26334b] focus:outline-none focus:ring-2 focus:ring-blue-300; }
   .secondary-button { @apply inline-flex min-h-9 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-200; }
+  .modal-backdrop { @apply fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/45 p-4; }
+  .modal-shell { @apply max-h-[calc(100vh-2rem)] w-full max-w-2xl overflow-y-auto border border-slate-200 bg-white shadow-2xl; border-radius: 6px; }
+  .modal-header { @apply sticky top-0 z-10 flex items-center justify-between gap-4 border-b border-slate-200 bg-white px-5 py-4; }
+  .modal-body { @apply space-y-5 p-5; }
+  .modal-footer { @apply sticky bottom-0 flex justify-end gap-2 border-t border-slate-200 bg-slate-50 px-5 py-3; }
+  .draft-boundary-note { @apply flex gap-3 border-l-2 border-emerald-400 bg-emerald-50 px-3 py-2.5 text-xs leading-5 text-slate-700; }
+  .draft-boundary-note strong { @apply font-semibold text-emerald-800; }
+  .draft-boundary-note p { @apply mt-0.5; }
+  .form-grid { @apply grid gap-4 sm:grid-cols-2; }
+  .form-field { @apply flex min-w-0 flex-col gap-1.5; }
+  .form-field-wide { @apply sm:col-span-2; }
+  .form-label { @apply text-xs font-semibold text-slate-700; }
+  .form-input { @apply min-h-10 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-ink outline-none transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-100; }
+  .form-textarea { @apply min-h-24 resize-y leading-6; }
+  .form-help { @apply text-right text-[10px] text-slate-400; }
   .table-shell { @apply overflow-x-auto border border-slate-200 bg-white; border-radius: 6px; }
   .data-table { @apply w-full min-w-[760px] text-left text-sm; }
   .data-table thead { @apply sticky top-0 z-10 border-b border-slate-200 bg-slate-50 text-[11px] uppercase text-slate-500; }

@@ -55,6 +55,7 @@ Implemented or planned in the first development iteration:
 - Mock multi-agent review outputs.
 - Mock Feishu collaboration artifacts.
 - Mock Decision Ledger and Pending Confirmations.
+- Browser-local NPD Run draft intake with snapshot activation guards.
 
 Not implemented at this stage:
 
@@ -66,6 +67,8 @@ Not implemented at this stage:
 - Model fine-tuning.
 - Real multi-user permissions.
 - Real project persistence beyond local data.
+
+Browser-local Run drafts are portfolio intake records, not evidence snapshots. They must remain unable to activate downstream pages until a matching reviewed snapshot is explicitly registered.
 
 ---
 

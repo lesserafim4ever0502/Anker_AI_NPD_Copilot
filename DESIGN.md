@@ -210,7 +210,7 @@ PRD Drafted / Need Confirmation
 2. Project Status Overview
 3. Project Cards
 4. Selected Project Detail
-5. New Run Mock CTA
+5. New Run Draft Dialog
 
 ### Required Project Cards
 
@@ -228,6 +228,8 @@ Anker AI-NPD Copilot 是面向安克新品定义团队的证据链驱动 NPD 工
 
 - 点击主项目卡片，右侧详情更新。
 - 点击“进入 NPD Run”，进入 Page 2。
+- 点击“新建 Run 草案”，登记项目名称、品类、场景、市场、初始问题和责任角色。
+- 浏览器草案只进入项目组合；没有独立证据快照时，进入后续分析的动作保持禁用。
 
 ### Screenshot Acceptance
 

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useProjectRun } from "../context/ProjectRunContext";
 
 export default function Header() {
-  const { projects, activeProject: project, activeRun: run, canActivateProject, setActiveProject } = useProjectRun();
+  const { projects, activeProject: project, activeRun: run, canActivateProject, isDraftProject, setActiveProject } = useProjectRun();
   const [open, setOpen] = useState(false);
 
   return (
@@ -26,11 +26,12 @@ export default function Header() {
             <ChevronDown size={14} className={`shrink-0 text-slate-400 transition ${open ? "rotate-180" : ""}`} />
           </button>
           {open ? <div className="project-switcher-menu" role="menu">
-            <div className="border-b border-slate-100 px-3 py-2"><div className="text-xs font-semibold text-ink">切换当前项目</div><div className="mt-0.5 text-[11px] text-slate-500">仅可切换到已载入独立 Run 快照的项目</div></div>
+            <div className="border-b border-slate-100 px-3 py-2"><div className="text-xs font-semibold text-ink">切换当前项目</div><div className="mt-0.5 text-[11px] text-slate-500">草案与组合示例需建立独立证据快照后才能激活</div></div>
             <div className="py-1">{projects.map((item) => {
               const ready = canActivateProject(item.id);
               const current = item.id === project.id;
-              return <button key={item.id} type="button" role="menuitem" disabled={!ready} title={ready ? `切换到 ${item.name}` : `${item.name} 尚未载入独立 Run 数据`} onClick={() => { setActiveProject(item.id); setOpen(false); }} className={`project-switcher-option ${ready ? "" : "project-switcher-option-unavailable"}`}><span className="min-w-0 flex-1"><span className="block truncate text-xs font-semibold text-ink">{item.name}</span><span className="mt-0.5 block truncate text-[11px] text-slate-500">{item.scenario} · {item.market}</span></span>{current ? <Check size={15} className="shrink-0 text-blue-700" /> : ready ? <span className="run-ready-chip">Run 已载入</span> : <span className="snapshot-missing-chip"><LockKeyhole size={12} />组合示例</span>}</button>;
+              const draft = isDraftProject(item.id);
+              return <button key={item.id} type="button" role="menuitem" disabled={!ready} title={ready ? `切换到 ${item.name}` : `${item.name} 尚未载入独立证据快照`} onClick={() => { setActiveProject(item.id); setOpen(false); }} className={`project-switcher-option ${ready ? "" : "project-switcher-option-unavailable"}`}><span className="min-w-0 flex-1"><span className="block truncate text-xs font-semibold text-ink">{item.name}</span><span className="mt-0.5 block truncate text-[11px] text-slate-500">{item.scenario} · {item.market}</span></span>{current ? <Check size={15} className="shrink-0 text-blue-700" /> : ready ? <span className="run-ready-chip">Run 已载入</span> : <span className="snapshot-missing-chip"><LockKeyhole size={12} />{draft ? "Run 草案" : "组合示例"}</span>}</button>;
             })}</div>
             <Link to="/project-workspace" onClick={() => setOpen(false)} className="project-switcher-footer">管理项目组合</Link>
           </div> : null}

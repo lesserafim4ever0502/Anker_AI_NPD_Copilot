@@ -103,6 +103,7 @@ Recommended Candidate: 跨平台 Dock 兼容预检助手（Recommended with Warn
 ## 8. P0 Functional Requirements
 
 - 展示多个 NPD 项目状态。
+- 可登记浏览器本地 NPD Run 草案，保存项目范围、问题陈述和责任角色。
 - 进入主 NPD Run。
 - 展示全局 Run Status Bar。
 - 展示每页 Decision Panel。
@@ -129,6 +130,7 @@ Recommended Candidate: 跨平台 Dock 兼容预检助手（Recommended with Warn
 - 不接真实后端。
 - 不接真实 LLM。
 - 不接真实飞书 API。
+- 浏览器本地 Run 草案不属于审核证据，也不能在无独立快照时激活后续分析页。
 
 入围后可升级：
 
@@ -163,3 +165,4 @@ Demo 通过验收的标准：
 8. 能看到 PRD 是草案，有 MVP 收敛、非目标、风险和验证计划。
 9. 能看到飞书承载文档、表格、任务、会议和知识库。
 10. 能看到 Decision Ledger 和 Pending Confirmations。
+11. 新建 Run 草案后能在项目组合中查看，但在独立证据快照建立前不能复用主 Run 数据或进入后续六页。

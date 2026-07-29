@@ -4,6 +4,14 @@
 
 ### Changed
 
+- Timestamp: 2026-07-28T11:10:52+08:00.
+- Continued the project beyond its submission package by adding guarded browser-local NPD Run draft intake to Project Workspace.
+- New drafts capture project name, categories, scenario, market, problem statement, and owner roles in versioned local storage.
+- Drafts receive an unavailable snapshot and remain unable to activate Evidence Pool or downstream decisions until an independent reviewed snapshot exists.
+- Header and portfolio controls now distinguish loaded Runs, local Run drafts, and static combination examples without changing the frozen main Run or business counts.
+- Added four validation checks for draft storage, unavailable snapshot state, dialog presence, and activation guard.
+- Validation: `npm run validate` passed 46 checks; `npx tsc -b --pretty false` passed. Production build could not be rerun because the required sandbox escalation was unavailable after the local esbuild child process was denied.
+
 - Timestamp: 2026-07-17T11:40:14+08:00.
 - Upgraded Feishu from a page-level data-lineage label and end-stage handoff metaphor into a collaboration context spanning all seven routes.
 - Each stage now exposes Feishu sources, current collaboration action, owner roles, review state, pending confirmations, artifact destination, and explicit data boundary in an expandable shared component.
