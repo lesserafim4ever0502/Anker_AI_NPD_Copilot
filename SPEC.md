@@ -95,7 +95,7 @@ Recommended Candidate: 跨平台 Dock 兼容预检助手（Recommended with Warn
 3. 用户痛点雷达页
 4. 竞品机会矩阵页
 5. Stage-Gate + 多 Agent 评审页
-6. 样例 NP PRD 摘要输出页
+6. 样例 NP PRD 摘要输出页 + Dock 兼容预检规则切片 + 验证运营控制台
 7. 飞书协作全景与知识沉淀页
 
 ---
@@ -114,6 +114,10 @@ Recommended Candidate: 跨平台 Dock 兼容预检助手（Recommended with Warn
 - 展示 Stage-Gate 矩阵、Kill Criteria 和多 Agent 评审。
 - 展示推荐但需二次确认的候选 NP。
 - 展示 PRD 摘要草案、MVP 功能、风险和验证计划。
+- 在 Page 6 运行本地兼容预检规则，显示输入、结果、判断依据、人工核对项、来源和边界。
+- 同时显示规则契约通过数和硬件金标准进度，不得把软件自检当成硬件验证。
+- 预置 10 组拓扑和 3 类任务，形成 30 例金标准计划；允许记录本地待复核观测和 FAQ 对照组，但未经双人签核不得计入验证结果。
+- 本地验证草稿可复制为结构化飞书交接 JSON；网页不直接写入真实飞书资产。
 - 七页均展示飞书来源、当前协作动作、责任角色、审核状态、待确认项和产物去向。
 - 展示飞书四层协同、产物卡片、会议议程、任务清单、Decision Ledger、知识库归档。
 
@@ -166,3 +170,17 @@ Demo 通过验收的标准：
 9. 能看到飞书承载文档、表格、任务、会议和知识库。
 10. 能看到 Decision Ledger 和 Pending Confirmations。
 11. 新建 Run 草案后能在项目组合中查看，但在独立证据快照建立前不能复用主 Run 数据或进入后续六页。
+
+---
+
+## 12. Post-competition Validation Principles
+
+赛后复盘确认：系统完整性、数据契约和协作闭环是基础能力，不是产品有效性的替代证明。后续版本遵守以下原则：
+
+1. `Product proof before platform breadth`：先验证一个具体品类任务，再扩展平台范围。
+2. `Measured evidence before proposed metrics`：优先提供实测基线和结果，未测指标继续标记为待验证。
+3. `One live vertical slice`：至少跑通一条包含来源、判断、Unknown、人工确认和版本回写的真实链路。
+4. `Relative differentiation gate`：外部提交前必须说明相对同类多 Agent / 证据链方案的不可替代证据。
+5. 历史报名快照不得被新实验覆盖；真实验证使用新版本或新 Run 快照。
+
+完整依据、入围方案对照和下一阶段门槛见 `docs/COMPETITION_POSTMORTEM.md`。

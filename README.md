@@ -4,7 +4,9 @@
 >
 > An evidence-driven AI workspace for moving from public user feedback to reviewable new-product decisions for Anker Innovation.
 
-本仓库当前是 **可运行、可继续登记 NPD Run 草案的桌面优先七页工作台**。Vite + React + TypeScript + Tailwind 工程、审核后的公开样本数据、Stage-Gate 结果、产品委员会结论与 Proposal PRD V0.2 均已实现。项目工作台支持登记浏览器本地 Run 草案；独立审核证据快照完成前，草案不能进入后续分析。飞书作为贯穿七页的协作底座，每个阶段均展示来源表、协作动作、责任角色、审核状态、待确认项和产物去向。
+本仓库当前是 **可运行、可继续登记 NPD Run 草案的桌面优先七页工作台**。Vite + React + TypeScript + Tailwind 工程、审核后的公开样本数据、Stage-Gate 结果、产品委员会结论与 Proposal PRD V0.2 均已实现。Page 6 已加入可操作的 Dock 兼容预检规则切片和验证运营控制台：前者运行 10 条规则契约并返回有边界的解释，后者把 10 组拓扑 × 3 个任务组织成 30 例金标准计划，支持记录浏览器本地待复核草稿和 FAQ 对照会话。硬件金标准仍明确为 `0 / 30`，本地草稿不会自动升级为验证结果。项目工作台支持登记浏览器本地 Run 草案；独立审核证据快照完成前，草案不能进入后续分析。飞书作为贯穿七页的协作底座，每个阶段均展示来源表、协作动作、责任角色、审核状态、待确认项和产物去向。
+
+2026 AI 先锋未来人才大赛赛后复盘已沉淀到 [`docs/COMPETITION_POSTMORTEM.md`](docs/COMPETITION_POSTMORTEM.md)。项目后续从“扩展平台展示”转向“验证一个具体品类任务”：优先补充一手研究、金标准案例、真实 AI / 规则运行切片和实测指标，不再通过增加页面代替产品验证。
 
 This is a **runnable desktop-first seven-page workspace with guarded local Run intake**. New Run drafts can be registered in browser storage, but remain locked until an independent evidence snapshot exists. The frontend, reviewed public sample data, Stage-Gate outcome, committee decision, and Proposal PRD V0.2 are implemented. Feishu is represented as the collaboration layer across all seven stages, with page-level sources, actions, owners, review states, open confirmations, and artifact destinations.
 
@@ -19,7 +21,7 @@ Anker AI-NPD Copilot 不是普通 AI 聊天机器人，也不是一次性新品�
 3. 用户痛点雷达页：从用户反馈中提炼痛点标签、严重度和设计信号。
 4. 竞品机会矩阵页：结合产品矩阵和痛点信号识别机会空白与重叠风险。
 5. Stage-Gate + 多 Agent 评审页：对 3 个候选 NP 做门禁评审、反方质疑和推荐判断。
-6. 样例 NP PRD 摘要输出页：生成结构化 PRD 草案、MVP 功能、风险和验证计划。
+6. 样例 NP PRD 摘要输出页：运行可解释的本地兼容预检规则切片，并通过验证运营控制台登记金标准或 FAQ 对照的本地待复核观测，再查看结构化 PRD 草案、风险和验证计划。
 7. 飞书协作全景页：汇总前六页已发生或计划发生的飞书协作、任务、会议和知识资产，不把飞书表现为流程末端。
 
 ## 3. 当前推荐 Demo 状态
@@ -66,6 +68,7 @@ Next: Product Review Meeting
 │   ├── REPORT_OUTLINE.md
 │   ├── ENTERPRISE_VALUE.md
 │   ├── DEVELOPMENT_PLAN.md
+│   ├── COMPETITION_POSTMORTEM.md
 │   └── CHANGELOG.md
 ├── data_templates/
 │   ├── *.json
@@ -99,6 +102,7 @@ DESIGN.md
 docs/SYSTEM_PRD.md
 docs/UX_PAGE_DETAILS.md
 docs/DATA_SCHEMA.md
+docs/COMPETITION_POSTMORTEM.md
 ```
 
 
@@ -153,6 +157,7 @@ Vite + React + TypeScript + Tailwind CSS
 - PRD 输出是草案，不是最终立项文件。
 - 必须区分真实飞书资产、已审核快照与 Proposal Mock；不得用统一“同步成功”状态混淆边界。
 - 不要把 NPD 表达成一键完成。系统应该保留 Warning、Pending Confirmation、Review Meeting 和 Validation Tasks。
+- 规则契约通过不等于硬件兼容验证；只有进入人工金标准集的案例才能升级为“支持”。
 
 ## 9. Sites 开发入口 / Sites Entry Point
 

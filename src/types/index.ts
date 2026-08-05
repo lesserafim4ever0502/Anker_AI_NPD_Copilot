@@ -261,6 +261,94 @@ export type EvaluationSummary = {
   nextAction: string;
 };
 
+export type CompatibilityOutcome = "supported" | "conditional" | "not_supported" | "unknown";
+
+export type CompatibilityInput = {
+  dockId: string;
+  hostOs: string;
+  hostConnection: string;
+  displayCount: number;
+  displayMode: string;
+  task: string;
+  driverState: string;
+};
+
+export type CompatibilityEvaluation = {
+  outcome: CompatibilityOutcome;
+  confidence: Confidence;
+  headline: string;
+  summary: string;
+  reasons: string[];
+  requiredChecks: string[];
+  evidenceRefs: string[];
+  ruleIds: string[];
+};
+
+export type CompatibilityRuleSet = {
+  version: string;
+  mode: "local_rule_slice";
+  scopeLabel: string;
+  lastReviewed: string;
+  hardwareVerifiedCases: number;
+  goldSetTarget: number;
+  boundary: string;
+  defaultInput: CompatibilityInput;
+  inputOptions: Record<string, { value: string; label: string }[]>;
+  docks: {
+    id: string;
+    name: string;
+    reviewedTasks: string[];
+    maxReviewedDisplays: number;
+    sourceRef: string;
+  }[];
+  evidence: {
+    id: string;
+    label: string;
+    type: string;
+    url: string;
+  }[];
+  rules: { id: string; description: string }[];
+  contractCases: {
+    id: string;
+    label: string;
+    input: CompatibilityInput;
+    expectedOutcome: CompatibilityOutcome;
+  }[];
+};
+
+export type ValidationDraftRecord = {
+  id: string;
+  createdAt: string;
+  method: string;
+  topologyId: string;
+  taskId: string;
+  comparisonArm: string | null;
+  observedOutcome: string;
+  reviewerVerdict: string;
+  durationSeconds: number | null;
+  reviewer: string;
+  notes: string;
+  verificationStatus: "local_draft";
+};
+
+export type ValidationProtocol = {
+  version: string;
+  lastReviewed: string;
+  mode: "local_validation_draft";
+  scopeLabel: string;
+  boundary: string;
+  targets: { userInterviews: number; topologies: number; tasksPerTopology: number; goldCases: number; faqComparisonSessions: number };
+  verified: { userInterviews: number; goldCases: number; faqComparisonSessions: number };
+  methods: { value: string; label: string }[];
+  comparisonArms: { value: string; label: string }[];
+  observedOutcomes: { value: string; label: string }[];
+  reviewerVerdicts: { value: string; label: string }[];
+  tasks: { id: string; title: string; instruction: string; successDefinition: string }[];
+  topologies: { id: string; host: string; os: string; dockId: string; connection: string; displays: string; reason: string }[];
+  metrics: { id: string; label: string; target: string; failRule: string }[];
+  feishuHandoff: { status: "proposal_mock"; targetObjects: string[]; requiredReviewers: string[]; writebackRule: string };
+};
+
 export type PendingConfirmation = {
   id: string;
   title: string;

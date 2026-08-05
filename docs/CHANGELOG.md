@@ -4,6 +4,26 @@
 
 ### Changed
 
+- Timestamp: 2026-08-05T15:30:00+08:00.
+- Added a Page 6 validation operations console that turns the competition postmortem into an executable 10-topology × 3-task gold-set plan.
+- Added browser-local, explicitly unsigned observation drafts for hardware and FAQ-comparison sessions, plus a structured Feishu handoff JSON copy action.
+- Added four measurable decision gates and kept verified counts at zero until independent dual review; planned cases and local drafts cannot change product claims.
+- Added a proposed Feishu validation-signoff artifact and expanded TypeScript, schema and automated validation contracts without adding a route, dependency, backend, live Feishu API or production persistence.
+- Reworked the validation console's nested desktop grids so decision thresholds, proposed metrics, risks, and Feishu handoff content stack before their labels become cramped; the page now remains horizontally readable at constrained desktop widths.
+
+- Timestamp: 2026-08-05T10:30:48+08:00.
+- Added a working Dock compatibility preflight slice inside Page 6 without adding a route, dependency, backend, production LLM, or live Feishu API.
+- Added `compatibilityRules.json` with three reviewed Anker Dock references, five bounded rules, five public evidence links, and ten deterministic contract cases.
+- Added a pure local evaluator and an interactive input/result surface that exposes conditions, evidence, required human checks, Unknown handling, and scope boundaries.
+- Kept hardware validation honest: rule contracts report `10 / 10`, while the hardware gold-standard counter remains `0 / 30`; public product claims cannot produce a verified `supported` result.
+- Updated types, validation checks, README, AGENT, SPEC, STATE, DESIGN, SYSTEM_PRD, UX details, data schema, demo script, postmortem, and review index.
+
+- Timestamp: 2026-08-04T10:09:25+08:00.
+- Added `docs/COMPETITION_POSTMORTEM.md` based on a complete read-only Feishu CLI extraction of the public shortlist: 309 valid records, 107 enterprises, and 3 Anker Innovation finalists.
+- Compared the three Anker finalist recommendations with the frozen submission and documented the inference boundary: the public page contains positive shortlist reasons, not official rejection feedback.
+- Shifted the next-phase priority from platform breadth to product proof: first-hand research, gold-standard compatibility cases, one live AI/rules vertical slice, measured outcomes, and a relative-competition Red Team gate.
+- Updated README, AGENT, SPEC, STATE, DESIGN, SYSTEM_PRD, DECISIONS, and `review_index.json`; frozen sample data, Gate outcomes, Proposal PRD V0.2, hosting state, and frontend behavior remain unchanged.
+
 - Timestamp: 2026-07-28T11:10:52+08:00.
 - Continued the project beyond its submission package by adding guarded browser-local NPD Run draft intake to Project Workspace.
 - New drafts capture project name, categories, scenario, market, problem statement, and owner roles in versioned local storage.

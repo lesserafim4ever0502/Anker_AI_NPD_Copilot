@@ -34,9 +34,9 @@ Across 18 Gate evaluations, compatibility preflight scores 4.24 and is `Recommen
 
 ### 3:20–4:10 Proposal PRD
 
-PRD 只定义有限规则 MVP：10 组拓扑、可追溯兼容结论、设置步骤、来源与版本元数据，以及未知返回。它不承诺通用兼容，不自动控制设备，也不开发新 Dock 硬件。所有成功指标都是拟议目标，仍需确认。
+先在“预检实验”选择 Dock、OS、显示拓扑和目标任务，运行本地规则。系统返回条件支持、当前范围不支持或未知，并同时给出判断依据、公开来源和人工核对项。顶部的 `10 / 10` 是规则契约自检，`0 / 30` 才是当前硬件金标准进度，两者不能混淆。PRD 仍只定义有限规则 MVP，不承诺通用兼容，也不自动控制设备。
 
-The Proposal PRD defines a bounded rules MVP: ten topologies, traceable compatibility results, setup steps, version metadata, and an explicit unknown state. It does not promise universal compatibility or new hardware. All targets remain proposed and pending confirmation.
+The Preflight Lab runs a local, explainable rule slice for a selected Dock, OS, topology, and task. Ten of ten software contract cases pass, while hardware gold-standard progress remains zero of thirty. The Proposal PRD still defines a bounded MVP and does not promise universal compatibility.
 
 ### 4:10–5:00 飞书协作全景 / Feishu Collaboration Overview
 

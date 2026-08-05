@@ -58,6 +58,8 @@ const summaries = await readJson("evaluationSummary.json");
 const confirmations = await readJson("pendingConfirmations.json");
 const proposal = await readJson("proposalPrd.json");
 const feishuLineage = await readJson("feishuLineage.json");
+const compatibilityRules = await readJson("compatibilityRules.json");
+const validationProtocol = await readJson("validationProtocol.json");
 
 const expectedCounts = [
   [projects, 3, "projects"],
@@ -89,6 +91,17 @@ assert(proposal.candidateId === mainCandidate?.id && proposal.version === "v0.2"
 assert(proposal.successMetrics?.length === 4, "Proposal PRD metrics: 4");
 assert(proposal.risks?.length === 4, "Proposal PRD risks: 4");
 assert(proposal.validationPlan?.length === 3, "Proposal PRD validation methods: 3");
+assert(compatibilityRules.mode === "local_rule_slice", "compatibility preflight uses local rule slice");
+assert(compatibilityRules.contractCases?.length === 10, "compatibility rule contract cases: 10");
+assert(compatibilityRules.hardwareVerifiedCases === 0, "hardware gold-set status remains explicit: 0 verified");
+assert(compatibilityRules.evidence?.every((item) => /^https:\/\//.test(item.url)), "compatibility evidence URLs use HTTPS");
+assert(compatibilityRules.contractCases?.every((item) => ["supported", "conditional", "not_supported", "unknown"].includes(item.expectedOutcome)), "compatibility contract outcomes are bounded");
+assert(validationProtocol.topologies?.length === 10, "validation protocol topologies: 10");
+assert(validationProtocol.tasks?.length === 3, "validation protocol tasks per topology: 3");
+assert(validationProtocol.topologies.length * validationProtocol.tasks.length === 30, "validation protocol planned gold cases: 30");
+assert(validationProtocol.verified?.goldCases === 0, "validation protocol verified gold cases remain explicit: 0");
+assert(validationProtocol.comparisonArms?.length === 2, "validation protocol has FAQ and preflight comparison arms");
+assert(validationProtocol.metrics?.some((item) => item.id === "false_certainty" && item.target === "0"), "validation protocol preserves zero false-certainty gate");
 assert(summaries.filter((item) => item.gateResult === "fail_evidence_gate").length === 1, "Fail Gate count: 1");
 
 for (const snapshot of snapshots) {

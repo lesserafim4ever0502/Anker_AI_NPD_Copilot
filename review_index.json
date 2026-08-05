@@ -40,6 +40,9 @@
     "sites_handoff": "docs/SITES_HANDOFF.md",
     "data_intake": "docs/DATA_INTAKE.md",
     "evidence_agent_prompt": "docs/EVIDENCE_AGENT_PROMPT.md",
+    "competition_postmortem": "docs/COMPETITION_POSTMORTEM.md",
+    "compatibility_rules": "src/data/compatibilityRules.json",
+    "validation_protocol": "src/data/validationProtocol.json",
     "raw_evidence_template": "data_templates/raw_evidence_intake.csv",
     "structured_evidence_template": "data_templates/structured_evidence_template.csv"
   },
@@ -54,6 +57,42 @@
   ],
   "recommended_demo_state": "PRD Drafted / Need Confirmation",
   "recommended_candidate": "跨平台 Dock 兼容预检助手（Recommended with Warning）",
+  "post_competition_direction": {
+    "status": "product-proof-first",
+    "source_record_count": 309,
+    "source_enterprise_count": 107,
+    "anker_finalist_count": 3,
+    "principles": [
+      "product proof before platform breadth",
+      "measured evidence before proposed metrics",
+      "one live AI/rules vertical slice",
+      "relative differentiation red-team gate",
+      "preserve historical submission snapshots"
+    ],
+    "next_validation": [
+      "8-12 target-user interviews or observable tasks",
+      "30-50 human gold-standard compatibility cases",
+      "traceable judgement with unknown and human confirmation",
+      "measured accuracy, unsupported certainty, completion rate and troubleshooting time"
+    ],
+    "implemented_slice": {
+      "location": "ProposalPrd / Preflight",
+      "mode": "local deterministic rules",
+      "contract_cases": 10,
+      "hardware_verified_cases": 0,
+      "gold_set_target": 30,
+      "boundary": "software contract pass is not hardware compatibility proof"
+    },
+    "validation_operations": {
+      "location": "ProposalPrd / Validation",
+      "planned_topologies": 10,
+      "tasks_per_topology": 3,
+      "planned_gold_cases": 30,
+      "verified_gold_cases": 0,
+      "persistence": "versioned browser-local unsigned drafts",
+      "handoff": "structured JSON for proposed Feishu review queue"
+    }
+  },
   "feishu_role": {
     "input": [
       "product matrix",

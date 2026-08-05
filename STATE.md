@@ -2,9 +2,9 @@
 
 ## Current Phase
 
-当前处于 **Post-submission Continuation / 项目与 Run 生命周期补全、暂停公开演示** 阶段。
+当前处于 **Post-competition Validation / 赛后复盘与单一产品任务验证准备、暂停公开演示** 阶段。
 
-The seven-page workspace is being continued beyond the submission package. Public hosting remains paused; the reviewed main Run, evidence, decisions, routes, and Proposal PRD V0.2 stay frozen while project intake and lifecycle controls are strengthened. Mobile-specific acceptance remains deferred.
+The seven-page workspace remains available as historical submission infrastructure. Public hosting stays paused; the reviewed main Run, evidence, decisions, routes, and Proposal PRD V0.2 remain frozen. The next phase prioritizes first-hand research, gold-standard compatibility cases, one live AI/rules vertical slice, and measured validation results. Mobile-specific acceptance remains deferred.
 
 ## Completed Decisions
 
@@ -33,6 +33,9 @@ The seven-page workspace is being continued beyond the submission package. Publi
 - Run 草案登记：项目工作台可登记浏览器本地 Run 草案，保存品类、场景、市场、问题陈述与责任角色。
 - 草案激活门禁：本地草案使用版本化存储，证据快照状态固定为 unavailable；未载入独立审核快照时不能进入后续六页或复用主 Run 数据。
 - 项目组合边界：除主 Run 外的两个预置项目仍是组合示例，不代表已创建独立 Run、飞书工作台或审核快照。
+- 大赛复盘：已通过飞书 CLI 完整解析 309 条入围记录和 107 家命题企业，并对安克创新 3 支入围方案完成对照分析。
+- 产品策略调整：后续从“平台完整性优先”切换为“单一产品任务验证优先”；不再通过增加页面代替一手研究、真实运行和实测指标。
+- 规则验证切片：Page 6 已加入 Dock 兼容预检实验，使用独立 JSON 规则包运行 10 条契约案例，并明确区分 `10 / 10` 软件规则自检与 `0 / 30` 硬件金标准。
 
 ## Current Demo State Recommendation
 
@@ -47,11 +50,19 @@ Next Action: Proposal PRD Scope Freeze
 
 ## Next Development Steps / 下一步
 
-1. 继续完善主 Run 的 Pending Confirmation 本地责任状态变更与 Decision Ledger 写回演示。
-2. 为浏览器本地 Run 草案设计明确的人工确认与独立证据导入边界，但不自动创建新的云端 Run。
-3. 在桌面流程稳定后补移动端信息架构与触控验收。
-4. 需要公开展示时再恢复 GitHub Pages，并在无登录窗口验收。
-5. 每个候选版本执行 `npm run validate`、TypeScript 检查与 `npm run build`。
+1. 为 Dock 兼容预检任务准备 8–12 位目标用户的一手访谈或可复核任务观察。
+2. 建立 30–50 条人工金标准兼容案例，覆盖 Mac、Windows、Dock、线材和显示拓扑。
+3. 在已完成的本地规则切片上接入人工金标准回写；真实 AI 判断仍待后续验证，不得用规则契约冒充。
+4. 实测准确率、无依据确定性结论、任务完成率和排查时间，并记录失败样本。
+5. 完成上述验证后再决定进一步前端迭代、移动端适配和公开 GitHub Pages 恢复顺序。
+
+## Competition Postmortem / 大赛复盘
+
+- Canonical document: `docs/COMPETITION_POSTMORTEM.md`.
+- Source: 2026 AI 先锋未来人才大赛公开入围名单，Revision 79。
+- Scope: 309 条有效入围记录、107 家企业、3 支安克创新入围队伍。
+- Confirmed lesson: 方法论相似度不是差异化；具体品类证据、可运行 Demo、实验结果和试点路径决定相对竞争力。
+- Inference boundary: 公开材料只有入围推荐理由，没有本项目官方淘汰意见，因此未入围原因均保持为对比推断。
 
 ## Sites Deployment / Sites 发布
 
@@ -253,6 +264,10 @@ This is a data-complete engineering skeleton ready for Sites presentation work. 
 - Submission validation is available through `npm run validate`; the canonical checklist is `docs/SUBMISSION_READINESS.md`.
 
 ### Validation Notes
+
+- Page 6 now contains a validation operations console derived from the competition postmortem: 10 planned device topologies, 3 task families, 30 planned gold cases, FAQ/preflight comparison arms, and explicit Fail rules.
+- Operators may save raw observations as versioned browser-local drafts and copy a structured Feishu handoff payload. Drafts remain unsigned, do not update verified counters, and do not change the frozen recommendation.
+- Page 7 now lists the proposed validation-record and dual-signoff queue as a collaboration artifact. No real Feishu table, task or frontend API write has been created by this change.
 
 - JSON seed files parse successfully.
 - Required frontend skeleton files exist.

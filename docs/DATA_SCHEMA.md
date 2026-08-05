@@ -20,6 +20,8 @@
 | `GateEvaluation`, `EvaluationSummary` | Gate reasons, evidence, blocking state and weighted summary / 门禁理由、证据、阻断与加权结论 | `gateEvaluations.json`, `evaluationSummary.json` |
 | `AgentEvaluation` | Six-role committee judgement and objection / 六角色委员会判断与异议 | `agentEvaluations.json` |
 | `PendingConfirmation` | Human-owned unresolved decisions / 必须由人负责的待确认事项 | `pendingConfirmations.json` |
+| `CompatibilityRuleSet`, `CompatibilityInput`, `CompatibilityEvaluation` | Local rule slice, bounded inputs and explainable outcomes / 本地规则切片、有限输入与可解释结果 | `compatibilityRules.json` |
+| `ValidationProtocol`, `ValidationDraftRecord` | Gold-set plan, FAQ comparison contract and unsigned local observations / 金标准计划、FAQ 对照契约与未签核本地观测 | `validationProtocol.json`, versioned `localStorage` |
 | `FeishuArtifact` | Mock handoff object shown in the web demo / 网页 Demo 中的 Mock 交接对象 | `feishuArtifacts.json` |
 | `FeishuWorkflow` | Four-layer collaboration, review meeting and knowledge archive / 四层协同、评审会议与知识归档 | `feishuWorkflow.json` |
 
@@ -36,6 +38,10 @@
 - Browser-local Run drafts use the versioned key `anker-ai-npd-copilot.portfolio-drafts.v1`; their snapshot status remains `unavailable` until reviewed data is imported.
 - Local drafts never change frozen JSON counts and must not inherit evidence, candidates, scores, recommendations, or pending confirmations from another Run.
 - Static portfolio examples do not imply that a Run or reviewed snapshot exists.
+- Compatibility outcomes are bounded to `supported | conditional | not_supported | unknown`; without a hardware gold-standard match, public claims remain `conditional` rather than `supported`.
+- Rule contract cases validate deterministic software behavior only. `hardwareVerifiedCases` must remain separate and cannot be inferred from contract-case pass counts.
+- Validation drafts use the versioned key `anker-ai-npd-validation-drafts-v1`; they remain `local_draft` until exported and independently signed off.
+- The 30 planned gold cases are a coverage plan, not 30 completed tests. Only dual-reviewed records may increment verified counts or change product claims.
 
 ## 4. JSON Consumption Rules / JSON 使用规则
 

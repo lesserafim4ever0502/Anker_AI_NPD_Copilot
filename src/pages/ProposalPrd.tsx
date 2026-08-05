@@ -5,10 +5,13 @@ import pendingConfirmations from "../data/pendingConfirmations.json";
 import StatusBadge, { getConfidenceLabel } from "../components/StatusBadge";
 import PageHeader from "../components/PageHeader";
 import PageDataLineage from "../components/PageDataLineage";
+import CompatibilityPreflightLab from "../components/CompatibilityPreflightLab";
+import ValidationOperationsPanel from "../components/ValidationOperationsPanel";
 import { Link, useSearchParams } from "react-router-dom";
 
-const tabs = ["Scope", "Evidence", "Validation"] as const;
+const tabs = ["Preflight", "Scope", "Evidence", "Validation"] as const;
 const tabLabels: Record<(typeof tabs)[number], string> = {
+  Preflight: "预检实验",
   Scope: "范围",
   Evidence: "证据",
   Validation: "验证",
@@ -42,6 +45,8 @@ export default function ProposalPrd() {
 
       <nav className="toolbar" aria-label="PRD 章节" role="tablist">{tabs.map((item) => <button key={item} role="tab" aria-selected={tab === item} onClick={() => setSearchParams({ tab: item })} className={`filter-button ${tab === item ? "filter-button-active" : ""}`}>{tabLabels[item]}</button>)}</nav>
 
+      {tab === "Preflight" ? <CompatibilityPreflightLab /> : null}
+
       {tab === "Scope" ? <>
         <section className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_360px]">
           <article className="panel"><div className="section-kicker"><Target size={14} /> 产品定位</div><p className="mt-3 text-sm leading-7 text-slate-700">{proposalPrd.positioning}</p><div className="mt-5 grid gap-4 sm:grid-cols-2"><div><h3 className="text-xs font-semibold text-slate-500">目标用户</h3><ul className="mt-2 space-y-2 text-sm text-slate-700">{proposalPrd.targetUsers.map((item) => <li key={item}>· {item}</li>)}</ul></div><div><h3 className="text-xs font-semibold text-slate-500">待完成任务</h3><ul className="mt-2 space-y-2 text-sm text-slate-700">{proposalPrd.jobsToBeDone.map((item) => <li key={item}>· {item}</li>)}</ul></div></div></article>
@@ -53,7 +58,8 @@ export default function ProposalPrd() {
       {tab === "Evidence" ? <section className="grid grid-cols-1 gap-5 lg:grid-cols-2"><article className="panel"><div className="section-kicker">证据摘要</div><h3 className="mt-3 section-title">Stage-Gate</h3><p className="mt-2 text-sm leading-6 text-slate-700">{proposalPrd.evidenceSummary.gateSummary}</p><h3 className="mt-5 section-title">产品委员会</h3><p className="mt-2 text-sm leading-6 text-slate-700">{proposalPrd.evidenceSummary.agentSummary}</p><div className="mt-5 border-l-2 border-amber-300 pl-3 text-xs leading-5 text-slate-600">{proposalPrd.evidenceSummary.limitations}</div></article><article className="warning-panel"><div className="section-kicker text-amber-700"><AlertTriangle size={14} /> 待确认事项</div><div className="mt-4 space-y-4">{candidatePending.map((item) => <div key={item.id} className="border-b border-amber-200 pb-4 last:border-0 last:pb-0"><div className="flex items-start justify-between gap-3"><h4 className="text-sm font-semibold text-ink">{item.title}</h4><StatusBadge status={item.status} /></div><p className="mt-2 text-xs leading-5 text-slate-700">{item.description}</p><p className="mt-2 text-xs font-semibold text-amber-800">责任角色 · {item.ownerRole.join(" / ")}</p></div>)}</div></article></section> : null}
 
       {tab === "Validation" ? <>
-        <section className="grid grid-cols-1 gap-4 lg:grid-cols-2"><article className="panel"><div className="section-kicker">拟议成功指标</div><div className="mt-4 divide-y divide-slate-100">{proposalPrd.successMetrics.map((metric) => <div key={metric.metric} className="grid grid-cols-1 gap-2 py-3 sm:grid-cols-[minmax(0,1fr)_auto]"><div><h4 className="text-sm font-semibold text-ink">{metric.metric}</h4><p className="mt-1 text-xs leading-5 text-slate-500">{metric.measurement}</p></div><div className="text-left sm:text-right"><div className="font-semibold tabular-nums text-blue-700">{metric.proposedTarget}</div><StatusBadge status={metric.status} /></div></div>)}</div></article><article className="danger-panel"><div className="section-kicker text-red-700">风险登记</div><div className="mt-4 space-y-4">{proposalPrd.risks.map((item) => <div key={item.id}><div className="flex items-center gap-2"><StatusBadge status={item.level} /><h4 className="text-sm font-semibold text-ink">{item.risk}</h4></div><p className="mt-1 pl-0 text-xs leading-5 text-slate-600 sm:pl-[58px]">{item.mitigation}</p></div>)}</div></article></section>
+        <ValidationOperationsPanel />
+        <section className="grid grid-cols-1 gap-4 2xl:grid-cols-2"><article className="panel"><div className="section-kicker">拟议成功指标</div><div className="mt-4 divide-y divide-slate-100">{proposalPrd.successMetrics.map((metric) => <div key={metric.metric} className="min-w-0 py-3"><h4 className="text-sm font-semibold text-ink">{metric.metric}</h4><p className="mt-1 text-xs leading-5 text-slate-500">{metric.measurement}</p><div className="mt-2 flex flex-wrap items-center gap-2"><div className="whitespace-nowrap font-semibold tabular-nums text-blue-700">{metric.proposedTarget}</div><StatusBadge status={metric.status} /></div></div>)}</div></article><article className="danger-panel"><div className="section-kicker text-red-700">风险登记</div><div className="mt-4 space-y-4">{proposalPrd.risks.map((item) => <div key={item.id}><div className="flex flex-wrap items-center gap-2"><StatusBadge status={item.level} /><h4 className="min-w-0 text-sm font-semibold text-ink">{item.risk}</h4></div><p className="mt-1 text-xs leading-5 text-slate-600">{item.mitigation}</p></div>)}</div></article></section>
         <section><div className="mb-3"><h3 className="section-title">验证计划</h3><p className="section-subtitle">任一边界测试出现无依据确定性结论，即视为 Fail</p></div><div className="grid grid-cols-1 gap-3 lg:grid-cols-3">{proposalPrd.validationPlan.map((item) => <article key={item.id} className="panel"><div className="text-xs font-semibold text-blue-700">{item.method}</div><h4 className="mt-2 font-semibold text-ink">{item.scope}</h4><p className="mt-3 border-t border-slate-100 pt-3 text-xs leading-5 text-slate-600">{item.decisionRule}</p></article>)}</div></section>
       </> : null}
     </div>

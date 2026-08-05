@@ -1,0 +1,58 @@
+{
+  "version": "v0.1",
+  "lastReviewed": "2026-08-05",
+  "mode": "local_validation_draft",
+  "scopeLabel": "Dock 兼容预检首轮验证",
+  "boundary": "本页记录仅保存在当前浏览器，用于形成待复核的验证草稿；未经双人复核和版本签核，不计入硬件金标准，不代表产品兼容承诺。",
+  "targets": {"userInterviews":8,"topologies":10,"tasksPerTopology":3,"goldCases":30,"faqComparisonSessions":10},
+  "verified": {"userInterviews":0,"goldCases":0,"faqComparisonSessions":0},
+  "methods": [
+    {"value":"gold_standard","label":"硬件金标准测试"},
+    {"value":"faq_comparison","label":"FAQ 对照任务测试"}
+  ],
+  "comparisonArms": [
+    {"value":"static_faq","label":"静态 FAQ"},
+    {"value":"preflight","label":"兼容预检"}
+  ],
+  "observedOutcomes": [
+    {"value":"supported","label":"支持"},
+    {"value":"conditional","label":"条件支持"},
+    {"value":"not_supported","label":"不支持"},
+    {"value":"unknown","label":"未知"}
+  ],
+  "reviewerVerdicts": [
+    {"value":"match","label":"规则与人工结论一致"},
+    {"value":"mismatch","label":"规则与人工结论不一致"},
+    {"value":"blocked","label":"测试阻塞"},
+    {"value":"inconclusive","label":"证据不足"}
+  ],
+  "tasks": [
+    {"id":"display","title":"显示拓扑","instruction":"完成目标显示模式并确认镜像、扩展、分辨率和刷新率。","successDefinition":"目标显示模式稳定运行，且限制条件与预检解释一致。"},
+    {"id":"ethernet","title":"有线网络","instruction":"连接 2.5GbE 网络并记录驱动、链路速率和实际吞吐。","successDefinition":"驱动与协商状态明确，实际吞吐达到测试环境可解释范围。"},
+    {"id":"charging","title":"主机供电","instruction":"在目标负载下记录协商功率、稳定性和异常恢复。","successDefinition":"供电任务可完成，且限制与异常状态能够被解释。"}
+  ],
+  "topologies": [
+    {"id":"topology-01","host":"MacBook Air M2","os":"macOS 15","dockId":"anker_007","connection":"USB-C","displays":"2 × 4K","reason":"验证 Apple Silicon 双外屏扩展边界"},
+    {"id":"topology-02","host":"MacBook Pro M3 Pro","os":"macOS 15","dockId":"anker_008","connection":"Thunderbolt 5","displays":"2 × 4K","reason":"验证 TB5 高带宽显示与网卡任务"},
+    {"id":"topology-03","host":"MacBook Pro M1","os":"macOS 14","dockId":"anker_010","connection":"Thunderbolt 4","displays":"1 × 4K","reason":"建立单外屏稳定对照"},
+    {"id":"topology-04","host":"Surface Laptop 7","os":"Windows 11 24H2","dockId":"anker_007","connection":"USB-C","displays":"2 × 4K","reason":"验证 Windows on Arm 驱动与显示组合"},
+    {"id":"topology-05","host":"Dell XPS 13","os":"Windows 11 24H2","dockId":"anker_008","connection":"Thunderbolt 5","displays":"2 × 4K","reason":"验证 TB5 网卡驱动依赖"},
+    {"id":"topology-06","host":"ThinkPad X1 Carbon","os":"Windows 11 23H2","dockId":"anker_010","connection":"Thunderbolt 4","displays":"2 × 4K","reason":"建立企业办公常见拓扑"},
+    {"id":"topology-07","host":"HP Spectre x360","os":"Windows 11 24H2","dockId":"anker_007","connection":"USB-C","displays":"1 × 4K","reason":"验证 USB-C 单屏与供电基线"},
+    {"id":"topology-08","host":"Mac mini M2","os":"macOS 15","dockId":"anker_008","connection":"Thunderbolt 5","displays":"2 × 4K","reason":"验证桌面主机长期连接任务"},
+    {"id":"topology-09","host":"Framework Laptop 13","os":"Windows 11 24H2","dockId":"anker_010","connection":"Thunderbolt 4","displays":"1 × 4K","reason":"验证可变端口主机的连接边界"},
+    {"id":"topology-10","host":"MacBook Air M3","os":"macOS 15","dockId":"anker_007","connection":"USB-C","displays":"2 × 4K","reason":"验证合盖与双屏工作模式"}
+  ],
+  "metrics": [
+    {"id":"gold_accuracy","label":"金标准结论准确率","target":">= 95%","failRule":"任一无依据确定性结论直接触发 Fail Gate"},
+    {"id":"task_completion","label":"任务正确完成率提升","target":">= 15 percentage points","failRule":"相对静态 FAQ 无提升则停止推进"},
+    {"id":"resolution_time","label":"排查时间降低","target":">= 20%","failRule":"中位完成时间无改善则停止推进"},
+    {"id":"false_certainty","label":"错误确定性结论","target":"0","failRule":"出现 1 次即暂停规则发布"}
+  ],
+  "feishuHandoff": {
+    "status": "proposal_mock",
+    "targetObjects": ["compatibility_gold_cases", "faq_comparison_sessions", "validation_decisions"],
+    "requiredReviewers": ["兼容性测试负责人", "产品负责人"],
+    "writebackRule": "本地草稿先进入待复核队列；双人签核后才能更新规则版本、Decision Ledger 和 PRD 指标。"
+  }
+}

@@ -91,3 +91,21 @@ Implementation artifacts:
 - `data_templates/raw_evidence_intake.csv`
 - `data_templates/structured_evidence_template.csv`
 - `data_templates/evidence_schema.json`
+
+---
+
+## Decision 016: Shift from Platform Completeness to Product Proof
+
+Status: Accepted
+
+2026 AI 先锋未来人才大赛入围名单复盘显示，Evidence-to-Decision、多 Agent、红队质疑和人工门禁方向本身成立，但系统完整性不能替代具体品类中的证据强度、真实运行和实验结果。
+
+后续开发决策：
+
+1. 保留现有七页工作台和历史投稿快照，不推翻已有工程资产。
+2. 暂停通过新增展示性页面扩展系统广度。
+3. 优先完成 Dock 兼容预检的一手研究、金标准案例、真实运行切片和实测指标。
+4. 飞书继续作为协作底座，但产品任务、证据和运行结果必须先于平台能力呈现。
+5. 外部提交前增加相对竞争力 Red Team Gate。
+
+Rationale and evidence: `docs/COMPETITION_POSTMORTEM.md`.

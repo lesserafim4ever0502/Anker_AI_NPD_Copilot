@@ -94,5 +94,25 @@
     ],
     "businessValue": "把 PRD 草案转化为后续可执行任务。",
     "mockStatus": "proposal_mock"
+  },
+  {
+    "id": "artifact-006",
+    "name": "兼容验证记录与签核队列",
+    "feishuType": "多维表格 / 任务",
+    "sourcePages": [
+      "PRD 输出",
+      "飞书协作"
+    ],
+    "content": [
+      "30 例硬件金标准计划",
+      "FAQ 对照会话",
+      "原始观察",
+      "规则与人工结论差异",
+      "双人签核",
+      "规则版本回写",
+      "Decision Ledger"
+    ],
+    "businessValue": "把验证草稿、人工签核和规则版本更新串成可审计闭环，未签核记录不得进入产品声明。",
+    "mockStatus": "proposal_mock"
   }
 ]

@@ -391,17 +391,18 @@ Anker AI-NPD Copilot 是面向安克新品定义团队的证据链驱动 NPD 工
 
 ### Modules
 
-1. PRD Header
-2. NP Basic Information
-3. Product Positioning
-4. Evidence Summary
-5. MVP Feature Scope
-6. Out of Scope
-7. Risk List
-8. Validation Plan
-9. Pending Confirmations
-10. Evidence Sidebar
-11. Feishu PRD Collaboration Context
+1. Compatibility Preflight Lab
+2. PRD Header
+3. NP Basic Information
+4. Product Positioning
+5. Evidence Summary
+6. MVP Feature Scope
+7. Out of Scope
+8. Risk List
+9. Validation Plan
+10. Pending Confirmations
+11. Evidence Sidebar
+12. Feishu PRD Collaboration Context
 
 ### PRD Status
 
@@ -417,6 +418,8 @@ Draft / Need Confirmation
 
 ### P0 Interactions
 
+- 默认进入“预检实验”，选择 Dock、OS、连接、显示拓扑、任务和驱动状态后运行本地规则。
+- 结果必须展示条件、来源、人工核对项、规则契约和硬件金标准边界。
 - 展示 PRD 草案。
 - 点击“查看 PRD 协作”进入 Page 7 对应 PRD 资产。
 - 不显示统一“同步成功”；必须区分现有文档、已审核快照与 Proposal Mock。
@@ -483,3 +486,24 @@ Demo 阶段可以用按钮和状态提示表达，不必实现复杂状态引擎
 - 页面显示当前阶段输出和下一步。
 - 页面至少有一个证据链或状态链元素。
 - 页面不把核心信息藏在图片里。
+
+---
+
+## 15. Post-competition Demonstration Hierarchy
+
+赛后版本的视觉与叙事优先级调整为：
+
+```text
+具体用户任务
+  → 可复核证据
+  → 产品判断
+  → 实际运行结果
+  → 风险与人工门禁
+  → 平台和飞书协作能力
+```
+
+- 平台架构、Run 生命周期和飞书资产不得占据产品价值之前的主要视觉焦点。
+- 首屏或前三分钟流程必须先回答“为谁解决什么任务、凭什么判断、实际跑出了什么”。
+- Proposed Metrics 与 measured results 必须在视觉上明确区分。
+- Mock 流程不得与真实运行结果使用相同状态样式。
+- 不新增只用于展示系统广度的页面；优先把真实案例、失败样本、Unknown 和人工确认做深。

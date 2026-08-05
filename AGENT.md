@@ -13,6 +13,7 @@ Any AI coding agent working on this repository must read these files before crea
 7. `docs/NPD_RUN_LIFECYCLE.md`
 8. `docs/DECISION_LOGIC.md`
 9. `docs/FEISHU_COLLABORATION.md`
+10. `docs/COMPETITION_POSTMORTEM.md`
 
 Do not start implementation from assumptions. The product narrative is part of the architecture.
 
@@ -56,6 +57,7 @@ Implemented or planned in the first development iteration:
 - Mock Feishu collaboration artifacts.
 - Mock Decision Ledger and Pending Confirmations.
 - Browser-local NPD Run draft intake with snapshot activation guards.
+- A working local-rules compatibility preflight slice inside Page 6, with explainable outcomes and contract cases.
 
 Not implemented at this stage:
 
@@ -66,6 +68,7 @@ Not implemented at this stage:
 - Production backend.
 - Model fine-tuning.
 - Real multi-user permissions.
+- Hardware-verified compatibility certification or a completed gold-standard topology set.
 - Real project persistence beyond local data.
 
 Browser-local Run drafts are portfolio intake records, not evidence snapshots. They must remain unable to activate downstream pages until a matching reviewed snapshot is explicitly registered.

@@ -1,0 +1,124 @@
+{
+  "version": "v0.1-local",
+  "mode": "local_rule_slice",
+  "scopeLabel": "Reviewed public sample / local rules",
+  "lastReviewed": "2026-08-05",
+  "hardwareVerifiedCases": 0,
+  "goldSetTarget": 30,
+  "boundary": "当前输出只验证规则契约和信息架构，不代表真实硬件兼容认证。只有经过人工金标准测试的配置才能升级为“支持”。",
+  "defaultInput": {
+    "dockId": "anker_007",
+    "hostOs": "macos",
+    "hostConnection": "usb_c",
+    "displayCount": 2,
+    "displayMode": "extend",
+    "task": "display",
+    "driverState": "unknown"
+  },
+  "inputOptions": {
+    "hostOs": [
+      {"value": "macos", "label": "macOS"},
+      {"value": "windows", "label": "Windows"}
+    ],
+    "hostConnection": [
+      {"value": "usb_c", "label": "USB-C"},
+      {"value": "tb4", "label": "Thunderbolt 4"},
+      {"value": "tb5", "label": "Thunderbolt 5"}
+    ],
+    "displayCount": [
+      {"value": "0", "label": "无外接显示器"},
+      {"value": "1", "label": "1 台"},
+      {"value": "2", "label": "2 台"},
+      {"value": "3", "label": "3 台"}
+    ],
+    "displayMode": [
+      {"value": "single", "label": "单屏"},
+      {"value": "mirror", "label": "镜像"},
+      {"value": "extend", "label": "扩展桌面"}
+    ],
+    "task": [
+      {"value": "display", "label": "显示输出"},
+      {"value": "ethernet", "label": "高速有线网络"},
+      {"value": "charging", "label": "主机供电"}
+    ],
+    "driverState": [
+      {"value": "unknown", "label": "未知 / 未检查"},
+      {"value": "system_default", "label": "系统默认驱动"},
+      {"value": "vendor_verified", "label": "已核对厂商驱动"}
+    ]
+  },
+  "docks": [
+    {
+      "id": "anker_007",
+      "name": "Anker Prime Charging Docking Station 14-in-1",
+      "reviewedTasks": ["display", "ethernet", "charging"],
+      "maxReviewedDisplays": 2,
+      "sourceRef": "anker_007"
+    },
+    {
+      "id": "anker_008",
+      "name": "Anker Prime TB5 Docking Station 14-in-1",
+      "reviewedTasks": ["display", "ethernet", "charging"],
+      "maxReviewedDisplays": 2,
+      "sourceRef": "anker_008"
+    },
+    {
+      "id": "anker_010",
+      "name": "Anker 777 Thunderbolt Docking Station 12-in-1",
+      "reviewedTasks": ["display", "ethernet", "charging"],
+      "maxReviewedDisplays": 2,
+      "sourceRef": "anker_010"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "anker_007",
+      "label": "Anker Prime Charging Docking Station public product page",
+      "type": "official_product_page",
+      "url": "https://www.anker.com/uk/products/a83b6-anker-prime-charging-docking-station-14-in-1-dual-display-160w"
+    },
+    {
+      "id": "anker_008",
+      "label": "Anker Prime TB5 Docking Station public product page",
+      "type": "official_product_page",
+      "url": "https://www.anker.com/products/a83b5-anker-prime-thunderbolt5-docking-station-14-in-1-140w-8k"
+    },
+    {
+      "id": "anker_010",
+      "label": "Anker 777 Thunderbolt Docking Station public product page",
+      "type": "official_product_page",
+      "url": "https://service.anker.com/product-description/a085g000004x2CLAAY/anker-777-thunderbolt-docking-station-apex-12in1-thunderbolt-4"
+    },
+    {
+      "id": "UGF-007",
+      "label": "Reviewed public feedback: macOS dual-display mirroring risk",
+      "type": "reviewed_user_feedback",
+      "url": "https://www.reddit.com/r/anker/comments/1e6ra4w/new_details_14in1_prime_charging_docking_station/"
+    },
+    {
+      "id": "UGF-008",
+      "label": "Reviewed public feedback: 2.5GbE driver dependency",
+      "type": "reviewed_user_feedback",
+      "url": "https://www.reddit.com/r/anker/comments/1k64u5l/anker_prime_tb5_dock/"
+    }
+  ],
+  "rules": [
+    {"id": "rule-required-inputs", "description": "关键输入缺失或互相矛盾时返回未知。"},
+    {"id": "rule-reviewed-display-limit", "description": "目标显示器数量超过当前公开规格审阅范围时，在本规则集内返回不支持。"},
+    {"id": "rule-macos-dual-extend", "description": "macOS 双外屏扩展需要核对芯片、驱动和显示拓扑，不能仅凭端口数量确认。"},
+    {"id": "rule-tb5-ethernet-driver", "description": "TB5 Dock 高速网卡任务需要核对网卡驱动版本。"},
+    {"id": "rule-public-claim-only", "description": "仅有公开规格覆盖、尚无硬件金标准时返回条件支持。"}
+  ],
+  "contractCases": [
+    {"id":"contract-001","label":"缺少操作系统","input":{"dockId":"anker_007","hostOs":"","hostConnection":"usb_c","displayCount":1,"displayMode":"single","task":"display","driverState":"unknown"},"expectedOutcome":"unknown"},
+    {"id":"contract-002","label":"显示任务但未选择显示器","input":{"dockId":"anker_007","hostOs":"windows","hostConnection":"usb_c","displayCount":0,"displayMode":"single","task":"display","driverState":"unknown"},"expectedOutcome":"unknown"},
+    {"id":"contract-003","label":"macOS 双外屏扩展","input":{"dockId":"anker_007","hostOs":"macos","hostConnection":"usb_c","displayCount":2,"displayMode":"extend","task":"display","driverState":"unknown"},"expectedOutcome":"conditional"},
+    {"id":"contract-004","label":"Windows 双外屏扩展","input":{"dockId":"anker_007","hostOs":"windows","hostConnection":"usb_c","displayCount":2,"displayMode":"extend","task":"display","driverState":"unknown"},"expectedOutcome":"conditional"},
+    {"id":"contract-005","label":"超出已审阅双屏范围","input":{"dockId":"anker_007","hostOs":"windows","hostConnection":"usb_c","displayCount":3,"displayMode":"extend","task":"display","driverState":"unknown"},"expectedOutcome":"not_supported"},
+    {"id":"contract-006","label":"TB5 网卡驱动未知","input":{"dockId":"anker_008","hostOs":"windows","hostConnection":"tb5","displayCount":0,"displayMode":"single","task":"ethernet","driverState":"unknown"},"expectedOutcome":"conditional"},
+    {"id":"contract-007","label":"TB5 使用系统默认驱动","input":{"dockId":"anker_008","hostOs":"windows","hostConnection":"tb5","displayCount":0,"displayMode":"single","task":"ethernet","driverState":"system_default"},"expectedOutcome":"conditional"},
+    {"id":"contract-008","label":"TB5 主机供电预检","input":{"dockId":"anker_008","hostOs":"macos","hostConnection":"tb5","displayCount":0,"displayMode":"single","task":"charging","driverState":"unknown"},"expectedOutcome":"conditional"},
+    {"id":"contract-009","label":"TB4 单外屏预检","input":{"dockId":"anker_010","hostOs":"windows","hostConnection":"tb4","displayCount":1,"displayMode":"single","task":"display","driverState":"unknown"},"expectedOutcome":"conditional"},
+    {"id":"contract-010","label":"TB4 三外屏超范围","input":{"dockId":"anker_010","hostOs":"macos","hostConnection":"tb4","displayCount":3,"displayMode":"extend","task":"display","driverState":"unknown"},"expectedOutcome":"not_supported"}
+  ]
+}
