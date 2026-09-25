@@ -4,6 +4,14 @@
 
 ### Changed
 
+- Timestamp: 2026-09-25T11:37:45+08:00.
+- Modified paths and implementation metrics:
+  - `README.md`: L1-144 -> L1-212, +107 -15.
+  - `assets/readme/workspace.png`: new binary file, 179,974 bytes.
+  - `assets/readme/evaluation.png`: new binary file, 207,662 bytes.
+  - `assets/readme/validation.png`: new binary file, 196,327 bytes.
+  - `docs/CHANGELOG.md`: L1-387 -> L1-394, +8 -0 including this entry.
+
 - Timestamp: 2026-08-05T15:30:00+08:00.
 - Added a Page 6 validation operations console that turns the competition postmortem into an executable 10-topology × 3-task gold-set plan.
 - Added browser-local, explicitly unsigned observation drafts for hardware and FAQ-comparison sessions, plus a structured Feishu handoff JSON copy action.
